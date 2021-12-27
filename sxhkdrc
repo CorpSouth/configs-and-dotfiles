@@ -1,0 +1,56 @@
+#
+# wm-independent hotkeys
+#
+
+#terminal emulator#
+super + shift + Return
+	urxvt
+      
+#restart sxhkd to refresh configuration settings in-place#
+
+shift + super + Escape 
+	pkill -USR1 -x sxhkd && dunstify --urgency=LOW "sxhkd reload"
+
+#restart compositor#
+
+control + shift + super + c
+        killall picom && picom &
+
+#refresh .Xresources#
+
+shift + super + x
+        xrdb -merge .Xresources && dunstify --urgency=LOW "xrdb -merge .Xresources"
+
+#launch programs#
+
+shift + super + a ; {w,s,f,e,m,p,o,d,t}
+	            {librewolf,tilda,pcmanfm,urxvt -e vim,thunderbird,pi-apps,libreoffice,webcord,telegram-desktop}
+
+##utility keys##
+
+super + shift + c ; {l}
+                  {lxappearance}
+
+shift + super + u ; {b,l,r,s}
+                    {bleachbit,slock,systemctl reboot,systemctl poweroff}
+
+#set the volume#
+
+super + {F10,F11,F12}
+        {~/.scripts/volume.sh down,~/.scripts/volume.sh up,~/.scripts/volume.sh mute}
+
+#grab the date-time#
+
+super + KP_Begin
+        dunstify --urgency=LOW "$(date)"
+
+#screenshot#
+
+super + Print
+	scrot && dunstify "Screen Captured"
+
+
+
+
+
+
