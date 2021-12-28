@@ -1,56 +1,72 @@
-#
-# wm-independent hotkeys
-#
+##########################
+# wm-independent hotkeys #
+##########################
 
-#terminal emulator#
+####################
+# summon the 'figs #
+####################
+
+control + shift + super + c ; {h,l,v,w,x}
+                              {urxvt -e vim ~/.config/sxhkd/sxhkdrc, lxappearance, urxvt -e sudo vim /etc/vim/vimrc, urxvt -e vim ~/.cwmrc, sudo urxvt -e vim /etc/X11/xinit/xinitrc}
+
+##########################
+# main terminal emulator #
+##########################
+
 super + shift + Return
-	urxvt
-      
-#restart sxhkd to refresh configuration settings in-place#
+      urxvt
 
-shift + super + Escape 
-	pkill -USR1 -x sxhkd && dunstify --urgency=LOW "sxhkd reload"
+#####################
+# dropdown terminal #
+#####################
 
-#restart compositor#
+control + shift + super + Return
+        tilda
 
-control + shift + super + c
-        killall picom && picom &
+####################################################################
+# refresh or restart the following daemons, services, and settings #
+####################################################################
 
-#refresh .Xresources#
+control + shift + super + r ; {c,h,n,x}
+                              {killall picom && picom, pkill -USR1 -x sxhkd && dunstify --urgency=LOW "sxhkd reload", killall dunst && dunst,xrdb -merge .Xresources && dunstify --urgency=LOW ".Xresources Reloaded"}
 
-shift + super + x
-        xrdb -merge .Xresources && dunstify --urgency=LOW "xrdb -merge .Xresources"
+###################
+# launch programs #
+###################
 
-#launch programs#
+control + shift + super + o ; {c,d,e,f,i,l,m,p,t,w}
+                              {urxvt -e tty-clock -t -c -C 7,webcord,urxvt -e vim,pcmanfm,feh Pictures/,libreoffice,thunderbird,pi-apps,telegram-desktop,librewolf}
 
-shift + super + a ; {w,s,f,e,m,p,o,d,t}
-	            {librewolf,tilda,pcmanfm,urxvt -e vim,thunderbird,pi-apps,libreoffice,webcord,telegram-desktop}
+#####################
+# system monitoring #
+#####################
 
-##utility keys##
+control + shift + super + m ; {h,i,t}
+                              {urxvt -e htop, urxvt -e sudo iftop, urxvt -e watch -n 1 "vcgencmd measure_clock arm; vcgencmd measure_temp"} 
 
-super + shift + c ; {l}
-                  {lxappearance}
+######################################
+# power management and screenlocking #
+######################################
 
-shift + super + u ; {b,l,r,s}
-                    {bleachbit,slock,systemctl reboot,systemctl poweroff}
-
-#set the volume#
+control + shift + super + p ; {l,r,s}
+                              {slock,systemctl reboot,systemctl poweroff}
+##################
+# set the volume #
+##################
 
 super + {F10,F11,F12}
         {~/.scripts/volume.sh down,~/.scripts/volume.sh up,~/.scripts/volume.sh mute}
 
-#grab the date-time#
+######################
+# grab the date-time #
+######################
 
-super + KP_Begin
-        dunstify --urgency=LOW "$(date)"
+alt + control + super + d 
+    dunstify --urgency=LOW "$(date)"
 
-#screenshot#
+##############
+# screenshot #
+##############
 
 super + Print
-	scrot && dunstify "Screen Captured"
-
-
-
-
-
-
+      scrot && dunstify "Screen Captured"
