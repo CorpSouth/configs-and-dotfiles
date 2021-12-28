@@ -19,8 +19,8 @@ borderwidth 2
 # Border Colors
 color   activeborder		"#3465A4"
 color 	urgencyborder 		"#AA00FF"
-color   inactiveborder		"#16171C"	
-color 	groupborder		"#274164"
+color   inactiveborder		"#14161b"	
+color 	groupborder		    "#274164"
 color 	ungroupborder		"#49525B"
 
 # Size of keyboard window movement - pixel
