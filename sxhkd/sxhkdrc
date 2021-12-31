@@ -16,13 +16,6 @@ control + shift + super + c ; {h,l,v,w,x}
 super + shift + Return
       urxvt
 
-#####################
-# dropdown terminal #  
-#####################
-
-control + shift + super + Return
-        tilda
-
 ####################################################################
 # refresh or restart the following daemons, services, and settings #
 ####################################################################
