@@ -82,10 +82,13 @@ alias upg="sudo apt full-upgrade"
 alias pau="pi-apps update"
 
 # search apt
-alias as="sudo apt search"
+alias apts="sudo apt search"
+
+# install from apt
+alias apti="sudo apt install"
 
 # invoke autoremove and purge
-alias saarp="sudo apt autoremove --purge -y"
+alias aptap="sudo apt autoremove --purge -y"
 
 # restart the following services
 alias restart-compositor="killall picom && picom &"
