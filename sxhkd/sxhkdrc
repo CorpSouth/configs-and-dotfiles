@@ -27,8 +27,8 @@ control + shift + super + r ; {c,h,n,x}
 # launch programs #
 ###################
 
-control + shift + super + o ; {c,d,e,F9,f,i,l,m,p,t,w}
-                              {urxvt -e tty-clock -t -c -C 7,webcord,urxvt -e vim,urxvt -e cmus,pcmanfm,feh Pictures/,libreoffice,thunderbird,pi-apps,telegram-desktop,librewolf}
+control + shift + super + o ; {c,d,e,F9,f,i,l,m,p,w}
+                              {urxvt -e tty-clock -t -c -C 7,urxvt -e vim,urxvt -e cmus,pcmanfm,feh Pictures/,libreoffice,thunderbird,pi-apps,librewolf}
 
 #####################
 # system monitoring #
@@ -42,7 +42,7 @@ control + shift + super + m ; {h,i,t}
 ######################################
 
 control + shift + super + p ; {l,r,s}
-                              {slock,pkexec systemctl reboot, pkexec systemctl poweroff}
+                              {slock,systemctl reboot,systemctl poweroff}
 ##################
 # set the volume #
 ##################
