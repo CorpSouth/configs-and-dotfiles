@@ -27,7 +27,7 @@ control + shift + super + r ; {c,h,n,x}
 # launch programs #
 ###################
 
-control + shift + super + o ; {c,d,e,F9,f,i,l,m,p,w}
+control + shift + super + o ; {c,e,F9,f,i,l,m,p,w}
                               {urxvt -e tty-clock -t -c -C 7,urxvt -e vim,urxvt -e cmus,pcmanfm,feh Pictures/,libreoffice,thunderbird,pi-apps,librewolf}
 
 #####################
