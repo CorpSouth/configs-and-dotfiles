@@ -32,7 +32,7 @@ snapdist 5
 # Percent of screen master should occupy with htile
 htile 50
 
-#Percent of screen master should occupy with vtile
+# Percent of screen master should occupy with vtile
 vtile 50
 
 # Applications that cwm will ignore for groups and borders
