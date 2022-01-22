@@ -305,7 +305,7 @@ bind-key 4S-Right window-resize-right-big
 #####################
 
 # Unbind default mouse actions - This removes the right click menu - Mouse binds will still work
-#unbind-mouse all 
+# unbind-mouse all 
 
 # Move window with mouse
 bind-mouse 4-1 window-move
