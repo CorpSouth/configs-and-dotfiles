@@ -75,15 +75,15 @@ command LockScreen        slock
 command Reboot            pkexec systemctl reboot
 command Shutdown          pkexec systemctl poweroff 
 
-#########################
-#  Keyboard Keybinding  #
-#########################
-# KEYBINDINGS:          #
-# 4 = mod (windows key) #
-# S = shift             #
-# C = control           #
-# M = meta (alt)        #
-#########################
+##########################
+#  Keyboard Keybindings  #
+##########################
+#  KEYBINDINGS:          #
+#  4 = mod (windows key) #
+#  S = shift             #
+#  C = control           #
+#  M = meta (alt)        #
+##########################
 
 # Remove all default keybindings
 unbind-key all
