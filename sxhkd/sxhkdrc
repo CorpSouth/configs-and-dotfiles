@@ -1,0 +1,65 @@
+###################
+# common programs #
+###################
+
+shift + super + Return
+      urxvt
+
+control + shift + super + o ; {b,e,f,m,p}
+ {firefox, \
+  urxvt -e vim, \
+  pcmanfm, \
+  thunderbird, \
+  pi-apps}
+
+##############
+# multimedia #
+##############
+
+super + {F9,F10,F11,F12}
+ {cmus, \
+  /home/pi/.local/bin/volume.sh down, \
+  /home/pi/.local/bin/volume.sh up, \
+  /home/pi/.local/bin/volume.sh mute}
+
+
+#####################
+# system monitoring #
+#####################
+
+control + shift + super + m ; {h,i,t}
+ {urxvt -e htop, \
+  urxvt -e sudo iftop, \
+  urxvt -e watch -n 1 "vcgencmd measure_clock arm; vcgencmd measure_temp"}
+
+#########
+# power #
+#########
+
+control + shift + super + End ; {l,r,s}
+ {slock, \
+  systemctl reboot, \
+  systemctl poweroff}
+
+###################
+# SUMMON THE FIGS #
+###################
+
+control + shift + super + c ; {c,e,h,n,t,w,x}
+ {urxvt -e vim ~/.config/picom/picom.conf, \
+  urxvt -e vim ~/.vim/vimrc, \
+  urxvt -e vim ~/.config/sxhkd/sxhkdrc, \
+  connman-gtk, \
+  lxappearance, \
+  urxvt -e vim ~/.cwmrc, \
+  urxvt -e vim ~/.Xresources}
+
+############################
+# refresh, restart, reload #
+############################
+
+control + shift + super + Escape ; {c,h,n,x}
+ {killall picom; picom; notify-send "X11" "compositing manager restarted", \
+  pkill -USR1 -x sxhkd; notify-send "X11" "hotkey daemon restarted", \
+  killall dunst; dunst; notify-send "X11" "notification service restarted", \
+  xrdb -merge ~/.Xresources; notify-send "X11" "xresources reloaded"}
