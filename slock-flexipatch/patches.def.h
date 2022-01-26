@@ -63,7 +63,7 @@
  * and the password can be entered then.
  * https://tools.suckless.org/slock/patches/dpms/
  */
-#define DPMS_PATCH 0
+#define DPMS_PATCH 1
 
 /* This patch draws the dwm logo which changes color based on the state.
  * https://tools.suckless.org/slock/patches/dwmlogo/
