@@ -146,13 +146,13 @@ autogroup 3 "mpv"
 autogroup 4 "BleachBit", "BleachBit"
 autogroup 4 "rpi-imager", "Imager"
 autogroup 4 "lxappearance", "Lxappearance"
+autogroup 4 "pcmanfm", "Pcmanfm"
 autogroup 5 "libreoffice", "libreoffice-startcenter"
 autogroup 5 "libreoffice", "libreoffice-base"
 autogroup 5 "libreoffice", "libreoffice-calc" 
 autogroup 5 "libreoffice", "libreoffice-draw" 
 autogroup 5 "libreoffice", "libreoffice-impress" 
 autogroup 5 "libreoffice", "libreoffice-writer" 
-autogroup 5 "pcmanfm", "Pcmanfm"
 # autogroup 6 
 # autogroup 7 
 # autogroup 8 
