@@ -10,3 +10,5 @@ Special thanks to Leah Neukirchen for keeping the Calm Window Manager project al
 Special thanks to Baskerville for the excellent Simple X11 Hotkey Daemon, completely changed the way I use Linux
 
 Special thanks to Bakkeby for the flexipatch editions of suckless software
+
+Special thanks to DistroTube for providing the sensible config to figure Picom out
