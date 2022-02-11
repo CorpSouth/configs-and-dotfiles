@@ -39,7 +39,6 @@
 
 ! Xft
 Xft*antialias: true
-Xft*dpi: 96
 Xft*hinting:   true
 Xft*hintstyle: hintfull
 Xft*rgba:      rgb
