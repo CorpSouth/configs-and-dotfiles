@@ -16,12 +16,10 @@
 #define col14 #868686
 #define col15 #f7f7f7
 
-! canvas
+! colorization
 *.foreground:  col7
 *.background:  col0
 *.cursorColor: col7
-
-! color scheme
 *.color0:  col0
 *.color1:  col1
 *.color2:  col2
