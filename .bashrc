@@ -112,8 +112,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export TERM=urxvt=256color
-
 #########
 # fetch #
 #########
