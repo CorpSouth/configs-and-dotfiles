@@ -122,3 +122,4 @@ pfetch
 # ls on x-terminal-emulator node spawn #
 ########################################
 
+ls -CF1
