@@ -6,10 +6,9 @@
 super + Return
  urxvt
 
-control + shift + super + o ; {b,e,f,i,m,p,F9}
+control + shift + super + o ; {b,e,i,m,p,F9}
  {firefox, \
   urxvt -e vim, \
-  urxvt -e fff, \
   feh -t ~/Pictures, \
   thunderbird, \
   pi-apps, \
@@ -38,8 +37,8 @@ control + shift + super + m ; {m}
 
 control + shift + super + End ; {l,r,s,x}
  {slock, \
-  systemctl reboot, \
-  systemctl poweroff,\
+  sudo init 6, \
+  sudo init 0,\
   pkill -KILL -u pi}
 
 ###################
