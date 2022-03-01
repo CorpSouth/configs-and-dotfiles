@@ -3,6 +3,8 @@ Just a place for personal items
 
 .cwmrc modified from the Arcolinux CWM Edition Github Repo https://github.com/arcolinux/arcolinux-cwm
 
+Special thanks to Airblader for the wonderful i3-gaps fork of i3wm
+
 Special thanks to Erik Dubois for providing the .cwmrc file, making it easier for me to get started
 
 Special thanks to Leah Neukirchen for keeping the Calm Window Manager project alive https://github.com/leahneukirchen/cwm
@@ -12,3 +14,5 @@ Special thanks to Baskerville for the excellent Simple X11 Hotkey Daemon, comple
 Special thanks to Bakkeby for the flexipatch editions of suckless software
 
 Special thanks to DistroTube for providing the sensible config to figure Picom out
+
+Special thanks to Matthew of The Linux Cast for making i3 easier to set up for me
