@@ -10,6 +10,7 @@ include $HOME/.config/i3/workspaces.conf
 # appearance #
 ##############
 
+font pango: ubuntu mono bold 11 
 gaps inner 5
 title_align center
 
@@ -20,9 +21,8 @@ title_align center
 set $mod Mod4
 floating_modifier $mod
 
-###################################################
-# font settings I will never use, but did anyways #
-###################################################
+#############
+# autostart #
+#############
 
-font pango: ubuntu mono bold 11 
-
+exec --no-startup-id urxvt --class scratchpad
