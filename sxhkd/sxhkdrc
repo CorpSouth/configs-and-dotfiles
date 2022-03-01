@@ -55,7 +55,7 @@ control + shift + super + c ; {c,e,h,n,t,w,x}
   urxvt -e vim ~/.config/sxhkd/sxhkdrc, \
   connman-gtk, \
   lxappearance, \
-  urxvt -e vim ~/.cwmrc, \
+  urxvt -e vim ~/.config/i3/config, \
   urxvt -e vim ~/.Xresources}
 
 ############################
