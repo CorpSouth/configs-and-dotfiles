@@ -1,0 +1,28 @@
+#######################
+# EDIT THESE INCLUDES #
+#######################
+
+include $HOME/.config/i3/grayscale.conf
+include $HOME/.config/i3/rules.conf
+include $HOME/.config/i3/workspaces.conf
+
+##############
+# appearance #
+##############
+
+gaps inner 5
+title_align center
+
+#########################
+# modifier key settings #
+#########################
+
+set $mod Mod4
+floating_modifier $mod
+
+###################################################
+# font settings I will never use, but did anyways #
+###################################################
+
+font pango: ubuntu mono bold 11 
+
