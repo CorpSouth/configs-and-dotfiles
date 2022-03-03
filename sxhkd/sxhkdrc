@@ -80,7 +80,7 @@ control + shift + super + p
  yad --center --file
 
 super + Print
- scrot raspbian.jpg -e 'mv $f ~/Screenshots'; notify-send "scrot taken"
+ scrot '%Y-%m-%d-%R_$a.png' -e '~/Screenshots/'; notify-send "scrot taken"
 
 ##############
 # WM HOTKEYS # 
