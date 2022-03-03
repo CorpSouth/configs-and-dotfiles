@@ -1,0 +1,22 @@
+#######################
+# EDIT THESE INCLUDES #
+#######################
+
+include $HOME/.config/i3/i3-Colors.conf
+include $HOME/.config/i3/i3-Rules.conf
+include $HOME/.config/i3/i3-Workspaces.conf
+
+##############
+# appearance #
+##############
+
+font pango: ubuntu mono 12
+gaps inner 5
+title_align center
+
+#########################
+# modifier key settings #
+#########################
+
+set $mod Mod4
+floating_modifier $mod
