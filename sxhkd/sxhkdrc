@@ -1,0 +1,187 @@
+###################
+# common programs #
+###################
+
+super + Menu
+ dmenu_run -l 20 
+
+super + Return
+ urxvt
+
+control + shift + super + o ; {b,e,f,i,m,p,F9}
+ {firefox, \
+  urxvt -e vim, \
+  urxvt -e vifm, \
+  feh -t ~/Pictures, \
+  thunderbird, \
+  pi-apps, \
+  mpv --player-operation-mode=pseudo-gui}
+
+##############
+# multimedia #
+##############
+
+control + shift + super + v
+ urxvt -e alsamixer
+
+super + {F10,F11,F12}
+ {/home/aln/.local/bin/volume.sh down, \
+  /home/aln/.local/bin/volume.sh up, \
+  /home/aln/.local/bin/volume.sh mute}
+
+
+#####################
+# system monitoring #
+#####################
+
+control + shift + super + m ; {m}
+ {urxvt -e btop}
+
+###################
+# power & session #
+###################
+
+control + shift + super + End ; {l,r,s,w,x}
+ {slock, \
+  systemctl reboot, \
+  systemctl poweroff,\
+  bspc wm -r, \
+  pkill -KILL -u aln}
+
+###################
+# SUMMON THE FIGS #
+###################
+
+control + shift + super + c ; {c,e,h,n,t,w,x}
+ {urxvt -e vim ~/.config/picom/picom.conf, \
+  urxvt -e vim ~/.vim/vimrc, \
+  urxvt -e vim ~/.config/sxhkd/sxhkdrc, \
+  connman-gtk, \
+  lxappearance, \
+  urxvt -e vim ~/.config/i3/config, \
+  urxvt -e vim ~/.Xresources}
+
+############################
+# refresh, restart, reload #
+############################
+
+control + shift + super + Escape ; {c,h,n,w,x}
+ {killall picom; picom; notify-send "X11" "compositing manager restarted", \
+  pkill -USR1 -x sxhkd; notify-send "X11" "hotkey daemon restarted", \
+  killall dunst; dunst; notify-send "X11" "notification service restarted", \
+  i3-msg restart, \
+  xrdb -merge ~/.Xresources; notify-send "X11" "xresources reloaded"}
+
+##################
+# misc utilities #
+##################
+
+control + shift + super + d
+ notify-send -t 5000 "$(date)"
+
+control + shift + super + p
+ yad --center --file
+
+super + Print
+ scrot '%Y-%m-%d-%R_$a.png' -e 'mv $f ~/Screenshots/'; notify-send "Scrot Taken"
+
+##############
+# WM HOTKEYS # 
+##############
+
+#########
+# focal #
+#########
+
+shift + super + Delete
+ i3-msg kill
+
+super+{h,j,k,l}
+ i3-msg focus {left,down,up,right}
+
+shift + super + p
+ i3-msg focus parent
+
+super + bracket{left,right}
+ {i3-msg workspace prev, \
+  i3-msg workspace next}
+
+##########
+# layout # 
+##########
+
+control + shift + super + l; {d,s,t}
+ i3-msg layout {default; notify-send  -t 3000 i3-Layout: Default, \
+                stacking; notify-send -t 3000 i3-Layout: Stacking, \
+                tabbed; notify-send   -t 3000 i3-Layout: Tabbed}
+
+#########
+# modal #
+#########
+
+super + f
+ i3-msg fullscreen toggle
+
+super + shift + space
+ i3-msg floating toggle
+
+super + space
+ i3-msg focus mode_toggle
+
+############
+# movement #
+############
+
+super + shift + {h,j,k,l}
+ i3-msg move {left,down,up,right}
+
+############
+# resizing #
+############
+
+alt + shift + {h,j,k,l}
+ {i3-msg resize shrink width 1 px or 1 ppt, \
+  i3-msg resize shrink height 1 px or 1 ppt, \
+  i3-msg resize grow height 1 px or 1 ppt, \
+  i3-msg resize grow width 1 px or 1 ppt}
+
+alt + shift + {Left,Down,Up,Right}
+ {i3-msg resize shrink width 10 px or 10 ppt, \
+  i3-msg resize shrink height 10 px or 10 ppt, \
+  i3-msg resize grow height 10 px or 10 ppt, \
+  i3-msg resize grow width 10 px or 10 ppt}  
+
+########################
+# scratchpad additions #
+########################
+
+shift + super + Insert 
+ i3-msg move scratchpad
+
+super + Insert
+ i3-msg scratchpad show
+
+#############
+# splitting #
+#############
+
+alt + super + {v,h}
+ i3-msg split {v,h}
+
+##############
+# workspaces #
+##############
+
+super + {1,2,3,4,5}
+ i3-msg workspace {1; notify-send -t 3000 .NET, \
+                   2; notify-send -t 3000 MAIL, \
+                   3; notify-send -t 3000 PLAY, \ 
+                   4; notify-send -t 3000 UTIL, \
+                   5; notify-send -t 3000 WORK}
+
+super + shift + {1,2,3,4,5}
+ i3-msg move container to workspace number {1; notify-send i3-Moved-to: .NET, \
+                                            2; notify-send i3-Moved-to: MAIL, \
+                                            3; notify-send i3-Moved-to: PLAY, \
+                                            4; notify-send i3-Moved-to: UTIL, \
+                                            5; notify-send i3-Moved-to: WORK}
