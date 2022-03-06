@@ -7,7 +7,3 @@ include $HOME/.config/i3/i3-Colors.conf
 include $HOME/.config/i3/i3-Keys.conf
 include $HOME/.config/i3/i3-Windows.conf
 include $HOME/.config/i3/i3-Workspaces.conf
-
-################################################
-# What, you expected a normal config file? lol #
-################################################
