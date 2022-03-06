@@ -14,7 +14,7 @@ control + shift + super + o ; {b,e,f,m,p,F9}
   spacefm, \
   thunderbird, \
   pi-apps, \
-  urxvt -e cmus}
+  mpv --player-operation-mode=pseudo-gui}
 
 ##############
 # multimedia #
@@ -33,9 +33,9 @@ super + {F10,F11,F12}
 # system monitoring #
 #####################
 
-control + shift + super + m ; {h,m}
- {urxvt -e htop, \
-  urxvt -e btop}
+control + shift + super + m ; {b,h}
+ {urxvt -e btop, \
+  urxvt -e htop}
 
 ###################
 # power & session #
@@ -166,25 +166,15 @@ shift + super + {Left,Down,Up,Right}
 super + c
  i3-msg move absolute position center
 
-#########################
-# non-modal resizing[1] #
-#########################
+######################
+# non-modal resizing #
+######################
 
 alt + shift + {h,j,k,l}
- {i3-msg resize shrink width 1 px or 1 ppt, \
-  i3-msg resize shrink height 1 px or 1 ppt, \
-  i3-msg resize grow height 1 px or 1 ppt, \
-  i3-msg resize grow width 1 px or 1 ppt}
-
-##########################
-# non-modal resizing [2] #
-##########################
-
-alt + shift + {Left,Down,Up,Right}
- {i3-msg resize shrink width 10 px or 10 ppt, \
-  i3-msg resize shrink height 10 px or 10 ppt, \
-  i3-msg resize grow height 10 px or 10 ppt, \
-  i3-msg resize grow width 10 px or 10 ppt}  
+ {i3-msg resize shrink width 5 px or 5 ppt, \
+  i3-msg resize shrink height 5 px or 5 ppt, \
+  i3-msg resize grow height 5 or 5 ppt, \
+  i3-msg resize grow width 5 px or 5 ppt}
 
 ##############
 # scratchpad #
@@ -211,17 +201,19 @@ shift + super + s
 # workspaces #
 ##############
 
-super + {1,2,3,4,5}
+super + {1,2,3,4,5,6}
  {i3-msg workspace 1; notify-send -t 3000 .NET, \
   i3-msg workspace 2; notify-send -t 3000 CHAT, \
-  i3-msg workspace 3; notify-send -t 3000 PLAY, \ 
-  i3-msg workspace 4; notify-send -t 3000 UTIL, \
-  i3-msg workspace 5; notify-send -t 3000 WORK}
+  i3-msg workspace 3; notify-send -t 3000 LOAD, \ 
+  i3-msg workspace 4; notify-send -t 3000 PLAY, \
+  i3-msg workspace 5; notify-send -t 3000 UTIL, \
+  i3-msg workspace 6; notify-send -t 3000 WORK}
 
-super + shift + {1,2,3,4,5}
+super + shift + {1,2,3,4,5,6}
  {i3-msg move container to workspace number 1; notify-send i3-Moved-to: .NET, \
   i3-msg move container to workspace number 2; notify-send i3-Moved-to: CHAT, \
-  i3-msg move container to workspace number 3; notify-send i3-Moved-to: PLAY, \
-  i3-msg move container to workspace number 4; notify-send i3-Moved-to: UTIL, \
-  i3-msg move container to workspace number 5; notify-send i3-Moved-to: WORK}
+  i3-msg move container to workspace number 3; notify-send i3-Moved-to: LOAD, \
+  i3-msg move container to workspace number 4; notify-send i3-Moved-to: PLAY, \
+  i3-msg move container to workspace number 5; notify-send i3-Moved-to: UTIL, \
+  i3-msg move container to workspace number 6; notify-send i3-Moved-to: WORK}
 
