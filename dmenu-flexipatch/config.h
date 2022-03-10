@@ -111,7 +111,7 @@ static const char worddelimiters[] = " ";
 
 #if BORDER_PATCH
 /* Size of the window border */
-static unsigned int border_width = 1;
+static unsigned int border_width = 2;
 #endif // BORDER_PATCH
 
 #if PREFIXCOMPLETION_PATCH

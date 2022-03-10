@@ -3,7 +3,10 @@
 ###################
 
 super + Menu
- dmenu_run -l 20 
+ dmenu_run 
+
+super + button3
+ dmenu_run
 
 super + Return
  urxvt
@@ -11,7 +14,7 @@ super + Return
 control + shift + super + o ; {b,e,f,m,p,F9}
  {firefox, \
   urxvt -e vim, \
-  spacefm, \
+  urxvt -e vifm, \
   thunderbird, \
   pi-apps, \
   mpv --player-operation-mode=pseudo-gui}
@@ -19,6 +22,9 @@ control + shift + super + o ; {b,e,f,m,p,F9}
 ##############
 # multimedia #
 ##############
+
+control + shift + super + F9
+ urxvt -e cmus
 
 control + shift + super + v
  urxvt -e alsamixer
@@ -33,9 +39,10 @@ super + {F10,F11,F12}
 # system monitoring #
 #####################
 
-control + shift + super + m ; {b,h}
+control + shift + super + m ; {b,h,t}
  {urxvt -e btop, \
-  urxvt -e htop}
+ urxvt -e htop, \
+ urxvt -e top}
 
 ###################
 # power & session #
@@ -65,12 +72,12 @@ control + shift + super + c ; {a,e,k,n,r,x}
 ############################
 
 control + shift + super + Escape ; {c,h,i,n,w,x}
- {killall picom; picom; notify-send "X11" "compositing manager restarted", \
-  pkill -USR1 -x sxhkd; notify-send "X11" "hotkey daemon restarted", \
-  i3-msg restart; notify-send "i3: restart-in-place",\
-  killall dunst; dunst; notify-send "X11" "notification service restarted", \
-  i3-msg reload; notify-send "i3: configuration reloaded", \
-  xrdb -merge ~/.Xresources; notify-send "X11" "xresources reloaded"}
+ {killall picom; picom; notify-send 'X11 compositing manager restarted', \
+  pkill -USR1 -x sxhkd; notify-send 'X11 hotkey daemon restarted', \
+  i3-msg restart; notify-send 'i3 restart-in-place',\
+  killall dunst; dunst; notify-send 'X11 notification service restarted', \
+  i3-msg reload; notify-send 'i3 configuration reloaded', \
+  xrdb -merge ~/.Xresources; notify-send 'X11 xresources reloaded'}
 
 ##################
 # misc utilities #
@@ -80,7 +87,7 @@ control + shift + super + d
  notify-send -t 5000 "$(date)"
 
 super + Print
- scrot '%Y-%m-%d-%R_$a.png' -e 'mv $f ~/Screenshots/'; notify-send "Scrot Taken"
+ scrot '%Y-%m-%d-%R_$a.png' -e 'mv $f ~/Screenshots/'; notify-send 'X11 Scrot Taken'
 
 control + shift + super +v
  urxvt -e alsamixer
@@ -117,9 +124,9 @@ super + bracket{left,right}
 ##########
 
 control + shift + super + l; {d,s,t}
- i3-msg layout {default; notify-send  -t 3000 i3-Layout: Default, \
-                stacking; notify-send -t 3000 i3-Layout: Stacking, \
-                tabbed; notify-send   -t 3000 i3-Layout: Tabbed}
+ i3-msg layout {default; notify-send  -t 3000 'i3-Layout: Default', \
+                stacking; notify-send -t 3000 'i3-Layout: Stacking', \
+                tabbed; notify-send   -t 3000 'i3-Layout: Tabbed'}
 
 shift + super + space
  i3-msg layout toggle 
@@ -171,10 +178,10 @@ super + c
 ######################
 
 alt + shift + {h,j,k,l}
- {i3-msg resize shrink width 5 px or 5 ppt, \
-  i3-msg resize shrink height 5 px or 5 ppt, \
-  i3-msg resize grow height 5 or 5 ppt, \
-  i3-msg resize grow width 5 px or 5 ppt}
+ {i3-msg resize shrink width 3 px or 3 ppt, \
+  i3-msg resize shrink height 3 px or 3 ppt, \
+  i3-msg resize grow height 3 or 3 ppt, \
+  i3-msg resize grow width 3 px or 3 ppt}
 
 ##############
 # scratchpad #
@@ -191,29 +198,44 @@ super + grave
 #############
 
 alt + super + {h,v}
- {i3-msg split h; notify-send -t 1000 i3-Split: Horizontal, \
-  i3-msg split v; notify-send -t 1000 i3-Split: Vertical}
+ {i3-msg split h; notify-send -t 1000 'i3-Split: Horizontal', \
+  i3-msg split v; notify-send -t 1000 'i3-Split: Vertical'}
 
 shift + super + s
  i3-msg split toggle
 
-##############
-# workspaces #
-##############
+#############
+# workspace #
+#############
 
 super + {1,2,3,4,5,6}
- {i3-msg workspace 1; notify-send -t 3000 .NET, \
-  i3-msg workspace 2; notify-send -t 3000 CHAT, \
-  i3-msg workspace 3; notify-send -t 3000 LOAD, \ 
-  i3-msg workspace 4; notify-send -t 3000 PLAY, \
-  i3-msg workspace 5; notify-send -t 3000 UTIL, \
-  i3-msg workspace 6; notify-send -t 3000 WORK}
+ {i3-msg workspace 1; \
+  notify-send .NET, \
+  i3-msg workspace 2; \
+  notify-send CHAT, \
+  i3-msg workspace 3; \
+  notify-send LOAD, \ 
+  i3-msg workspace 4; \
+  notify-send PLAY, \
+  i3-msg workspace 5; \
+  notify-send UTIL, \
+  i3-msg workspace 6; \
+  notify-send WORK}
+
+######################
+# workspace transfer #
+######################
 
 super + shift + {1,2,3,4,5,6}
- {i3-msg move container to workspace number 1; notify-send i3-Moved-to: .NET, \
-  i3-msg move container to workspace number 2; notify-send i3-Moved-to: CHAT, \
-  i3-msg move container to workspace number 3; notify-send i3-Moved-to: LOAD, \
-  i3-msg move container to workspace number 4; notify-send i3-Moved-to: PLAY, \
-  i3-msg move container to workspace number 5; notify-send i3-Moved-to: UTIL, \
-  i3-msg move container to workspace number 6; notify-send i3-Moved-to: WORK}
-
+ {i3-msg move container to workspace number 1; \ 
+  notify-send 'moved container to .NET', \
+  i3-msg move container to workspace number 2; \ 
+  notify-send 'moved container to CHAT', \
+  i3-msg move container to workspace number 3; \
+  notify-send 'moved container to LOAD', \
+  i3-msg move container to workspace number 4; \
+  notify-send 'moved container to PLAY', \
+  i3-msg move container to workspace number 5; \
+  notify-send 'moved container to UTIL', \
+  i3-msg move container to workspace number 6; \
+  notify-send 'moved container to WORK'}
