@@ -6,22 +6,18 @@
 # Layout Settings #
 ###################
 
-# Gaps, adjusted just enough so no operable space is compromised 
-
-gap 5 5 5 5
-
 # Font
-fontname "ubuntu mono:size=12"
+fontname "ubuntu mono"
 
 # Width of border around window
 borderwidth 2
 
 # Border Colors
-color   activeborder		"#3498db"
-color 	urgencyborder 		"#ffffff"
+color   activeborder		"#3465A4"
+color 	urgencyborder 		"#448AFF"
 color   inactiveborder		"#14161b"	
-color 	groupborder		"#3498db"
-color 	ungroupborder		"#14161b"
+color 	groupborder		"#729FCF"
+color 	ungroupborder		"#274164"
 
 # Size of keyboard window movement - pixel
 moveamount 10
@@ -36,18 +32,19 @@ htile 50
 vtile 50
 
 # Applications that cwm will ignore for groups and borders
-ignore dunst
+ignore Calc
+ignore Dunst
 ignore xclock
 
 # Command Menu - Apps that will be in the right click command menu
-color menubg 	"#22252c"
-color menufg 	"#3498db"
-color font      "#eeeeee"
-color selfont	"#ffffff"
+color menubg 	"#1B1D24"
+color menufg 	"#3465A4"
+color font      "#E3E4E7"
+color selfont	"#FFFFFF"
 
 # Add the applications you want to appear in the right click menu
 command '»common«'       'true'
-command FilePicker       "yad --center --file"
+command FileManager      spacefm
 command Mail             thunderbird
 command SystemMonitor    "urxvt -e btop"
 command TerminalEmulator urxvt
@@ -83,7 +80,7 @@ bind-key 4M-Menu   menu-window
 bind-key 4S-Menu   menu-window-hidden
 
 # Close Window
-bind-key 4-q window-close
+bind-key 4-Delete window-close
 bind-key 4S-q window-close
 
 # Hide window
@@ -112,7 +109,7 @@ bind-key 4-f window-fullscreen
 bind-key 4-m window-maximize
 
 # Restart cwm, reloading configuration
-bind-key 4S-r restart
+bind-key 4CS-r restart
     
 ################################
 # Autogroup & Group Keybinding #
@@ -123,16 +120,21 @@ sticky yes
 
 #Autogroup definitions
 autogroup 1 "Navigator", "Firefox" 
-autogroup 2 "Mail", "thunderbird"
+autogroup 1 "Mail", "thunderbird"
+autogroup 2 "telegram-desktop", "TelegramDesktop"
+autogroup 2 "WebCord"
 autogroup 3 "feh", "feh"
-autogroup 3 "gl", "mpv" 
+autogroup 3 "gl", "mpv"
+autogroup 4 "BleachBit" 
+autogroup 4 "Imager", "rpi-imager"
 autogroup 4 "lxappearance", "Lxappearance"
+autogroup 4 "spacefm", "Spacefm"
 autogroup 4 "xclock", "XClock"
 autogroup 5 "libreoffice", "libreoffice-startcenter"
 autogroup 5 "xcalc", "XCalc"
 
 # Show only windows for group $N
-bind-key 4-1 group-only-1  
+bind-key 4-1 group-only-1 
 bind-key 4-2 group-only-2 
 bind-key 4-3 group-only-3 
 bind-key 4-4 group-only-4 
@@ -178,7 +180,7 @@ bind-key 4M-bracketright window-cycle-ingroup
 bind-key 4M-bracketleft	window-rcycle-ingroup
 
 # Stick current window to be visible in all groups
-bind-key 4C-S	window-stick
+bind-key 4C-s	window-stick
 
 ######################
 # Tiling Keybindings #
@@ -267,10 +269,8 @@ bind-key 4S-Right window-resize-right-big
 #####################
 # Mouse Keybindings #
 #####################
-
-# Unbind default mouse actions - This removes the right click menu - Mouse binds will still work
-
-unbind-mouse all 
+# unbind-mouse all  #
+##################### 
 
 # Move window with mouse
 bind-mouse 4-1 window-move
