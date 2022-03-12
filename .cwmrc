@@ -124,7 +124,7 @@ autogroup 5 Lxappearance
 autogroup 5 Spacefm
 autogroup 5 XClock
 autogroup 6 libreoffice
-autogroup 6 XCal"
+autogroup 6 XCalc
 
 ##########################
 # sticky window to group #
