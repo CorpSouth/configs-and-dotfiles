@@ -39,13 +39,6 @@
 *.color66:     col0
 *color66:      col0
 
-! dmenu
-dmenu.font:          ubuntu mono:pixelsize=15
-dmenu.background:    col16
-dmenu.foreground:    col17
-dmenu.selbackground: col18
-dmenu.selforeground: col19
-
 ! Xclock 
 XClock*analog:      false
 XClock*Clock.face:  ubuntu mono:pixelsize=15
