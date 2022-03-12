@@ -109,7 +109,7 @@ bind-key 4-f window-fullscreen
 bind-key 4-m window-maximize
 
 # Restart cwm, reloading configuration
-bind-key 4CS-r restart
+bind-key 4S-r restart
     
 ################################
 # Autogroup & Group Keybinding #
@@ -123,15 +123,16 @@ autogroup 1 "Navigator", "Firefox"
 autogroup 1 "Mail", "thunderbird"
 autogroup 2 "telegram-desktop", "TelegramDesktop"
 autogroup 2 "WebCord"
-autogroup 3 "feh", "feh"
-autogroup 3 "gl", "mpv"
-autogroup 4 "BleachBit" 
-autogroup 4 "Imager", "rpi-imager"
-autogroup 4 "lxappearance", "Lxappearance"
-autogroup 4 "spacefm", "Spacefm"
-autogroup 4 "xclock", "XClock"
-autogroup 5 "libreoffice", "libreoffice-startcenter"
-autogroup 5 "xcalc", "XCalc"
+autogroup 3 "urxvt", "URxvt"
+autogroup 4 "feh", "feh"
+autogroup 4 "gl", "mpv"
+autogroup 5 "BleachBit" 
+autogroup 5 "Imager", "rpi-imager"
+autogroup 5 "lxappearance", "Lxappearance"
+autogroup 5 "spacefm", "Spacefm"
+autogroup 5 "xclock", "XClock"
+autogroup 6 "libreoffice", "libreoffice-startcenter"
+autogroup 6 "xcalc", "XCalc"
 
 # Show only windows for group $N
 bind-key 4-1 group-only-1 
@@ -180,7 +181,7 @@ bind-key 4M-bracketright window-cycle-ingroup
 bind-key 4M-bracketleft	window-rcycle-ingroup
 
 # Stick current window to be visible in all groups
-bind-key 4C-s	window-stick
+bind-key 4C-S	window-stick
 
 ######################
 # Tiling Keybindings #
@@ -269,8 +270,8 @@ bind-key 4S-Right window-resize-right-big
 #####################
 # Mouse Keybindings #
 #####################
-# unbind-mouse all  #
-##################### 
+
+unbind-mouse all 
 
 # Move window with mouse
 bind-mouse 4-1 window-move
