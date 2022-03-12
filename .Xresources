@@ -16,12 +16,6 @@
 #define col14 #868686
 #define col15 #f7f7f7
 
-! from GTKRC
-#define col16 #1B1D24
-#define col17 #E3E4E7
-#define col18 #3498DB
-#define col19 #FFFFFF
-
 ! colorization
 *.foreground:  col7
 *.background:  col0
