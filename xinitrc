@@ -22,6 +22,7 @@ xrdb -merge .Xresources &
 # x11 compositor #
 ##################
 
+sleep 1 &&
 xcompmgr &
 
 #####################
@@ -29,12 +30,6 @@ xcompmgr &
 #####################
 
 nitrogen --restore &
-
-###############
-# set xcursor #
-###############
-
-xsetroot -cursor_name left_ptr &
 
 ####################
 # autohide xcursor #
@@ -46,5 +41,4 @@ xbanish -t 5 &
 # start xsession #
 ##################
 
-sleep 1 &&
 exec cwm -c ~/.config/cwm/.cwmrc 
