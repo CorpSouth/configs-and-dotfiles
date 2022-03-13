@@ -1,9 +1,0 @@
-#######################
-# EDIT THESE INCLUDES #
-#######################
-
-include ~/.config/i3/i3-Autostart.conf
-include ~/.config/i3/i3-Colors.conf
-include ~/.config/i3/i3-Keys.conf
-include ~/.config/i3/i3-Windows.conf
-include ~/.config/i3/i3-Workspaces.conf
