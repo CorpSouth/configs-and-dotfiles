@@ -1,3 +1,9 @@
+#ifdef COLOR
+*Customization: -color
+#else
+*Customization: -mono
+#endif
+
 ! Base16 Grayscale
 #define col0  #101010
 #define col1  #7c7c7c
@@ -36,12 +42,10 @@
 *.color13:     col13
 *.color14:     col14
 *.color15:     col15
-*.color66:     col0
-*color66:      col0
 
 ! Xclock 
 XClock*analog:      false
-XClock*Clock.face:  ubuntu mono:pixelsize=15
+XClock*Clock.face:  hack 
 XClock*foreground:  col7
 XClock*background:  col0
 XClock*majorColor:  col15
@@ -57,9 +61,9 @@ Xft*hintstyle: hintfull
 Xft*rgba:      rgb
 
 ! URxvt
-URxvt*font:             xft:ubuntu mono:pixelsize=15
-URxvt*boldFont:         xft:ubuntu mono:style=bold
-URxvt*italicFont:       xft:ubuntu mono:style=italic   
+URxvt*font:             xft:hack
+URxvt*boldFont:         xft:hack:style=bold
+URxvt*italicFont:       xft:hack:style=italic   
 URxvt*geometry:         100x30
 URxvt*cursorBlink:      true
 URxvt*cursorUnderline:  true
