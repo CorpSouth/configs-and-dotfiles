@@ -7,16 +7,12 @@
 #  C = control                  #
 #  M = meta (alt)               #
 #################################
-# reload cwm configuration file #
-#################################
-
-bind-key 4CS-r restart
 
 ##################################
 # APPEARANCE SETTINGS START HERE #
 ##################################
 
-fontname "ubuntu mono"
+fontname "hack"
 
 ######################
 # borders and colors #
@@ -24,15 +20,15 @@ fontname "ubuntu mono"
 
 borderwidth 2
 
-color activeborder   "#3465A4"
-color urgencyborder  "#448AFF"
-color inactiveborder "#14161b"	
-color groupborder	 "#729FCF"
-color ungroupborder	 "#274164"
-color menubg         "#1B1D24"
-color menufg         "#3465A4"
-color font           "#E3E4E7"
-color selfont        "#FFFFFF"
+color activeborder   "#3DAEE9"
+color urgencyborder  "#F67400"
+color inactiveborder "#31363B"	
+color groupborder    "#27AE60"
+color ungroupborder  "#DA4453" 
+color menubg         "#31363B"
+color menufg         "#3DAEE9"
+color font           "#EFF0F1"
+color selfont        "#FCFCFC"
 
 #################
 # menu contents #
@@ -59,12 +55,18 @@ command Shutdown         sudo init 0
 unbind-key all
 
 #################
+# reload .cwmrc #
+#################
+
+bind-key 4CS-r restart
+
+#################
 # menu keybinds #
 #################
 
-bind-key 4-Menu    menu-cmd
+bind-key 4-Menu    menu-exec
 bind-key C-Menu    menu-window
-bind-key M-Menu    menu-exec
+bind-key M-Menu    menu-cmd
 bind-key S-Menu    menu-group
 bind-key 4C-Menu   menu-window-hidden
 bind-key 4M-Menu   menu-exec-wm
@@ -191,6 +193,7 @@ bind-key 4S-5 window-movetogroup-5
 ####################
 
 bind-key 4-f window-fullscreen
+bind-key 4-m window-maximize
 bind-key 4CM-h window-hmaximize
 bind-key 4CM-v window-vmaximize
 
