@@ -26,7 +26,7 @@
  * config.mk when enabling this patch.
  * https://tools.suckless.org/slock/patches/blur-pixelated-screen/
  */
-#define BLUR_PIXELATED_SCREEN_PATCH 0
+#define BLUR_PIXELATED_SCREEN_PATCH 1
 
 /* This patch introduces an additional color to indicate the state of Caps Lock.
  * https://tools.suckless.org/slock/patches/capscolor/
@@ -128,7 +128,7 @@
  * unless they enter the correct password.
  * https://tools.suckless.org/slock/patches/unlock_screen/
  */
-#define UNLOCKSCREEN_PATCH 1
+#define UNLOCKSCREEN_PATCH 0
 
 /* This patch adds the ability to get colors via Xresources.
  * https://tools.suckless.org/slock/patches/xresources/
