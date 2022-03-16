@@ -1,16 +1,33 @@
-#################################
-#  Keyboard Keybindings         #
-#################################
-#  KEYBINDINGS:                 #
-#  4 = mod (windows key)        #
-#  S = shift                    #
-#  C = control                  #
-#  M = meta (alt)               #
-#################################
+#############################
+# .cwmrc configuration file #
+#############################
+# Keyboard Keybind Legend   #
+#############################
+# 4 = mod (windows key)     #
+# C = shift                 #
+# M = alt                   #
+# S = shift                 #
+#############################
+# Mouse Keybind Legend      #
+#############################
+# 1 = left click            #
+# 2 = middle click          #
+# 3 = right click           #
+# 4 = scroll up             #
+# 5 = scroll down           #
+############################# 
 
-##################################
-# APPEARANCE SETTINGS START HERE #
-##################################
+######################################
+# APPEARANCE SETTINGS START HERE     #
+######################################
+# settings for edge-gapping in order # 
+######################################
+# gap top bottom left right          #
+######################################
+
+#############
+# menu font #
+#############
 
 fontname "hack"
 
@@ -22,31 +39,29 @@ borderwidth 2
 
 color activeborder   "#3DAEE9"
 color urgencyborder  "#F67400"
-color inactiveborder "#31363B"	
+color inactiveborder "#3B4045"
 color groupborder    "#27AE60"
 color ungroupborder  "#DA4453" 
-color menubg         "#31363B"
+color menubg         "#232629"
 color menufg         "#3DAEE9"
-color font           "#EFF0F1"
+color font           "#BDC3C7"
 color selfont        "#FCFCFC"
 
 #################
 # menu contents #
 #################
 
-command '»common«'       'true'
-command FileManager      pcmanfm
-command Mail             thunderbird
-command SystemMonitor    "urxvt -e btop"
-command TerminalEmulator urxvt
-command TextEditor       "urxvt -e vim"
-command WebBrowser       firefox
-command '»system«'       'true'
-command KillWindow       xkill
-command LockScreen       slock
-command Logout           "pkill -KILL -u aln"
-command Reboot           sudo reboot 
-command Shutdown         sudo shutdown now 
+command '»common«'        'true'
+command File-Manager      pcmanfm
+command Mail-Client       thunderbird
+command Package-Manager   "pi-apps"
+command System-Monitor    "urxvt -e btop"
+command Terminal-Emulator urxvt
+command Text-Editor       "urxvt -e vim"
+command Web-Browser       firefox
+command '»system«'        'true'
+command Kill-Window       xkill
+command Lock-Screen       slock
 
 ####################
 # default keybinds # 
@@ -93,21 +108,8 @@ bind-key 4-bracketleft	window-rcycle-ingroup
 bind-key 4-Delete window-close
 bind-key 4C-h window-hide
 
-###################
-# window snapping #
-###################
-
-bind-key 4-KP_Left  window-snap-left
-bind-key 4-KP_Right window-snap-right
-bind-key 4-KP_Up    window-snap-up
-bind-key 4-KP_Down  window-snap-down
-bind-key 4-KP_End   window-snap-down-left
-bind-key 4-KP_Next  window-snap-down-right
-bind-key 4-KP_Home  window-snap-up-left
-bind-key 4-KP_Prior window-snap-up-right
-    
 ###########################################################################
-# GROUP ASSIGNMENT STARTS HERE                                            #
+# WINDOW GROUPING ASSIGNMENTS AND KEY BINDS START HERE                    #
 ###########################################################################
 # use the xprop command to grab "WM_NAME, WM_CLASS", listed in that order #
 ###########################################################################
@@ -118,21 +120,21 @@ autogroup 1 Firefox
 autogroup 1 thunderbird
 autogroup 2 TelegramDesktop
 autogroup 2 WebCord
-autogroup 4 feh
-autogroup 4 mpv
-autogroup 5 BleachBit 
-autogroup 5 Imager
-autogroup 5 Lxappearance
-autogroup 5 Spacefm
-autogroup 5 XClock
-autogroup 6 libreoffice
-autogroup 6 XCalc
+autogroup 3 mpv 
+autogroup 3 Sxiv
+autogroup 4 BleachBit 
+autogroup 4 Imager
+autogroup 4 Lxappearance
+autogroup 4 Pcmanfm
+autogroup 4 XClock
+autogroup 5 libreoffice
+autogroup 5 XCalc
 
 ##########################
 # sticky window to group #
 ##########################
 
-bind-key 4C-s	window-stick
+bind-key 4C-s window-stick
 
 ###########################
 # group membership toggle #
@@ -144,22 +146,22 @@ bind-key 4-g window-group
 # close all windows from group #
 ################################
 
-bind-key 4M-1 group-close-1
-bind-key 4M-2 group-close-2
-bind-key 4M-3 group-close-3
-bind-key 4M-4 group-close-4
-bind-key 4M-5 group-close-5
+bind-key 4C-1 group-close-1
+bind-key 4C-2 group-close-2
+bind-key 4C-3 group-close-3
+bind-key 4C-4 group-close-4
+bind-key 4C-5 group-close-5
 
 ################
 # cycle groups #
 ################
 
-bind-key 4M-bracketright group-cycle
-bind-key 4M-bracketleft group-rcycle
+bind-key 4S-bracketright group-cycle
+bind-key 4S-bracketleft group-rcycle
 
-##############
-# view group #
-##############
+#######################
+# view only one group #
+#######################
 
 bind-key 4-1 group-only-1 
 bind-key 4-2 group-only-2 
@@ -172,11 +174,11 @@ bind-key 4-5 group-only-5
 #####################
 
 bind-key 4-a group-toggle-all
-bind-key 4C-1 group-toggle-1
-bind-key 4C-2 group-toggle-2
-bind-key 4C-3 group-toggle-3
-bind-key 4C-4 group-toggle-4
-bind-key 4C-5 group-toggle-5
+bind-key 4M-1 group-toggle-1
+bind-key 4M-2 group-toggle-2
+bind-key 4M-3 group-toggle-3
+bind-key 4M-4 group-toggle-4
+bind-key 4M-5 group-toggle-5
 
 ########################
 # move window to group #
@@ -188,9 +190,11 @@ bind-key 4S-3 window-movetogroup-3
 bind-key 4S-4 window-movetogroup-4
 bind-key 4S-5 window-movetogroup-5
 
-####################
-# maximize windows #
-####################
+#####################################
+# MOVE/RESIZING KEYBINDS START HERE #
+#####################################
+# maximize windows                  #
+#####################################
 
 bind-key 4-f window-fullscreen
 bind-key 4-m window-maximize
@@ -201,39 +205,39 @@ bind-key 4CM-v window-vmaximize
 # moving #
 ##########
 
-moveamount 10
+moveamount 5 
 
-bind-key 4-h window-move-left
-bind-key 4-j window-move-down
-bind-key 4-k window-move-up
-bind-key 4-l window-move-right
+bind-key 4-h window-move-left-big
+bind-key 4-j window-move-down-big
+bind-key 4-k window-move-up-big
+bind-key 4-l window-move-right-big
 
 ######################
 # moving alternative #
 ######################
 
-bind-key 4-Left window-move-left-big
-bind-key 4-Down window-move-down-big
-bind-key 4-Up window-move-up-big
-bind-key 4-Right window-move-right-big
+bind-key 4-Left window-move-left
+bind-key 4-Down window-move-down
+bind-key 4-Up window-move-up
+bind-key 4-Right window-move-right
 
 ############
 # resizing #
 ############
 
-bind-key 4S-h window-resize-left
-bind-key 4S-j window-resize-down
-bind-key 4S-k window-resize-up
-bind-key 4S-l window-resize-right
+bind-key 4S-h window-resize-left-big
+bind-key 4S-j window-resize-down-big
+bind-key 4S-k window-resize-up-big
+bind-key 4S-l window-resize-right-big
 
 ########################
 # resizing alternative #
 ########################
 
-bind-key 4S-Left window-resize-left-big
-bind-key 4S-Down window-resize-down-big
-bind-key 4S-Up window-resize-up-big
-bind-key 4S-Right window-resize-right-big
+bind-key 4S-Left window-resize-left
+bind-key 4S-Down window-resize-down
+bind-key 4S-Up window-resize-up
+bind-key 4S-Right window-resize-right
 
 ############
 # snapping #
@@ -260,11 +264,13 @@ vtile 50
 bind-key 4M-h window-htile
 bind-key 4M-v window-vtile
 
-#####################
-# Mouse Keybindings #
-#####################
-# unbind-mouse all  #
-#####################
+######################################################################
+# MOUSE KEYBINDS START HERE: all of these can be excluded completely #
+######################################################################
+# "unbind-mouse all" only disables the Left/Middle/Right click menus #
+######################################################################
+# unbind-mouse all                                                   #
+######################################################################
 
 ##########################
 # move and resize window #
