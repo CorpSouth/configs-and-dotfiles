@@ -1,0 +1,77 @@
+##################
+# spawn terminal #
+##################
+
+super + Return
+ urxvt
+
+###################
+# common programs #
+###################
+
+control + shift + super + o ; {b,e,f,F9,i,m,p}
+ {firefox, \
+ urxvt -e vim, \
+ pcmanfm, \
+ mpv --player-operation-mode=pseudo-gui, \
+ nsxiv -r -t ~/Pictures, \
+ thunderbird, \
+ pi-apps}
+
+############################
+# pull the system monitors #
+############################
+
+control + shift + super + m ; {b,h,t}
+ {urxvt -e btop, \
+ urxvt -e htop, \
+ urxvt -e top}
+
+##############
+# media keys #
+##############
+
+control + shift + super + F9
+ urxvt -e cmus
+
+control + shift + super + v
+ urxvt -e alsamixer
+
+super + {F9,F10,F11,F12}
+ {urxvt -e cmus, \
+ pactl set-sink-volume @DEFAULT_SINK@ -5%, \
+ pactl set-sink-volume @DEFAULT_SINK@ +5%, \
+ pactl set-sink-mute @DEFAULT_SINK@ toggle}
+
+##################
+# screenshotting #
+##################
+
+super + Print
+ scrot ~/Screenshots/%c-raspbian.png; notify-send "Scrot Taken"
+
+#######################################
+# grab the date-time via notification #
+#######################################
+
+control + shift + super + d
+ notify-send -t 2000 "$(date)"
+
+#####################
+# session and power #
+#####################
+
+control + shift + super + End ; {l,r,s,x}
+ {slock, \
+ sudo init 6, \
+ sudo init 0, \
+ pkill -KILL -u aln}
+
+###############################
+# restart and update services #
+###############################
+
+control + shift + super + Escape ; {h,n,x}
+ {pkill -USR1 -x sxhkd; notify-send "Hotkey Daemon Restarted", \
+ killall dunst; dunst; notify-send "Notification Service Restarted", \
+ xrdb -merge ~/.Xresources; notify-send ".Xresources Updated"}
