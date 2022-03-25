@@ -35,7 +35,7 @@ xrdb -merge .Xresources &
 # wallpaper restore #
 #####################
 
-~/.fehbg &
+xwallpaper --center ~/Pictures/Wallpapers/tackybluehotelwallpaper.png &
 
 ####################
 # autohide xcursor #
