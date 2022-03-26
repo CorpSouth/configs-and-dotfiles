@@ -48,7 +48,7 @@ color ungroupborder  "#DA4453"
 color menubg         "#31363B"
 color menufg         "#3DAEE9"
 color font           "#EFF0F1"
-color selfont        "#FCFCFC"
+color selfont        "#3B4045"
 
 #####################################################################################
 # menu contents                                                                     #
