@@ -1,10 +1,8 @@
 #############################
-# .cwmrc configuration file #
-#############################
 # Keyboard Keybind Legend   #
 #############################
 # 4 = mod (windows key)     #
-# C = shift                 #
+# C = control               #
 # M = alt                   #
 # S = shift                 #
 #############################
@@ -17,67 +15,80 @@
 # 5 = scroll down           #
 ############################# 
 
-######################################
-# APPEARANCE SETTINGS START HERE     #
-######################################
-# settings for edge-gapping in order # 
-######################################
-# gap top bottom left right          #
-######################################
+###########################################
+# APPEARANCE AND MENU SETTINGS START HERE #
+###########################################
+# settings for edge-gapping in order:     # 
+# gap top bottom left right               #
+###########################################
+
+gap 10 10 10 10 
 
 #############
 # menu font #
 #############
 
-fontname "hack"
+fontname "hack" 
 
-######################
-# borders and colors #
-######################
+##########################
+# borders and coloration #
+##########################
 
-borderwidth 2
+borderwidth 1
 
 color activeborder   "#3DAEE9"
 color urgencyborder  "#F67400"
 color inactiveborder "#3B4045"
 color groupborder    "#27AE60"
 color ungroupborder  "#DA4453" 
-color menubg         "#232629"
+color menubg         "#31363B"
 color menufg         "#3DAEE9"
-color font           "#BDC3C7"
+color font           "#EFF0F1"
 color selfont        "#FCFCFC"
 
 #################
 # menu contents #
 #################
 
-command '»common«'        'true'
-command File-Manager      pcmanfm
-command Mail-Client       thunderbird
-command Package-Manager   "pi-apps"
-command System-Monitor    "urxvt -e btop"
-command Terminal-Emulator urxvt
-command Text-Editor       "urxvt -e vim"
-command Web-Browser       firefox
-command '»system«'        'true'
-command Kill-Window       xkill
-command Lock-Screen       slock
+command '»common«'  'true'
+command FireFox     firefox
+command PCManFM     pcmanfm
+command URxvt       urxvt
+command Thunderbird thunderbird
+command Pi-Apps     pi-apps
+command Btop++      "urxvt -e btop"
+command Vim         "urxvt -e vim"
+command '»system«' 'true'
+command XKill       xkill
+command Slock       slock
+command Scrot       "scrot /home/aln/Pictures/Screenshots/%c-raspbian.png"
 
-####################
-# default keybinds # 
-####################
+###########################################################################################
+# STANDARD CALM WINDOW MANAGER KEYBINDINGS START HERE                                     #
+###########################################################################################
+# "unbind-key" can disable all cwm keybindings using "all" or any known specific defaults #
+###########################################################################################
+# I would personally recommend an external hotkey daemon like sxhkd to handle all of your #
+# keyboard application shortcuts and to more easily avoid conflicting keybindings         #       
+###########################################################################################   
 
 unbind-key all
 
-#################
-# reload .cwmrc #
-#################
+##############################################################################
+# lock the screen, quit the session, or reload the .cwmrc file               #
+##############################################################################
+# NOTICE: cwm hates these being above wherever the "unbind-key" is specified #
+##############################################################################
+# addendum, I don't use the "lock" functionality of cwm, but kept it anyways #
+##############################################################################
 
+bind-key 4CS-l lock
+bind-key 4CS-q quit
 bind-key 4CS-r restart
 
-#################
-# menu keybinds #
-#################
+####################
+# menu keybindings #
+####################
 
 bind-key 4-Menu    menu-exec
 bind-key C-Menu    menu-window
@@ -87,32 +98,22 @@ bind-key 4C-Menu   menu-window-hidden
 bind-key 4M-Menu   menu-exec-wm
 bind-key 4S-Menu   menu-ssh
 
-######################
-# cycle window focus #
-######################
+#####################
+# focal keybindings #
+#####################
 
 bind-key 4-Tab window-cycle
 bind-key 4S-Tab window-rcycle
-
-##########################
-# cycle windows in-group #
-##########################
-
-bind-key 4-bracketright window-cycle-ingroup
-bind-key 4-bracketleft	window-rcycle-ingroup
-
-########################
-# close or hide window #
-########################
-
-bind-key 4-Delete window-close
+bind-key 4S-Delete window-close
 bind-key 4C-h window-hide
 
-###########################################################################
-# WINDOW GROUPING ASSIGNMENTS AND KEY BINDS START HERE                    #
-###########################################################################
-# use the xprop command to grab "WM_NAME, WM_CLASS", listed in that order #
-###########################################################################
+############################################################################
+# ALL WINDOW GROUPING ASSIGNMENTS AND GROUP-RELATED KEYBINDINGS START HERE #
+############################################################################
+# use the xprop command to grab "WM_NAME, WM_CLASS", listed in that order  #
+############################################################################
+# "sticky yes/no" specifies whether or not all windows honor group status  #
+############################################################################
 
 sticky yes
 
@@ -122,13 +123,21 @@ autogroup 2 TelegramDesktop
 autogroup 2 WebCord
 autogroup 3 mpv 
 autogroup 3 Sxiv
-autogroup 4 BleachBit 
 autogroup 4 Imager
 autogroup 4 Lxappearance
 autogroup 4 Pcmanfm
 autogroup 4 XClock
 autogroup 5 libreoffice
 autogroup 5 XCalc
+
+#######################################
+# ignore rules for borders and groups #
+#######################################
+
+ignore "About Mozilla Firefox"
+ignore Calc
+ignore Dunst
+ignore XClock
 
 ##########################
 # sticky window to group #
@@ -159,11 +168,18 @@ bind-key 4C-5 group-close-5
 bind-key 4S-bracketright group-cycle
 bind-key 4S-bracketleft group-rcycle
 
+##########################
+# cycle windows in-group #
+##########################
+
+bind-key 4-bracketright window-cycle-ingroup
+bind-key 4-bracketleft  window-rcycle-ingroup
+
 #######################
 # view only one group #
 #######################
 
-bind-key 4-1 group-only-1 
+bind-key 4-1 group-only-1
 bind-key 4-2 group-only-2 
 bind-key 4-3 group-only-3 
 bind-key 4-4 group-only-4 
@@ -173,12 +189,12 @@ bind-key 4-5 group-only-5
 # group view toggle #
 #####################
 
-bind-key 4-a group-toggle-all
 bind-key 4M-1 group-toggle-1
 bind-key 4M-2 group-toggle-2
 bind-key 4M-3 group-toggle-3
 bind-key 4M-4 group-toggle-4
 bind-key 4M-5 group-toggle-5
+bind-key 4S-Home group-toggle-all
 
 ########################
 # move window to group #
@@ -190,11 +206,11 @@ bind-key 4S-3 window-movetogroup-3
 bind-key 4S-4 window-movetogroup-4
 bind-key 4S-5 window-movetogroup-5
 
-#####################################
-# MOVE/RESIZING KEYBINDS START HERE #
-#####################################
-# maximize windows                  #
-#####################################
+######################################
+# MOVE/RESIZE KEYBINDINGS START HERE #
+######################################
+# maximize windows                   #
+######################################
 
 bind-key 4-f window-fullscreen
 bind-key 4-m window-maximize
@@ -221,18 +237,18 @@ bind-key 4-Down window-move-down
 bind-key 4-Up window-move-up
 bind-key 4-Right window-move-right
 
-############
-# resizing #
-############
+##########
+# resize #
+##########
 
 bind-key 4S-h window-resize-left-big
 bind-key 4S-j window-resize-down-big
 bind-key 4S-k window-resize-up-big
 bind-key 4S-l window-resize-right-big
 
-########################
-# resizing alternative #
-########################
+######################
+# resize alternative #
+######################
 
 bind-key 4S-Left window-resize-left
 bind-key 4S-Down window-resize-down
@@ -264,13 +280,13 @@ vtile 50
 bind-key 4M-h window-htile
 bind-key 4M-v window-vtile
 
-######################################################################
-# MOUSE KEYBINDS START HERE: all of these can be excluded completely #
-######################################################################
-# "unbind-mouse all" only disables the Left/Middle/Right click menus #
-######################################################################
-# unbind-mouse all                                                   #
-######################################################################
+###########################################################################
+# MOUSE KEYBINDINGS START HERE: all of which are optional                 #
+###########################################################################
+# "unbind-mouse all" only disables the Left, Middle and Right-Click menus #
+###########################################################################
+# unbind-mouse all                                                        #
+###########################################################################
 
 ##########################
 # move and resize window #
