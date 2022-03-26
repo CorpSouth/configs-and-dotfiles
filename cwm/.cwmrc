@@ -323,4 +323,4 @@ bind-mouse 4S-2 window-hide
 # close a window by mouse #
 ###########################
 
-bind-mouse 4CS-2 window-close
+bind-mouse 4CS-3 window-close
