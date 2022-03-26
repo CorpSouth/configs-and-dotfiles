@@ -1,25 +1,29 @@
-#############################
-# Keyboard Keybind Legend   #
-#############################
-# 4 = mod (windows key)     #
-# C = control               #
-# M = alt                   #
-# S = shift                 #
-#############################
-# Mouse Keybind Legend      #
-#############################
-# 1 = left click            #
-# 2 = middle click          #
-# 3 = right click           #
-# 4 = scroll up             #
-# 5 = scroll down           #
-############################# 
-
+###########################################
+# Keyboard Keybind Legend                 #
+###########################################
+# 4 = mod (windows key)                   #
+# C = control                             #
+# M = alt                                 #
+# S = shift                               #
+###########################################
+# Mouse Keybind Legend                    #
+###########################################
+# 1 = left click                          #
+# 2 = middle click                        #
+# 3 = right click                         #
+# 4 = scroll up                           #
+# 5 = scroll down                         #
+###########################################
+# Mouse Operated Menus                    #                  
+###########################################
+# left click = window switcher menu       #
+# middle click = group switcher menu      #
+# right click = cmd (applications) menu   #
 ###########################################
 # APPEARANCE AND MENU SETTINGS START HERE #
 ###########################################
 # settings for edge-gapping in order:     # 
-# gap top bottom left right               #
+# "gap top bottom left right"             #
 ###########################################
 
 gap 10 10 10 10 
@@ -46,9 +50,11 @@ color menufg         "#3DAEE9"
 color font           "#EFF0F1"
 color selfont        "#FCFCFC"
 
-#################
-# menu contents #
-#################
+#####################################################################################
+# menu contents                                                                     #
+#####################################################################################
+# NOTICE: cwm hates these being below wherever the "unbind-key" option is specified #
+#####################################################################################
 
 command '»common«'  'true'
 command FireFox     firefox
@@ -74,13 +80,13 @@ command Scrot       "scrot /home/aln/Pictures/Screenshots/%c-raspbian.png"
 
 unbind-key all
 
-##############################################################################
-# lock the screen, quit the session, or reload the .cwmrc file               #
-##############################################################################
-# NOTICE: cwm hates these being above wherever the "unbind-key" is specified #
-##############################################################################
-# addendum, I don't use the "lock" functionality of cwm, but kept it anyways #
-##############################################################################
+######################################################################################
+# lock the screen, quit the session, or reload the .cwmrc file                       #
+######################################################################################
+# NOTICE: cwm hates these being above wherever the "unbind-key" option is specified  #
+######################################################################################
+# addendum, I don't use the "lock" functionality of cwm, but kept it anyways         #
+######################################################################################
 
 bind-key 4CS-l lock
 bind-key 4CS-q quit
@@ -114,6 +120,8 @@ bind-key 4C-h window-hide
 ############################################################################
 # "sticky yes/no" specifies whether or not all windows honor group status  #
 ############################################################################
+# "double quotes" for entries containing a space or multiple spaces        #
+############################################################################
 
 sticky yes
 
@@ -131,7 +139,7 @@ autogroup 5 libreoffice
 autogroup 5 XCalc
 
 #######################################
-# ignore rules for borders and groups #
+# ignore rules for focus and grouping #
 #######################################
 
 ignore "About Mozilla Firefox"
@@ -139,21 +147,21 @@ ignore Calc
 ignore Dunst
 ignore XClock
 
-##########################
-# sticky window to group #
-##########################
+##############################
+# sticky a window to a group #
+##############################
 
 bind-key 4C-s window-stick
 
-###########################
-# group membership toggle #
-###########################
+#####################################
+# toggle a windows group membership #
+#####################################
 
 bind-key 4-g window-group
 
-################################
-# close all windows from group #
-################################
+#########################################
+# close all windows in a specific group #
+#########################################
 
 bind-key 4C-1 group-close-1
 bind-key 4C-2 group-close-2
@@ -175,9 +183,9 @@ bind-key 4S-bracketleft group-rcycle
 bind-key 4-bracketright window-cycle-ingroup
 bind-key 4-bracketleft  window-rcycle-ingroup
 
-#######################
-# view only one group #
-#######################
+#################################
+# view only one group at a time #
+#################################
 
 bind-key 4-1 group-only-1
 bind-key 4-2 group-only-2 
@@ -185,20 +193,21 @@ bind-key 4-3 group-only-3
 bind-key 4-4 group-only-4 
 bind-key 4-5 group-only-5 
 
-#####################
-# group view toggle #
-#####################
+###########################
+# group multi-view toggle #
+###########################
 
 bind-key 4M-1 group-toggle-1
 bind-key 4M-2 group-toggle-2
 bind-key 4M-3 group-toggle-3
 bind-key 4M-4 group-toggle-4
 bind-key 4M-5 group-toggle-5
+
 bind-key 4S-Home group-toggle-all
 
-########################
-# move window to group #
-########################
+############################
+# move a window to a group #
+############################
 
 bind-key 4S-1 window-movetogroup-1
 bind-key 4S-2 window-movetogroup-2
@@ -217,9 +226,11 @@ bind-key 4-m window-maximize
 bind-key 4CM-h window-hmaximize
 bind-key 4CM-v window-vmaximize
 
-##########
-# moving #
-##########
+#########################################################################
+# move a window in big increments                                       #
+#########################################################################
+# "moveamount" determines the amount of pixels in bigger movement steps #
+#########################################################################
 
 moveamount 5 
 
@@ -228,36 +239,40 @@ bind-key 4-j window-move-down-big
 bind-key 4-k window-move-up-big
 bind-key 4-l window-move-right-big
 
-######################
-# moving alternative #
-######################
+#####################################
+# move a window in small increments #
+#####################################
 
 bind-key 4-Left window-move-left
 bind-key 4-Down window-move-down
 bind-key 4-Up window-move-up
 bind-key 4-Right window-move-right
 
-##########
-# resize #
-##########
+#####################################
+# resize a window in big increments #
+#####################################
 
 bind-key 4S-h window-resize-left-big
 bind-key 4S-j window-resize-down-big
 bind-key 4S-k window-resize-up-big
 bind-key 4S-l window-resize-right-big
 
-######################
-# resize alternative #
-######################
+#######################################
+# resize a window in small increments #
+#######################################
 
 bind-key 4S-Left window-resize-left
 bind-key 4S-Down window-resize-down
 bind-key 4S-Up window-resize-up
 bind-key 4S-Right window-resize-right
 
-############
-# snapping #
-############
+#########################################################
+# snapping windows to the edge of the screen            #
+#########################################################
+# snapping windows is affected by edge gap settings     #
+#########################################################
+# "snapdist" determines the distance of window snapping #
+#########################################################
 
 snapdist 5
 
@@ -270,9 +285,11 @@ bind-key 4-KP_Next  window-snap-down-right
 bind-key 4-KP_Home  window-snap-up-left
 bind-key 4-KP_Prior window-snap-up-right
 
-##########
-# tiling #
-##########
+############################################
+# pseudo-tiling windows                    #
+############################################
+# "htile" and "vtile" set the split ratios #
+############################################
 
 htile 50
 vtile 50
@@ -288,16 +305,22 @@ bind-key 4M-v window-vtile
 # unbind-mouse all                                                        #
 ###########################################################################
 
-##########################
-# move and resize window #
-##########################
+#####################################
+# move and resize a window by mouse #
+#####################################
 
 bind-mouse 4-1 window-move
 bind-mouse 4-3 window-resize
 
-#########################
-# hide and lower window #
-#########################
+####################################
+# hide and lower a window by mouse #
+####################################
 
 bind-mouse 4-2 window-lower
 bind-mouse 4S-2 window-hide
+
+###########################
+# close a window by mouse #
+###########################
+
+bind-mouse 4CS-2 window-close
