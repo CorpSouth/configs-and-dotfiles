@@ -31,24 +31,17 @@ sxhkd &
 
 xrdb -merge .Xresources &
 
-#####################
-# wallpaper restore #
-#####################
+########################
+# set background color #
+########################
 
-xwallpaper --center ~/Pictures/Wallpapers/tackybluehotelwallpaper.png &
+hsetroot -solid "#4E5247"
 
 ####################
 # autohide xcursor #
 ####################
 
-xbanish -t 5 &
-
-##############
-# compositor #
-##############
-
-sleep 1 &&
-xcompmgr -cCfF -r2 -o 0.98 -l-3 -t-3 -D10 -I 0.098 -O 0.098 &
+xbanish &
 
 ##################
 # start xsession #
