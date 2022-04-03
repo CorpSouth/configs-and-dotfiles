@@ -6,21 +6,21 @@
 
 ! Base16 Grayscale
 #define col0  #101010
-#define col1  #7c7c7c
-#define col2  #8e8e8e
-#define col3  #a0a0a0
+#define col1  #7C7C7C
+#define col2  #8E8E8E
+#define col3  #A0A0A0
 #define col4  #686868
 #define col5  #747474
 #define col6  #868686
-#define col7  #b9b9b9
+#define col7  #B9B9B9
 #define col8  #525252
-#define col9  #7c7c7c
-#define col10 #8e8e8e
-#define col11 #a0a0a0
+#define col9  #7C7C7C
+#define col10 #8E8E8E
+#define col11 #A0A0A0
 #define col12 #686868
 #define col13 #747474
 #define col14 #868686
-#define col15 #f7f7f7
+#define col15 #F7F7F7
 
 ! colorization
 *.foreground:  col7
@@ -45,7 +45,7 @@
 
 ! Xclock 
 XClock*analog:      false
-XClock*Clock.face:  hack 
+XClock*Clock.face:  terminus 
 XClock*foreground:  col7
 XClock*background:  col0
 XClock*majorColor:  col15
@@ -57,14 +57,13 @@ XClock*secondColor: col15
 ! Xft
 Xft*antialias: true
 Xft*hinting:   true
-Xft*hintstyle: hintfull
+Xft*hintstyle: hintslight
 Xft*rgba:      rgb
 
 ! URxvt
-URxvt*font:             xft:hack
-URxvt*boldFont:         xft:hack:style=bold
-URxvt*italicFont:       xft:hack:style=italic   
-URxvt*geometry:         100x30
+URxvt*font:             xft:terminus
+URxvt*boldFont:         xft:terminus:style=bold
+URxvt*italicFont:       xft:terminus:style=italic   
 URxvt*cursorBlink:      true
 URxvt*cursorUnderline:  true
 URxvt.iso14755:         false
