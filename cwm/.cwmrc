@@ -26,29 +26,29 @@
 # "gap top bottom left right"             #
 ###########################################
 
-gap 10 10 10 10 
+gap 2 2 2 2  
 
 #############
 # menu font #
 #############
 
-fontname "hack" 
+fontname "terminus:style=bold:pixelsize=15"
 
 ##########################
 # borders and coloration #
 ##########################
 
-borderwidth 1
+borderwidth 2
 
-color activeborder   "#3DAEE9"
-color urgencyborder  "#F67400"
-color inactiveborder "#3B4045"
-color groupborder    "#27AE60"
-color ungroupborder  "#DA4453" 
-color menubg         "#31363B"
-color menufg         "#3DAEE9"
-color font           "#EFF0F1"
-color selfont        "#FCFCFC"
+color activeborder   "#669900"
+color urgencyborder  "#FF9900"
+color inactiveborder "#282828"
+color groupborder    "#39E4A3"
+color ungroupborder  "#CC0000" 
+color menubg         "#3F3E3E"
+color menufg         "#669900"
+color font           "#FFFFFF"
+color selfont        "#D1FF96"
 
 #####################################################################################
 # menu contents                                                                     #
@@ -56,18 +56,18 @@ color selfont        "#FCFCFC"
 # NOTICE: cwm hates these being below wherever the "unbind-key" option is specified #
 #####################################################################################
 
-command '»common«'  'true'
-command FireFox     firefox
-command PCManFM     pcmanfm
-command URxvt       urxvt
-command Thunderbird thunderbird
-command Pi-Apps     pi-apps
-command Btop++      "urxvt -e btop"
-command Vim         "urxvt -e vim"
-command '»system«' 'true'
-command XKill       xkill
-command Slock       slock
-command Scrot       "scrot /home/aln/Pictures/Screenshots/%c-raspbian.png"
+command '»common«'    'true'
+command LibreWolf      librewolf
+command "File Picker" "yad --center --file" 
+command URxvt         urxvt
+command Thunderbird   thunderbird
+command "Pi Apps"     pi-apps
+command Btop++        "urxvt -e btop"
+command Vim           "urxvt -e vim"
+command '»system«'    'true'
+command XKill         xkill
+command Slock         slock
+command Scrot         "scrot /home/aln/Pictures/Screenshots/%c-raspbian.png"
 
 ###########################################################################################
 # STANDARD CALM WINDOW MANAGER KEYBINDINGS START HERE                                     #
@@ -130,10 +130,9 @@ autogroup 1 thunderbird
 autogroup 2 TelegramDesktop
 autogroup 2 WebCord
 autogroup 3 mpv 
-autogroup 3 Sxiv
+autogroup 3 Nsxiv
 autogroup 4 Imager
 autogroup 4 Lxappearance
-autogroup 4 Pcmanfm
 autogroup 4 XClock
 autogroup 5 libreoffice
 autogroup 5 XCalc
