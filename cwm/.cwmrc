@@ -56,18 +56,18 @@ color selfont        "#D1FF96"
 # NOTICE: cwm hates these being below wherever the "unbind-key" option is specified #
 #####################################################################################
 
-command '»common«'    'true'
-command LibreWolf      librewolf
-command "File Picker" "yad --center --file" 
-command URxvt         urxvt
-command Thunderbird   thunderbird
-command "Pi Apps"     pi-apps
-command Btop++        "urxvt -e btop"
-command Vim           "urxvt -e vim"
-command '»system«'    'true'
-command XKill         xkill
-command Slock         slock
-command Scrot         "scrot /home/aln/Pictures/Screenshots/%c-raspbian.png"
+command '»common«'  'true'
+command LibreWolf   librewolf
+command PCManFM     pcmanfm   
+command URxvt       urxvt
+command Thunderbird thunderbird
+command "Pi Apps"   pi-apps
+command Btop++      "urxvt -e btop"
+command Vim         "urxvt -e vim"
+command '»system«'  'true'
+command XKill       xkill
+command Slock       slock
+command Scrot       "scrot /home/aln/Pictures/Screenshots/%c-raspbian.png"
 
 ###########################################################################################
 # STANDARD CALM WINDOW MANAGER KEYBINDINGS START HERE                                     #
@@ -133,6 +133,7 @@ autogroup 3 mpv
 autogroup 3 Nsxiv
 autogroup 4 Imager
 autogroup 4 Lxappearance
+autogroup 4 Pcmanfm
 autogroup 4 XClock
 autogroup 5 libreoffice
 autogroup 5 XCalc
