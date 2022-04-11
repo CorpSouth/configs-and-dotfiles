@@ -27,7 +27,6 @@ Mine is nothing special. Breeze colors. Dmenu-like.
 
 # About: My i3 Window Manager/i3-Gaps Configuration
 
-https://github.com/i3/i3
 https://github.com/airblader/i3-gaps
 
 Special thanks to Airblader and the rest of the i3 team for making a robust, stable, and feature-complete software
