@@ -14,7 +14,7 @@ include $HOME/.config/i3/workspaces.conf
 # for various settings pertaining to i3-wm itself. It keeps things   #
 # from getting way, way too cluttered and in dubious order. Catch is #
 # you still need at least the default "config" text file to keep the # 
-# includes. As for why I only have three? I prefer to use a          #
+# includes. As for why I only have four inclues? I prefer to use a   #
 # third-party hotkey daemon called sxhkd -- bad name, great utility  #
 # for setting all of your hotkeys separate from your window manager. #
 # as for the lack of includes; I'm a simple man, I don't use any bar #
