@@ -1,0 +1,44 @@
+/**
+ * Existing Rofi theme modified to fit (somewhat) with the KDE Breeze theme
+ * Modified from: dmenu.rasi
+ * Original User: Qball
+ * Copyright: Dave Davenport
+ */
+
+* {
+    background-color: rgb(239,240,241); 
+    border-color:     rgb(188,190,191);
+    text-color:       rgb(35,38,39);
+    font:             "Hack 13";
+}
+window {
+    anchor:     north;
+    location:   north;
+    width:      100%;
+    border:     1px 1px 1px 1px;
+    children:   [ horibox ];
+}
+horibox {
+    orientation: horizontal;
+    children:   [ prompt, entry, listview ];
+}
+listview {
+    layout:     horizontal;
+    spacing:    5px;
+    lines:      100;
+}
+entry {
+    expand:     false;
+    width:      10em;
+}
+element {
+    padding: 0px 2px;
+}
+element selected {
+    background-color: rgb(61,174,233);
+}
+
+element-text, element-icon {
+  background-color: inherit;
+  text-color: inherit;
+}

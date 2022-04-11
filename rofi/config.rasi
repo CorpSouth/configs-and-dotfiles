@@ -1,0 +1,33 @@
+configuration {
+ font: "Hack 10";
+ case-sensitive: false;
+ modi: "window,drun,ssh,combi,filebrowser";
+ combi-modi: "drun,run,ssh,window"; 
+ display-combi: " multi ";
+ display-drun: " applications ";
+ display-filebrowser: " files ";
+ display-run: " command ";
+ display-ssh: " SSH ";
+ display-window: " switch ";
+ cycle: true;
+ hide-scrollbar: true;
+ terminal: "URxvt";
+ disable-history: true;
+
+   filebrowser {
+      /** Directory the file browser starts in. */
+      directory: "/home/aln";
+      /**
+        * Sorting method. Can be set to:
+        *   - "name"
+        *   - "mtime" (modification time)
+        *   - "atime" (access time)
+        *   - "ctime" (change time)
+        */
+      sorting-method: "name";
+      /** Group directories before files. */
+      directories-first: true;
+   }
+}
+@theme "~/.config/rofi/themes/dmenu-breeze-dark.rasi"
+//@theme "~/.config/rofi/themes/dmenu-breeze.rasi"

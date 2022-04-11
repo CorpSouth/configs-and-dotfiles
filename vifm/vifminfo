@@ -1,0 +1,146 @@
+# You can edit this file by hand, but it's recommended not to do that.
+
+# Marks:
+'H
+	/home/aln/
+	..
+1649601291
+'b
+	/home/aln/bin/
+	..
+1649601291
+'h
+	/home/aln/
+	..
+1649601291
+'z
+	/home/aln/.config/vifm
+	..
+1649601291
+
+# Bookmarks:
+
+# TUI:
+al
+q0
+v2
+ov
+m-1
+l2
+r2
+
+# Left window history (oldest to newest):
+d/home/aln
+	Documents
+2
+d/home/aln/Documents
+	..
+0
+d/home/aln
+	Pictures
+5
+d/home
+	aln
+1
+d/
+	home
+4
+d/home
+	aln
+1
+d/home/aln
+	Pictures
+5
+d/home
+	aln
+1
+d/home/aln
+	Pictures
+5
+d/home
+	aln
+1
+d/home/aln
+	Pictures
+5
+d/home
+	aln
+1
+d/home/aln
+	Pictures
+5
+d/home
+	aln
+1
+d/
+	home
+4
+d/home
+	aln
+1
+d/
+	home
+4
+d/home
+	aln
+1
+d/home/aln
+	Pictures
+5
+d/home/aln/Pictures
+	..
+0
+d/home/aln
+	Pictures
+5
+d/home/aln/Pictures
+	..
+0
+d/home/aln
+	Pictures
+5
+d/home/aln/Pictures
+	..
+0
+d/home/aln
+	Templates
+6
+d
+
+# Right window history (oldest to newest):
+D/home/aln
+	..
+0
+D
+
+# Command line history (oldest to newest):
+:colorscheme monochrome
+:x
+:d
+
+# Search history (oldest to newest):
+/.config
+
+# Prompt history (oldest to newest):
+
+# Local filter history (oldest to newest):
+
+# Registers:
+""/home/aln/.local/share/vifm/Trash/000_Pictures(1)
+
+# Directory stack (oldest to newest):
+
+# Trash content:
+t/home/aln/.local/share/vifm/Trash/000_Pictures(1)
+	/home/aln/Pictures(1)
+
+# State:
+f
+i1
+[.1
+[F
+F
+I1
+].1
+]F
+s0

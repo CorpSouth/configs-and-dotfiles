@@ -1,0 +1,23 @@
+######################################################################
+# I split all the necessary configurations to external include files #
+######################################################################
+
+include $HOME/.config/i3/appearance.conf
+include $HOME/.config/i3/keys.conf
+include $HOME/.config/i3/rules.conf
+include $HOME/.config/i3/workspaces.conf
+
+######################################################################
+# why so bare? why so few includes for that matter?                  #
+######################################################################
+# simply put, i3 allows you to add external include directives files #
+# for various settings pertaining to i3-wm itself. It keeps things   #
+# from getting way, way too cluttered and in dubious order. Catch is #
+# you still need at least the default "config" text file to keep the # 
+# includes. As for why I only have three? I prefer to use a          #
+# third-party hotkey daemon called sxhkd -- bad name, great utility  #
+# for setting all of your hotkeys separate from your window manager. #
+# as for the lack of includes; I'm a simple man, I don't use any bar #
+# or system tray for stuff I know the terminal and notifications     #
+# excel at keeping up to speed with. I use xinit like most others.   #
+######################################################################
