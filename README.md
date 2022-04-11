@@ -2,7 +2,7 @@
 
 ![NOBARSINCLUDED](https://user-images.githubusercontent.com/96737550/162654106-35c2d7db-baff-4cfd-8dda-d7f4c08bf5cd.png)
 
-_Pictured Above: my actual desktop, cry about it :')_
+_Pictured: my actual desktop, cry about it :')_
 
 I hope what I put in here can provide a useful base for anyone interested in the tools that I am using. :)
 
