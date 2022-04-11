@@ -16,6 +16,8 @@ I've pretty much completed most of what I wanted with CWM, it's my ideal floatin
 and serves as a vanilla/default WM for X11 on OpenBSD. I've added as much helpful commentary in the .cwmrc file to get
 new users better-acquainted with setting up a standalone window manager.
 
+_Recommended for a clean $HOME: add "exec cwm -c $HOME/.config/cwm/.cwmrc" to your xinitrc, moving all files to XDG_CONFIG_HOME of course_
+
 # About: My Dunst Configuration
 
 https://github.com/dunst-project/dunst
