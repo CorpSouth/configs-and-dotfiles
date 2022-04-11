@@ -23,6 +23,7 @@ xautolock -time 10 -locker slock &
 # hotkey service #
 ##################
 
+sleep 1 &&
 sxhkd &
 
 ##############
@@ -31,20 +32,28 @@ sxhkd &
 
 xrdb -merge .Xresources &
 
-########################
-# set background color #
-########################
+##################
+# set background #
+##################
 
-hsetroot -solid "#4E5247"
+xwallpaper --center ~/Pictures/Wallpapers/NOBARSINCLUDED.png &
 
 ####################
 # autohide xcursor #
 ####################
 
+sleep 1 &&
 xbanish &
+
+##################
+# system monitor #
+##################
+
+sleep 1 &&
+urxvt -e btop &
 
 ##################
 # start xsession #
 ##################
 
-exec cwm -c ~/.config/cwm/.cwmrc 
+exec i3 
