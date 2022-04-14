@@ -31,18 +31,14 @@ shift + Menu
 # common programs #
 ###################
 
-control + shift + super + o ; {b,c,e,f,F9,i,m,p}
+control + shift + super + o ; {b,e,f,F9,i,m,p}
  {librewolf, \
- xclock, \
  urxvt -e vim, \
  pcmanfm, \
  mpv --player-operation-mode=pseudo-gui, \
  nsxiv -r -t ~/Pictures, \
  thunderbird, \
  pi-apps}
-
-control + shift + super + f
- urxvt -e vifm
 
 ############################
 # pull the system monitors #
@@ -63,9 +59,8 @@ control + shift + super + F9
 control + shift + super + v
  urxvt -e alsamixer
 
-super + {F9,F10,F11,F12}
- {urxvt -e cmus, \
- pactl set-sink-volume @DEFAULT_SINK@ -5%, \
+super + {F10,F11,F12}
+ {pactl set-sink-volume @DEFAULT_SINK@ -5%, \
  pactl set-sink-volume @DEFAULT_SINK@ +5%, \
  pactl set-sink-mute @DEFAULT_SINK@ toggle}
 
@@ -175,11 +170,28 @@ shift + super + F11
 # scratchpad #
 ##############
 
+shift + super + Return 
+ i3-msg "exec --no-startup-id urxvt -name scratchpad"
+
 alt + grave
  i3-msg move scratchpad
 
 super + grave 
  i3-msg scratchpad show
+
+########################################################
+# scratchpad instances for common programs             #
+########################################################
+# see $HOME/.config/i3/rules.conf for scratchpad rules #
+########################################################
+
+control + shift + super + s; {c,e,f,F9,s,v}
+ {xclock, \
+  urxvt -e nano, \
+  urxvt -e vifm, \
+  urxvt -e cmus, \
+  urxvt -e htop, \
+  urxvt -e alsamixer}
 
 ###############
 # move-resize #
