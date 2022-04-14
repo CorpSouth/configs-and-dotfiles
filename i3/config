@@ -2,7 +2,6 @@
 # I split all the necessary configurations to external include files #
 ######################################################################
 
-include $HOME/.config/i3/autostart.conf
 include $HOME/.config/i3/keys.conf
 include $HOME/.config/i3/looks.conf
 include $HOME/.config/i3/rules.conf
