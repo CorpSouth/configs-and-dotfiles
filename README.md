@@ -1,8 +1,8 @@
 # Welcome to my Repository! 
 
-![NOBARSINCLUDED](https://user-images.githubusercontent.com/96737550/162654106-35c2d7db-baff-4cfd-8dda-d7f4c08bf5cd.png)
+![i3-slogan](https://user-images.githubusercontent.com/96737550/163432440-bd72512a-0ef3-4dfe-85a3-83244d3ecdb4.png)
 
-_Pictured: my actual desktop, cry about it :')_
+_Pictured: my actual desktop, just the wallpaper, cry about it :')_
 
 I hope what I put in here can provide a useful base for anyone interested in the tools that I am using. :)
 
