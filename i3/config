@@ -19,13 +19,6 @@ include $HOME/.config/i3/workspaces.conf
 #                                                   #
 #####################################################
 #                                                   #
-# autostart.conf                                    #
-#                                                   #
-# I only ever use this to set a default terminal to # 
-# launch as a dropdown or scratchpad instance, all  #
-# other automatic startups of crucial programs are  #
-# specified in the /etc/X11/xinit/xinitrc file      #
-#                                                   #
 # keys.conf                                         #
 #                                                   #
 # only ever used to disable the mouse bindings      #
@@ -49,4 +42,5 @@ include $HOME/.config/i3/workspaces.conf
 # all workspace names and setting go here, though   #
 # without a bar I do not set their names and keep   #
 # their task-specific roles to my memory            #
+#                                                   #
 #####################################################
