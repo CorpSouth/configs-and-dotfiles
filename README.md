@@ -33,8 +33,8 @@ Special thanks to Airblader and the rest of the i3 team for making a robust, sta
 better and increasingly streamlined for future endeavours.
 
 I had organized and commented as much I could to provide some helpful context in how to define and organize settings
-in the main config, though it's been split into multiple includes for the sake of digestible navigation, exemplary twearking, 
-and organized documentation without needing a manpage visit or overwhelming the contents. Ironically, I don't use the gaps
+in the main config, though it's been split into multiple includes for the sake of digestible navigation, exemplary tweaking, 
+and organized commentary without needing a manpage visit or overwhelming their contents. Ironically, I don't use the gaps
 since ditching the bar had made them even more trivial for me in my use case. I just use this fork to get rid of title bars
 where they are not wanted.
 
