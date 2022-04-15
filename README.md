@@ -34,9 +34,9 @@ better and increasingly streamlined for future endeavours.
 
 I had organized and commented as much I could to provide some helpful context in how to define and organize settings
 in the main config, though it's been split into multiple includes for the sake of digestible navigation, exemplary tweaking, 
-and organized commentary without needing a manpage visit or overwhelming their contents. Ironically, I don't use the gaps
-since ditching the bar had made them even more trivial for me in my use case. I just use this fork to get rid of title bars
-where they are not wanted.
+and organized commentary without needing a manpage visit or overwhelming their contents. I have disabled all mouse functionality
+to be hard on myself about mouse habits. Ironically I don't use gaps since ditching the bar had made them even  more trivial for 
+me in my use case, so I just use this fork to get rid of title bars where they are not wanted instead.
 
 I'm still learning i3 to some extent.
 
@@ -52,6 +52,8 @@ My Rofi configuration is a combination of personal tweaks (of course) to suit my
 it's just too useful to pass up, even if you prefer other means of file exploration. I had yet to fully extend my own
 Rofi configuration but from where I am at currently, it's a daily tool worth checking out. The themes are just modifications
 of the existing dmenu.rasi style, it suits my barebones environment and is just far easier to tweak for me at this stage.
+
+I have disabled all mouse functionality to be hard on myself about bad mouse habits.
 
 _Credit to the unadulterated dmenu.rasi goes to its original creator_
 
