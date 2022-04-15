@@ -34,7 +34,8 @@ better and increasingly streamlined for future endeavours.
 
 I had organized and commented as much I could to provide some helpful context in how to define and organize settings
 in the main config, though it's been split into multiple includes for the sake of digestible navigation, exemplary twearking, 
-and organized documentation without needing a manpage visit or overwhelming the contents. I'm still learning i3 to some extent.
+and organized documentation without needing a manpage visit or overwhelming the contents. Ironically, I don't use the gaps
+since ditching the bar had made them even more trivial for me in my use case. I'm still learning i3 to some extent.
 I highly recommend https://i3wm.org for all the official documentation, you're going to love it. :)
 
 # About: My Rofi Configuration & Themes
