@@ -1,5 +1,5 @@
 configuration {
- font: "Noto Mono 10";
+ font: "Monospace 13";
  case-sensitive: false;
  modi: "combi,drun,filebrowser,run,ssh,window";
  combi-modi: "drun,filebrowser,run,ssh,window"; 
@@ -19,10 +19,7 @@ configuration {
  kb-cancel: "Menu";
 }
 
-/* uncomment one line at a time to select a theme */
-
-@theme "~/.config/rofi/themes/dmenu-breeze-dark.rasi"
-//@theme "~/.config/rofi/themes/dmenu-breeze.rasi"
+@theme "~/.config/rofi/themes/dmenu-edited.rasi"
 
 /*settings for the file browser function as enabled on line 4 "modi:"*/
 
