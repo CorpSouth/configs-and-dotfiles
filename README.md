@@ -50,7 +50,7 @@ Special thanks goes to the developer and contributors to the Rofi multi-menu pro
 
 My Rofi configuration is a combination of personal tweaks (of course) to suit my workflow, enabling the filebrowser because
 it's just too useful to pass up, even if you prefer other means of file exploration. I had yet to fully extend my own
-Rofi configuration but from where I am at currently, it's a daily tool worth checking out. The themes are just modifications
+Rofi configuration but from where I am at currently, it's a daily tool worth checking out. The theme is just a modification
 of the existing dmenu.rasi style, it suits my barebones environment and is just far easier to tweak for me at this stage.
 
 I have disabled all mouse functionality to be hard on myself about bad mouse habits.
