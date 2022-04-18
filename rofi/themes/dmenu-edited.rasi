@@ -2,12 +2,13 @@
  * ROFI Color theme
  * User: Qball
  * Copyright: Dave Davenport
+ * Edited By: CorpSouth
  */
 
 * {
-    background-color:      #383838;
-    border-color:          #292929;
-    text-color:            #FFFFFF;
+    background-color:      #303030;
+    border-color:          #212121;
+    text-color:            #DADADA;
 }
 window {
     anchor:     north;
@@ -34,7 +35,7 @@ element {
 }
 element selected {
     background-color: #4C4C4C;
-    text-color: #FFFFFF;
+    text-color: #F0F0F0;
 }
 element-text, element-icon {
   background-color: inherit;
