@@ -1,3 +1,9 @@
+#########
+# fetch #
+#########
+
+pfetch
+
 ########
 # init #
 ########
@@ -197,9 +203,19 @@ alias aptux='sudo apt update; sudo apt upgrade -y'
 # SUMMON THE FIGS #
 ###################
 
-alias cwmrc='vim ~/.config/cwm/.cwmrc'
-
 alias dunstrc='vim ~/.config/dunst/dunstrc'
+
+alias i3config='vim ~/.config/i3/config'
+
+alias i3keys='vim ~/.config/i3/keys.conf'
+
+alias i3looks='vim ~/.config/i3/looks.conf'
+
+alias i3rules='vim ~/.config/i3/rules.conf'
+
+alias i3workspaces='vim ~/.config/i3/workspaces.conf'
+
+alias rofi-config='vim ~/.config/rofi/config.rasi'
 
 alias sxhkdrc='vim ~/.config/sxhkd/sxhkdrc'
 

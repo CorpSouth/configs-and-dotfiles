@@ -45,7 +45,7 @@
 
 ! Xclock 
 XClock*analog:      false
-XClock*Clock.face:  terminus 
+XClock*Clock.face:  noto mono 
 XClock*foreground:  col7
 XClock*background:  col0
 XClock*majorColor:  col15
@@ -61,9 +61,9 @@ Xft*hintstyle: hintslight
 Xft*rgba:      rgb
 
 ! URxvt
-URxvt*font:             xft:terminus
-URxvt*boldFont:         xft:terminus:style=bold
-URxvt*italicFont:       xft:terminus:style=italic   
+URxvt*font:             xft:noto mono
+URxvt*boldFont:         xft:noto mono:style=bold
+URxvt*italicFont:       xft:noto mono:style=italic   
 URxvt*cursorBlink:      true
 URxvt*cursorUnderline:  true
 URxvt.iso14755:         false
