@@ -1,5 +1,5 @@
 configuration {
- font: "Monospace 13";
+ font: "Noto Mono 13";
  case-sensitive: false;
  modi: "combi,drun,filebrowser,run,ssh,window";
  combi-modi: "drun,filebrowser,run,ssh,window"; 
