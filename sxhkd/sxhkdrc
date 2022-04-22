@@ -53,12 +53,6 @@ control + shift + super + m ; {b,h,t}
 # media keys #
 ##############
 
-control + shift + super + F9
- urxvt -e cmus
-
-control + shift + super + v
- urxvt -e alsamixer
-
 super + {F10,F11,F12}
  {pactl set-sink-volume @DEFAULT_SINK@ -5%, \
  pactl set-sink-volume @DEFAULT_SINK@ +5%, \
@@ -124,7 +118,7 @@ super + Tab
  i3-msg focus next
 
 shift + super + Tab
- i3-msg focus prev
+ i3-msg focus prev 
 
 super + {h,j,k,l}
  i3-msg focus {left,down,up,right}
