@@ -1,6 +1,6 @@
 # Welcome to my Repository! 
 
-![i3-slogan](https://user-images.githubusercontent.com/96737550/163432440-bd72512a-0ef3-4dfe-85a3-83244d3ecdb4.png)
+![lowcontrastsunset](https://user-images.githubusercontent.com/96737550/164571319-5e33b4b3-65f6-4cb1-bdd3-b408a47cfc80.jpg)
 
 _Pictured: my actual desktop, just the wallpaper, cry about it :')_
 
