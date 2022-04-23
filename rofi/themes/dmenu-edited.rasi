@@ -6,8 +6,8 @@
  */
 
 * {
-    background-color:      #303030;
-    border-color:          #212121;
+    background-color:      #383838;
+    border-color:          #1F1F1F;
     text-color:            #DADADA;
 }
 window {
