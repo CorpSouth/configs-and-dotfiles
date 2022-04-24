@@ -34,8 +34,7 @@ include $HOME/.config/i3/workspaces.conf
 # rules.conf                                        # 
 #                                                   #
 # all use of the 'for_window' variable are defined  #
-# here, including the purely cosmetic ones, this    #
-# should help prevent confusion about goes where    #
+# here, including the purely cosmetic rules         #
 #                                                   #
 # workspaces.conf                                   #
 #                                                   #
