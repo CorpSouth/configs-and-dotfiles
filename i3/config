@@ -15,6 +15,7 @@ include $HOME/.config/i3/workspaces.conf
 #                                                   #
 # A) reduces single-file clutter                    #
 # B) prevents dubious variable organization         #
+# C) I prefer xinitrc, hence no autostart hooks     #                                                  
 #                                                   #
 #####################################################
 #                                                   #
@@ -34,7 +35,7 @@ include $HOME/.config/i3/workspaces.conf
 #                                                   #
 # all use of the 'for_window' variable are defined  #
 # here, including the purely cosmetic ones, this    #
-# should help prevent confusion as what goes where  #
+# should help prevent confusion about goes where    #
 #                                                   #
 # workspaces.conf                                   #
 #                                                   #
