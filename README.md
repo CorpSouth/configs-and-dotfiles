@@ -1,8 +1,8 @@
 # Welcome to my Repository! 
 
-![lowcontrastsunset](https://user-images.githubusercontent.com/96737550/164571319-5e33b4b3-65f6-4cb1-bdd3-b408a47cfc80.jpg)
+![Wed Apr 27 09:47:14 2022-raspbian](https://user-images.githubusercontent.com/96737550/165545972-898e1451-4cd5-4c8b-8d19-2f9931b10f62.png)
 
-_Pictured: my actual desktop, just the wallpaper, cry about it :')_
+_Pictured: my actual desktop, just this, cry about it :')_
 
 I hope what I put in here can provide a useful base for anyone interested in the tools that I am using. :)
 
