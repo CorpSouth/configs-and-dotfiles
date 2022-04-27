@@ -1,6 +1,6 @@
 # Welcome to my Repository! 
 
-![Wed Apr 27 09:47:14 2022-raspbian](https://user-images.githubusercontent.com/96737550/165545972-898e1451-4cd5-4c8b-8d19-2f9931b10f62.png)
+![Wed Apr 27 09:53:26 2022-raspbian](https://user-images.githubusercontent.com/96737550/165547598-a1e59e8b-e272-4f16-ba27-c5a381e01c95.png)
 
 _Pictured: my actual desktop, just this, cry about it :')_
 
