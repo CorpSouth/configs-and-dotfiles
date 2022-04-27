@@ -4,44 +4,46 @@
 *Customization: -mono
 #endif
 
-! Base16 Grayscale
-#define col0  #101010
-#define col1  #7C7C7C
-#define col2  #8E8E8E
-#define col3  #A0A0A0
-#define col4  #686868
-#define col5  #747474
-#define col6  #868686
-#define col7  #B9B9B9
-#define col8  #525252
-#define col9  #7C7C7C
-#define col10 #8E8E8E
-#define col11 #A0A0A0
-#define col12 #686868
-#define col13 #747474
-#define col14 #868686
-#define col15 #F7F7F7
+! Nord color palette 
+#define col0  #2E3440
+#define col1  #3B4252
+#define col2  #434C5E
+#define col3  #4C566A
+#define col4  #D8DEE9
+#define col5  #E5E9F0
+#define col6  #ECEFF4
+#define col7  #8FBCBB
+#define col8  #88C0D0
+#define col9  #81A1C1
+#define col10 #5E81AC
+#define col11 #BF616A
+#define col12 #D08770
+#define col13 #EBCB8B
+#define col14 #A3BE8C
+#define col15 #B48EAD
 
 ! colorization
-*.foreground:  col7
+*.foreground:  col4
 *.background:  col0
-*.cursorColor: col7
-*.color0:      col0
-*.color1:      col1
-*.color2:      col2
-*.color3:      col3
-*.color4:      col4
-*.color5:      col5
-*.color6:      col6
-*.color7:      col7
-*.color8:      col8
-*.color9:      col9
-*.color10:     col10
-*.color11:     col11
-*.color12:     col12
-*.color13:     col13
-*.color14:     col14
-*.color15:     col15
+*.cursorColor: col4
+*fading:       35
+*fadeColor:    col3
+*.color0:      col1
+*.color1:      col11
+*.color2:      col14
+*.color3:      col13
+*.color4:      col9
+*.color5:      col15
+*.color6:      col8
+*.color7:      col5
+*.color8:      col3
+*.color9:      col11
+*.color10:     col14
+*.color11:     col13
+*.color12:     col9
+*.color13:     col15
+*.color14:     col7
+*.color15:     col6
 
 ! Xclock 
 XClock*analog:      false
