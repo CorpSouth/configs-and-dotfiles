@@ -32,7 +32,7 @@ gap 0 0 0 0
 # menu font #
 #############
 
-fontname "Noto Mono:style=bold:pixelsize=15"
+fontname "Noto Mono"
 
 ##########################
 # borders and coloration #
@@ -40,15 +40,15 @@ fontname "Noto Mono:style=bold:pixelsize=15"
 
 borderwidth 1
 
-color activeborder   "#B89F65"
-color urgencyborder  "#F27835"
-color inactiveborder "#7D693A"
-color groupborder    "#73D216"
-color ungroupborder  "#FC4138" 
-color menubg         "#383838"
-color menufg         "#4C4C4C"
-color font           "#DADADA"
-color selfont        "#DADADA"
+color activeborder   "#4C566A" 
+color inactiveborder "#1F232B"
+color urgencyborder  "#C3674A" 
+color groupborder    "#A3BE8C"
+color ungroupborder  "#BF616A" 
+color menubg         "#2E3440" 
+color menufg         "#4C566A"
+color font           "#D8DEE9" 
+color selfont        "#ECEFF4" 
 
 #####################################################################################
 # menu contents                                                                     #
@@ -125,7 +125,7 @@ bind-key 4C-h window-hide
 
 sticky yes
 
-autogroup 1 Firefox 
+autogroup 1 librewolf 
 autogroup 1 thunderbird
 autogroup 2 TelegramDesktop
 autogroup 2 WebCord
@@ -302,25 +302,25 @@ bind-key 4M-v window-vtile
 ###########################################################################
 # "unbind-mouse all" only disables the Left, Middle and Right-Click menus #
 ###########################################################################
-# unbind-mouse all                                                        #
-###########################################################################
+
+unbind-mouse all
 
 #####################################
 # move and resize a window by mouse #
 #####################################
 
-bind-mouse 4-1 window-move
-bind-mouse 4-3 window-resize
+#bind-mouse 4-1 window-move
+#bind-mouse 4-3 window-resize
 
 ####################################
 # hide and lower a window by mouse #
 ####################################
 
-bind-mouse 4-2 window-lower
-bind-mouse 4S-2 window-hide
+#bind-mouse 4-2 window-lower
+#bind-mouse 4S-2 window-hide
 
 ###########################
 # close a window by mouse #
 ###########################
 
-bind-mouse 4CS-3 window-close
+#bind-mouse 4CS-3 window-close
