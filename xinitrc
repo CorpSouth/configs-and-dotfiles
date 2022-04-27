@@ -36,7 +36,7 @@ xrdb -merge .Xresources &
 # set background #
 ##################
 
-xwallpaper --center ~/Pictures/Wallpapers/NOBARSINCLUDED.png &
+hsetroot -solid "#434C5E" &
 
 ####################
 # autohide xcursor #
@@ -45,15 +45,15 @@ xwallpaper --center ~/Pictures/Wallpapers/NOBARSINCLUDED.png &
 sleep 1 &&
 xbanish &
 
-##################
-# system monitor #
-##################
+#############################
+# start compositing manager #
+#############################
 
 sleep 1 &&
-urxvt -e btop &
+picom --experimental-backends &
 
 ##################
 # start xsession #
 ##################
 
-exec i3 
+exec cwm -c $HOME/.config/cwm/.cwmrc 
