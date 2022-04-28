@@ -40,7 +40,7 @@ fontname "Noto Mono"
 
 borderwidth 1
 
-color activeborder   "#81A1C1" 
+color activeborder   "#8FBCBB" 
 color inactiveborder "#5E81AC"
 color urgencyborder  "#C3674A" 
 color groupborder    "#A3BE8C"
