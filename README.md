@@ -2,7 +2,7 @@
 
 ![CrimsonDuskMountains](https://user-images.githubusercontent.com/96737550/165831146-2ca941ef-54a2-49d0-92b6-3901dd457369.jpg)
 
-_Pictured: my actual desktop, just this, cry about it :') ... all credit goes to Eberhard Grossgasteiger for this wonderful view_
+_Pictured: my actual desktop, just this, cry about it :') all credit goes to Eberhard Grossgasteiger for this wonderful view_
 
 I hope what I put in here can provide a useful base for anyone interested in the tools that I am using. :)
 
