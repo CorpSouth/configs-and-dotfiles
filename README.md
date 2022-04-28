@@ -1,8 +1,8 @@
 # Welcome to my Repository! 
 
-![Wed Apr 27 09:53:26 2022-raspbian](https://user-images.githubusercontent.com/96737550/165547598-a1e59e8b-e272-4f16-ba27-c5a381e01c95.png)
+![CrimsonDuskMountains](https://user-images.githubusercontent.com/96737550/165831146-2ca941ef-54a2-49d0-92b6-3901dd457369.jpg)
 
-_Pictured: my actual desktop, just this, cry about it :')_
+_Pictured: my actual desktop, just this, cry about it :') ... all credit goes to Eberhard Grossgasteiger for this wonderful view_
 
 I hope what I put in here can provide a useful base for anyone interested in the tools that I am using. :)
 
