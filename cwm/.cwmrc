@@ -152,7 +152,7 @@ autogroup 5 XCalc
 # ignore rules for focus and grouping #
 #######################################
 
-ignore "About Mozilla Firefox"
+ignore "About LibreWolf"
 ignore Calc
 ignore Dunst
 ignore Polybar
