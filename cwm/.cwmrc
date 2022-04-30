@@ -40,18 +40,20 @@ fontname "Noto Mono"
 
 borderwidth 2
 
-color activeborder   "#4C566A" 
-color inactiveborder "#2E3440"
-color urgencyborder  "#C3674A" 
+color activeborder   "#88C0D0"
+color inactiveborder "#5E81AC"
+color urgencyborder  "#EBCB8B" 
 color groupborder    "#A3BE8C"
 color ungroupborder  "#BF616A" 
-color menubg         "#2E3440" 
-color menufg         "#4C566A"
-color font           "#D8DEE9" 
+color menubg         "#D8DEE9" 
+color menufg         "#434C5E"
+color font           "#2E3440" 
 color selfont        "#ECEFF4" 
 
 #####################################################################################
-# menu contents                                                                     #
+# menu contents for programs, system commands, and to point to scripts              #
+#####################################################################################
+# whenever calling a script "write/the/full/path/to/your/script"                    #
 #####################################################################################
 # NOTICE: cwm hates these being below wherever the "unbind-key" option is specified #
 #####################################################################################
@@ -138,7 +140,7 @@ autogroup 4 Imager
 autogroup 4 Lxappearance
 autogroup 4 Pcmanfm
 autogroup 4 XClock
-autogroup 5 libreoffice
+autogroup 5 libreoffice-startcenter
 autogroup 5 XCalc
 
 #######################################
