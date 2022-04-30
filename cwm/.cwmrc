@@ -342,6 +342,11 @@ bind-mouse 4CS-2 window-group
 
 bind-mouse 4-1 window-move
 bind-mouse 4-3 window-resize
+
+##############################
+# maximize a window by mouse #
+##############################
+
 bind-mouse 4S-1 window-fullscreen
 bind-mouse 4S-2 window-maximize
 bind-mouse 4S-3 window-hmaximize
