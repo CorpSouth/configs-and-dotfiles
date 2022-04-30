@@ -31,7 +31,7 @@
 # "gap top bottom left right"               #
 #############################################
 
-gap 0 0 0 0
+gap 5 5 5 5
 
 #############
 # menu font #
@@ -314,11 +314,69 @@ vtile 50
 bind-key 4M-h window-htile
 bind-key 4M-v window-vtile
 
-########################################################################
-# MOUSE BINDINGS START HERE: all of which are optional                 #
-########################################################################
-# "unbind-mouse all"  disables the Left, Middle and Right-Click menus, #
-# other mouse bindings specified will still work                       #
-########################################################################
+##########################################################################
+# MOUSE BINDINGS START HERE: all of which are optional                   #
+##########################################################################
+# "unbind-mouse all"  disables the click menus as well as other defaults #
+##########################################################################
 
-#unbind-mouse all
+unbind-mouse all
+
+#########
+# menus #
+#########
+
+bind-mouse M-1 menu-window
+bind-mouse M-2 menu-group
+bind-mouse M-3 menu-cmd
+
+#########
+# focal #
+#########
+
+bind-mouse C-4 window-raise
+bind-mouse C-5 window-lower
+bind-mouse C-2 window-hide
+bind-mouse C-3 window-close
+bind-mouse CS-1 group-rcycle 
+bind-mouse CS-3 group-cycle
+bind-mouse CS-4 window-cycle-ingroup
+bind-mouse CS-5 window-rcycle-ingroup
+
+########################
+# move/resize a window #
+########################
+
+bind-mouse 4-1 window-move
+bind-mouse 4-3 window-resize
+bind-mouse 4C-1 window-maximize
+bind-mouse 4C-3 window-full-screen
+bind-mouse 4S-1 window-hmaximize
+bind-mouse 4S-2 window-vmaximize
+
+##############################################
+# snapping windows to the edge of the screen #
+##############################################
+
+bind-mouse CM-1 window-snap-left
+bind-mouse CM-3 window-snap-right
+bind-mouse CM-4 window-snap-up
+bind-mouse CM-5 window-snap-down
+bind-mouse 4CM-1 window-snap-up-left
+bind-mouse 4CM-3 window-snap-up-right
+bind-mouse 4CM-4 window-snap-down-left
+bind-mouse 4CM-5 window-snap-down-right
+
+#########################
+# pseudo-tiling windows #
+#########################
+
+bind-mouse 4S-1 window-htile
+bind-mouse 4S-3 window-vtile
+
+#####################################
+# toggle a windows group membership #
+#####################################
+
+bind-mouse C-1 window-group
+
