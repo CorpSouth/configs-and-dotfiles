@@ -1,30 +1,35 @@
-###########################################
-# Keyboard Keybind Legend                 #
-###########################################
-# 4 = mod (windows key)                   #
-# C = control                             #
-# M = alt                                 #
-# S = shift                               #
-###########################################
-# Mouse Keybind Legend                    #
-###########################################
-# 1 = left click                          #
-# 2 = middle click                        #
-# 3 = right click                         #
-# 4 = scroll up                           #
-# 5 = scroll down                         #
-###########################################
-# Mouse Operated Menus                    #                  
-###########################################
-# left click = window switcher menu       #
-# middle click = group switcher menu      #
-# right click = cmd (applications) menu   #
-###########################################
-# APPEARANCE AND MENU SETTINGS START HERE #
-###########################################
-# settings for edge-gapping in order:     # 
-# "gap top bottom left right"             #
-###########################################
+#############################################
+# for a cleaner $HOME, add to your xinitrc: #
+# "exec cwm -c $HOME/.config/cwm/.cwmrc"    #
+# it makes sense to keep a main config file #
+# within the XDG_CONFIG_HOME directory      #
+#############################################
+# Keyboard Keybind Legend                   #
+#############################################
+# 4 = mod (windows key)                     #
+# C = control                               #
+# M = alt                                   #
+# S = shift                                 #
+#############################################
+# Mouse Keybind Legend                      #
+#############################################
+# 1 = left click                            #
+# 2 = middle click                          #
+# 3 = right click                           #
+# 4 = scroll up                             #
+# 5 = scroll down                           #
+#############################################
+# Mouse Operated Menus                      #                  
+#############################################
+# left click = window switcher menu         #
+# middle click = group switcher menu        #
+# right click = cmd (applications) menu     #
+#############################################
+# APPEARANCE AND MENU SETTINGS START HERE   #
+#############################################
+# settings for edge-gapping in order:       # 
+# "gap top bottom left right"               #
+#############################################
 
 gap 0 0 0 0
 
@@ -50,13 +55,13 @@ color menufg         "#434C5E"
 color font           "#2E3440" 
 color selfont        "#ECEFF4" 
 
-#####################################################################################
-# menu contents for programs, system commands, and to point to scripts              #
-#####################################################################################
-# whenever calling a script "write/the/full/path/to/your/script"                    #
-#####################################################################################
-# NOTICE: cwm hates these being below wherever the "unbind-key" option is specified #
-#####################################################################################
+#######################################################################################
+# menu contents for programs, system commands, and to point to scripts                #
+#######################################################################################
+# whenever a command requires your path, "/specify/the/full/path/", no "$HOME" or '~' #
+#######################################################################################
+# NOTICE: cwm hates these being below wherever the "unbind-key" option is specified   #
+#######################################################################################
 
 command '»common«'  'true'
 command LibreWolf   librewolf
