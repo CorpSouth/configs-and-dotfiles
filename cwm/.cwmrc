@@ -314,47 +314,11 @@ vtile 50
 bind-key 4M-h window-htile
 bind-key 4M-v window-vtile
 
-###########################################################################
-# MOUSE KEYBINDINGS START HERE: all of which are optional                 #
-###########################################################################
-# "unbind-mouse all" only disables the Left, Middle and Right-Click menus #
-###########################################################################
+########################################################################
+# MOUSE BINDINGS START HERE: all of which are optional                 #
+########################################################################
+# "unbind-mouse all"  disables the Left, Middle and Right-Click menus, #
+# other mouse bindings specified will still work                       #
+########################################################################
 
 #unbind-mouse all
-
-#########
-# focal #
-#########
-
-bind-mouse 4C-1 window-hide
-bind-mouse 4C-2 window-lower
-bind-mouse 4C-3 window-close
-
-######################################
-# group and ungroup windows by mouse #
-######################################
-
-bind-mouse 4CS-2 window-group
-
-#####################################
-# move and resize a window by mouse #
-#####################################
-
-bind-mouse 4-1 window-move
-bind-mouse 4-3 window-resize
-
-##############################
-# maximize a window by mouse #
-##############################
-
-bind-mouse 4S-1 window-fullscreen
-bind-mouse 4S-2 window-maximize
-bind-mouse 4S-3 window-hmaximize
-bind-mouse 4S-4 window-vmaximize
-
-#########################
-# tile windows by mouse #
-#########################
-
-bind-mouse 4M-1 window-htile
-bind-mouse 4M-3 window-vtile
