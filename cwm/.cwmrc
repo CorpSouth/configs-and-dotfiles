@@ -291,38 +291,6 @@ bind-key 4-Down window-move-down
 bind-key 4-Up window-move-up
 bind-key 4-Right window-move-right
 
-########################################
-# XDOTOOL KEY BINDS START HERE         #
-########################################
-# NOTICE: I do not have any click+drag #
-# emulation for selecting text added,  #
-# either it isn't possible with the    #
-# Calm Window Manager, or I don't know #
-# how to implement it myself           #
-########################################
-# emulate clicks using xdotool         #
-########################################
-
-bind-key 4-KP_Begin "xdotool click --clearmodifiers 1"
-bind-key 4-KP_End   "xdotool click --clearmodifiers 2"
-bind-key 4-KP_Next  "xdotool click --clearmodifiers 3"
-
-########################################
-# emulate click and drag using xdotool #
-########################################
-
-bind-key 4-KP_Home "xdotool mousedown 1"
-bind-key 4-KP_Prior "xdotool mouseup 1"
-
-#####################################
-# emulate scrollwheel using xdotool #
-#####################################
-
-bind-key 4S-KP_Up   "xdotool click --clearmodifiers 4"
-bind-key 4S-KP_Down "xdotool click --clearmodifiers 5"
-
-#####################################
-# XDOTOOL KEYBINDINGS END HERE      #
 #####################################
 # resize a window in big increments #
 #####################################
