@@ -76,6 +76,26 @@ command XKill       xkill
 command Slock       slock
 command Scrot       "scrot /home/aln/Pictures/Screenshots/%c-raspbian.png"
 
+################################################
+# alternate window managers in the 'wm' menu   #
+################################################
+# not all of these are on my system, but I've  #
+# placed the bulk of popular ones here anyways #
+################################################
+
+wm Awesome awesome
+wm BSPWM bspwm
+wm DWM dwm
+wm FluxBox fluxbox
+wm i3 i3
+wm IceWM icewm-session
+wm OpenBox openbox-session
+wm Ratpoison ratpoison
+wm SpectrWM spectrwm
+wm StumpWM stumpwm
+wm WindowMaker wmaker
+wm Xmonad xmonad
+
 ###########################################################################################
 # STANDARD CALM WINDOW MANAGER KEYBINDINGS START HERE                                     #
 ###########################################################################################
@@ -119,9 +139,9 @@ bind-key 4CS-Menu window-menu-label
 bind-key 4-Tab window-cycle
 bind-key 4S-Tab window-rcycle
 bind-key 4S-Delete window-close
-bind-key 4C-h window-hide
-bind-key 4C-l window-lower
-bind-key 4C-r window-raise
+bind-key 4-minus window-hide
+bind-key 4M-minus window-lower
+bind-key 4-plus window-raise
 
 ############################################################################
 # ALL WINDOW GROUPING ASSIGNMENTS AND GROUP-RELATED KEYBINDINGS START HERE #
@@ -216,6 +236,12 @@ bind-key 4M-5 group-toggle-5
 
 bind-key 4S-Home group-toggle-all
 
+################################
+# view previously active group #
+################################
+
+bind-key 4-Prior group-last
+
 ############################
 # move a window to a group #
 ############################
@@ -259,6 +285,27 @@ bind-key 4-Down window-move-down
 bind-key 4-Up window-move-up
 bind-key 4-Right window-move-right
 
+##########################################################################
+# the Calm Window Manager has the capability to emulate pointer devices, #
+# use the following key binds to move the cursor with the keyboard       #
+##########################################################################
+# move the pointer in big increments                                     #
+##########################################################################
+
+bind-key 4C-h pointer-move-left-big
+bind-key 4C-j pointer-move-down-big
+bind-key 4C-k pointer-move-up-big
+bind-key 4C-l pointer-move-right-big
+
+########################################
+# move the pointer in small increments #
+########################################
+
+bind-key 4C-Left  pointer-move-left
+bind-key 4C-Down  pointer-move-down
+bind-key 4C-Up    pointer-move-up
+bind-key 4C-Right pointer-move-right
+
 #####################################
 # resize a window in big increments #
 #####################################
@@ -281,7 +328,7 @@ bind-key 4S-Right window-resize-right
 # freeze current window geometry #
 ##################################
 
-bind-key 4C-f window-freeze
+bind-key 4CS-Pause window-freeze
 
 #########################################################
 # snapping windows to the edge of the screen            #
@@ -314,11 +361,11 @@ vtile 50
 bind-key 4M-h window-htile
 bind-key 4M-v window-vtile
 
-##########################################################################
-# MOUSE BINDINGS START HERE: all of which are optional                   #
-##########################################################################
-# "unbind-mouse all"  disables the click menus as well as other defaults #
-##########################################################################
+########################################################################
+# MOUSE BINDINGS START HERE                                            #
+########################################################################
+# "unbind-mouse all"  disables the click menus as well as all defaults #
+########################################################################
 
 unbind-mouse all
 
@@ -334,14 +381,9 @@ bind-mouse M-3 menu-cmd
 # focal #
 #########
 
-bind-mouse C-4 window-raise
-bind-mouse C-5 window-lower
-bind-mouse C-2 window-hide
-bind-mouse C-3 window-close
-bind-mouse CS-1 group-rcycle 
-bind-mouse CS-3 group-cycle
-bind-mouse CS-4 window-cycle-ingroup
-bind-mouse CS-5 window-rcycle-ingroup
+bind-mouse 4-2 window-hide
+bind-mouse 4-4 window-raise
+bind-mouse 4-5 window-lower
 
 ########################
 # move/resize a window #
@@ -349,34 +391,9 @@ bind-mouse CS-5 window-rcycle-ingroup
 
 bind-mouse 4-1 window-move
 bind-mouse 4-3 window-resize
-bind-mouse 4C-1 window-maximize
-bind-mouse 4C-3 window-full-screen
-bind-mouse 4S-1 window-hmaximize
-bind-mouse 4S-2 window-vmaximize
-
-##############################################
-# snapping windows to the edge of the screen #
-##############################################
-
-bind-mouse CM-1 window-snap-left
-bind-mouse CM-3 window-snap-right
-bind-mouse CM-4 window-snap-up
-bind-mouse CM-5 window-snap-down
-bind-mouse 4CM-1 window-snap-up-left
-bind-mouse 4CM-3 window-snap-up-right
-bind-mouse 4CM-4 window-snap-down-left
-bind-mouse 4CM-5 window-snap-down-right
-
-#########################
-# pseudo-tiling windows #
-#########################
-
-bind-mouse 4S-1 window-htile
-bind-mouse 4S-3 window-vtile
 
 #####################################
 # toggle a windows group membership #
 #####################################
 
-bind-mouse C-1 window-group
-
+bind-mouse 4C-2 window-group
