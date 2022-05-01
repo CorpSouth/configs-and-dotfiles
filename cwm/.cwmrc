@@ -58,7 +58,7 @@ color selfont        "#ECEFF4"
 #######################################################################################
 # menu contents for programs, system commands, and to point to scripts                #
 #######################################################################################
-# whenever a command requires your path, "/specify/the/full/path/", no "$HOME" or '~' #
+# whenever a command requires your home, "/specify/the/full/path/", no "$HOME" or '~' #
 #######################################################################################
 # NOTICE: cwm hates these being below wherever the "unbind-key" option is specified   #
 #######################################################################################
@@ -96,6 +96,8 @@ wm StumpWM stumpwm
 wm WindowMaker wmaker
 wm Xmonad xmonad
 
+###########################################################################################
+# APPEARANCE AND MENU SETTINGS END HERE                                                   #
 ###########################################################################################
 # STANDARD CALM WINDOW MANAGER KEYBINDINGS START HERE                                     #
 ###########################################################################################
@@ -143,6 +145,8 @@ bind-key 4-minus window-hide
 bind-key 4M-minus window-lower
 bind-key 4-plus window-raise
 
+############################################################################
+# STANDARD CALM WINDOW MANAGER KEYBINDINGS END HERE                        #
 ############################################################################
 # ALL WINDOW GROUPING ASSIGNMENTS AND GROUP-RELATED KEYBINDINGS START HERE #
 ############################################################################
@@ -252,11 +256,13 @@ bind-key 4S-3 window-movetogroup-3
 bind-key 4S-4 window-movetogroup-4
 bind-key 4S-5 window-movetogroup-5
 
-######################################
-# MOVE/RESIZE KEYBINDINGS START HERE #
-######################################
-# maximize windows                   #
-######################################
+#########################################
+# END OF GROUP ASSIGNMENTS AND KEYBINDS #
+#########################################
+# MOVE/RESIZE KEYBINDINGS START HERE    #
+#########################################
+# maximize windows                      #
+#########################################
 
 bind-key 4-f window-fullscreen
 bind-key 4-m window-maximize
@@ -285,34 +291,28 @@ bind-key 4-Down window-move-down
 bind-key 4-Up window-move-up
 bind-key 4-Right window-move-right
 
-##########################################################################
-# the Calm Window Manager has the capability to emulate pointer devices, #
-# use the following key binds to move the cursor with the keyboard       #
-##########################################################################
-# move the pointer in big increments                                     #
-##########################################################################
-
-bind-key 4-KP_Left  pointer-move-left-big
-bind-key 4-KP_Down  pointer-move-down-big
-bind-key 4-KP_Up    pointer-move-up-big
-bind-key 4-KP_Right pointer-move-right-big
-
 ########################################
-# move the pointer in small increments #
+# XDOTOOL KEY BINDS START HERE         #
 ########################################
-
-bind-key 4M-KP_Left  pointer-move-left
-bind-key 4M-KP_Down  pointer-move-down
-bind-key 4M-KP_Up    pointer-move-up
-bind-key 4M-KP_Right pointer-move-right
-
-################################
-# emulate clicks using xdotool #
-################################
+# NOTICE: I do not have any click+drag #
+# emulation for selecting text added,  #
+# either it isn't possible with the    #
+# Calm Window Manager, or I don't know #
+# how to implement it myself           #
+########################################
+# emulate clicks using xdotool         #
+########################################
 
 bind-key 4-KP_Begin "xdotool click --clearmodifiers 1"
 bind-key 4-KP_End   "xdotool click --clearmodifiers 2"
 bind-key 4-KP_Next  "xdotool click --clearmodifiers 3"
+
+########################################
+# emulate click and drag using xdotool #
+########################################
+
+bind-key 4-KP_Home "xdotool mousedown 1"
+bind-key 4-KP_Prior "xdotool mouseup 1"
 
 #####################################
 # emulate scrollwheel using xdotool #
@@ -321,6 +321,8 @@ bind-key 4-KP_Next  "xdotool click --clearmodifiers 3"
 bind-key 4S-KP_Up   "xdotool click --clearmodifiers 4"
 bind-key 4S-KP_Down "xdotool click --clearmodifiers 5"
 
+#####################################
+# XDOTOOL KEYBINDINGS END HERE      #
 #####################################
 # resize a window in big increments #
 #####################################
@@ -377,6 +379,8 @@ bind-key 4M-h window-htile
 bind-key 4M-v window-vtile
 
 ########################################################################
+# MOVE/RESIZE KEYBINDINGS END HERE                                     #
+########################################################################
 # MOUSE BINDINGS START HERE                                            #
 ########################################################################
 # "unbind-mouse all"  disables the click menus as well as all defaults #
@@ -412,3 +416,59 @@ bind-mouse 4-3 window-resize
 #####################################
 
 bind-mouse 4C-2 window-group
+
+#######################################################################
+# MOUSE BINDINGS END HERE                                             #
+#######################################################################
+# POINTER EMULATION KEYBINDINGS STARTS HERE                           #
+#######################################################################
+# the Calm Window Manager has the ability to emulate pointer devices, #
+# use the following key binds to move the cursor with the keyboard    #
+#######################################################################
+# move the pointer in big increments                                  #
+#######################################################################
+
+bind-key 4-KP_Left  pointer-move-left-big
+bind-key 4-KP_Down  pointer-move-down-big
+bind-key 4-KP_Up    pointer-move-up-big
+bind-key 4-KP_Right pointer-move-right-big
+
+########################################
+# move the pointer in small increments #
+########################################
+
+bind-key 4M-KP_Left  pointer-move-left
+bind-key 4M-KP_Down  pointer-move-down
+bind-key 4M-KP_Up    pointer-move-up
+bind-key 4M-KP_Right pointer-move-right
+
+##########################################
+# POINTER EMULATION KEYBINDINGS END HERE #
+##########################################
+# XDOTOOL KEYBINDINGS START HERE         #
+##########################################
+# NOTICE: I do not have any click+drag   #
+# emulation for selecting text added,    #
+# either it isn't possible with the      #
+# Calm Window Manager, or I don't know   #
+# how to implement these myself          #
+##########################################
+# emulate clicks using xdotool           #
+##########################################
+
+bind-key 4-KP_Begin "xdotool click --clearmodifiers 1"
+bind-key 4-KP_End   "xdotool click --clearmodifiers 2"
+bind-key 4-KP_Next  "xdotool click --clearmodifiers 3"
+
+#####################################
+# emulate scrollwheel using xdotool #
+#####################################
+
+bind-key 4S-KP_Up   "xdotool click --clearmodifiers 4"
+bind-key 4S-KP_Down "xdotool click --clearmodifiers 5"
+
+################################
+# XDOTOOL KEYBINDINGS END HERE #
+################################
+# end of .cwmrc file           #
+################################
