@@ -396,30 +396,33 @@ bind-mouse 4C-2 window-group
 # move the pointer in big increments                                  #
 #######################################################################
 
-bind-key 4-KP_Left  pointer-move-left-big
-bind-key 4-KP_Down  pointer-move-down-big
-bind-key 4-KP_Up    pointer-move-up-big
-bind-key 4-KP_Right pointer-move-right-big
+#bind-key 4-KP_Left  pointer-move-left-big
+#bind-key 4-KP_Down  pointer-move-down-big
+#bind-key 4-KP_Up    pointer-move-up-big
+#bind-key 4-KP_Right pointer-move-right-big
 
 ########################################
 # move the pointer in small increments #
 ########################################
 
-bind-key 4M-KP_Left  pointer-move-left
-bind-key 4M-KP_Down  pointer-move-down
-bind-key 4M-KP_Up    pointer-move-up
-bind-key 4M-KP_Right pointer-move-right
+#bind-key 4M-KP_Left  pointer-move-left
+#bind-key 4M-KP_Down  pointer-move-down
+#bind-key 4M-KP_Up    pointer-move-up
+#bind-key 4M-KP_Right pointer-move-right
 
 ##########################################
 # POINTER EMULATION KEYBINDINGS END HERE #
 ##########################################
 # XDOTOOL KEYBINDINGS START HERE         #
 ##########################################
-# NOTICE: I do not have any click+drag   #
-# emulation for selecting text added,    #
-# either it isn't possible with the      #
-# Calm Window Manager, or I don't know   #
-# how to implement these myself          #
+# emulate pointer movement using xdotool #
+##########################################
+
+bind-key 4-KP_Left  "xdotool mousemove_relative -- -15 0"
+bind-key 4-KP_Down  "xdotool mousemove_relative 0 15"
+bind-key 4-KP_Up    "xdotool mousemove_relative -- 0 -15"
+bind-key 4-KP_Right "xdotool mousemove_relative 15 0"
+
 ##########################################
 # emulate clicks using xdotool           #
 ##########################################
@@ -434,6 +437,13 @@ bind-key 4-KP_Next  "xdotool click --clearmodifiers 3"
 
 bind-key 4S-KP_Up   "xdotool click --clearmodifiers 4"
 bind-key 4S-KP_Down "xdotool click --clearmodifiers 5"
+
+########################################
+# emulate click-and-drag using xdotool #
+########################################
+
+bind-key 4M-KP_Begin "xdotool mousedown --clearmodifiers 1"
+bind-key 4C-KP_Begin "xdotool mouseup --clearmodifiers 1"
 
 ################################
 # XDOTOOL KEYBINDINGS END HERE #
