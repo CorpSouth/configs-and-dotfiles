@@ -25,7 +25,7 @@ _Recommended for a clean $HOME: add "exec cwm -c $HOME/.config/cwm/.cwmrc" to yo
 https://github.com/dunst-project/dunst
 
 Special thanks to the Dunst Project for providing the agnostic notification solution for X11 and XWayland.
-Mine is nothing special. Dmenu-like.
+Mine is nothing special.
 
 # About: My i3 Window Manager/i3-Gaps Configuration
 
