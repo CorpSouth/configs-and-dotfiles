@@ -59,7 +59,7 @@ I have disabled all mouse functionality to be hard on myself about bad mouse hab
 
 _Credit to the unadulterated dmenu.rasi goes to its original creator_
 
-# About: My Simple X11 Hotkey Daemon (SXHKD)
+# About: My Simple X11 Hotkey Daemon (SXHKD) Configuration
 
 https://github.com/baskerville/sxhkd
 
