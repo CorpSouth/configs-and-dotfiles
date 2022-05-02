@@ -1,6 +1,6 @@
 # Welcome to my Repository! 
 
-![CrimsonDuskMountains](https://user-images.githubusercontent.com/96737550/165831146-2ca941ef-54a2-49d0-92b6-3901dd457369.jpg)
+![CrimsonDuskMountains](https://user-images.githubusercontent.com/96737550/166337402-842d263b-f70e-46a0-90a7-0fa34f46ac0e.jpg)
 
 _Pictured: my actual desktop, just this, cry about it :') all credit goes to Eberhard Grossgasteiger for this wonderful view_
 
@@ -15,6 +15,8 @@ Special thanks goes to Leah Neukirchen for keeping the Calm Window Manager proje
 I've pretty much completed most of what I wanted with CWM, it's my ideal floating alternative to the tilers out there, 
 and serves as a vanilla/default WM for X11 on OpenBSD. I've added as much helpful commentary in the .cwmrc file to get
 new users better-acquainted with setting up a standalone window manager.
+
+Dependencies for my specific config file: xdotool https://github.com/jordansissel/xdotool
 
 _Recommended for a clean $HOME: add "exec cwm -c $HOME/.config/cwm/.cwmrc" to your xinitrc, moving all files to XDG_CONFIG_HOME of course_
 
