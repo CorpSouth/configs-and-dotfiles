@@ -36,14 +36,7 @@ xrdb -merge .Xresources &
 # set background #
 ##################
 
-xwallpaper --center $HOME/Pictures/Wallpapers/CrimsonDuskMountains.jpg &
-
-####################
-# autohide xcursor #
-####################
-
-sleep 1 &&
-xbanish &
+xwallpaper --stretch $HOME/Pictures/Wallpapers/CrimsonDuskMountains.jpg &
 
 #############################
 # start compositing manager #
@@ -51,6 +44,12 @@ xbanish &
 
 sleep 1 &&
 picom --experimental-backends &
+
+########################
+# autohide the xcursor #
+########################
+
+unclutter-xfixes --timeout 5 &
 
 ##################
 # start xsession #
