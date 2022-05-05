@@ -45,12 +45,6 @@ xwallpaper --stretch $HOME/Pictures/Wallpapers/CrimsonDuskMountains.jpg &
 sleep 1 &&
 picom --experimental-backends &
 
-########################
-# autohide the xcursor #
-########################
-
-unclutter-xfixes --timeout 5 &
-
 ##################
 # start xsession #
 ##################
