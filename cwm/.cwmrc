@@ -218,6 +218,12 @@ bind-key 4S-bracketleft group-rcycle
 bind-key 4-bracketright window-cycle-ingroup
 bind-key 4-bracketleft  window-rcycle-ingroup
 
+################################
+# view previously active group #
+################################
+
+bind-key 4M-bracketleft group-last
+
 #################################
 # view only one group at a time #
 #################################
@@ -239,12 +245,6 @@ bind-key 4M-4 group-toggle-4
 bind-key 4M-5 group-toggle-5
 
 bind-key 4S-Home group-toggle-all
-
-################################
-# view previously active group #
-################################
-
-bind-key 4-Prior group-last
 
 ############################
 # move a window to a group #
@@ -396,19 +396,19 @@ bind-mouse 4C-2 window-group
 # move the pointer in big increments                                  #
 #######################################################################
 
-#bind-key 4-KP_Left  pointer-move-left-big
-#bind-key 4-KP_Down  pointer-move-down-big
-#bind-key 4-KP_Up    pointer-move-up-big
-#bind-key 4-KP_Right pointer-move-right-big
+bind-key MS-KP_Left  pointer-move-left-big
+bind-key MS-KP_Down  pointer-move-down-big
+bind-key MS-KP_Up    pointer-move-up-big
+bind-key MS-KP_Right pointer-move-right-big
 
 ########################################
 # move the pointer in small increments #
 ########################################
 
-#bind-key 4M-KP_Left  pointer-move-left
-#bind-key 4M-KP_Down  pointer-move-down
-#bind-key 4M-KP_Up    pointer-move-up
-#bind-key 4M-KP_Right pointer-move-right
+bind-key M-KP_Left  pointer-move-left
+bind-key M-KP_Down  pointer-move-down
+bind-key M-KP_Up    pointer-move-up
+bind-key M-KP_Right pointer-move-right
 
 ##########################################
 # POINTER EMULATION KEYBINDINGS END HERE #
