@@ -9,23 +9,23 @@ super + Return
 # rofi menus #
 ##############
 
-#super + Menu
-# rofi -no-click-to-exit -show run 
+super + Menu
+ rofi -no-click-to-exit -show run 
 
-#shift + super + Menu
-# rofi -no-click-to-exit -show combi
+shift + super + Menu
+ rofi -no-click-to-exit -show combi
 
-#alt + Menu
-# rofi -no-click-to-exit -show drun
+alt + Menu
+ rofi -no-click-to-exit -show drun
 
-#control + Menu
-# rofi -no-click-to-exit -show window 
+control + Menu
+ rofi -no-click-to-exit -show window 
 
-#alt + ctrl + Menu
-# rofi -show filebrowser
+alt + ctrl + Menu
+ rofi -show filebrowser
 
-#shift + Menu
-# rofi -no-click-to-exit -show ssh
+shift + Menu
+ rofi -no-click-to-exit -show ssh
 
 ###################
 # common programs #
@@ -53,16 +53,14 @@ control + shift + super + m ; {b,h,t}
 # media keys #
 ##############
 
-control + shift + super + F9
- urxvt -e cmus
+XF86AudioLowerVolume
+ pactl set-sink-volume @DEFAULT_SINK@ -5%
 
-super + {F10,F11,F12}
- {pactl set-sink-volume @DEFAULT_SINK@ -5%, \
- pactl set-sink-volume @DEFAULT_SINK@ +5%, \
- pactl set-sink-mute @DEFAULT_SINK@ toggle}
+XF86AudioRaiseVolume
+ pactl set-sink-volume @DEFAULT_SINK@ +5%
 
-control + shift + super + v
- urxvt -e alsamixer
+XF86AudioMute
+ pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 ##################
 # screenshotting #
@@ -103,81 +101,81 @@ control + shift + super + Escape ; {h,n,x}
 # restart the window manager  #
 ###############################
 
-#control + shift + super + F5
-# i3-msg restart
+control + shift + super + F5
+ i3-msg restart
 
 ###################################
 # reload i3-wm configuration file #
 ###################################
 
-#control + shift + super + c
-# i3-msg reload
+control + shift + super + c
+ i3-msg reload
 
 #########
 # focal #
 #########
 
-#super + p
-# i3-msg focus parent
+super + p
+ i3-msg focus parent
 
-#super + Tab
-# i3-msg focus next
+super + Tab
+ i3-msg focus next
 
-#shift + super + Tab
-# i3-msg focus prev 
+shift + super + Tab
+ i3-msg focus prev 
 
-#super + {h,j,k,l}
-# i3-msg focus {left,down,up,right}
+super + {h,j,k,l}
+ i3-msg focus {left,down,up,right}
 
-#shift + super + Delete
-# i3-msg kill
+shift + super + Delete
+ i3-msg kill
 
-#super + bracket{left,right}
-# i3-msg workspace{prev,next}
+super + bracket{left,right}
+ i3-msg workspace{prev,next}
 
-#super + {1,2,3,4,5,6}
-# i3-msg workspace {1,2,3,4,5,6}
+super + {1,2,3,4,5,6}
+ i3-msg workspace {1,2,3,4,5,6}
                    
 ##########
 # layout #
 ##########
 
-#super + f
-# i3-msg floating toggle
+super + f
+ i3-msg floating toggle
 
-#control + super + {h,v}
-# i3-msg split {h,v}
+control + super + {h,v}
+ i3-msg split {h,v}
 
-#control + super + s
-# i3-msg split toggle
+control + super + s
+ i3-msg split toggle
 
-#control + shift + super + l ; {d,s,t}
-# i3-msg layout {default; dunstify --urgency=LOW --timeout=2000 "i3-Layout: Default", \ 
-#               stacking; dunstify --urgency=LOW --timeout=2000 "i3-Layout: Stacking", \ 
-#               tabbed; dunstify --urgency=LOW --timeout=2000 "i3-Layout: Tabbed"}
+control + shift + super + l ; {d,s,t}
+ i3-msg layout {default; dunstify --urgency=LOW --timeout=2000 "i3-Layout: Default", \ 
+               stacking; dunstify --urgency=LOW --timeout=2000 "i3-Layout: Stacking", \ 
+               tabbed; dunstify --urgency=LOW --timeout=2000 "i3-Layout: Tabbed"}
 
 #########
 # modal #
 #########
 
-#shift + super + s
-# i3-msg sticky toggle
+shift + super + s
+ i3-msg sticky toggle
 
-#shift + super + F11
-# i3-msg fullscreen toggle
+shift + super + F11
+ i3-msg fullscreen toggle
 
 ##############
 # scratchpad #
 ##############
 
-#shift + super + Return 
-# i3-msg "exec --no-startup-id urxvt -name scratchpad"
+shift + super + Return 
+ i3-msg "exec --no-startup-id urxvt -name scratchpad"
 
-#alt + grave
-# i3-msg move scratchpad
+alt + grave
+ i3-msg move scratchpad
 
-#super + grave 
-# i3-msg scratchpad show
+super + grave 
+ i3-msg scratchpad show
 
 ########################################################
 # scratchpad instances for common programs             #
@@ -185,44 +183,94 @@ control + shift + super + Escape ; {h,n,x}
 # see $HOME/.config/i3/rules.conf for scratchpad rules #
 ########################################################
 
-#control + shift + super + s; {c,e,f,F9,s,v}
-# {xclock, \
-#  urxvt -e nano, \
-#  urxvt -e vifm, \
-#  urxvt -e cmus, \
-#  urxvt -e htop, \
-#  urxvt -e alsamixer}
+XF86Calculator
+ xcalc
+
+XF86Explorer
+ urxvt -e vifm
+
+XF86Tools
+ urxvt -e cmus
 
 ###############
 # move-resize #
 ###############
 
-#super + c
-# i3-msg move position center
+super + c
+ i3-msg move position center
 
-#shift + super + {h,j,k,l}
-# i3-msg move {left,down,up,right}
+shift + super + {h,j,k,l}
+ i3-msg move {left,down,up,right}
 
-#shift + super + {Left,Down,Up,Right}
-# i3-msg move {left,down,up,right}
+shift + super + {Left,Down,Up,Right}
+ i3-msg move {left,down,up,right}
 
-#alt + super + {h,j,k,l}
-# i3-msg {resize shrink width 10 px or 10 ppt, \
+alt + super + {h,j,k,l}
+ i3-msg {resize shrink width 10 px or 10 ppt, \
         resize grow height 10 px or 10 ppt, \
         resize shrink height 10 px or 10 ppt, \
         resize grow width 10 px or 10 ppt}
 
-#alt + super + {Left,Down,Up,Right}
-# i3-msg {resize shrink width 1 px or 1 ppt, \
+alt + super + {Left,Down,Up,Right}
+ i3-msg {resize shrink width 1 px or 1 ppt, \
         resize grow height 1 px or 1 ppt, \
         resize shrink height 1 px or 1 ppt, \
         resize grow width 1 px or 1 ppt}
 
-#super + w
-# i3-msg move container to workspace back_and_forth
+super + w
+ i3-msg move container to workspace back_and_forth
 
-#shift + super + w
-# i3-msg move container to workspace back_and_forth; workspace back_and_forth 
+shift + super + w
+ i3-msg move container to workspace back_and_forth; workspace back_and_forth 
 
-#shift + super + {1,2,3,4,5,6}
-# i3-msg move container to workspace number {1,2,3,4,5,6}
+shift + super + {1,2,3,4,5,6}
+ i3-msg move container to workspace number {1,2,3,4,5,6}
+
+##########################################
+# xdotool: emulate the pointer movements #
+##########################################
+
+super + KP_Left
+ xdotool mousemove_relative -- -15 0
+
+super + KP_Down
+ xdotool mousemove_relative 0 15
+
+super + KP_Up
+ xdotool mousemove_relative -- 0 -15
+
+super + KP_Right
+ xdotool mousemove_relative 15 0
+
+###########################
+# xdotool: emulate clicks #
+###########################
+
+super + KP_Begin
+ xdotool click --clearmodifiers 1
+
+super + KP_End
+ xdotool click --clearmodifiers 2
+
+super + KP_Next
+ xdotool click --clearmodifiers 3
+
+################################
+# xdotool: emulate scrollwheel #
+################################
+
+alt + super + KP_Up
+ xdotool click --clearmodifiers 4
+
+alt + super + KP_Down
+ xdotool click --clearmodifiers 5
+
+###################################
+# xdotool: emulate click-and-drag #
+###################################
+
+control + KP_Begin
+ xdotool mousedown --clearmodifiers 1
+
+alt + control + KP_Begin
+ xdotool mouseup --clearmodifiers 1
