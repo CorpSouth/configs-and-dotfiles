@@ -1,0 +1,30 @@
+#!/usr/bin/sh
+
+#########################################################
+# specify the target $PATH(s) for fzf to search through #
+#########################################################
+
+DIR="/usr/bin"
+
+#######################################
+# ABOUT: Run="$()"                    #
+#######################################
+# the "|" is a pipe-through function  #
+# "ls" lists the directory contents   #
+# "uniq -u" ignores duplicate entries #
+# the various "--" flags are optional #
+#######################################
+
+Run="$(ls $DIR | uniq -u | fzf --border=sharp --color=16 --info=hidden --margin 2% --marker='.' --no-mouse --no-unicode --padding 2% --pointer='@' --prompt='run: ' --reverse)"
+
+###################################################
+# NOTICE: the "nohup" flag, or no-hang-up, allows #
+# the terminal to exit gracefully upon selection  #
+# and detach from the child process altogether    #
+###################################################
+# NOTICE: ">/dev/null 2>&1" prevents nohup from   #
+# littering $HOME with a "nohup.out" logging file #
+# every time an entry is selected                 #
+###################################################
+
+exec nohup $Run >/dev/null 2>&1
