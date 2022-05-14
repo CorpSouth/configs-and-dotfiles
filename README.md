@@ -1,8 +1,8 @@
 # Welcome to my Repository! 
 
-![CrimsonDuskMountains](https://user-images.githubusercontent.com/96737550/166337402-842d263b-f70e-46a0-90a7-0fa34f46ac0e.jpg)
+![Fri May 13 22:32:59 2022-raspbian](https://user-images.githubusercontent.com/96737550/168409390-e8ec5059-17da-4359-bae8-b61ddf50411d.png)
 
-_Pictured: my actual desktop, just this, cry about it :') all credit goes to Eberhard Grossgasteiger for this wonderful view_
+_Pictured: my actual desktop, just this, cry about it :') barren i3 desktop with the fzf_run launch script run through urxvt (rxvt-unicode) in 50x15_
 
 I hope what I put in here can provide a useful base for anyone interested in the tools that I am using. :)
 
@@ -26,6 +26,14 @@ https://github.com/dunst-project/dunst
 
 Special thanks to the Dunst Project for providing the agnostic notification solution for X11 and XWayland.
 Mine is nothing special.
+
+# About: "My" fzf_run Launch Script 
+
+https://github.com/jdpedersen1/scripts
+
+Special thanks to Jake@Linux for the original script, I hope my tip about the 'nohup' made the simply wonderful script even more fun!
+
+Basically this is just a script that only requires the fzf fuzzyfinder utility, available on most distributions. It feeds an fzf search query to be launched in a terminal emulator (tty) session. It is recommended for i3 users to assign a for_window rule to float and center the terminal with this script. Recommended geometry is 50x15.
 
 # About: My i3 Window Manager/i3-Gaps Configuration
 
