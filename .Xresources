@@ -1,9 +1,3 @@
-#ifdef COLOR
-*Customization: -color
-#else
-*Customization: -mono
-#endif
-
 ! Nord color palette 
 #define col0  #2E3440
 #define col1  #3B4252
@@ -46,26 +40,26 @@
 *.color15:     col6
 
 ! Xclock 
-XClock*analog:      false
-XClock*Clock.face:  noto mono 
-XClock*foreground:  col7
+XClock*analog:      true 
+XClock*Clock.face:  JetBrains Mono 
+XClock*foreground:  col4
 XClock*background:  col0
-XClock*majorColor:  col15
-XClock*minorColor:  col15
-XClock*hourColor:   col15
-XClock*minuteColor: col15
-XClock*secondColor: col15
+XClock*majorColor:  col4
+XClock*minorColor:  col4
+XClock*hourColor:   col4
+XClock*minuteColor: col4
+XClock*secondColor: col4
 
 ! Xft
 Xft*antialias: true
 Xft*hinting:   true
-Xft*hintstyle: hintslight
+Xft*hintstyle: hintfull
 Xft*rgba:      rgb
 
 ! URxvt
-URxvt*font:             xft:noto mono
-URxvt*boldFont:         xft:noto mono:style=bold
-URxvt*italicFont:       xft:noto mono:style=italic   
+URxvt*font:             xft:JetBrains Mono
+URxvt*boldFont:         xft:JetBrains Mono:style=bold
+URxvt*italicFont:       xft:JetBrains Mono:style=italic   
 URxvt*cursorBlink:      true
 URxvt*cursorUnderline:  true
 URxvt.iso14755:         false
@@ -77,6 +71,7 @@ Urxvt*scrollBar_right:  false
 URxvt*internalBorder:   10 
 URxvt*urgentOnBell:     true
 
-! Urxvt keybinds for copy/pasting
+! URxvt keybinds for copy/pasting
 URxvt.keysym.Shift-Control-V: eval:paste_clipboard
 Rxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+
