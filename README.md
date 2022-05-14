@@ -33,7 +33,7 @@ https://github.com/jdpedersen1/scripts
 
 Special thanks to Jake@Linux for the original script, I hope my tip about the 'nohup' made the simply wonderful script even more fun!
 
-Basically this is just a script that only requires the fzf fuzzyfinder utility, available on most distributions. It feeds an fzf search query to be launched in a terminal emulator (tty) session. It is recommended for i3 users to assign a for_window rule to float and center the terminal with this script. Recommended geometry is 50x15.
+Basically this is just a script that I had borrowed and tweaked so that it only requires the fzf fuzzyfinder utility, available on most distributions. It feeds an fzf search query to be launched in a terminal emulator (tty) session. It is recommended for i3 users to assign a for_window rule to float and center the terminal with this script, using the class (title) definition. Recommended geometry is 50x15.
 
 # About: My i3 Window Manager/i3-Gaps Configuration
 
