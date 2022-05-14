@@ -5,39 +5,23 @@
 super + Return
  urxvt
 
-##############
-# rofi menus #
-##############
+############
+# fzf menu #
+############
 
 super + Menu
- rofi -no-click-to-exit -show run 
-
-shift + super + Menu
- rofi -no-click-to-exit -show combi
-
-alt + Menu
- rofi -no-click-to-exit -show drun
-
-control + Menu
- rofi -no-click-to-exit -show window 
-
-alt + ctrl + Menu
- rofi -show filebrowser
-
-shift + Menu
- rofi -no-click-to-exit -show ssh
+ urxvt -g 50x15 -T fzf_run -e $HOME/.local/bin/fzf_run 
 
 ###################
 # common programs #
 ###################
 
-control + shift + super + o ; {b,e,f,F9,i,m,p}
- {librewolf, \
+control + shift + super + o ; {b,e,f,i,m,p}
+ {firefox, \
  urxvt -e vim, \
  pcmanfm, \
- mpv --player-operation-mode=pseudo-gui, \
  nsxiv -r -t ~/Pictures, \
- thunderbird, \
+ urxvt -T Mail -e neomutt, \
  pi-apps}
 
 ############################
@@ -52,6 +36,9 @@ control + shift + super + m ; {b,h,t}
 ##############
 # media keys #
 ##############
+
+super + v
+ urxvt -e alsamixer
 
 XF86AudioLowerVolume
  pactl set-sink-volume @DEFAULT_SINK@ -5%
@@ -189,6 +176,9 @@ XF86Calculator
 XF86Explorer
  urxvt -e vifm
 
+XF86Mail
+ urxvt -e neomutt
+
 XF86Tools
  urxvt -e cmus
 
@@ -207,14 +197,14 @@ shift + super + {Left,Down,Up,Right}
 
 alt + super + {h,j,k,l}
  i3-msg {resize shrink width 10 px or 10 ppt, \
-        resize grow height 10 px or 10 ppt, \
         resize shrink height 10 px or 10 ppt, \
+        resize grow height 10 px or 10 ppt, \
         resize grow width 10 px or 10 ppt}
 
 alt + super + {Left,Down,Up,Right}
  i3-msg {resize shrink width 1 px or 1 ppt, \
-        resize grow height 1 px or 1 ppt, \
         resize shrink height 1 px or 1 ppt, \
+        resize grow height 1 px or 1 ppt, \
         resize grow width 1 px or 1 ppt}
 
 super + w

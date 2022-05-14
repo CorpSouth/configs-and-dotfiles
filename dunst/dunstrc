@@ -24,16 +24,16 @@
     # dynamic width from 0 to 300
     # width = (0, 300)
     # constant width of 300
-    width = 350 
+    width = 300 
 
     # The maximum height of a single notification, excluding the frame.
     height = 300 
 
     # Position the notification in the top right corner
-    origin = bottom-right
+    origin = bottom-right 
 
     # Offset from the origin
-    offset = 15x15
+    offset = 10x50
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
@@ -76,20 +76,20 @@
     separator_height = 2
 
     # Padding between text and separator.
-    padding = 2
+    padding = 8
 
     # Horizontal padding.
-    horizontal_padding = 2
+    horizontal_padding = 8
 
     # Padding between text and icon.
-    text_icon_padding = 0
+    text_icon_padding = 2
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
     frame_width = 2
 
     # Defines color of the frame around the notification window.
-    frame_color = "#5E81AC"
+    frame_color = "#81A1C1"
 
     # Define a color for the separator.
     # possible values are:
@@ -111,7 +111,7 @@
 
     ### Text ###
 
-    font = Noto Mono 13 
+    font =  JetBrains Mono
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
@@ -257,7 +257,7 @@
     # By enabling this setting dunst will not be able to detect when a monitor
     # is connected or disconnected which might break follow mode if the screen
     # layout changes.
-    force_xinerama = false
+    force_xinerama = false 
 
     ### mouse
 
@@ -286,7 +286,7 @@
     # dunst will attempt to calculate an appropriate dpi value for each monitor
     # using the resolution and physical size. This might be useful in setups
     # where there are multiple screens with very different dpi values.
-    per_monitor_dpi = false
+    per_monitor_dpi = true 
 
 
 [urgency_low]
@@ -300,7 +300,7 @@
 
 [urgency_normal]
     background =  "#3B4252"
-    foreground =  "#ECEFF4"
+    foreground =  "#D8DEE9"
     frame_color = "#88C0D0"
     timeout = 10
     # Icon for notifications with normal urgency, uncomment to enable
@@ -308,7 +308,7 @@
 
 [urgency_critical]
     background =  "#3B4252"
-    foreground =  "#ECEFF4"
+    foreground =  "#D8DEE9"
     frame_color = "#EBCB8B"
     timeout = 0
     # Icon for notifications with critical urgency, uncomment to enable
