@@ -1,12 +1,12 @@
-#########
-# fetch #
-#########
+#################
+# fetch utility #
+#################
 
 pfetch
 
-########
-# init #
-########
+################
+# initializing #
+################
 
 autoload -Uz compinit  
 compinit
@@ -199,9 +199,23 @@ alias aptsrc='sudo apt source'
 
 alias aptux='sudo apt update; sudo apt upgrade -y'
 
+###########
+# pi-apps #
+###########
+
+alias pai='pi-apps install'
+
+alias pala='pi-apps list-all'
+
+alias pas='pi-apps status'
+
+alias pau='pi-apps update'
+
 ###################
 # SUMMON THE FIGS #
 ###################
+
+alias cwmrc='vim ~/.config/cwm/.cwmrc'
 
 alias dunstrc='vim ~/.config/dunst/dunstrc'
 
