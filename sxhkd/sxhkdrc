@@ -3,14 +3,14 @@
 ##################
 
 super + Return
- urxvt
+ x-terminal-emulator 
 
 ############
 # fzf menu #
 ############
 
 super + Menu
- urxvt -g 50x15 -T fzf_run -e $HOME/.local/bin/fzf_run 
+ x-terminal-emulator -g 50x15 -T fzf_run -e $HOME/.local/bin/fzf_run 
 
 ###################
 # common programs #
@@ -18,10 +18,10 @@ super + Menu
 
 control + shift + super + o ; {b,e,f,i,m,p}
  {firefox, \
- urxvt -e vim, \
+ x-terminal-emulator -e vim, \
  pcmanfm, \
  nsxiv -r -t ~/Pictures, \
- urxvt -T Mail -e neomutt, \
+ x-terminal-emulator -T Mail -e neomutt, \
  pi-apps}
 
 ############################
@@ -29,9 +29,9 @@ control + shift + super + o ; {b,e,f,i,m,p}
 ############################
 
 control + shift + super + m ; {b,h,t}
- {urxvt -e btop, \
- urxvt -e htop, \
- urxvt -e top}
+ {x-terminal-emulator -e btop, \
+ x-terminal-emulator -e htop, \
+ x-terminal-emulator -e top}
 
 ##############
 # media keys #
@@ -156,7 +156,7 @@ shift + super + F11
 ##############
 
 shift + super + Return 
- i3-msg "exec --no-startup-id urxvt -name scratchpad"
+ i3-msg "exec --no-startup-id x-terminal-emulator -name scratchpad"
 
 alt + grave
  i3-msg move scratchpad
