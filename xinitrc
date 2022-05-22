@@ -36,17 +36,24 @@ xrdb -merge .Xresources &
 # set background #
 ##################
 
-xwallpaper --stretch $HOME/Pictures/Wallpapers/CrimsonDuskMountains.jpg &
+hsetroot -solid "#232831" &
 
-#############################
-# start compositing manager #
-#############################
+############################
+# start the system monitor #
+############################
 
 sleep 1 &&
-picom --experimental-backends &
+urxvt -e btop &
+
+#####################################
+# start a basic scratchpad terminal #
+#####################################
+
+sleep 1 &&
+x-terminal-emulator -name scratchpad &
 
 ##################
 # start xsession #
 ##################
 
-exec cwm -c $HOME/.config/cwm/.cwmrc 
+exec i3 
