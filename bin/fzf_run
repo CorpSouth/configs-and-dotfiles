@@ -15,7 +15,7 @@ DIR="/usr/bin"
 # the various "--" flags are optional #
 #######################################
 
-Run="$(ls $DIR | uniq -u | fzf --border=sharp --color=16 --info=hidden --margin 2% --marker='.' --no-mouse --no-unicode --padding 2% --pointer='@' --prompt='run: ' --reverse)"
+Run="$(ls $DIR | uniq -u | fzf --border=sharp --color=16 --info=hidden --margin 2% --marker='»' --no-mouse --padding 2% --pointer='›' --prompt='→ ' --reverse)"
 
 ###################################################
 # NOTICE: the "nohup" flag, or no-hang-up, allows #
@@ -24,7 +24,7 @@ Run="$(ls $DIR | uniq -u | fzf --border=sharp --color=16 --info=hidden --margin 
 ###################################################
 # NOTICE: ">/dev/null 2>&1" prevents nohup from   #
 # littering $HOME with a "nohup.out" logging file #
-# every time an entry is selected                 #
+# every time an entry is selected, do not touch   #
 ###################################################
 
 exec nohup $Run >/dev/null 2>&1
