@@ -1,0 +1,40 @@
+##################################################
+# if not running interactively don't do anything #
+##################################################
+
+[[ $- != *i* ]] && return
+
+################################################
+# all options including ricing related go here #
+################################################
+# custom prompt                                #
+################################################
+
+PROMPT="%B%F{green}%<<%~ %f%b"
+
+#########
+# fetch #
+#########
+
+PF_INFO="editor kernel memory os pkgs shell uptime wm palette" /usr/bin/pfetch
+
+##############
+# setoptions #
+##############
+
+setopt autocd ALWAYS_TO_END COMPLETE_IN_WORD correct extendedglob HIST_FIND_NO_DUPS HIST_IGNORE_DUPS HIST_REDUCE_BLANKS interactive_comments menucomplete MULTI_OS nomatch
+
+################
+# unsetoptions #
+################
+
+unsetopt BEEP
+
+###########
+# history #
+###########
+
+HISTSIZE=1000
+SAVEHIST=1000
+HISTFILE="$XDG_CONFIG_HOME/zsh/.zsh_history"
+LESSHISTFILE=-

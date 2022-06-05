@@ -1,0 +1,47 @@
+######################################
+# autoload functions go in this file #
+######################################
+# enable zsh automatic completion    #
+######################################
+
+autoload -U compinit; compinit
+zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
+
+############################
+# allow changing of prompt #
+############################
+
+autoload -U promptinit; promptinit
+
+###########################################
+# select bracket-wrapped chunks and lines #
+###########################################
+
+autoload -U select-bracketed
+zle -N select-bracketed
+for m in visual viopp; do
+  for c in {a,i}${(s..)^:-'()[]{}<>bB'}; do
+    bindkey -M $m $c select-bracketed
+  done
+done
+
+#########################################
+# select quote-wrapped chunks and lines #
+#########################################
+
+autoload -U select-quoted
+zle -N select-quoted
+for m in visual viopp; do
+  for c in {a,i}{\',\",\`}; do
+    bindkey -M $m $c select-quoted
+  done
+done
+
+####################
+# line editor mode #
+####################
+
+autoload edit-command-line; zle -N edit-command-line
+autoload -U edit-command-line && zle -N edit-command-line && bindkey -M vicmd "^v" edit-command-line
+bindkey '^v' edit-command-line
