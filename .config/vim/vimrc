@@ -1,4 +1,9 @@
-" xdg specification, please keep this at the top of vimrc
+" nocompatible allows for more unusual tweaks
+
+set nocompatible
+
+" xdg specification, please keep this at the top of vimrc but below
+" nocompatible
 
 if empty("$XDG_CACHE_HOME")
     let $XDG_CACHE_HOME="$HOME/.cache"
@@ -12,13 +17,14 @@ if empty("$XDG_DATA_HOME")
     let $XDG_DATA_HOME="$HOME/.local/share"
 endif
 
+let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc"
+let netrw_home = "$XDG_CACHE_HOME/vim/netrw"
+
 set directory=$XDG_CACHE_HOME/vim/swap,~/,/tmp
 set backupdir=$XDG_CACHE_HOME/vim/backup,~/,/tmp
 set undodir=$XDG_CACHE_HOME/vim/undo,~/,/tmp
-set viminfo+=n$XDG_CACHE_HOME/vim/viminfo
+set viminfo+=n$XDG_CACHE_HOME/vim/completions/viminfo
 set runtimepath+=$XDG_CONFIG_HOME/vim,$XDG_CONFIG_HOME/vim/after,$VIM,$VIMRUNTIME
-let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc"
-
 " All system-wide defaults are set in $VIMRUNTIME/archlinux.vim (usually just
 " /usr/share/vim/vimfiles/archlinux.vim) and sourced by the call to :runtime
 " you can find below.  If you wish to change any of those settings, you should
@@ -36,10 +42,11 @@ runtime! archlinux.vim
 " and configure vim to your own liking!
 
 " do not load defaults if ~/.vimrc is missing
-"let skip_defaults_vim=1
+let skip_defaults_vim=1
 
 set linebreak
-set noswapfile incsearch
+set noswapfile
+set nowritebackup
 set spell spelllang=en_us 
 
 call plug#begin('~/.config/vim/plugged')
