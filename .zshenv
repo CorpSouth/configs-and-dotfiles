@@ -1,0 +1,68 @@
+##############################################
+# put all zsh dotfiles into $XDG_CONFIG_HOME # 
+##############################################
+
+ZDOTDIR=$HOME/.config/zsh
+
+#################
+# xdg variables #
+#################
+
+export XDG_CONFIG_HOME=~/.config
+export XDG_CACHE_HOME=~/.cache
+export XDG_DATA_HOME=~/.local/share
+export XDG_STATE_HOME=~/.local/state
+
+#################
+# X11 variables #
+#################
+
+export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
+export XRESOURCES="$XDG_CONFIG_HOME/X11/xresources"
+export XSERVERRC="$XDG_CONFIG_HOME/X11/xserverrc"
+export USERXSESSION="$XDG_CACHE_HOME/X11/xsession"
+export USERXSESSIONRC="$XDG_CACHE_HOME/X11/xsessionrc"
+export ALTUSERXSESSION="$XDG_CACHE_HOME/X11/Xsession"
+export ERRFILE="$XDG_CACHE_HOME/X11/xsession-errors"
+
+#################
+# vim variables #
+#################
+
+export VIMINIT="source $XDG_CONFIG_HOME/vim/vimrc"
+
+###################
+# enable 256color #
+###################
+
+export TERM=xterm-256color
+
+#####################
+# manpage variables #
+#####################
+
+export MANPAGER='/bin/bash -c "vim -MRn -c \"set buftype=nofile showtabline=0 ft=man ts=8 nomod nolist norelativenumber nonu noma\" -c \"normal L\" -c \"nmap q :qa<CR>\"</dev/tty <(col -b)"'
+export MANPATH="/usr/local/man:$MANPATH"
+
+########################
+# default applications #
+########################
+
+export BROWSER="$(if [[ -n $DISPLAY ]]; then echo 'librewolf'; else echo 'links'; fi)"
+export CALCULATOR="$(if [[ -n $DISPLAY ]]; then echo 'xcalc'; else echo 'bc'; fi)"
+export EDITOR="$(if [[ -n $DISPLAY ]]; then echo 'vim'; else echo 'nano'; fi)"
+export EMAIL="$(if [[ -n $DISPLAY ]]; then echo 'thunderbird'; else echo 'mutt'; fi)"
+export FILEMANAGER="$(if [[ -n $DISPLAY ]]; then echo 'pcmanfm'; else echo 'vifm'; fi)"
+export TERMINAL="$(if [[ -n $DISPLAY ]]; then echo 'urxvt'; else echo 'xterm'; fi)"
+
+####################
+# set the language #
+####################
+
+export LANG=en_US.UTF-8
+
+####################
+# compilation flag #
+####################
+
+export ARCHFLAGS="-arch aarch64"
