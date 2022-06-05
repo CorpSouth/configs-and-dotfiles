@@ -1,0 +1,90 @@
+! Nord color palette 
+#define col0  #2E3440
+#define col1  #3B4252
+#define col2  #434C5E
+#define col3  #4C566A
+#define col4  #D8DEE9
+#define col5  #E5E9F0
+#define col6  #ECEFF4
+#define col7  #8FBCBB
+#define col8  #88C0D0
+#define col9  #81A1C1
+#define col10 #5E81AC
+#define col11 #BF616A
+#define col12 #D08770
+#define col13 #EBCB8B
+#define col14 #A3BE8C
+#define col15 #B48EAD
+
+! colorization
+*.foreground:  col4
+*.background:  col0
+*.cursorColor: col4
+*fading:       35
+*fadeColor:    col3
+*.color0:      col1
+*.color1:      col11
+*.color2:      col14
+*.color3:      col13
+*.color4:      col9
+*.color5:      col15
+*.color6:      col8
+*.color7:      col5
+*.color8:      col3
+*.color9:      col11
+*.color10:     col14
+*.color11:     col13
+*.color12:     col9
+*.color13:     col15
+*.color14:     col7
+*.color15:     col6
+
+! Xclock 
+XClock*analog:      true 
+XClock*Clock.face:  Iosevka 
+XClock*foreground:  col7
+XClock*background:  col0
+XClock*majorColor:  col8
+XClock*minorColor:  col8
+XClock*hourColor:   col8
+XClock*minuteColor: col8
+XClock*secondColor: col8
+
+! Xft
+Xft*antialias: true
+Xft*hinting:   true
+Xft*hintstyle: hintslight
+Xft*lcdfilter: lcddefault
+Xft*rgba:      rgb
+
+! URxvt
+URxvt*font:              xft:Iosevka Term Extended:size=12
+URxvt*boldfont:          xft:Iosevka Term Extended:size=12:style=bold
+URxvt*italicfont:        xft:Iosevka Term Extended:size=12:style=italic
+URxvt*bolditalicfont:    xft:Iosevka Term Extended:size=12:style=bolditalic
+URxvt*cursorBlink:       true
+URxvt*cursorUnderline:   true
+URxvt.iso14755:          false
+URxvt.iso14755_52:       false
+URxvt*letterSpace:       1
+URxvt*lineSpace:         1
+URxvt*scrollWithBuffer:  true 
+URxvt*scrollTtyOutput:   false
+URxvt*scrollTtyKeypress: true
+URxvt*scrollBar:         false
+URxvt*scrollBar_right:   false
+URxvt*secondaryScreen:   1
+URxvt*secondaryScroll:   0
+URxvt*internalBorder:    12 
+URxvt*urgentOnBell:      true
+
+! URxvt Perl Extensions
+Urxvt.perl-ext-common: resize-font
+
+! URxvt keybinds for copy/pasting
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+
+! URxvt keybinds for changing text size on the fly
+URxvt.keysym.C-Down: resize-font:smaller
+URxvt.keysym.C-Up:   resize-font:bigger

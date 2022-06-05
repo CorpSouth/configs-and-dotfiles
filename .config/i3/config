@@ -1,0 +1,45 @@
+######################################################################
+# I split all the necessary configurations to external include files #
+######################################################################
+
+include $HOME/.config/i3/keys.conf
+include $HOME/.config/i3/looks.conf
+include $HOME/.config/i3/rules.conf
+include $HOME/.config/i3/workspaces.conf
+
+#####################################################
+# a little tour of this bundle of includes and why  #
+#####################################################
+#                                                   #
+# I use this file as a bundle of includes because:  #
+#                                                   #
+# A) reduces single-file clutter                    #
+# B) prevents dubious variable organization         #
+# C) I prefer xinitrc, hence no autostart hooks     #                                                  
+#                                                   #
+#####################################################
+#                                                   #
+# keys.conf                                         #
+#                                                   #
+# only ever used to disable the mouse bindings      #
+# I prefer ALL of my keybindings to use sxhkd       #
+# see $HOME/.config/sxhkd/sxhkdrc for details       #
+#                                                   #
+# looks.conf                                        #
+#                                                   #
+# for all settings that exclusively apply to looks, #
+# I do not use a panel so colors and fonts of the   #
+# window titlebar, borders are all that's set here  #
+#                                                   #
+# rules.conf                                        # 
+#                                                   #
+# all use of the 'for_window' variable are defined  #
+# here, including the purely cosmetic rules         #
+#                                                   #
+# workspaces.conf                                   #
+#                                                   #
+# all workspace names and setting go here, though   #
+# without a bar I do not set their names and keep   #
+# their task-specific roles to my memory            #
+#                                                   #
+#####################################################

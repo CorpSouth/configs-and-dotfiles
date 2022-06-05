@@ -1,0 +1,73 @@
+#!/bin/sh
+
+##############
+# policy kit #
+##############
+
+lxpolkit &
+
+##############################
+# start notification service #
+##############################
+
+sleep 2 &&
+dunst &
+
+###############
+# screen lock #
+###############
+
+sleep 2 &&
+xsidle.sh slock &
+
+##################
+# hotkey service #
+##################
+
+sleep 2 &&
+sxhkd &
+
+##############
+# xresources #
+##############
+
+xrdb -merge $XRESOURCES &
+
+##################
+# set background #
+##################
+
+hsetroot -solid "#232831" &
+
+#################################
+# start the compositing manager #
+#################################
+
+sleep 2 &&
+picom &
+
+############################
+# start the system monitor #
+############################
+
+sleep 5 &&
+urxvt -e btop &
+
+########################
+# autohide the xcursor #
+########################
+
+unclutter --timeout 3 &
+
+#####################################
+# start a basic scratchpad terminal #
+#####################################
+
+sleep 5 &&
+urxvt -name scratchpad &
+
+##################
+# start xsession #
+##################
+
+exec i3 

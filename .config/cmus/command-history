@@ -1,0 +1,9 @@
+set status_display_program=/usr/local/bin/cmus-notify.pl
+set status_display_program=/usr/local/bin/cmus-notify
+colorscheme default
+?
+help
+bind
+unbind
+add ~/Music/Videogame-OSTs
+add
