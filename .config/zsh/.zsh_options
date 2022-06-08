@@ -1,14 +1,8 @@
-##################################################
-# if not running interactively don't do anything #
-##################################################
-
-[[ $- != *i* ]] && return
-
 ################################################
 # custom prompt                                #
 ################################################
 
-PROMPT="%B%F{green}%<<%~ %f%b"
+PROMPT="%B%F{green}%<<%2~ %f%b"
 
 #########
 # fetch #
@@ -16,11 +10,17 @@ PROMPT="%B%F{green}%<<%~ %f%b"
 
 PF_INFO="editor kernel memory os pkgs shell uptime wm palette" /usr/bin/pfetch
 
+################################
+# emulate the following shells #
+################################
+
+#if [ -n "$ZSH_VERSION" ]; then emulate -L sh; fi
+
 ##############
 # setoptions #
 ##############
 
-setopt autocd ALWAYS_TO_END COMPLETE_IN_WORD correct extendedglob HIST_FIND_NO_DUPS HIST_IGNORE_DUPS HIST_REDUCE_BLANKS interactive_comments menucomplete MULTI_OS nomatch
+setopt autocd ALWAYS_TO_END COMPLETE_IN_WORD correct extendedglob interactive_comments menucomplete MULTI_OS nomatch
 
 ################
 # unsetoptions #
@@ -32,7 +32,11 @@ unsetopt BEEP
 # history #
 ###########
 
+HISTIGNORE="^x*"
 HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE="$XDG_CONFIG_HOME/zsh/.zsh_history"
 LESSHISTFILE=-
+setopt HIST_FIND_NO_DUPS
+setopt HIST_IGNORE_DUPS
+setopt HIST_REDUCE_BLANKS

@@ -35,19 +35,26 @@ alias rm='rm -i --preserve-root'
 alias cp='cp -n'
 alias mv='mv -n'
 
-########################################################################
-# aliases to help facilitate application launching in the terminal     #
-########################################################################
-# A raw method to launching programs is to use the "nohup" command,    #
-# which means "no hang up", allowing the instance to run without       #
-# being attached to the parent terminal session it started. This is    # 
-# not a perfect solution as nohup produces nohup.out in response to    #
-# an event with STDOUT. The solution is to create a basic shell script #
-# that redirects the output file to /dev/null, the script is only two  #
-# source lines of code (sloc) and is named 'x', for simplicity's sake  #   ########################################################################
+#################################################################################
+# aliases to help facilitate GUI application launching from the command line    #
+#################################################################################
+# One way to launch GUI applications from the command line is through nohup,    #
+# also known as no-hangup, which detaches the child process from the parent.    #
+# This method isn't perfect due to the command littering $HOME with a nohup.out #
+# logfile every time. A solution is to use a prefixing script in a shell alias  #
+# which I have titled "x", containing only the necessary string for detaching   #
+# the child process from the parent. It is shell-agnostic and should work with  #
+# non-POSIX compliant shells. Put the script in your $PATH and prefix an alias  #
+# of your choosing. Here are the contents of the shell script below:            #
+#################################################################################
+#                                                                               #
+# '#!/bin/sh                                                                    #
+#  nohup "$@" >/dev/null 2>&1 &'                                                #
+#                                                                               #
+#################################################################################
 
 alias bleachbit="x bleachbit; clear"
-alias bleachbit-root="x doas bleachbit; clear"
+alias bleachbit-root="doas x bleachbit; clear"
 alias cmake-gui="x cmake-gui; clear"
 alias eos-apps-info="x eos-apps-info; clear"
 alias eos-log-tool="x eos-log-tool; clear"
@@ -62,10 +69,10 @@ alias libreoffice-math="x libreoffice --math; clear"
 alias libreoffice-writer="x libreoffice --writer; clear"
 alias librewolf="x librewolf; clear"
 alias lxappearance="x lxappearance; clear"
-alias lxshortcut="x lxshortcut; clear"
+alias lxappearance-root=" doas x lxshortcut; clear"
 alias mpv-gui="x mpv --player-operation-mode=pseudo-gui; clear"
 alias pcmanfm="x pcmanfm; clear"
-alias pcmanfm-desktop-pref="x pcmanfm --desktop-pref; clear"
+alias pcmanfm-root="doas x pcmanfm; clear"
 alias picom="x picom; clear"
 alias telegram-desktop="x telegram-desktop; clear"
 alias thunderbird="x thunderbird; clear"
