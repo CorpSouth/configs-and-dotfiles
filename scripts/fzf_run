@@ -1,21 +1,38 @@
-#!/usr/bin/sh
+#!/usr/bin/env bash
 
-#########################################################
-# specify the target $PATH(s) for fzf to search through #
-#########################################################
+####################################################################
+# the common and-or most logical areas to search for applications  #
+####################################################################
+# specify /usr/bin (standard $PATH) if you like, but I personally  #
+# don't want a bunch of crap you can't actually launch in the menu #
+####################################################################
 
-DIR="/usr/bin"
+DIRS=(
+  /usr/bin
+)
 
 #######################################
 # ABOUT: Run="$()"                    #
 #######################################
 # the "|" is a pipe-through function  #
+# the "\" is a line break, essential  #
 # "ls" lists the directory contents   #
 # "uniq -u" ignores duplicate entries #
 # the various "--" flags are optional #
 #######################################
 
-Run="$(ls $DIR | uniq -u | fzf --border=sharp --color=16 --info=hidden --marker='»' --no-mouse --pointer='›' --prompt='→ ' --reverse)"
+Run="$(ls $DIRS | \
+	uniq -u | \
+	fzf \
+	-e -i -x \
+	--border=sharp \
+	--color='16' \
+	--margin='1,2' \
+	--no-info \
+	--no-mouse \
+	--no-multi \
+	--prompt='Run: ' \
+       	--reverse)"
 
 ###################################################
 # NOTICE: the "nohup" flag, or no-hang-up, allows #
