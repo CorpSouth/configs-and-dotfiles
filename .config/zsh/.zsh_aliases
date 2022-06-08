@@ -20,6 +20,7 @@ alias ls='ls --color=auto'
 # YouTube #
 ###########
 
+alias yt-dlp-update="doas yt-dlp -U"
 alias yta-aac="yt-dlp --extract-audio --audio-format aac "
 alias yta-best="yt-dlp --extract-audio --audio-format best "
 alias yta-flac="yt-dlp --extract-audio --audio-format flac "
@@ -33,3 +34,40 @@ alias ytv-best="yt-dlp -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+besta
 alias rm='rm -i --preserve-root'
 alias cp='cp -n'
 alias mv='mv -n'
+
+########################################################################
+# aliases to help facilitate application launching in the terminal     #
+########################################################################
+# A raw method to launching programs is to use the "nohup" command,    #
+# which means "no hang up", allowing the instance to run without       #
+# being attached to the parent terminal session it started. This is    # 
+# not a perfect solution as nohup produces nohup.out in response to    #
+# an event with STDOUT. The solution is to create a basic shell script #
+# that redirects the output file to /dev/null, the script is only two  #
+# source lines of code (sloc) and is named 'x', for simplicity's sake  #   ########################################################################
+
+alias bleachbit="x bleachbit; clear"
+alias bleachbit-root="x doas bleachbit; clear"
+alias cmake-gui="x cmake-gui; clear"
+alias eos-apps-info="x eos-apps-info; clear"
+alias eos-log-tool="x eos-log-tool; clear"
+alias eos-update-notifier-configure="x eos-update-notifier-configure; clear"
+alias firewall-config="x firewall-config; clear"
+alias libfm-pref-apps="x libfm-pref-apps; clear"
+alias libreoffice-base="x libreoffice --base; clear"
+alias libreoffice-calc="x libreoffice --calc; clear"
+alias libreoffice-draw="x libreoffice --draw; clear"
+alias libreoffice-impress="x libreoffice --impress; clear"
+alias libreoffice-math="x libreoffice --math; clear"
+alias libreoffice-writer="x libreoffice --writer; clear"
+alias librewolf="x librewolf; clear"
+alias lxappearance="x lxappearance; clear"
+alias lxshortcut="x lxshortcut; clear"
+alias mpv-gui="x mpv --player-operation-mode=pseudo-gui; clear"
+alias pcmanfm="x pcmanfm; clear"
+alias pcmanfm-desktop-pref="x pcmanfm --desktop-pref; clear"
+alias picom="x picom; clear"
+alias telegram-desktop="x telegram-desktop; clear"
+alias thunderbird="x thunderbird; clear"
+alias webcord="x webcord-3.2.0-arm64.AppImage; clear"
+alias xarchiver="x xarchiver; clear"
