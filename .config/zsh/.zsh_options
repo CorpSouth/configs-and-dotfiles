@@ -16,31 +16,91 @@ PF_INFO="editor kernel memory os pkgs shell uptime wm palette" /usr/bin/pfetch
 
 #if [ -n "$ZSH_VERSION" ]; then emulate -L sh; fi
 
-##############
-# setoptions #
-##############
+#####################################
+# setoptions                        #
+#####################################
+# automatically CD into a directory #
+#####################################
 
-setopt autocd ALWAYS_TO_END COMPLETE_IN_WORD correct extendedglob interactive_comments menucomplete MULTI_OS nomatch
+setopt AUTO_CD
 
-################
-# unsetoptions #
-################
+###############
+# completions #
+###############
 
-unsetopt BEEP
+setopt ALWAYS_TO_END
+setopt AUTO_LIST
+setopt AUTO_MENU
+setopt AUTO_PARAM_SLASH
+setopt COMPLETE_IN_WORD
+setopt NO_MENU_COMPLETE
+
+#######################
+# correct my mistakes #
+#######################
+
+setopt CORRECT_ALL
+
+############
+# globbing #
+############
+
+setopt extended_glob
+setopt glob_dots
 
 ###########
 # history #
 ###########
 
 HISTFILE="$XDG_DATA_HOME/zsh/.zsh_history"
-HISTORY_IGNORE="figs|pfetch|x*|x0*"
 HISTSIZE=1000
 SAVEHIST=1000
 LESSHISTFILE=-
 
+setopt APPEND_HISTORY
+setopt HIST_EXPIRE_DUPS_FIRST
 setopt HIST_FIND_NO_DUPS 
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
 setopt HIST_NO_FUNCTIONS
+setopt HIST_NO_STORE
 setopt HIST_SAVE_NO_DUPS
+setopt HIST_VERIFY
+setopt INC_APPEND_HISTORY
+setopt NO_SHARE_HISTORY
 
+################
+# input/output #
+################
+
+setopt INTERACTIVE_COMMENTS
+setopt NO_CLOBBER
+setopt NO_CORRECT
+setopt NO_CORRECT_ALL
+setopt NO_FLOW_CONTROL
+setopt NO_RM_STAR_SILENT
+setopt PATH_DIRS
+setopt RC_QUOTES
+
+###############
+# job control #
+###############
+
+setopt AUTO_RESUME
+setopt LONG_LIST_JOBS
+setopt NO_BG_NICE
+setopt NO_CHECK_JOBS
+setopt NO_HUP
+setopt NOTIFY
+
+#############
+# prompting #
+#############
+
+setopt prompt_subst
+
+################
+# unsetoptions #
+################
+
+unsetopt BEEP
