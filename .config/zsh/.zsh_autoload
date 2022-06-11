@@ -4,9 +4,21 @@
 # enable zsh automatic completion    #
 ######################################
 
-autoload -U compinit; compinit
+autoload -U compinit; compinit -d "$XDG_DATA_HOME/zsh/.zcompdump"
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
+
+################################################
+# resetting the terminal with escape sequences #
+################################################
+
+autoload -Uz add-zsh-hook
+
+function reset_broken_terminal () {
+	printf '%b' '\e[0m\e(B\e)0\017\e[?5l\e7\e[0;0r\e8'
+}
+
+add-zsh-hook -Uz precmd reset_broken_terminal
 
 #####################
 # persistent rehash #

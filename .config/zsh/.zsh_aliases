@@ -49,32 +49,43 @@ alias mv='mv -n'
 #################################################################################
 #                                                                               #
 # '#!/bin/sh                                                                    #
-#  nohup "$@" >/dev/null 2>&1 &'                                                #
+#  $(nohup "$@" >/dev/null 2>&1 & kill -KILL $PPID) &'                          #
+#                                                                               #
+#################################################################################
+# In addition to the above script, I have created an alternative version that   #
+# uses "setsid" with the "-f" or "fork" option, named "x0". It can substitute   #
+# "x" in the event of nohup prematurely timing out for some programs, since it  #
+# excludes SIGHUP system calls whereas nohup simply ignores any instances.      #
+# Here are the contents of the alternate shell script below:                    #
+#################################################################################
+#                                                                               #
+# '#!/bin/sh                                                                    #
+#  $(setsid -f "$@" >/dev/null 2>&1; kill -KILL $PPID)'                         #
 #                                                                               #
 #################################################################################
 
-alias bleachbit="x bleachbit; clear"
-alias bleachbit-root="doas x bleachbit; clear"
-alias cmake-gui="x cmake-gui; clear"
-alias eos-apps-info="x eos-apps-info; clear"
-alias eos-log-tool="x eos-log-tool; clear"
-alias eos-update-notifier-configure="x eos-update-notifier-configure; clear"
-alias firewall-config="x firewall-config; clear"
-alias libfm-pref-apps="x libfm-pref-apps; clear"
-alias libreoffice-base="x libreoffice --base; clear"
-alias libreoffice-calc="x libreoffice --calc; clear"
-alias libreoffice-draw="x libreoffice --draw; clear"
-alias libreoffice-impress="x libreoffice --impress; clear"
-alias libreoffice-math="x libreoffice --math; clear"
-alias libreoffice-writer="x libreoffice --writer; clear"
-alias librewolf="x librewolf; clear"
-alias lxappearance="x lxappearance; clear"
-alias lxappearance-root=" doas x lxshortcut; clear"
-alias mpv-gui="x mpv --player-operation-mode=pseudo-gui; clear"
-alias pcmanfm="x pcmanfm; clear"
-alias pcmanfm-root="doas x pcmanfm; clear"
-alias picom="x picom; clear"
-alias telegram-desktop="x telegram-desktop; clear"
-alias thunderbird="x thunderbird; clear"
-alias webcord="x webcord-3.2.0-arm64.AppImage; clear"
-alias xarchiver="x xarchiver; clear"
+alias bleachbit="x bleachbit"
+alias bleachbit-root="x bleachbit"
+alias cmake-gui="x cmake-gui"
+alias eos-apps-info="x eos-apps-info"
+alias eos-log-tool="x eos-log-tool"
+alias firewall-config="x firewall-config"
+alias libfm-pref-apps="x libfm-pref-apps"
+alias libreoffice-base="x libreoffice --base"
+alias libreoffice-calc="x libreoffice --calc"
+alias libreoffice-draw="x libreoffice --draw"
+alias libreoffice-impress="x libreoffice --impress"
+alias libreoffice-math="x libreoffice --math"
+alias libreoffice-writer="x libreoffice --writer"
+alias librewolf="x librewolf"
+alias lxappearance="x lxappearance"
+alias lxappearance-root="doas x lxappearance"
+alias mpv-gui="x mpv --player-operation-mode=pseudo-gui"
+alias pcmanfm="x pcmanfm"
+alias pcmanfm-root="doas x pcmanfm"
+alias picom="x picom"
+alias telegram-desktop="x telegram-desktop"
+alias thunderbird="x thunderbird"
+alias usbimager="x usbimager"
+alias webcord="x webcord-3.2.0-arm64.AppImage"
+alias xarchiver="x xarchiver"
