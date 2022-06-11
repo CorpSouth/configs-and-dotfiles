@@ -1,0 +1,2 @@
+#!/bin/sh
+$(setsid -f "$@" >/dev/null 2>&1; kill -KILL $PPID)
