@@ -4,6 +4,14 @@
 
 ZDOTDIR=$HOME/.config/zsh
 
+#############
+# set $PATH #
+#############
+
+typeset -U path PATH
+path=(~/.local/bin $path)
+export PATH
+
 #################
 # xdg variables #
 #################
@@ -32,10 +40,10 @@ export ERRFILE="$XDG_CACHE_HOME/X11/xsession-errors"
 export VIMINIT="source $XDG_CONFIG_HOME/vim/vimrc"
 
 ###################
-# enable 256color #
+# gnupg variables #
 ###################
 
-export TERM=xterm-256color
+export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 
 #####################
 # manpage variables #
@@ -49,10 +57,7 @@ export MANPATH="/usr/local/man:$MANPATH"
 ########################
 
 export BROWSER="$(if [[ -n $DISPLAY ]]; then echo 'librewolf'; else echo 'links'; fi)"
-export CALCULATOR="$(if [[ -n $DISPLAY ]]; then echo 'xcalc'; else echo 'bc'; fi)"
 export EDITOR="$(if [[ -n $DISPLAY ]]; then echo 'vim'; else echo 'nano'; fi)"
-export EMAIL="$(if [[ -n $DISPLAY ]]; then echo 'thunderbird'; else echo 'mutt'; fi)"
-export FILEMANAGER="$(if [[ -n $DISPLAY ]]; then echo 'pcmanfm'; else echo 'vifm'; fi)"
 export TERMINAL="$(if [[ -n $DISPLAY ]]; then echo 'urxvt'; else echo 'xterm'; fi)"
 
 ####################
