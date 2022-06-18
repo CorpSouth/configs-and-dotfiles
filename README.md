@@ -26,7 +26,7 @@ improving how we add and take away features on a whim.
 
 # About: My ZSH Configuration
 
-_The least portable due to Pacman related optimizations that can be easily deterred
+_The least portable due to Pacman related optimizations that can be easily deterred if problematic_
 
 I modularized the .zshrc core file to the extent that I have organized all functions and calls into their own separate files. Bar none
 I want everything from zle, zsh, and keybindings to be in their own separate files to prevent readability issues if I ever go too
