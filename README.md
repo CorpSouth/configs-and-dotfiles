@@ -15,7 +15,7 @@ and serves as a vanilla/default WM for X11 on OpenBSD. I've added as much helpfu
 new users better-acquainted with setting up a standalone window manager. As of right now I've fully portablized my workflow
 into the .cwmrc file, so it isn't likely to get in the way of completing a fresh linux install.
 
-_Recommended for a clean $HOME: add "exec cwm -c $HOME/.config/cwm/.cwmrc" to your xinitrc, moving all files to XDG_CO
+_Recommended for a clean $HOME: add "exec cwm -c $HOME/.config/cwm/.cwmrc" to your xinitrc_
 
 # About: My Slock-Flexipatch Build
 
