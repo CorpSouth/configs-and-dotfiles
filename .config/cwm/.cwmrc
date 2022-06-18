@@ -37,15 +37,15 @@
 # menu font #
 #############
 
-fontname "Iosevka Fixed"
+fontname "SauceCodePro Nerd Font"
 
 ##########################
 # borders and coloration #
 ##########################
 
-borderwidth 2
+borderwidth 3
 
-color activeborder   "#88C0D0"
+color activeborder   "#8FBCBB"
 color inactiveborder "#5E81AC"
 color urgencyborder  "#EBCB8B" 
 color groupborder    "#A3BE8C"
@@ -55,26 +55,41 @@ color menufg         "#434C5E"
 color font           "#2E3440" 
 color selfont        "#ECEFF4" 
 
-#######################################################################################
-# menu contents for programs, system commands, and to point to scripts                #
-#######################################################################################
-# whenever a command requires your home, "/specify/the/full/path/", no "$HOME" or '~' #
-#######################################################################################
-# NOTICE: cwm hates these being below wherever the "unbind-key" option is specified   #
-#######################################################################################
+#####################################################################################
+# menu contents for programs, system commands, and to point to scripts              #
+#####################################################################################
+# whenever a command specifies your $PATH, define the absolute path instead         #
+#####################################################################################
+# NOTICE: cwm hates these being below wherever the "unbind-key" option is specified #
+#####################################################################################
 
-command '»common«'  'true'
-command LibreWolf   librewolf
-command PCManFM     pcmanfm   
-command URxvt       urxvt
-command Thunderbird thunderbird
-command "Pi Apps"   pi-apps
-command Btop++      "urxvt -e btop"
-command Vim         "urxvt -e vim"
-command '»system«'  'true'
-command XKill       xkill
-command Slock       slock
-command Scrot       "scrot /home/aln/Pictures/Screenshots/%c-raspbian.png"
+command '»common«'                'true'
+command Browser                   librewolf
+command Calculator                "urxvt -e bc -q"
+command Editor                    "urxvt -e vim"
+command 'Task Manager'            "urxvt -e btop"
+command 'Terminal Emulator'       urxvt
+command '»games«'                 'true'
+command 'Pacman4Console'          "urxvt -e pacman4console"
+command 'Rogue 5.4'               "urxvt -e rogue"
+command '»productivity«'          'true'
+command 'Libreoffice Startcenter' libreoffice
+command 'Libreoffice Base'        "libreoffice --base"
+command 'Libreoffice Calc'        "libreoffice --calc"
+command 'Libreoffice Draw'        "libreoffice --draw"
+command 'Libreoffice Impress'     "libreoffice --impress"
+command 'Libreoffice Math'        "libreoffice --math"
+command 'Libreoffice Writer'      "libreoffice --writer"
+command '»settings«'              'true'
+command Alsamixer                 "urxvt -e alsamixer"
+command 'CWM Configuration File'  "urxvt -e vim /home/aaron/.config/cwm/.cwmrc"
+command 'Startup Settings'        "urxvt -e vim /home/aaron/.config/X11/xinitrc"
+command '»system«'                'true'
+command 'Force Close'             xkill
+command 'Lock Screen'             slock
+command 'Logout'                  "pkill -KILL -u aaron"
+command 'Reboot'                  "systemctl reboot"
+command 'Shut Down'
 
 ################################################
 # alternate window managers in the 'wm' menu   #
@@ -99,27 +114,35 @@ wm Xmonad xmonad
 ###########################################################################################
 # APPEARANCE AND MENU SETTINGS END HERE                                                   #
 ###########################################################################################
-# STANDARD CALM WINDOW MANAGER KEYBINDINGS START HERE                                     #
+# STANDARD KEYBINDINGS START HERE                                                         #
 ###########################################################################################
 # "unbind-key" can disable all cwm keybindings using "all" or any known specific defaults #
 ###########################################################################################
-# I would personally recommend an external hotkey daemon like sxhkd to handle all of your #
-# keyboard application shortcuts and to more easily avoid conflicting keybindings         #       
-###########################################################################################   
+# once you specify unbind-key to "all", all custom keybindings must be placed *below* it  #
+###########################################################################################
 
 unbind-key all
+bind-key 4-Return urxvt 
 
-######################################################################################
-# lock the screen, quit the session, or reload the .cwmrc file                       #
-######################################################################################
-# NOTICE: cwm hates these being above wherever the "unbind-key" option is specified  #
-######################################################################################
-# addendum, I don't use the "lock" functionality of cwm, but kept it anyways         #
-######################################################################################
+###########
+# browser #
+###########
 
-bind-key 4CS-l lock
-bind-key 4CS-q quit
-bind-key 4CS-r restart
+bind-key XF86HomePage librewolf
+
+##############
+# calculator #
+##############
+
+bind-key XF86Calculator "urxvt -e bc -q"
+
+################################################################
+# lock the screen, quit the session, or reload the .cwmrc file #
+################################################################
+
+bind-key 4CMS-l slock
+bind-key 4CMS-End quit
+bind-key 4CMS-r restart
 
 ####################
 # menu keybindings #
@@ -134,19 +157,33 @@ bind-key 4M-Menu  menu-exec-wm
 bind-key 4S-Menu  menu-ssh
 bind-key 4CS-Menu window-menu-label
 
-#####################
-# focal keybindings #
-#####################
+################
+# print screen # 
+################
+
+bind-key 4-Print "scrot /home/aaron/Pictures/Screenshots/%c-enos-arm.png"
+
+######################
+# volume keybindings #
+######################
+
+bind-key XF86AudioLowerVolume "pactl set-sink-volume @DEFAULT_SINK@ -5%"
+bind-key XF86AudioRaiseVolume "pactl set-sink-volume @DEFAULT_SINK@ +5%"
+bind-key XF86AudioMute        "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+
+############################
+# window focus keybindings #
+############################
 
 bind-key 4-Tab window-cycle
 bind-key 4S-Tab window-rcycle
-bind-key 4S-Delete window-close
+bind-key 4C-Delete window-close
 bind-key 4-minus window-hide
 bind-key 4M-minus window-lower
 bind-key 4-plus window-raise
 
 ############################################################################
-# STANDARD CALM WINDOW MANAGER KEYBINDINGS END HERE                        #
+# STANDARD KEYBINDINGS END HERE                                            #
 ############################################################################
 # ALL WINDOW GROUPING ASSIGNMENTS AND GROUP-RELATED KEYBINDINGS START HERE #
 ############################################################################
@@ -264,8 +301,8 @@ bind-key 4S-5 window-movetogroup-5
 # maximize windows                      #
 #########################################
 
-bind-key 4-f window-fullscreen
-bind-key 4-m window-maximize
+bind-key 4C-f window-fullscreen
+bind-key 4C-m window-maximize
 bind-key 4CM-h window-hmaximize
 bind-key 4CM-v window-vmaximize
 
@@ -343,8 +380,8 @@ bind-key 4C-KP_Prior window-snap-up-right
 htile 50
 vtile 50
 
-bind-key 4M-h window-htile
-bind-key 4M-v window-vtile
+bind-key 4C-h window-htile
+bind-key 4C-v window-vtile
 
 ########################################################################
 # MOVE/RESIZE KEYBINDINGS END HERE                                     #
@@ -360,9 +397,9 @@ unbind-mouse all
 # menus #
 #########
 
-bind-mouse M-1 menu-window
-bind-mouse M-2 menu-group
-bind-mouse M-3 menu-cmd
+bind-mouse 1 menu-window
+bind-mouse 2 menu-group
+bind-mouse 3 menu-cmd
 
 #########
 # focal #
@@ -413,40 +450,3 @@ bind-key M-KP_Right pointer-move-right
 ##########################################
 # POINTER EMULATION KEYBINDINGS END HERE #
 ##########################################
-# XDOTOOL KEYBINDINGS START HERE         #
-##########################################
-# emulate pointer movement using xdotool #
-##########################################
-
-bind-key 4-KP_Left  "xdotool mousemove_relative -- -15 0"
-bind-key 4-KP_Down  "xdotool mousemove_relative 0 15"
-bind-key 4-KP_Up    "xdotool mousemove_relative -- 0 -15"
-bind-key 4-KP_Right "xdotool mousemove_relative 15 0"
-
-##########################################
-# emulate clicks using xdotool           #
-##########################################
-
-bind-key 4-KP_Begin "xdotool click --clearmodifiers 1"
-bind-key 4-KP_End   "xdotool click --clearmodifiers 2"
-bind-key 4-KP_Next  "xdotool click --clearmodifiers 3"
-
-#####################################
-# emulate scrollwheel using xdotool #
-#####################################
-
-bind-key 4S-KP_Up   "xdotool click --clearmodifiers 4"
-bind-key 4S-KP_Down "xdotool click --clearmodifiers 5"
-
-########################################
-# emulate click-and-drag using xdotool #
-########################################
-
-bind-key 4M-KP_Begin "xdotool mousedown --clearmodifiers 1"
-bind-key 4C-KP_Begin "xdotool mouseup --clearmodifiers 1"
-
-################################
-# XDOTOOL KEYBINDINGS END HERE #
-################################
-# end of .cwmrc file           #
-################################
