@@ -25,6 +25,7 @@ export XDG_STATE_HOME=~/.local/state
 # X11 variables #
 #################
 
+export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
 export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
 export XRESOURCES="$XDG_CONFIG_HOME/X11/xresources"
 export XSERVERRC="$XDG_CONFIG_HOME/X11/xserverrc"
@@ -71,6 +72,12 @@ export TERMINAL="$(if [[ -n $DISPLAY ]]; then echo 'urxvt'; else echo 'xterm'; f
 ####################
 
 export LANG=en_US.UTF-8
+
+##################
+# wget variables #
+##################
+
+export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
 
 ####################
 # compilation flag #
