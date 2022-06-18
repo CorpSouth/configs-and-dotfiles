@@ -4,14 +4,8 @@
 # policy kit #
 ##############
 
-lxpolkit &
-
-##############################
-# start notification service #
-##############################
-
 sleep 2 &&
-dunst &
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 ###############
 # screen lock #
@@ -19,13 +13,6 @@ dunst &
 
 sleep 2 &&
 xsidle.sh slock &
-
-##################
-# hotkey service #
-##################
-
-sleep 2 &&
-sxhkd &
 
 ##############
 # xresources #
@@ -37,37 +24,23 @@ xrdb -merge $XRESOURCES &
 # set background #
 ##################
 
-hsetroot -solid "#232831" &
+xwallpaper --stretch $HOME/Pictures/Wallpapers/Nordic_Tribe.jpg &
 
 #################################
 # start the compositing manager #
 #################################
 
 sleep 2 &&
-picom &
-
-############################
-# start the system monitor #
-############################
-
-sleep 5 &&
-urxvt -e btop &
+ picom &
 
 ########################
 # autohide the xcursor #
 ########################
 
-unclutter --timeout 3 &
-
-#####################################
-# start a basic scratchpad terminal #
-#####################################
-
-sleep 5 &&
-urxvt -name scratchpad &
+xbanish -t 3 &
 
 ##################
 # start xsession #
 ##################
 
-exec i3 
+exec cwm -c $HOME/.config/cwm/.cwmrc 
