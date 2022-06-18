@@ -1,21 +1,3 @@
-################################################
-# custom prompt                                #
-################################################
-
-PROMPT="%B%F{green}%<<%2~ %f%b"
-
-#########
-# fetch #
-#########
-
-PF_INFO="editor kernel memory os pkgs shell uptime wm palette" /usr/bin/pfetch
-
-################################
-# emulate the following shells #
-################################
-
-#if [ -n "$ZSH_VERSION" ]; then emulate -L sh; fi
-
 #####################################
 # setoptions                        #
 #####################################
@@ -41,12 +23,20 @@ setopt NO_MENU_COMPLETE
 
 setopt CORRECT_ALL
 
+###########################################
+# disable beep ... who even has a buzzer? #
+###########################################
+
+setopt NOBEEP
+
 ############
 # globbing #
 ############
 
-setopt extended_glob
-setopt glob_dots
+setopt EXTENDED_GLOB
+setopt GLOB_COMPLETE
+setopt GLOB_DOTS
+setopt NUMERICGLOBSORT
 
 ###########
 # history #
@@ -97,10 +87,14 @@ setopt NOTIFY
 # prompting #
 #############
 
-setopt prompt_subst
+setopt PROMPT_SUBST 
 
-################
-# unsetoptions #
-################
+########
+# push #
+########
 
-unsetopt BEEP
+setopt AUTOPUSHD
+setopt PUSHDIGNOREDUPS
+setopt PUSHDMINUS
+setopt PUSHDSILENT
+setopt PUSHDTOHOME

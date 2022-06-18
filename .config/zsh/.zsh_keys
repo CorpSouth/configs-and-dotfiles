@@ -1,10 +1,10 @@
-#########################
-# ALL KEY BINDS GO HERE #
-#########################
-# enable vi mode        #
-#########################
+#################################
+# ALL KEY BINDS GO HERE         #
+#################################
+# clear the backbuffer          #
+#################################
 
-bindkey -v
+bindkey '^L' clear-screen-and-scrollback
 
 #################################
 # create a zkbd compatible hash #
@@ -25,10 +25,6 @@ key[PageUp]="${terminfo[kpp]}"
 key[PageDown]="${terminfo[knp]}"
 key[Shift-Tab]="${terminfo[kcbt]}"
 
-###############
-# keybindings #
-###############
-
 [[ -n "${key[Home]}"      ]] && bindkey -- "${key[Home]}"       beginning-of-line
 [[ -n "${key[End]}"       ]] && bindkey -- "${key[End]}"        end-of-line
 [[ -n "${key[Insert]}"    ]] && bindkey -- "${key[Insert]}"     overwrite-mode
@@ -42,15 +38,15 @@ key[Shift-Tab]="${terminfo[kcbt]}"
 [[ -n "${key[PageDown]}"  ]] && bindkey -- "${key[PageDown]}"   end-of-buffer-or-history
 [[ -n "${key[Shift-Tab]}" ]] && bindkey -- "${key[Shift-Tab]}"  reverse-menu-complete
 
-#######################################################################
-# Finally, make sure the terminal is in application mode, when zle is #
-# active. Only then are the values from $terminfo valid.              #
-#######################################################################
+############
+# exit zsh #
+############
 
-if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
-	autoload -Uz add-zle-hook-widget
-	function zle_application_mode_start { echoti smkx }
-	function zle_application_mode_stop { echoti rmkx }
-	add-zle-hook-widget -Uz zle-line-init zle_application_mode_start
-	add-zle-hook-widget -Uz zle-line-finish zle_application_mode_stop
-fi
+bindkey '^D' exit_zsh
+
+####################
+# line editor mode #
+####################
+
+bindkey -M vicmd "^e" edit-command-line
+bindkey '^e' edit-command-line

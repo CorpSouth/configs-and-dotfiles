@@ -1,0 +1,5 @@
+#########
+# fetch #
+#########
+
+PF_INFO="editor kernel memory pkgs shell uptime wm palette" /usr/bin/pfetch
