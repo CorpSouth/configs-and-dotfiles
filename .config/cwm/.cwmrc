@@ -63,33 +63,37 @@ color selfont        "#ECEFF4"
 # NOTICE: cwm hates these being below wherever the "unbind-key" option is specified #
 #####################################################################################
 
-command '»common«'                'true'
-command Browser                   librewolf
-command Calculator                "urxvt -e bc -q"
-command Editor                    "urxvt -e vim"
-command 'Task Manager'            "urxvt -e btop"
-command 'Terminal Emulator'       urxvt
-command '»games«'                 'true'
-command 'Pacman4Console'          "urxvt -e pacman4console"
-command 'Rogue 5.4'               "urxvt -e rogue"
-command '»productivity«'          'true'
-command 'Libreoffice Startcenter' libreoffice
-command 'Libreoffice Base'        "libreoffice --base"
-command 'Libreoffice Calc'        "libreoffice --calc"
-command 'Libreoffice Draw'        "libreoffice --draw"
-command 'Libreoffice Impress'     "libreoffice --impress"
-command 'Libreoffice Math'        "libreoffice --math"
-command 'Libreoffice Writer'      "libreoffice --writer"
-command '»settings«'              'true'
-command Alsamixer                 "urxvt -e alsamixer"
-command 'CWM Configuration File'  "urxvt -e vim /home/aaron/.config/cwm/.cwmrc"
-command 'Startup Settings'        "urxvt -e vim /home/aaron/.config/X11/xinitrc"
-command '»system«'                'true'
-command 'Force Close'             xkill
-command 'Lock Screen'             slock
-command 'Logout'                  "pkill -KILL -u aaron"
-command 'Reboot'                  "systemctl reboot"
-command 'Shut Down'
+command '»common«'            'true'
+command Browser               librewolf
+command Calculator            'urxvt -e bc -q'
+command Editor                'urxvt -e vim'
+command 'Task Manager'        'urxvt -e btop'
+command '»games«'             'true'
+command 'MyMan'               'urxvt -e myman'
+command 'Rogue 5.4'           'urxvt -e rogue'
+command '»productivity«'      'true'
+command 'LibreOffice'         libreoffice
+command 'LibreOffice Base'    'libreoffice --base'
+command 'LibreOffice Calc'    'libreoffice --calc'
+command 'LibreOffice Draw'    'libreoffice --draw'
+command 'LibreOffice Impress' 'libreoffice --impress'
+command 'LibreOffice Math'    'libreoffice --math'
+command 'Libreoffice Writer'  'libreoffice --writer'
+command '»settings«'          'true'
+command 'Autostart'           'urxvt -e vim /home/aaron/.config/X11/xinitrc'
+command 'Calm Window Manager' 'urxvt -e vim /home/aaron/.config/cwm/.cwmrc'
+command 'Change Xcursor Theme' 'urxvt -e vim /home/aaron/.local/share/icons/default/index.theme' 
+command 'GTK2 Settings'        'urxvt -e vim /home/aaron/.config/gtk-2.0/gtkrc'
+command 'GTK3 Settings'        'urxvt -e vim /home/aaron/.config/gtk-3.0/settings.ini'
+command 'Volume Controls'      'urxvt -e alsamixer'
+command 'Xrdb Reload'          'xrdb -merge /home/aaron/.config/X11/xresources'
+command 'Xresources'           'urxvt -e vim /home/aaron/.config/X11/xresources'
+command '»system«'             'true'
+command 'Force Close'          xkill
+command 'Lock Screen'          slock
+command 'Logout'               'pkill -KILL -u aaron'
+command 'Reboot'               'systemctl reboot'
+command 'Shut Down'            'systemctl poweroff'
 
 ################################################
 # alternate window managers in the 'wm' menu   #
@@ -140,9 +144,9 @@ bind-key XF86Calculator "urxvt -e bc -q"
 # lock the screen, quit the session, or reload the .cwmrc file #
 ################################################################
 
-bind-key 4CMS-l slock
-bind-key 4CMS-End quit
-bind-key 4CMS-r restart
+bind-key 4CS-Pause slock
+bind-key 4CS-End   quit
+bind-key 4CS-F5    restart
 
 ####################
 # menu keybindings #
@@ -197,17 +201,7 @@ bind-key 4-plus window-raise
 sticky yes
 
 autogroup 1 librewolf 
-autogroup 1 thunderbird
-autogroup 2 TelegramDesktop
-autogroup 2 WebCord
-autogroup 3 mpv 
-autogroup 3 Nsxiv
-autogroup 4 Imager
-autogroup 4 Lxappearance
-autogroup 4 Pcmanfm
-autogroup 4 XClock
-autogroup 5 libreoffice-startcenter
-autogroup 5 XCalc
+autogroup 6 libreoffice-startcenter
 
 #######################################
 # ignore rules for focus and grouping #
@@ -240,6 +234,7 @@ bind-key 4C-2 group-close-2
 bind-key 4C-3 group-close-3
 bind-key 4C-4 group-close-4
 bind-key 4C-5 group-close-5
+bind-key 4C-6 group-close-6
 
 ################
 # cycle groups #
@@ -270,6 +265,7 @@ bind-key 4-2 group-only-2
 bind-key 4-3 group-only-3 
 bind-key 4-4 group-only-4 
 bind-key 4-5 group-only-5 
+bind-key 4-6 group-only-6 
 
 ###########################
 # group multi-view toggle #
@@ -280,6 +276,7 @@ bind-key 4M-2 group-toggle-2
 bind-key 4M-3 group-toggle-3
 bind-key 4M-4 group-toggle-4
 bind-key 4M-5 group-toggle-5
+bind-key 4M-6 group-toggle-6
 
 bind-key 4S-Home group-toggle-all
 
@@ -292,6 +289,7 @@ bind-key 4S-2 window-movetogroup-2
 bind-key 4S-3 window-movetogroup-3
 bind-key 4S-4 window-movetogroup-4
 bind-key 4S-5 window-movetogroup-5
+bind-key 4S-6 window-movetogroup-6
 
 #########################################
 # END OF GROUP ASSIGNMENTS AND KEYBINDS #
