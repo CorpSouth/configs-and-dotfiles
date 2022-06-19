@@ -1,17 +1,9 @@
 #!/bin/sh
 
-##############
-# policy kit #
-##############
-
-sleep 2 &&
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-
 ###############
 # screen lock #
 ###############
 
-sleep 2 &&
 xsidle.sh slock &
 
 ##############
@@ -30,8 +22,7 @@ xwallpaper --stretch $HOME/Pictures/Wallpapers/Nordic_Tribe.jpg &
 # start the compositing manager #
 #################################
 
-sleep 2 &&
- picom &
+picom &
 
 ########################
 # autohide the xcursor #
