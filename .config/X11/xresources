@@ -1,54 +1,42 @@
-! Nord color palette 
-#define col0  #2E3440
-#define col1  #3B4252
-#define col2  #434C5E
-#define col3  #4C566A
-#define col4  #D8DEE9
-#define col5  #E5E9F0
-#define col6  #ECEFF4
-#define col7  #8FBCBB
-#define col8  #88C0D0
-#define col9  #81A1C1
-#define col10 #5E81AC
-#define col11 #BF616A
-#define col12 #D08770
-#define col13 #EBCB8B
-#define col14 #A3BE8C
-#define col15 #B48EAD
+! Breeze color palette 
+#define col0  #31363B
+#define col1  #ED1515
+#define col2  #11D116
+#define col3  #F67400
+#define col4  #1D99F3
+#define col5  #9B59B6
+#define col6  #1ABC9C
+#define col7  #EFF0F1
+#define col8  #7F8C8D
+#define col9  #C0392B
+#define col10 #1CDC9A
+#define col11 #FDBC4B
+#define col12 #3DAEE9
+#define col13 #8E44AD
+#define col14 #16A085
+#define col15 #FCFCFC
 
 ! colorization
-*.foreground:  col4
+*.foreground:  col7
 *.background:  col0
-*.cursorColor: col4
-!*fading:       35
-!*fadeColor:    col3
-*.color0:      col1
-*.color1:      col11
-*.color2:      col14
-*.color3:      col13
-*.color4:      col9
-*.color5:      col15
-*.color6:      col8
-*.color7:      col5
-*.color8:      col3
-*.color9:      col11
-*.color10:     col14
-*.color11:     col13
-*.color12:     col9
-*.color13:     col15
-*.color14:     col7
-*.color15:     col6
-
-! Xclock 
-XClock*analog:      true 
-XClock*Clock.face:  Source Code Pro 
-XClock*foreground:  col7
-XClock*background:  col0
-XClock*majorColor:  col8
-XClock*minorColor:  col8
-XClock*hourColor:   col8
-XClock*minuteColor: col8
-XClock*secondColor: col8
+*.cursorColor: col7
+*.color0:      col0
+*.color1:      col1
+*.color2:      col2
+*.color3:      col3
+*.color4:      col4
+*.color5:      col5
+*.color6:      col6
+*.color7:      col7
+*.color8:      col8
+*.color9:      col9
+*.color10:     col10
+*.color11:     col11
+*.color12:     col12
+*.color13:     col13
+*.color14:     col14
+*.color15:     col15
+*.colorBD:     col15
 
 ! Xft
 Xft*antialias: true 
