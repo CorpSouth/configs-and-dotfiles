@@ -1,8 +1,6 @@
 # Welcome to my Repository! 
 
-![Fri Jun 17 22:32:10 2022-enos-arm](https://user-images.githubusercontent.com/96737550/174421843-3160306e-97fa-4513-97ec-cc7c7c9ce566.png)
-
-_Pictured above: Calm Window Manager running a fork of Rxvt-Unicode (urxvt) and pfetch, with a nordic tribe wallpaper because I'm a nord nerd_
+![Wed Jun 22 13:02:55 2022-enos-arm](https://user-images.githubusercontent.com/96737550/175107175-3ea09974-ca77-4fc8-bcf6-08a68220a185.png)
 
 # About: My Calm Window Manager (CWM) Configuration
 
