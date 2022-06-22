@@ -37,23 +37,23 @@
 # menu font #
 #############
 
-fontname "SauceCodePro Nerd Font"
+fontname "Ubuntu Mono"
 
 ##########################
 # borders and coloration #
 ##########################
 
-borderwidth 3
+borderwidth 1
 
-color activeborder   "#8FBCBB"
-color inactiveborder "#5E81AC"
-color urgencyborder  "#EBCB8B" 
-color groupborder    "#A3BE8C"
-color ungroupborder  "#BF616A" 
-color menubg         "#D8DEE9" 
-color menufg         "#434C5E"
-color font           "#2E3440" 
-color selfont        "#ECEFF4" 
+color activeborder   "#EEEEEC"
+color inactiveborder "#555753"
+color urgencyborder  "#FCE94F" 
+color groupborder    "#8AE234"
+color ungroupborder  "#EF2929" 
+color menubg         "#2E3436" 
+color menufg         "#D3D7CF"
+color font           "#D3D7CF" 
+color selfont        "#2E3436" 
 
 #####################################################################################
 # menu contents for programs, system commands, and to point to scripts              #
@@ -63,30 +63,25 @@ color selfont        "#ECEFF4"
 # NOTICE: cwm hates these being below wherever the "unbind-key" option is specified #
 #####################################################################################
 
-command '»common«'            'true'
-command Browser               librewolf
-command Calculator            'urxvt -e bc -q'
-command Editor                'urxvt -e vim'
-command 'Task Manager'        'urxvt -e btop'
-command '»games«'             'true'
-command 'MyMan'               'urxvt -e myman'
-command 'Rogue 5.4'           'urxvt -e rogue'
-command '»productivity«'      'true'
-command 'LibreOffice'         libreoffice
-command 'LibreOffice Base'    'libreoffice --base'
-command 'LibreOffice Calc'    'libreoffice --calc'
-command 'LibreOffice Draw'    'libreoffice --draw'
-command 'LibreOffice Impress' 'libreoffice --impress'
-command 'LibreOffice Math'    'libreoffice --math'
-command 'Libreoffice Writer'  'libreoffice --writer'
-command '»settings«'          'true'
-command 'Autostart'           'urxvt -e vim /home/aaron/.config/X11/xinitrc'
-command 'Calm Window Manager' 'urxvt -e vim /home/aaron/.config/cwm/.cwmrc'
+command '»common«'             'true'
+command Browser                librewolf
+command Editor                 'urxvt -e vim'
+command 'Task Manager'         'urxvt -e btop'
+command '»games«'              'true'
+command 'Rogue 5.4'            'urxvt -e rogue'
+command 'Smines'               'urxvt -e smines'
+command '»productivity«'       'true'
+command 'Calcurse Calendar'    'urxvt -e calcurse'
+command 'GNU BC Calculator'    'urxvt -e bc -q'
+command 'LibreOffice'          libreoffice
+command '»settings«'           'true'
+command 'Autostart'            'urxvt -e vim /home/aaron/.config/X11/xinitrc'
+command 'Calm Window Manager'  'urxvt -e vim /home/aaron/.config/cwm/.cwmrc'
 command 'Change Xcursor Theme' 'urxvt -e vim /home/aaron/.local/share/icons/default/index.theme' 
-command 'GTK2 Settings'        'urxvt -e vim /home/aaron/.config/gtk-2.0/gtkrc'
 command 'GTK3 Settings'        'urxvt -e vim /home/aaron/.config/gtk-3.0/settings.ini'
+command 'Picom'                'urxvt -e vim /home/aaron/.config/picom/picom.conf'
 command 'Volume Controls'      'urxvt -e alsamixer'
-command 'Xrdb Reload'          'xrdb -merge /home/aaron/.config/X11/xresources'
+command 'Xrdb Reload'          'urxvt -merge /home/aaron/.config/X11/xresources'
 command 'Xresources'           'urxvt -e vim /home/aaron/.config/X11/xresources'
 command '»system«'             'true'
 command 'Force Close'          xkill
@@ -126,7 +121,7 @@ wm Xmonad xmonad
 ###########################################################################################
 
 unbind-key all
-bind-key 4-Return urxvt 
+bind-key 4-Return urxvt
 
 ###########
 # browser #
