@@ -1,4 +1,4 @@
-! Breeze color palette 
+! Tango color palette 
 #define col0  #31363B
 #define col1  #ED1515
 #define col2  #11D116
@@ -46,10 +46,10 @@ Xft*lcdfilter: lcddefault
 Xft*rgba:      rgb
 
 ! URxvt
-URxvt*font:              xft:Hack Nerd Font:size=12
-URxvt*boldfont:          xft:Hack Nerd Font:size=12:style=bold
-URxvt*italicfont:        xft:Hack Nerd Font:size=12:style=italic
-URxvt*bolditalicfont:    xft:Hack Nerd Font:size=12:style=bolditalic
+URxvt*font:              xft:Ubuntu Mono:size=12
+URxvt*boldfont:          xft:Ubuntu Mono:size=12:style=bold
+URxvt*italicfont:        xft:Ubuntu Mono:size=12:style=italic
+URxvt*bolditalicfont:    xft:Ubuntu Mono:size=12:style=bolditalic
 URxvt*cursorBlink:       true
 URxvt*cursorUnderline:   true
 URxvt.iso14755:          false
