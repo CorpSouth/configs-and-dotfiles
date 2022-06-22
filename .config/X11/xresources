@@ -1,20 +1,20 @@
 ! Tango color palette 
-#define col0  #31363B
-#define col1  #ED1515
-#define col2  #11D116
-#define col3  #F67400
-#define col4  #1D99F3
-#define col5  #9B59B6
-#define col6  #1ABC9C
-#define col7  #EFF0F1
-#define col8  #7F8C8D
-#define col9  #C0392B
-#define col10 #1CDC9A
-#define col11 #FDBC4B
-#define col12 #3DAEE9
-#define col13 #8E44AD
-#define col14 #16A085
-#define col15 #FCFCFC
+#define col0  #2E3436
+#define col1  #CC0000
+#define col2  #4E9A06
+#define col3  #C4A000
+#define col4  #3465A4
+#define col5  #75507B
+#define col6  #06989A
+#define col7  #D3D7CF
+#define col8  #555753
+#define col9  #EF2929
+#define col10 #8AE234
+#define col11 #FCE94F
+#define col12 #729FCF
+#define col13 #AD7FA8
+#define col14 #34E2E2
+#define col15 #EEEEEC
 
 ! colorization
 *.foreground:  col7
