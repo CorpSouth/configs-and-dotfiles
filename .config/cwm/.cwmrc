@@ -71,9 +71,10 @@ command '»games«'         'true'
 command 'Rogue 5.4'       'urxvt -e rogue'
 command 'Smines'          'urxvt -e smines'
 command '»productivity«'  'true'
-command 'BC               'urxvt -e bc -q'
 command 'Calcurse'        'urxvt -e calcurse'
 command 'LibreOffice'     libreoffice
+command 'Xcalc'           xcalc
+command 'Xclock'          xclock
 command '»settings«'      'true'
 command 'Autostart'       'urxvt -e vim /home/aaron/.config/X11/xinitrc'
 command 'Cwmrc'           'urxvt -e vim /home/aaron/.config/cwm/.cwmrc'
