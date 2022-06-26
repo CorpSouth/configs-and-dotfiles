@@ -31,13 +31,13 @@
 # "gap top bottom left right"               #
 #############################################
 
-#gap 5 5 5 5
+gap 5 5 5 5
 
 #############
 # menu font #
 #############
 
-fontname "Ubuntu Mono"
+fontname "Hack"
 
 ##########################
 # borders and coloration #
@@ -45,15 +45,15 @@ fontname "Ubuntu Mono"
 
 borderwidth 1
 
-color activeborder   "#EEEEEC"
-color inactiveborder "#555753"
-color urgencyborder  "#FCE94F" 
-color groupborder    "#8AE234"
-color ungroupborder  "#EF2929" 
-color menubg         "#2E3436" 
-color menufg         "#D3D7CF"
-color font           "#D3D7CF" 
-color selfont        "#2E3436" 
+color activeborder   "#3DAEE9"
+color inactiveborder "#BDC3C7"
+color urgencyborder  "#F67400" 
+color groupborder    "#11D116"
+color ungroupborder  "#ED1515" 
+color menubg         "#31363B" 
+color menufg         "#3DAEE9"
+color font           "#EFF0F1" 
+color selfont        "#FCFCFC" 
 
 #####################################################################################
 # menu contents for programs, system commands, and to point to scripts              #
@@ -63,32 +63,33 @@ color selfont        "#2E3436"
 # NOTICE: cwm hates these being below wherever the "unbind-key" option is specified #
 #####################################################################################
 
-command '»common«'             'true'
-command Browser                librewolf
-command Editor                 'urxvt -e vim'
-command 'Task Manager'         'urxvt -e btop'
-command '»games«'              'true'
-command 'Rogue 5.4'            'urxvt -e rogue'
-command 'Smines'               'urxvt -e smines'
-command '»productivity«'       'true'
-command 'Calcurse Calendar'    'urxvt -e calcurse'
-command 'GNU BC Calculator'    'urxvt -e bc -q'
-command 'LibreOffice'          libreoffice
-command '»settings«'           'true'
-command 'Autostart'            'urxvt -e vim /home/aaron/.config/X11/xinitrc'
-command 'Calm Window Manager'  'urxvt -e vim /home/aaron/.config/cwm/.cwmrc'
-command 'Change Xcursor Theme' 'urxvt -e vim /home/aaron/.local/share/icons/default/index.theme' 
-command 'GTK3 Settings'        'urxvt -e vim /home/aaron/.config/gtk-3.0/settings.ini'
-command 'Picom'                'urxvt -e vim /home/aaron/.config/picom/picom.conf'
-command 'Volume Controls'      'urxvt -e alsamixer'
-command 'Xrdb Reload'          'urxvt -merge /home/aaron/.config/X11/xresources'
-command 'Xresources'           'urxvt -e vim /home/aaron/.config/X11/xresources'
-command '»system«'             'true'
-command 'Force Close'          xkill
-command 'Lock Screen'          slock
-command 'Logout'               'pkill -KILL -u aaron'
-command 'Reboot'               'systemctl reboot'
-command 'Shut Down'            'systemctl poweroff'
+command '»common«'        'true'
+command Browser           librewolf
+command Editor            'urxvt -e vim'
+command 'Task Manager'    'urxvt -e btop'
+command '»games«'         'true'
+command 'Rogue 5.4'       'urxvt -e rogue'
+command 'Smines'          'urxvt -e smines'
+command '»productivity«'  'true'
+command 'BC               'urxvt -e bc -q'
+command 'Calcurse'        'urxvt -e calcurse'
+command 'LibreOffice'     libreoffice
+command '»settings«'      'true'
+command 'Autostart'       'urxvt -e vim /home/aaron/.config/X11/xinitrc'
+command 'Cwmrc'           'urxvt -e vim /home/aaron/.config/cwm/.cwmrc'
+command 'GTK3 Settings'   'urxvt -e vim /home/aaron/.config/gtk-3.0/settings.ini'
+command 'Picom.conf'      'urxvt -e vim /home/aaron/.config/picom/picom.conf'
+command 'Vimrc'           'urxvt -e vim /home/aaron/.config/vim/vimrc'
+command 'Volume Controls' 'urxvt -e alsamixer'
+command 'Xcursor Theme'   'urxvt -e vim /home/aaron/.local/share/icons/default/index.theme'
+command 'Xrdb Merge'      'xrdb -merge /home/aaron/.config/X11/xresources'
+command 'Xresources'      'urxvt -e vim /home/aaron/.config/X11/xresources'
+command '»system«'        'true'
+command 'Force Close'     xkill
+command 'Lock Screen'     slock
+command 'Logout'          'pkill -KILL -u aaron'
+command 'Reboot'          'systemctl reboot'
+command 'Shut Down'       'systemctl poweroff'
 
 ################################################
 # alternate window managers in the 'wm' menu   #
