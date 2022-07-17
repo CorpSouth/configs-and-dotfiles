@@ -1,25 +1,44 @@
-! Tango color palette 
-#define col0  #2E3436
-#define col1  #CC0000
-#define col2  #4E9A06
-#define col3  #C4A000
-#define col4  #3465A4
-#define col5  #75507B
-#define col6  #06989A
-#define col7  #D3D7CF
-#define col8  #555753
-#define col9  #EF2929
-#define col10 #8AE234
-#define col11 #FCE94F
-#define col12 #729FCF
-#define col13 #AD7FA8
-#define col14 #34E2E2
-#define col15 #EEEEEC
+! Sixteen-Color Definitions Start Here
+#define BG #1B1918
+#define FG #F1EFEE
+#define CC #A8A19F
 
-! colorization
-*.foreground:  col7
-*.background:  col0
-*.cursorColor: col7
+! Black
+#define col0  #1B1918
+#define col8  #766E6B
+
+! Red
+#define col1  #F22C40
+#define col9  #F22C40
+
+! Green
+#define col2  #7B9726
+#define col10 #7B9726
+
+! Yellow
+#define col3  #C38418
+#define col11 #C38418
+
+! Blue
+#define col4  #407EE7
+#define col12 #407EE7
+
+! Magenta
+#define col5  #6666EA
+#define col13 #6666EA
+
+! Cyan
+#define col6  #3D97B8
+#define col14 #3D97B8
+
+! White
+#define col7  #A8A19F
+#define col15 #F1EFEE
+
+! Applying Colors
+*.background:  BG
+*.foreground:  FG
+*.cursorColor: CC
 *.color0:      col0
 *.color1:      col1
 *.color2:      col2
@@ -36,27 +55,171 @@
 *.color13:     col13
 *.color14:     col14
 *.color15:     col15
-*.colorBD:     col15
 
-! Xft
-Xft*antialias: true 
-Xft*hinting:   true 
-Xft*hintstyle: hintnone
-Xft*lcdfilter: lcddefault
-Xft*rgba:      rgb
+! XCalc
+xcalc*geometry:                        300x450+1291+5
+xcalc.ti.background:                   col0
+xcalc.ti.bevel.background:             col7
+xcalc.ti.bevel.screen.borderColor:     col7
+xcalc.ti.bevel.screen.borderWidth:     4 
+xcalc.ti.bevel.screen.background:      col2
+xcalc.ti.bevel.screen.DEC.background:  col2
+xcalc.ti.bevel.screen.DEC.foreground:  BG
+xcalc.ti.bevel.screen.DEG.background:  col2
+xcalc.ti.bevel.screen.DEG.foreground:  BG
+xcalc.ti.bevel.screen.GRAD.background: col2
+xcalc.ti.bevel.screen.GRAD.foreground: BG
+xcalc.ti.bevel.screen.RAD.background:  col2
+xcalc.ti.bevel.screen.RAD.foreground:  col0
+xcalc.ti.bevel.screen.INV.background:  col2
+xcalc.ti.bevel.screen.INV.foreground:  col1
+xcalc.ti.bevel.screen.LCD.background:  col2
+xcalc.ti.bevel.screen.LCD.foreground:  BG
+xcalc.ti.bevel.screen.LCD.shadowWidth: 0
+xcalc.ti.bevel.screen.M.background:    col2
+xcalc.ti.bevel.screen.M.foreground:    BG
+xcalc.ti.bevel.screen.P.background:    col2 
+xcalc.ti.bevel.screen.P.foreground:    BG
+xcalc.ti.bevel.defaultDistance:        0
+xcalc.ti.bevel.screen.vertDistance:    10
+xcalc.ti.bevel.screen.horizDistance:   10 
+xcalc.ti.button1.background:           CC
+xcalc.ti.button1.foreground:           BG
+xcalc.ti.button2.background:           CC
+xcalc.ti.button2.foreground:           BG
+xcalc.ti.button3.background:           CC
+xcalc.ti.button3.foreground:           BG
+xcalc.ti.button4.background:           CC
+xcalc.ti.button4.foreground:           BG
+xcalc.ti.button5.background:           col3
+xcalc.ti.button5.foreground:           BG
+xcalc.ti.button6.background:           CC
+xcalc.ti.button6.foreground:           BG
+xcalc.ti.button7.background:           CC
+xcalc.ti.button7.foreground:           BG
+xcalc.ti.button8.background:           CC
+xcalc.ti.button8.foreground:           BG
+xcalc.ti.button9.background:           CC
+xcalc.ti.button9.foreground:           BG
+xcalc.ti.button10.background:          CC
+xcalc.ti.button10.foreground:          BG
+xcalc.ti.button11.background:          CC
+xcalc.ti.button11.foreground:          BG
+xcalc.ti.button12.background:          CC
+xcalc.ti.button12.foreground:          BG
+xcalc.ti.button13.background:          CC
+xcalc.ti.button13.foreground:          BG
+xcalc.ti.button14.background:          CC
+xcalc.ti.button14.foreground:          BG
+xcalc.ti.button15.background:          CC
+xcalc.ti.button15.foreground:          BG
+xcalc.ti.button16.background:          CC
+xcalc.ti.button16.foreground:          BG
+xcalc.ti.button17.background:          CC
+xcalc.ti.button17.foreground:          BG
+xcalc.ti.button18.background:          col5
+xcalc.ti.button18.foreground:          BG
+xcalc.ti.button19.background:          col5
+xcalc.ti.button19.foreground:          BG
+xcalc.ti.button20.background:          col1
+xcalc.ti.button20.foreground:          BG
+xcalc.ti.button21.background:          CC
+xcalc.ti.button21.foreground:          BG
+xcalc.ti.button22.background:          col4
+xcalc.ti.button22.foreground:          BG
+xcalc.ti.button23.background:          col4
+xcalc.ti.button23.foreground:          BG
+xcalc.ti.button24.background:          col4
+xcalc.ti.button24.foreground:          BG
+xcalc.ti.button25.background:          col1
+xcalc.ti.button25.foreground:          BG
+xcalc.ti.button26.background:          CC
+xcalc.ti.button26.foreground:          BG
+xcalc.ti.button27.background:          col4
+xcalc.ti.button27.foreground:          BG
+xcalc.ti.button28.background:          col4
+xcalc.ti.button28.foreground:          BG
+xcalc.ti.button29.background:          col4
+xcalc.ti.button29.foreground:          BG
+xcalc.ti.button30.background:          col1
+xcalc.ti.button30.foreground:          BG
+xcalc.ti.button31.background:          CC
+xcalc.ti.button31.foreground:          BG
+xcalc.ti.button32.background:          col4
+xcalc.ti.button32.foreground:          BG
+xcalc.ti.button33.background:          col4
+xcalc.ti.button33.foreground:          BG
+xcalc.ti.button34.background:          col4
+xcalc.ti.button34.foreground:          BG
+xcalc.ti.button35.background:          col1
+xcalc.ti.button35.foreground:          BG
+xcalc.ti.button36.background:          CC
+xcalc.ti.button36.foreground:          BG
+xcalc.ti.button37.background:          col4
+xcalc.ti.button37.foreground:          BG
+xcalc.ti.button38.background:          col4
+xcalc.ti.button38.foreground:          BG
+xcalc.ti.button39.background:          col4
+xcalc.ti.button39.foreground:          BG
+xcalc.ti.button40.background:          col1
+xcalc.ti.button40.foreground:          BG
+xcalc.ti.button41.background:          CC
+xcalc.ti.button41.foreground:          BG
+xcalc.ti.button42.background:          CC
+xcalc.ti.button42.foreground:          BG
+xcalc.ti.button43.background:          CC
+xcalc.ti.button43.foreground:          BG
+xcalc.ti.button44.background:          CC
+xcalc.ti.button44.foreground:          BG
+xcalc.ti.button45.background:          CC
+xcalc.ti.button45.foreground:          BG
+xcalc.ti.button46.background:          CC
+xcalc.ti.button46.foreground:          BG
+xcalc.ti.button47.background:          CC
+xcalc.ti.button47.foreground:          BG
+xcalc.ti.button48.background:          CC
+xcalc.ti.button48.foreground:          BG
+xcalc.ti.button49.background:          CC
+xcalc.ti.button49.foreground:          BG
+xcalc.ti.button50.background:          CC
+xcalc.ti.button50.foreground:          BG
+xcalc.ti.button51.background:          CC
+xcalc.ti.button51.foreground:          BG
+xcalc.ti.button52.background:          CC
+xcalc.ti.button52.foreground:          BG
+xcalc.ti.button53.background:          CC
+xcalc.ti.button53.foreground:          BG
+xcalc.ti.button54.background:          CC
+xcalc.ti.button54.foreground:          BG
+xcalc.ti.button55.background:          CC
+xcalc.ti.button55.foreground:          BG
+XCalc*Cursor:                          hand2
+XCalc*ShapeStyle:                      rectangle
+
+! XClock
+XClock*geometry:    350x350+5+5
+XClock*foreground:  FG
+XClock*background:  BG
+XClock*majorColor:  col6
+XClock*minorColor:  col6
+XClock*hourColor:   col8
+XClock*minuteColor: col8
+XClock*secondColor: col1
+XClock*update:      1
 
 ! URxvt
-URxvt*font:              xft:Ubuntu Mono:size=12
-URxvt*boldfont:          xft:Ubuntu Mono:size=12:style=bold
-URxvt*italicfont:        xft:Ubuntu Mono:size=12:style=italic
-URxvt*bolditalicfont:    xft:Ubuntu Mono:size=12:style=bolditalic
+URxvt*font:              xft:Noto Sans Mono:size=14
+URxvt*boldfont:          xft:Noto Sans Mono:size=14:style=bold
+URxvt*italicfont:        xft:Noto Sans Mono:size=14:style=italic
+URxvt*bolditalicfont:    xft:Noto Sans Mono:size=14:style=bolditalic
 URxvt*cursorBlink:       true
 URxvt*cursorUnderline:   true
-URxvt.iso14755:          false
-URxvt.iso14755_52:       false
-!URxvt*letterSpace:       1
-!URxvt*lineSpace:         1
-URxvt*scrollWithBuffer:   true 
+URxvt.depth:             24
+URxvt.geometry:          90x24
+URxvt.letterSpace:       0
+URxvt.lineSpace:         0
+URxvt.saveline:          2048
+URxvt*scrollWithBuffer:  false 
 URxvt*scrollTtyOutput:   false
 URxvt*scrollTtyKeypress: true
 URxvt*scrollBar:         false
