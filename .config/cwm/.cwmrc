@@ -37,60 +37,49 @@ gap 5 5 5 5
 # menu font #
 #############
 
-fontname "Hack"
+fontname "Noto Sans Mono:size=14" 
 
-##########################
-# borders and coloration #
-##########################
+##########################################################
+# borders and coloration                                 #
+##########################################################
+# default border with is 1                               #
+##########################################################
+# for colors, both generic names and hex code is allowed #
+##########################################################
 
-borderwidth 1
+borderwidth 2
 
-color activeborder   "#3DAEE9"
-color inactiveborder "#BDC3C7"
-color urgencyborder  "#F67400" 
-color groupborder    "#11D116"
-color ungroupborder  "#ED1515" 
-color menubg         "#31363B" 
-color menufg         "#3DAEE9"
-color font           "#EFF0F1" 
-color selfont        "#FCFCFC" 
+color activeborder   "#669900" 
+color inactiveborder "#282828" 
+color urgencyborder  "#FF9900" 
+color groupborder    "#39E4A3"
+color ungroupborder  "#CC0000"
+color menubg         "#3F3E3E"
+color menufg         "#669900"
+color font           "#EDF0F5"
+color selfont        "#D1FF96"
 
-#####################################################################################
-# menu contents for programs, system commands, and to point to scripts              #
-#####################################################################################
-# whenever a command specifies your $PATH, define the absolute path instead         #
-#####################################################################################
-# NOTICE: cwm hates these being below wherever the "unbind-key" option is specified #
-#####################################################################################
+####################################################################################
+# menu contents for programs, system commands, and to point to scripts             #
+####################################################################################
+# whenever a command specifies your $PATH, define the absolute path instead        #
+####################################################################################
+# all menu options are to be placed *above* wherever the 'unbind-key' is specified #
+####################################################################################
 
-command '»common«'        'true'
-command Browser           librewolf
-command Editor            'urxvt -e vim'
-command 'Task Manager'    'urxvt -e btop'
-command '»games«'         'true'
-command 'Rogue 5.4'       'urxvt -e rogue'
-command 'Smines'          'urxvt -e smines'
-command '»productivity«'  'true'
-command 'Calcurse'        'urxvt -e calcurse'
-command 'LibreOffice'     libreoffice
-command 'Xcalc'           xcalc
-command 'Xclock'          xclock
-command '»settings«'      'true'
-command 'Autostart'       'urxvt -e vim /home/aaron/.config/X11/xinitrc'
-command 'Cwmrc'           'urxvt -e vim /home/aaron/.config/cwm/.cwmrc'
-command 'GTK3 Settings'   'urxvt -e vim /home/aaron/.config/gtk-3.0/settings.ini'
-command 'Picom.conf'      'urxvt -e vim /home/aaron/.config/picom/picom.conf'
-command 'Vimrc'           'urxvt -e vim /home/aaron/.config/vim/vimrc'
-command 'Volume Controls' 'urxvt -e alsamixer'
-command 'Xcursor Theme'   'urxvt -e vim /home/aaron/.local/share/icons/default/index.theme'
-command 'Xrdb Merge'      'xrdb -merge /home/aaron/.config/X11/xresources'
-command 'Xresources'      'urxvt -e vim /home/aaron/.config/X11/xresources'
-command '»system«'        'true'
-command 'Force Close'     xkill
-command 'Lock Screen'     slock
-command 'Logout'          'pkill -KILL -u aaron'
-command 'Reboot'          'systemctl reboot'
-command 'Shut Down'       'systemctl poweroff'
+command Browser                librewolf
+command Calculator             xcalc
+command Clock                  xclock 
+command Editor                 'urxvt -T Vim -e vim'
+command Mail                   thunderbird
+command '»system«'            'true'
+command 'Compositor Toggle'    picom_toggle
+command 'Notifications Toggle' dunst_toggle 
+command 'Force Close'          xkill
+command 'Lock Screen'          slock
+command 'Logout'               'pkill -KILL -u aaron'
+command 'Reboot'               'systemctl reboot'
+command 'Shut Down'            'systemctl poweroff'
 
 ################################################
 # alternate window managers in the 'wm' menu   #
@@ -119,11 +108,11 @@ wm Xmonad xmonad
 ###########################################################################################
 # "unbind-key" can disable all cwm keybindings using "all" or any known specific defaults #
 ###########################################################################################
-# once you specify unbind-key to "all", all custom keybindings must be placed *below* it  #
+# all custom keybindings are to be placed *after* wherever 'unbind-key' is specified      #
 ###########################################################################################
 
 unbind-key all
-bind-key 4-Return urxvt
+bind-key 4-Return urxvt 
 
 ###########
 # browser #
@@ -135,7 +124,19 @@ bind-key XF86HomePage librewolf
 # calculator #
 ##############
 
-bind-key XF86Calculator "urxvt -e bc -q"
+bind-key XF86Calculator xcalc 
+
+#########
+# email #
+#########
+
+bind-key XF86Mail thunderbird
+
+###################
+# gtk file picker #
+###################
+
+bind-key XF86Explorer 'yad --center --file'
 
 ################################################################
 # lock the screen, quit the session, or reload the .cwmrc file #
@@ -179,9 +180,9 @@ bind-key XF86AudioMute        "pactl set-sink-mute @DEFAULT_SINK@ toggle"
 bind-key 4-Tab window-cycle
 bind-key 4S-Tab window-rcycle
 bind-key 4C-Delete window-close
-bind-key 4-minus window-hide
-bind-key 4M-minus window-lower
-bind-key 4-plus window-raise
+bind-key 4C-Home window-hide
+bind-key 4C-Next window-lower 
+bind-key 4C-Prior window-raise
 
 ############################################################################
 # STANDARD KEYBINDINGS END HERE                                            #
@@ -198,17 +199,25 @@ bind-key 4-plus window-raise
 sticky yes
 
 autogroup 1 librewolf 
-autogroup 6 libreoffice-startcenter
+autogroup 1 Thunderbird
+autogroup 2 TelegramDesktop
+autogroup 2 WebCord
+autogroup 3 alephone
+autogroup 3 chocolate-doom
+autogroup 4 URxvt
+autogroup 4 XCalc
+autogroup 4 XClock
+autogroup 5 libreoffice-startcenter
 
 #######################################
 # ignore rules for focus and grouping #
 #######################################
 
 ignore "About LibreWolf"
-ignore Calc
+ignore blockbar
 ignore Dunst
+ignore Guake
 ignore Polybar
-ignore XClock
 
 ##############################
 # sticky a window to a group #
@@ -220,7 +229,7 @@ bind-key 4C-s window-stick
 # toggle a windows group membership #
 #####################################
 
-bind-key 4-g window-group
+bind-key 4C-g window-group
 
 #########################################
 # close all windows in a specific group #
@@ -231,7 +240,6 @@ bind-key 4C-2 group-close-2
 bind-key 4C-3 group-close-3
 bind-key 4C-4 group-close-4
 bind-key 4C-5 group-close-5
-bind-key 4C-6 group-close-6
 
 ################
 # cycle groups #
@@ -261,8 +269,7 @@ bind-key 4-1 group-only-1
 bind-key 4-2 group-only-2 
 bind-key 4-3 group-only-3 
 bind-key 4-4 group-only-4 
-bind-key 4-5 group-only-5 
-bind-key 4-6 group-only-6 
+bind-key 4-5 group-only-5
 
 ###########################
 # group multi-view toggle #
@@ -272,10 +279,9 @@ bind-key 4M-1 group-toggle-1
 bind-key 4M-2 group-toggle-2
 bind-key 4M-3 group-toggle-3
 bind-key 4M-4 group-toggle-4
-bind-key 4M-5 group-toggle-5
-bind-key 4M-6 group-toggle-6
+bind-keu 4M-5 group-toggle-5
 
-bind-key 4S-Home group-toggle-all
+bind-key 4-Home group-toggle-all
 
 ############################
 # move a window to a group #
@@ -285,8 +291,7 @@ bind-key 4S-1 window-movetogroup-1
 bind-key 4S-2 window-movetogroup-2
 bind-key 4S-3 window-movetogroup-3
 bind-key 4S-4 window-movetogroup-4
-bind-key 4S-5 window-movetogroup-5
-bind-key 4S-6 window-movetogroup-6
+bind-key 4S-4 window-movetogroup-5
 
 #########################################
 # END OF GROUP ASSIGNMENTS AND KEYBINDS #
