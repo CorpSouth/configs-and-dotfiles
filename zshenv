@@ -40,6 +40,12 @@ export ERRFILE="$XDG_CACHE_HOME/X11/xsession-errors"
 
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
 
+################
+# qt variables #
+################
+
+export QT_QPA_PLATFORMTHEME=gtk3
+
 #################
 # vim variables #
 #################
@@ -63,15 +69,16 @@ export MANPATH="/usr/local/man:$MANPATH"
 # default applications #
 ########################
 
-export BROWSER="$(if [[ -n $DISPLAY ]]; then echo 'librewolf'; else echo 'links'; fi)"
-export EDITOR="$(if [[ -n $DISPLAY ]]; then echo 'vim'; else echo 'nano'; fi)"
-export TERMINAL="$(if [[ -n $DISPLAY ]]; then echo 'urxvt'; else echo 'xterm'; fi)"
+export BROWSER=librewolf
+export EDITOR=vim
+export TERMINAL=urxvt
 
 ####################
 # set the language #
 ####################
 
 export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
 ##################
 # wget variables #
