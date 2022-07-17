@@ -1,0 +1,69 @@
+" nocompatible allows for more unusual tweaks
+
+set nocompatible
+
+" xdg base directory specifications, please keep this at the top of vimrc but below nocompatible
+
+if empty("$XDG_CACHE_HOME")
+    let $XDG_CACHE_HOME="$HOME/.cache"
+endif
+
+if empty("$XDG_CONFIG_HOME")
+    let $XDG_CONFIG_HOME="$HOME/.config"
+endif
+
+if empty("$XDG_DATA_HOME")
+    let $XDG_DATA_HOME="$HOME/.local/share"
+endif
+
+let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc"
+let netrw_home = "$XDG_CACHE_HOME/vim/netrw"
+
+set directory=$XDG_CACHE_HOME/vim/swap,~/,/tmp
+set backupdir=$XDG_CACHE_HOME/vim/backup,~/,/tmp
+set undodir=$XDG_CACHE_HOME/vim/undo,~/,/tmp
+set viminfo+=n$XDG_CACHE_HOME/vim/completions/viminfo
+set runtimepath+=$XDG_CONFIG_HOME/vim,$XDG_CONFIG_HOME/vim/after,$VIM,$VIMRUNTIME
+
+" All system-wide defaults are set in $VIMRUNTIME/archlinux.vim (usually just
+" /usr/share/vim/vimfiles/archlinux.vim) and sourced by the call to :runtime
+" you can find below.  If you wish to change any of those settings, you should
+" do it in this file (/etc/vimrc), since archlinux.vim will be overwritten
+" everytime an upgrade of the vim packages is performed.  It is recommended to
+" make changes after sourcing archlinux.vim since it alters the value of the
+" 'compatible' option.
+
+" This line should not be removed as it ensures that various options are
+" properly set to work with the Vim-related packages.
+runtime! archlinux.vim
+
+" If you prefer the old-style vim functionalty, add 'runtime! vimrc_example.vim'
+" Or better yet, read /usr/share/vim/vim80/vimrc_example.vim or the vim manual
+" and configure vim to your own liking!
+
+" do not load defaults if ~/.vimrc is missing
+let skip_defaults_vim=1
+
+filetype on
+set linebreak
+set noswapfile
+set nowritebackup
+set spell spelllang=en_us 
+set t_Co=256
+set termguicolors
+syntax on
+
+call plug#begin('~/.config/vim/plugged')
+
+Plug 'base16-project/base16-vim'
+Plug 'catppuccin/vim', { 'as': 'catppuccin' }
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+Plug 'preservim/vim-pencil'
+Plug 'godlygeek/tabular'
+Plug 'preservim/vim-markdown'
+
+call plug#end()
+
+let base16colorspace=256
+colorscheme base16-atelier-forest 
