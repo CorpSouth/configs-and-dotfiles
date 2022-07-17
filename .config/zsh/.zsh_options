@@ -34,6 +34,7 @@ setopt NOBEEP
 ############
 
 setopt EXTENDED_GLOB
+setopt GLOB
 setopt GLOB_COMPLETE
 setopt GLOB_DOTS
 setopt NUMERICGLOBSORT

@@ -31,6 +31,12 @@ alias ytv-best="yt-dlp -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+besta
 # safeguards to prevent total devastation of data #
 ###################################################
 
-alias rm='rm -i --preserve-root'
 alias cp='cp -n'
 alias mv='mv -n'
+alias rm='rm -i --preserve-root'
+
+########################
+# grab the temperature #
+########################
+
+alias thermals='doas /opt/vc/bin/vcgencmd measure_temp'

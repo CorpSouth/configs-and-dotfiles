@@ -155,3 +155,22 @@ function reset_broken_terminal () {
 	printf '%b' '\e[0m\e(B\e)0\017\e[?5l\e7\e[0;0r\e8'
 }
 add-zsh-hook -Uz precmd reset_broken_terminal
+
+#####################
+# other functions   #
+#####################
+# 256 Colors Output #
+#####################
+
+function aa_256 () 
+{ 
+    local o= i= x=`tput op` cols=`tput cols` y= oo= yy=;
+    y=`printf %$(($cols-6))s`;
+    yy=${y// /=};
+    for i in {0..256};
+    do
+        o=00${i};
+        oo=`echo -en "setaf ${i}\nsetab ${i}\n"|tput -S`;
+        echo -e "${o:${#o}-3:3} ${oo}${yy}${x}";
+    done
+}
