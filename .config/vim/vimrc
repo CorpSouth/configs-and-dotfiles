@@ -1,29 +1,6 @@
 " nocompatible allows for more unusual tweaks
-
 set nocompatible
-
-" xdg specification, please keep this at the top of vimrc but below
-" nocompatible
-
-if empty("$XDG_CACHE_HOME")
-    let $XDG_CACHE_HOME="$HOME/.cache"
-endif
-
-if empty("$XDG_CONFIG_HOME")
-    let $XDG_CONFIG_HOME="$HOME/.config"
-endif
-
-if empty("$XDG_DATA_HOME")
-    let $XDG_DATA_HOME="$HOME/.local/share"
-endif
-
-let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc"
-let netrw_home = "$XDG_CACHE_HOME/vim/netrw"
-
-set directory=$XDG_CACHE_HOME/vim/swap,~/,/tmp
-set backupdir=$XDG_CACHE_HOME/vim/backup,~/,/tmp
-set undodir=$XDG_CACHE_HOME/vim/undo,~/,/tmp
-set viminfo+=n$XDG_CACHE_HOME/vim/completions/viminfo
+" keep this on top but below nocompatible
 set runtimepath+=$XDG_CONFIG_HOME/vim,$XDG_CONFIG_HOME/vim/after,$VIM,$VIMRUNTIME
 " All system-wide defaults are set in $VIMRUNTIME/archlinux.vim (usually just
 " /usr/share/vim/vimfiles/archlinux.vim) and sourced by the call to :runtime
@@ -48,6 +25,7 @@ set linebreak
 set noswapfile
 set nowritebackup
 set spell spelllang=en_us 
+set termguicolors
 
 call plug#begin('~/.config/vim/plugged')
 
@@ -57,7 +35,8 @@ Plug 'junegunn/limelight.vim'
 Plug 'preservim/vim-pencil'
 Plug 'godlygeek/tabular'
 Plug 'preservim/vim-markdown'
+Plug 'base16-project/base16-vim'
 
 call plug#end()
 
-colorscheme nord 
+colorscheme base16-colors 
