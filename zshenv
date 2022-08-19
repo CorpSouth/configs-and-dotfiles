@@ -12,7 +12,7 @@ typeset -U path PATH
 path=(~/.local/bin $path)
 export PATH
 
-#################
+################
 # xdg variables #
 #################
 
@@ -20,19 +20,6 @@ export XDG_CONFIG_HOME=~/.config
 export XDG_CACHE_HOME=~/.cache
 export XDG_DATA_HOME=~/.local/share
 export XDG_STATE_HOME=~/.local/state
-
-#################
-# X11 variables #
-#################
-
-export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
-export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
-export XRESOURCES="$XDG_CONFIG_HOME/X11/xresources"
-export XSERVERRC="$XDG_CONFIG_HOME/X11/xserverrc"
-export USERXSESSION="$XDG_CACHE_HOME/X11/xsession"
-export USERXSESSIONRC="$XDG_CACHE_HOME/X11/xsessionrc"
-export ALTUSERXSESSION="$XDG_CACHE_HOME/X11/Xsession"
-export ERRFILE="$XDG_CACHE_HOME/X11/xsession-errors"
 
 #################
 # gtk variables #
@@ -50,19 +37,13 @@ export QT_QPA_PLATFORMTHEME=gtk3
 # vim variables #
 #################
 
-export VIMINIT="source $XDG_CONFIG_HOME/vim/vimrc"
-
-###################
-# gnupg variables #
-###################
-
-export GNUPGHOME="$XDG_DATA_HOME/gnupg"
+#export VIMINIT="source $XDG_CONFIG_HOME/nvim/init.vim"
 
 #####################
 # manpage variables #
 #####################
 
-export MANPAGER='/bin/bash -c "vim -MRn -c \"set buftype=nofile showtabline=0 ft=man ts=8 nomod nolist norelativenumber nonu noma\" -c \"normal L\" -c \"nmap q :qa<CR>\"</dev/tty <(col -b)"'
+export MANPAGER='/bin/bash -c "nvim -MRn -c \"set buftype=nofile showtabline=0 ft=man ts=8 nomod nolist norelativenumber nonu noma\" -c \"normal L\" -c \"nmap q :qa<CR>\"</dev/tty <(col -b)"'
 export MANPATH="/usr/local/man:$MANPATH"
 
 ########################
@@ -70,8 +51,8 @@ export MANPATH="/usr/local/man:$MANPATH"
 ########################
 
 export BROWSER=librewolf
-export EDITOR=vim
-export TERMINAL=urxvt
+export EDITOR=nvim
+export TERMINAL=xfce4-terminal
 
 ####################
 # set the language #
