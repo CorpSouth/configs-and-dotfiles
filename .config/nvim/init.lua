@@ -60,8 +60,10 @@ local bindsym = vim.keymap.set
 --Save & Quit--
 ---------------
 
-bindsym('i', '<A-s>', '<Esc><cmd>w<CR>')
-bindsym('n', '<A-q>', '<cmd>x<CR>')
+bindsym('i', '<C-w>', '<cmd>w<CR>')
+bindsym('n', '<C-w>', '<cmd>w<CR>')
+bindsym('i', '<C-x>', '<cmd>x<CR>')
+bindsym('n', '<C-x>', '<cmd>x<CR>')
 
 -------------
 --Splitting--
