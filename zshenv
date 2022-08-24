@@ -4,6 +4,12 @@
 
 ZDOTDIR=$HOME/.config/zsh
 
+##############################
+# Disable Caps Lock for Good #
+##############################
+
+setxkbmap -option ctrl:nocaps
+
 #############
 # set $PATH #
 #############
@@ -22,6 +28,23 @@ export XDG_DATA_HOME=~/.local/share
 export XDG_STATE_HOME=~/.local/state
 
 #################
+# X11 Variables #
+#################
+
+export ALTUSERXSESSION="$XDG_CACHE_HOME/X11/xsession"
+export ERRFILE="$XDG_CACHE_HOME/X11/xsession-errors"
+export USERXSESSION="$XDG_CACHE_HOME/X11/xsession"
+export USERXSESSIONRC="$XDG_CACHE_HOME/X11/xsessionrc"
+export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
+export XSERVERRC="$XDG_CONFIG_HOME/X11/xserverrc"
+
+###################
+# gnupg variables #
+###################
+
+export GNUPGHOME="XDG_DATA_HOME"/gnupg
+
+#################
 # gtk variables #
 #################
 
@@ -31,7 +54,7 @@ export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
 # qt variables #
 ################
 
-export QT_QPA_PLATFORMTHEME=gtk3
+export QT_QPA_PLATFORMTHEME=qt5ct
 
 #################
 # vim variables #
