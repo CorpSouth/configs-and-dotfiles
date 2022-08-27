@@ -37,8 +37,8 @@
        on: 'Any' - any monitor, 'Mouse' - where the mouse is, 'Active' - where
        the active window is -->
   <theme>
-    <name>oomox-EndeavourOS-Arc-Dark</name>
-    <titleLayout/>
+    <name>oomox-EndeavourOS Arc Dark</name>
+    <titleLayout>NDSLIMC</titleLayout>
     <!--       available characters are NDSLIMC, each can occur at most once.
       N: window icon
       L: window label (AKA title).
@@ -88,9 +88,9 @@
     <!-- 'italic' or 'normal' -->
     <font place="ActiveOnScreenDisplay">
       <name>Lato</name>
-      <size>8</size>
-      <weight>Normal</weight>
-      <slant>Normal</slant>
+      <size>10</size>
+      <weight>Bold</weight>
+      <slant>Bold</slant>
     </font>
     <font place="InactiveOnScreenDisplay">
       <name>Lato</name>
@@ -171,7 +171,7 @@
   <!-- 'Left', 'Middle', 'Right' -->
   <!-- APPLICATION RULES START HERE -->
   <applications>
-    <!-- Defaults to maximize for normal windows and force center for others -->
+    <!-- Defaults to maximize for normal windows, otherwise force center -->
     <application type="normal">
       <position force="yes">
         <x>center</x>
@@ -195,6 +195,12 @@
     <application class="Xarchiver">
       <maximized>false</maximized>
     </application>
+    <application class="XCalc">
+      <maximized>false</maximized>
+    </application>
+    <application class="XClock">
+      <maximized>false</maximized>
+    </application>
     <application class="Yad*">
       <maximized>false</maximized>
     </application>
@@ -214,6 +220,9 @@
       <desktop>2</desktop>
     </application>
     <!-- Desktop 3 -->
+    <application class="FreeTube*">
+      <desktop>3</desktop>
+    </application>
     <application class="Lxmusic*">
       <desktop>3</desktop>
     </application>
@@ -221,8 +230,11 @@
       <desktop>3</desktop>
     </application>
     <!-- Desktop 4 -->
-    <application class="Xterm*">
-      <desktop>4</desktop>	
+    <application class="UXTerm*">
+      <desktop>4</desktop>
+    </application>
+    <application class="XTerm*">
+      <desktop>4</desktop>
     </application>
     <!-- Desktop 5 -->
     <application class="Lxappearance">
@@ -233,6 +245,16 @@
     </application>
     <application class="Obconf">
       <desktop>5</desktop>
+    </application>
+    <!-- Desktop 6 -->
+    <application class="libreoffice-startcenter">
+      <desktop>6</desktop>
+    </application>
+    <application class="Oomox*">
+      <desktop>6</desktop>
+    </application>
+    <application class="Soffice*">
+      <desktop>6</desktop>
     </application>
     <!-- Workaround for applications not focusing upon launching -->
     <application class="*" name="*" role="*" title="*" type="*">
@@ -252,12 +274,17 @@
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
-          <name>LXTerminal</name>
+          <name>UXTerm</name>
         </startupnotify>
-        <command>lxterminal</command>
+        <command>uxterm</command>
       </action>
     </keybind>
     <!-- Menu/Run -->
+    <keybind key="A-C-Menu">
+      <action name="ShowMenu">
+        <menu>client-list-combined-menu</menu>
+      </action>
+    </keybind>
     <keybind key="W-Menu">
       <action name="ShowMenu">
         <menu>root-menu</menu>
@@ -268,6 +295,12 @@
         <command>gmrun</command>
       </action>
     </keybind>
+    <!-- Screenshot -->
+    <keybind key="Print">
+      <action name="Execute">
+	<command>scrot /home/corpsouth/.local/share/screenshots/%c-enos-arm.png</command>
+      </action>
+    </keybind>
     <!-- XF86 common shortcuts -->
     <keybind key="XF86Calculator">
       <action name="Execute">
@@ -275,23 +308,14 @@
           <enabled>true</enabled>
           <name>Calculator</name>
         </startupnotify>
-        <command>galculator</command>
+        <command>xcalc</command>
       </action>
     </keybind>
     <keybind key="XF86Explorer">
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
-          <name>File Manager</name>
-        </startupnotify>
-        <command>pcmanfm</command>
-      </action>
-    </keybind>
-    <keybind key="A-XF86Explorer">
-      <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>File Picker Dialog</name>
+          <name>File Chooser</name>
         </startupnotify>
         <command>yad --center --file</command>
       </action>
@@ -315,15 +339,6 @@
       </action>
     </keybind>
     <keybind key="XF86Tools">
-      <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>Music Player</name>
-        </startupnotify>
-        <command>lxmusic</command>
-      </action>
-    </keybind>
-    <keybind key="A-XF86Tools">
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
@@ -426,6 +441,11 @@
         <to>5</to>
       </action>
     </keybind>
+    <keybind key="W-6">
+      <action name="GoToDesktop">
+        <to>6</to>
+      </action>
+    </keybind>
     <!-- DESKTOP NAVIGATION KEYBINDINGS END HERE -->
     <!-- KB2: FOCAL KEYBINDINGS START HERE -->
     <!-- Cycle the next/previous window using Tab -->
@@ -503,7 +523,7 @@
       <action name="Restart"/>
     </keybind>
     <!-- Show desktop -->
-    <keybind key="C-W-d">
+    <keybind key="C-W-Home">
       <action name="ToggleShowDesktop"/>
     </keybind>
     <!-- Show the openbox menu -->
@@ -511,6 +531,10 @@
       <action name="ShowMenu">
         <menu>client-menu</menu>
       </action>
+    </keybind>
+    <!-- Toggle the window decorations -->
+    <keybind key="C-W-d">
+      <action name="ToggleDecorations"/>
     </keybind>
     <!-- Toggle fullscreen -->
     <keybind key="C-W-f">
@@ -939,7 +963,7 @@
       <!-- Menus -->
       <mousebind button="Middle" action="Press">
         <action name="ShowMenu">
-          <menu>client-list-combined-menu</menu>
+          <menu>client-menu</menu>
         </action>
       </mousebind>
       <mousebind button="Right" action="Press">
