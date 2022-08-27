@@ -1,39 +1,39 @@
 ! Sixteen-Color Definitions Start Here
-#define BG #1B1918
-#define FG #F1EFEE
-#define CC #A8A19F
+#define BG #111111
+#define FG #FFFFFF
+#define CC #BBBBBB
 
 ! Black
-#define col0  #1B1918
-#define col8  #766E6B
+#define col0  #111111
+#define col8  #777777
 
 ! Red
-#define col1  #F22C40
-#define col9  #F22C40
+#define col1  #FF4136
+#define col9  #FF4136
 
 ! Green
-#define col2  #7B9726
-#define col10 #7B9726
+#define col2  #2ECC40
+#define col10 #2ECC40
 
 ! Yellow
-#define col3  #C38418
-#define col11 #C38418
+#define col3  #FFDC00
+#define col11 #FFDC00
 
 ! Blue
-#define col4  #407EE7
-#define col12 #407EE7
+#define col4  #0074D9
+#define col12 #0074D9
 
 ! Magenta
-#define col5  #6666EA
-#define col13 #6666EA
+#define col5  #B10DC9
+#define col13 #B10DC9
 
 ! Cyan
-#define col6  #3D97B8
-#define col14 #3D97B8
+#define col6  #7FDBFF
+#define col14 #7FDBFF
 
 ! White
-#define col7  #A8A19F
-#define col15 #F1EFEE
+#define col7  #BBBBBB
+#define col15 #FFFFFF
 
 ! Applying Colors
 *.background:  BG
@@ -207,35 +207,48 @@ XClock*minuteColor: col8
 XClock*secondColor: col1
 XClock*update:      1
 
-! URxvt
-URxvt*font:              xft:Noto Sans Mono:size=14
-URxvt*boldfont:          xft:Noto Sans Mono:size=14:style=bold
-URxvt*italicfont:        xft:Noto Sans Mono:size=14:style=italic
-URxvt*bolditalicfont:    xft:Noto Sans Mono:size=14:style=bolditalic
-URxvt*cursorBlink:       true
-URxvt*cursorUnderline:   true
-URxvt.depth:             24
-URxvt.geometry:          90x24
-URxvt.letterSpace:       0
-URxvt.lineSpace:         0
-URxvt.saveline:          2048
-URxvt*scrollWithBuffer:  false 
-URxvt*scrollTtyOutput:   false
-URxvt*scrollTtyKeypress: true
-URxvt*scrollBar:         false
-URxvt*scrollBar_right:   false
-URxvt*secondaryScreen:   1
-URxvt*secondaryScroll:   0
-URxvt*internalBorder:    12 
-URxvt*urgentOnBell:      true
+! UXTerm
+UXTerm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
+UXTerm*faceName:           Iosevka Term Extended
+UXTerm*faceSize:           12
+UXTerm*faceSize1:          8
+UXTerm*faceSize2:          10
+UXTerm*faceSize3:          12
+UXTerm*faceSize4:          16
+UXTerm*highlightSelection: true
+UXTerm*internalBorder:     12
+UXTerm*saveLines:          16385
+UXTerm*selectToClipboard:  true
+UXTerm*termName:           xterm-256color
+UXTerm*trimSelection:      true
+UXTerm.VT100.Translations: #override \n\
+  Ctrl <Key> minus: smaller-vt-font() \n\
+  Ctrl <Key> plus: larger-vt-font() \n\
+  Ctrl <Key> 0: set-vt-font(d) \n\
+  Ctrl Shift <Key> C: copy-selection(CLIPBOARD) \n\
+  Ctrl Shift <Key> V: insert-selection(CLIPBOARD) \n\
+  <Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0) \n\
+  <Btn2Up>: insert-selection(PRIMARY)
 
-! URxvt Perl Extensions
-Urxvt.perl-ext-common: resize-font
-
-! URxvt keybinds for copy/pasting
-URxvt.keysym.Shift-Control-V: eval:paste_clipboard
-URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
-
-! URxvt keybinds for changing text size on the fly
-URxvt.keysym.C-Down: resize-font:smaller
-URxvt.keysym.C-Up:   resize-font:bigger
+! XTerm
+XTerm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
+XTerm*faceName:           Iosevka Term Extended
+XTerm*faceSize:           12
+XTerm*faceSize1:          8
+XTerm*faceSize2:          10
+XTerm*faceSize3:          12
+XTerm*faceSize4:          16
+XTerm*highlightSelection: true
+XTerm*internalBorder:     12
+XTerm*saveLines:          16385
+XTerm*selectToClipboard:  true
+XTerm*termName:           xterm-256color
+XTerm*trimSelection:      true
+XTerm.VT100.Translations: #override \n\
+  Ctrl <Key> minus: smaller-vt-font() \n\
+  Ctrl <Key> plus: larger-vt-font() \n\
+  Ctrl <Key> 0: set-vt-font(d) \n\
+  Ctrl Shift <Key> C: copy-selection(CLIPBOARD) \n\
+  Ctrl Shift <Key> V: insert-selection(CLIPBOARD) \n\
+  <Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0) \n\
+  <Btn2Up>: insert-selection(PRIMARY)

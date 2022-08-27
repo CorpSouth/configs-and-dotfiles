@@ -1,37 +1,51 @@
 #!/bin/sh
 
-###############
-# screen lock #
-###############
+####################
+# autohide xcursor #
+####################
 
-xsidle.sh slock &
+xbanish -t 5 &
 
-##############
-# xresources #
-##############
+###############################
+# invoke the policykit daemon #
+###############################
+
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+####################################
+# launch system monitoring utility #
+####################################
+
+sleep 2 &&
+uxterm -e btop &
+
+###############################
+# run the lock screen manager #
+###############################
+
+xautolock -time 10 -locker slock &
+
+#####################
+# reload xresources #
+#####################
 
 xrdb -merge $XRESOURCES &
 
-##################
-# set background #
-##################
+#####################
+# set the wallpaper #
+#####################
 
-xwallpaper --stretch $HOME/Pictures/Wallpapers/Nordic_Tribe.jpg &
+xwallpaper --stretch $XDG_DATA_HOME/wallpapers/eos-minimal.png &
 
 #################################
 # start the compositing manager #
 #################################
 
+sleep 2 &&
 picom &
 
-########################
-# autohide the xcursor #
-########################
+######################
+# start the xsession #
+######################
 
-xbanish -t 3 &
-
-##################
-# start xsession #
-##################
-
-exec cwm -c $HOME/.config/cwm/.cwmrc 
+exec openbox
