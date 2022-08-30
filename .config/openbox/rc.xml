@@ -48,7 +48,7 @@
       S: shade (roll up/down)
       D: omnipresent (on all desktops).
   -->
-    <keepBorder>no</keepBorder>
+    <keepBorder>yes</keepBorder>
     <animateIconify>no</animateIconify>
     <font place="ActiveWindow">
       <name>Lato</name>
@@ -195,7 +195,7 @@
     <application class="librewolf*">
       <desktop>1</desktop>
     </application>
-    <application class="Thunderbird*">
+    <application class="thunderbird*">
       <desktop>1</desktop>
     </application>
     <!-- Desktop 2, Chew the Fat -->
@@ -236,6 +236,9 @@
       <desktop>5</desktop>
     </application>
     <!-- Desktop 6, For Getting Stuff Done -->
+    <application class="Inkscape*">
+      <desktop>6</desktop>
+    </application>
     <application class="libreoffice-startcenter">
       <desktop>6</desktop>
     </application>
@@ -257,7 +260,7 @@
   <!-- APPLICATION RULES END HERE -->
   <keyboard>
     <chainQuitKey>Escape</chainQuitKey>
-    <!-- APPLICATION KEYBINDINGS AND KEYCHORDS START HERE-->
+    <!-- APPLICATION KEYBINDINGS AND KEYCHAINS START HERE-->
     <!-- Keychains for power and session control -->
     <keybind key="C-S-W-End">
       <keybind key="l">
@@ -282,12 +285,17 @@
       </keybind>
     </keybind>
     <!-- Keychains for restarting programs and services, or restoring and updating settings -->
-    <keybind key="C-S-W-F5">
+    <keybind key="W-F5">      
+      <keybind key="F5">
+   	<action name="Restart"/>
+      </keybind>
       <keybind key="Menu">
-	<action name="Reconfigure"/>
+	<action name="Execute">
+	  <command>mmaker -f --no-debian --no-legacy openbox -t xterm</command>
+        </action>
       </keybind>
       <keybind key="r">
-	<action name="Restart"/>
+	<action name="Reconfigure"/>
       </keybind>
       <keybind key="x">
 	<action name="Execute">
@@ -298,10 +306,6 @@
     <!-- Launch the terminal emulator -->
     <keybind key="W-Return">
       <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>UXTerm</name>
-        </startupnotify>
         <command>uxterm</command>
       </action>
     </keybind>
@@ -330,112 +334,80 @@
     <!-- XF86 common shortcuts -->
     <keybind key="XF86Calculator">
       <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>Calculator</name>
-        </startupnotify>
         <command>xcalc</command>
       </action>
     </keybind>
     <keybind key="XF86Explorer">
       <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>File Chooser</name>
-        </startupnotify>
         <command>yad --center --file</command>
       </action>
     </keybind>
     <keybind key="XF86HomePage">
       <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>Web Browser</name>
-        </startupnotify>
         <command>librewolf</command>
       </action>
     </keybind>
     <keybind key="XF86Mail">
       <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>Mail Reader</name>
-        </startupnotify>
         <command>thunderbird</command>
       </action>
     </keybind>
     <keybind key="XF86Tools">
       <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>Multimedia Player</name>
-        </startupnotify>
         <command>mpv --player-operation-mode=pseudo-gui</command>
       </action>
     </keybind>
     <!-- XF86 volume keys -->
     <keybind key="XF86AudioLowerVolume">
       <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>Lowering Audio Volume</name>
-        </startupnotify>
         <command>pactl set-sink-volume @DEFAULT_SINK@ -5%</command>
       </action>
     </keybind>
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>Raising Audio Volume</name>
-        </startupnotify>
         <command>pactl set-sink-volume @DEFAULT_SINK@ +5%</command>
       </action>
     </keybind>
     <keybind key="XF86AudioMute">
       <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>Audio Muted</name>
-        </startupnotify>
         <command>pactl set-sink-mute @DEFAULT_SINK@ toggle</command>
       </action>
     </keybind>
     <!-- APPLICATION KEYBINDINGS AND KEYCHORDS END HERE -->
     <!-- DESKTOP NAVIGATION KEYBINDINGS START HERE -->
     <!-- Keybinds for desktop switching using the HJKL keys (vim-like) -->
-    <keybind key="A-W-h">
-      <action name="GoToDesktop">
-        <to>left</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="A-W-j">
+    <keybind key="A-W-KP_Down">
       <action name="GoToDesktop">
         <to>down</to>
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="A-W-k">
+    <keybind key="A-W-KP_Left">
       <action name="GoToDesktop">
-        <to>up</to>
+        <to>left</to>
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="A-W-l">
+    <keybind key="A-W-KP_Right">
       <action name="GoToDesktop">
         <to>right</to>
         <wrap>no</wrap>
       </action>
     </keybind>
+    <keybind key="A-W-KP_Up">
+      <action name="GoToDesktop">
+        <to>up</to>
+        <wrap>no</wrap>
+      </action>
+    </keybind>
     <!-- Keybinds for desktop switching using the bracket keys -->
-    <keybind key="W-bracketright">
+    <keybind key="A-W-bracketright">
       <action name="GoToDesktop">
         <to>next</to>
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="W-bracketleft">
+    <keybind key="A-W-bracketleft">
       <action name="GoToDesktop">
         <to>previous</to>
         <wrap>no</wrap>
@@ -493,235 +465,240 @@
         </finalactions>
       </action>
     </keybind>
-    <!-- Switch windows using bracket keys -->
-    <keybind key="A-W-bracketleft">
-       <action name="PreviousWindow"/>
+    <!-- Cycle windows using bracket keys -->
+    <keybind key="W-bracketleft">
+       <action name="PreviousWindow">
+         <finalactions>
+           <action name="Focus"/>
+           <action name="Raise"/>
+           <action name="Unshade"/>
+        </finalactions>
+       </action>
     </keybind>
-    <keybind key="A-W-bracketright">
-       <action name="NextWindow"/>
-    </keybind>
-    <!-- Directionally cycle window focus using HJKL keys (vim-like) -->
-    <keybind key="W-h">
-      <action name="DirectionalCycleWindows">
-        <direction>left</direction>
+    <keybind key="W-bracketright">
+      <action name="NextWindow">
+        <finalactions>
+          <action name="Focus"/>
+          <action name="Raise"/>
+          <action name="Unshade"/>
+        </finalactions>
       </action>
     </keybind>
-    <keybind key="W-j">
+    <!-- Directionally cycle window focus using the numpad keys 2468 -->
+    <keybind key="W-KP_Down">
       <action name="DirectionalCycleWindows">
         <direction>down</direction>
       </action>
     </keybind>
-    <keybind key="W-k">
+    <keybind key="W-KP_Left">
       <action name="DirectionalCycleWindows">
-        <direction>up</direction>
+        <direction>left</direction>
       </action>
     </keybind>
-    <keybind key="W-l">
+    <keybind key="W-KP_Right">
       <action name="DirectionalCycleWindows">
         <direction>right</direction>
+      </action>
+    </keybind>
+    <keybind key="W-KP_Up">
+      <action name="DirectionalCycleWindows">
+        <direction>up</direction>
       </action>
     </keybind>
     <!-- FOCAL KEYBINDINGS END HERE -->
     <!-- GENERAL WINDOW MANAGEMENT KEYBINDINGS START HERE -->
     <!-- Centering windows -->
-    <keybind key="C-W-c">
+    <keybind key="W-c">
       <action name="MoveResizeTo">
         <x>center</x>
         <y>center</y>
       </action>
     </keybind>
     <!-- Closing/killing windows -->
-    <keybind key="C-W-Delete">
+    <keybind key="W-Delete">
       <action name="Close">
       </action>
     </keybind>
-    <!-- Move/Resize keychains -->
-    <keybind key="C-W-w">
-      <keybind key="m">
-	<action name="Move"/>
-      </keybind>
-      <keybind key="r">
-	<action name="Resize"/>
-      </keybind>
+    <!-- Iconifying windows -->
+    <keybind key="W-i">
+      <action name="Iconify"/>
     </keybind>
-    <!-- Toggles -->
-    <keybind key="C-W-t">
-      <keybind key="d">
-	<action name="ForEach">
-	  <query>
-	    <decor>no</decor>
-          </query>
-          <then>
-	    <action name="ToggleDecorations"/>
-          </then>
-          <else>
-            <action name="ToggleDecorations"/>
-	  </else>
-        </action>
-      </keybind>
-      <keybind key="f">
-	<action name="ToggleFullscreen"/>
-      </keybind>
-      <keybind key="Home">
-	<action name="ToggleShowDesktop"/>
-      </keybind>
-      <keybind key="m">
-	<action name="ToggleMaximize"/>
-      </keybind>
-      <keybind key="o">
-	<action name="ToggleOmnipresent"/>
-      </keybind>
-      <keybind key="p">
-	<action name="Execute">
-	  <command>/home/corpsouth/.local/bin/picom-toggle.sh</command>
-        </action>
-      </keybind>
-      <keybind key="s">
-	<action name="ToggleShade"/>
-      </keybind>
+    <!-- Lowering/raising windows -->
+    <keybind key="A-W-r">
+      <action name="RaiseLower"/>
+    </keybind>
+    <keybind key="W-Down">
+      <action name="FocusToBottom"/>
+      <action name="Lower"/>
+      <action name="Unfocus"/>
+    </keybind>
+    <keybind key="W-Up">
+      <action name="Focus"/>
+      <action name="Raise"/>
+    </keybind>
+    <!-- Moving/resizing windows -->
+    <keybind key="A-W-m">
+      <action name="Move"/>
+    </keybind>
+    <keybind key="W-r">
+      <action name="Resize"/>
+    </keybind>
+    <!-- Toggle window settings and states -->
+    <keybind key="A-W-d">
+      <action name="ToggleDecorations"/>
+    </keybind>
+    <keybind key="W-d">
+      <action name="ToggleShowDesktop"/>
+    </keybind>
+    <keybind key="W-f">
+      <action name="ToggleFullscreen"/>
+    </keybind>
+    <keybind key="W-m">
+      <action name="ToggleMaximize"/>
+      <action name="Undecorate"/>
+    </keybind>
+    <keybind key="W-o">
+      <action name="ToggleOmnipresent"/>
+    </keybind>
+    <keybind key="W-s">
+      <action name="ToggleShade"/>
     </keybind>
     <!-- GENERAL WINDOW MANAGEMENT KEYBINDINGS END HERE -->
     <!-- WINDOW DESKTOP RELOCATION KEYBINDINGS START HERE -->
-    <!-- Cardinal window desktop relocation using HJKL keys (vim-like) -->
-    <keybind key="C-W-h">
-      <action name="SendToDesktop">
-        <to>left</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="C-W-j">
+    <!-- Window desktop relocation using the numpad -->
+    <keybind key="S-W-KP_Down">
       <action name="SendToDesktop">
         <to>down</to>
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="C-W-k">
+    <keybind key="S-W-KP_Left">
       <action name="SendToDesktop">
-        <to>up</to>
+        <to>left</to>
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="C-W-l">
+    <keybind key="S-W-KP_Right">
       <action name="SendToDesktop">
         <to>right</to>
         <wrap>no</wrap>
       </action>
     </keybind>
+    <keybind key="S-W-KP_Up">
+      <action name="SendToDesktop">
+        <to>up</to>
+        <wrap>no</wrap>
+      </action>
+    </keybind>
+    <!-- Send window to the next/previous desktop -->
+    <keybind key="S-W-bracketleft">
+      <action name="SendToDesktop">
+        <to>previous</to>
+      </action>
+    </keybind>
+    <keybind key="S-W-bracketright">
+      <action name="SendToDesktop">
+        <to>next</to>
+      </action>
+    </keybind>
+    <!-- Send window to a targeted desktop -->
+    <keybind key="S-W-1">
+      <action name="SendToDesktop">
+        <follow>no</follow>
+        <to>1</to>
+      </action>
+    </keybind>
+    <keybind key="S-W-2">
+      <action name="SendToDesktop">
+        <follow>no</follow>
+        <to>2</to>
+      </action>
+    </keybind>
+    <keybind key="S-W-3">
+      <action name="SendToDesktop">
+        <follow>no</follow>
+        <to>3</to>
+      </action>
+    </keybind>
+    <keybind key="S-W-4">
+      <action name="SendToDesktop">
+        <follow>no</follow>
+        <to>4</to>
+      </action>
+    </keybind>
+    <keybind key="S-W-5">
+      <action name="SendToDesktop">
+        <follow>no</follow>
+        <to>5</to>
+      </action>
+    </keybind>
     <!-- WINDOW DESKTOP RELOCATION KEYBINDINGS END HERE -->
-    <!-- WINDOW GROWING KEYCHORDS START HERE -->
-    <keybind key="C-W-g">
+    <!-- WINDOW GROWING KEYCHAINS START HERE -->
+    <keybind key="W-g">
       <keybind key="f">
 	<action name="GrowToFill"/>
       </keybind>
-      <keybind key="h">
+      <keybind key="KP_Down">
 	<action name="GrowToEdge">
-	<direction>west</direction>
+	  <direction>south</direction>
 	</action>
       </keybind>
-      <keybind key="j">
+      <keybind key="KP_Left">
 	<action name="GrowToEdge">
-	<direction>south</direction>
+	  <direction>west</direction>
 	</action>
       </keybind>
-      <keybind key="k">
+      <keybind key="KP_Right">
 	<action name="GrowToEdge">
-	<direction>north</direction>
+	  <direction>east</direction>
 	</action>
       </keybind>
-      <keybind key="l">
+      <keybind key="KP_Up">
 	<action name="GrowToEdge">
-	<direction>east</direction>
+	  <direction>north</direction>
 	</action>
       </keybind>
     </keybind>
     <!-- WINDOW GROWING KEYCHAINS END HERE -->
-    <!-- WINDOW SNAPPING KEYCHAINS START HERE -->
-    <keybind key="C-W-s">
-     <keybind key="h">
-       <action name="UnmaximizeFull"/>
-       <action name="MaximizeVert"/>
-       <action name="MoveResizeTo">
-         <width>50%</width>
-         <x>0</x>
-         <y>0</y>
-       </action>
-     </keybind>
-     <keybind key="j">
-       <action name="UnmaximizeFull"/>
-       <action name="MaximizeHorizontal"/>
-       <action name="MoveResizeTo">
-         <width>100%</width>
-         <height>50%</height>
-         <x>0</x>
-         <y>-0</y>
-       </action>
-     </keybind>
-     <keybind key="k">
-       <action name="UnmaximizeFull"/>
-       <action name="MaximizeHorizontal"/>
-       <action name="MoveResizeTo">
-         <width>100%</width>
-         <height>50%</height>
-         <x>0</x>
-         <y>0</y>
-       </action>
-     </keybind>
-     <keybind key="l">
-       <action name="UnmaximizeFull"/>
-       <action name="MaximizeVert"/>
-       <action name="MoveResizeTo">
-         <width>50%</width>
-         <x>-0</x>
-         <y>0</y>
-       </action>
-     </keybind>
-    </keybind>
-    <keybind key="A-C-W-s">
-     <keybind key="h">
-       <action name="UnmaximizeFull"/>
-       <action name="MoveResizeTo">
-         <x>0</x>
-         <y>0</y>
-         <width>50%</width>
-         <height>50%</height>
-       </action>
-     </keybind>
-     <keybind key="j">
-       <action name="UnmaximizeFull"/>
-       <action name="MoveResizeTo">
-         <x>0</x>
-         <y>50%</y>
-         <width>50%</width>
-         <height>50%</height>
-       </action>
-     </keybind>
-     <keybind key="k">
-       <action name="UnmaximizeFull"/>
-       <action name="MoveResizeTo">
-         <x>50%</x>
-         <y>0</y>
-         <width>50%</width>
-         <height>50%</height>
-       </action>
-     </keybind>
-     <keybind key="l">
-       <action name="UnmaximizeFull"/>
-       <action name="MoveResizeTo">
-         <x>50%</x>
-         <y>50%</y>
-         <width>50%</width>
-         <height>50%</height>
-       </action>
+    <!-- WINDOW SHRINKING KEYCHAINS START HERE -->
+    <keybind key="A-W-s">
+      <keybind key="KP_Down">
+	<action name="ShrinkToEdge">
+	  <direction>south</direction>
+	</action>
       </keybind>
-     </keybind>
-    <keybind key="C-W-Left">
+      <keybind key="KP_Left">
+	<action name="ShrinkToEdge">
+	  <direction>west</direction>
+	</action>
+      </keybind>
+      <keybind key="KP_Right">
+	<action name="ShrinkToEdge">
+	  <direction>east</direction>
+	</action>
+      </keybind>
+      <keybind key="KP_Up">
+	<action name="ShrinkToEdge">
+	  <direction>north</direction>
+	</action>
+      </keybind>
+    </keybind>
+    <!-- WINDOW SHRINKING KEYCHAINS END HERE -->
+    <!-- WINDOW SNAPPING KEYBINDINGS START HERE -->
+    <!-- Aside -->
+    <keybind key="C-W-Down">
+      <action name="MoveToEdge">
+	<direction>south</direction>
+      </action>
+    </keybind>
+     <keybind key="C-W-Left">
       <action name="MoveToEdge">
 	<direction>west</direction>
       </action>
     </keybind>
-    <keybind key="C-W-Down">
+    <keybind key="C-W-Right">
       <action name="MoveToEdge">
-	<direction>south</direction>
+	<direction>east</direction>
       </action>
     </keybind>
     <keybind key="C-W-Up">
@@ -729,9 +706,93 @@
 	<direction>north</direction>
       </action>
     </keybind>
-    <keybind key="C-W-Right">
+    <!-- Corner -->
+    <keybind key="C-W-KP_1">
+      <action name="Undecorate"/>
+      <action name="Unmaximize"/>
+      <action name="MoveResizeTo">
+        <x>0</x>
+        <y>50%</y>
+        <width>50%</width>
+        <height>50%</height>
+      </action>
+    </keybind>
+    <keybind key="C-W-KP_3">
+      <action name="Undecorate"/>
+      <action name="Unmaximize"/>
+      <action name="MoveResizeTo">
+        <x>50%</x>
+        <y>50%</y>
+        <width>50%</width>
+        <height>50%</height>
+      </action>
+    </keybind>
+    <keybind key="C-W-KP_7">
+      <action name="Undecorate"/>
+      <action name="Unmaximize"/>
+      <action name="MoveResizeTo">
+        <x>0</x>
+        <y>0</y>
+        <width>50%</width>
+        <height>50%</height>
+      </action>
+    </keybind>
+    <keybind key="C-W-KP_9">
+      <action name="Undecorate"/>
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <x>50%</x>
+        <y>0</y>
+        <width>50%</width>
+        <height>50%</height>
+      </action>
+    </keybind>
+    <!-- Edge -->
+    <keybind key="C-W-KP_Down">      
+      <action name="Undecorate"/>
+      <action name="Unmaximize"/>
+      <action name="MaximizeHorizontal"/>
+      <action name="MoveResizeTo">	
+	<height>50%</height>
+	<width>100%</width>
+      </action>
+      <action name="MoveToEdge">
+	<direction>south</direction>
+      </action>
+    </keybind>
+    <keybind key="C-W-KP_Left">
+      <action name="Undecorate"/>
+      <action name="Unmaximize"/>
+      <action name="MaximizeVert"/>
+      <action name="MoveResizeTo">
+	<width>50%</width>
+      </action>
+      <action name="MoveToEdge">
+	<direction>west</direction>
+      </action>
+    </keybind>
+    <keybind key="C-W-KP_Right">
+      <action name="Undecorate"/>
+      <action name="Unmaximize"/>
+      <action name="MaximizeVert"/>
+      <action name="MoveResizeTo">
+	<height>100%</height>
+        <width>50%</width>
+      </action>
       <action name="MoveToEdge">
 	<direction>east</direction>
+      </action>
+    </keybind>     
+    <keybind key="C-W-KP_Up">      
+      <action name="Undecorate"/>
+      <action name="Unmaximize"/>
+      <action name="MaximizeHorizontal"/>
+      <action name="MoveResizeTo">
+	<height>50%</height>
+        <width>100%</width>
+      </action>
+      <action name="MoveToEdge">
+	<direction>north</direction>
       </action>
     </keybind>
     <!-- WINDOW SNAPPING KEYBINDINGS END HERE -->
