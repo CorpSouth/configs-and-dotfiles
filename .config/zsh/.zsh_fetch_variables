@@ -2,4 +2,4 @@
 # fetch #
 #########
 
-PF_INFO="editor kernel memory pkgs shell uptime wm palette" /usr/bin/pfetch
+PF_INFO="ascii de host editor kernel memory pkgs os shell uptime wm palette" pfetch

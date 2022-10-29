@@ -1,12 +1,4 @@
 #################################
-# ALL KEY BINDS GO HERE         #
-#################################
-# clear the backbuffer          #
-#################################
-
-bindkey '^L' clear-screen-and-scrollback
-
-#################################
 # create a zkbd compatible hash #
 #################################
 

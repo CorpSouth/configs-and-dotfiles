@@ -98,21 +98,6 @@ function zle-keymap-select {
 }
 zle -N zle-keymap-select
 
-########################
-# clear the backbuffer #
-########################
-
-function clear-screen-and-scrollback() {
-    echoti civis >"$TTY"
-    printf '%b' '\e[H\e[2J' >"$TTY"
-    zle .reset-prompt
-    zle -R
-    printf '%b' '\e[3J' >"$TTY"
-    echoti cnorm >"$TTY"
-}
-
-zle -N clear-screen-and-scrollback
-
 ##############
 # exit shell #
 ##############
@@ -172,3 +157,9 @@ function aa_256 ()
         echo -e "${o:${#o}-3:3} ${oo}${yy}${x}";
     done
 }
+
+#######################
+# syntax highlighting #
+#######################
+
+#source /usr/share/zsh-syntax-highlighting

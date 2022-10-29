@@ -6,7 +6,7 @@
 # useful if you run into theme problems and don't want to use lxappearance  #
 #############################################################################
 
-export XCURSOR_PATH=${XCURSOR_PATH}:~/.local/share/icons
+#export XCURSOR_PATH=${XCURSOR_PATH}:~/.local/share/icons
 
 ######################################################
 # use the tty as a login manager with this method    #
@@ -15,6 +15,6 @@ export XCURSOR_PATH=${XCURSOR_PATH}:~/.local/share/icons
 # or you will have to edit them out as the root user #
 ######################################################
 
-if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-  exec startx "$XINITRC"
-fi
+#if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+#  exec startx "$XINITRC"
+#fi

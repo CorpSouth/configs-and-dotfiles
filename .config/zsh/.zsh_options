@@ -43,7 +43,7 @@ setopt NUMERICGLOBSORT
 # history #
 ###########
 
-HISTFILE="$XDG_DATA_HOME/zsh/.zsh_history"
+HISTFILE="/var/home/corpsouth/.local/share/zsh/.zsh_history"
 HISTSIZE=1000
 SAVEHIST=1000
 LESSHISTFILE=-

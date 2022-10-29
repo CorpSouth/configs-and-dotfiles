@@ -2,11 +2,4 @@
 # custom prompt #
 #################
 
-PROMPT='%B%F{7}%<<%2~ %f%b'
-RPROMPT=$'%B%F{7}%*%f%b'
-
-################
-# system fetch #
-################
-
-PF_INFO="ascii editor kernel memory pkgs shell uptime wm palette" /usr/bin/pfetch
+PS1='[%n@%m %F{red}%/%f$vcs_info_msg_0_]$ '
