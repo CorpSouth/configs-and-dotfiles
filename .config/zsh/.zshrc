@@ -13,9 +13,11 @@ source ~/.config/zsh/.zsh_options
 source ~/.config/zsh/.zsh_prompt
 source ~/.config/zsh/.zsh_styles
 
-###########
-# PLUGINS #
-###########
+##########################################
+# PLUGINS                                #
+##########################################
+# Note: best to keep these at the bottom #
+##########################################
 
 source /var/home/corpsouth/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /var/home/corpsouth/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
