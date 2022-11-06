@@ -207,9 +207,12 @@ XClock*minuteColor: col8
 XClock*secondColor: col1
 XClock*update:      1
 
+! XCursor theme respecting
+Xcursor.theme: Adwaita
+
 ! UXTerm
 UXTerm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
-UXTerm*faceName:           Iosevka Term Extended
+UXTerm*faceName:           Monospace
 UXTerm*faceSize:           12
 UXTerm*faceSize1:          8
 UXTerm*faceSize2:          10
@@ -232,7 +235,7 @@ UXTerm.VT100.Translations: #override \n\
 
 ! XTerm
 XTerm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
-XTerm*faceName:           Iosevka Term Extended
+XTerm*faceName:           Monospace
 XTerm*faceSize:           12
 XTerm*faceSize1:          8
 XTerm*faceSize2:          10

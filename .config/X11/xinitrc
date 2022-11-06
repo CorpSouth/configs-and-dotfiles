@@ -1,5 +1,11 @@
 #!/bin/sh
 
+############################
+# set virtual monitor size #
+############################
+
+xrandr -s 1600x900 &
+
 ####################
 # autohide xcursor #
 ####################
@@ -11,13 +17,6 @@ xbanish -t 5 &
 ###############################
 
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-
-####################################
-# launch system monitoring utility #
-####################################
-
-sleep 2 &&
-uxterm -e btop &
 
 ###############################
 # run the lock screen manager #
@@ -35,7 +34,7 @@ xrdb -merge $XRESOURCES &
 # set the wallpaper #
 #####################
 
-xwallpaper --stretch $XDG_DATA_HOME/wallpapers/eos-minimal.png &
+xwallpaper --stretch $XDG_DATA_HOME/wallpapers/DebianArt/Emerald-wallpaper_1920x1080.png &
 
 #################################
 # start the compositing manager #
@@ -48,4 +47,4 @@ picom &
 # start the xsession #
 ######################
 
-exec openbox
+exec cwm -c /home/corpsouth/.config/cwm/.cwmrc
