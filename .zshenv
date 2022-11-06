@@ -32,6 +32,13 @@ export XDG_CONFIG_HOME=~/.config
 export XDG_CACHE_HOME=~/.cache
 export XDG_DATA_HOME=~/.local/share
 export XDG_STATE_HOME=~/.local/state
+export USERXESSION="$XDG_CACHE_HOME/X11/xsession"
+export USERXSESSIONRC="XDG_CACHE_HOME/X11/xsessionrc"
+export ALTUSERXSESSION="$XDG_CACHE_HOME/X11/Xsession"
+export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
+export XSERVERRC="$XDG_CONFIG_HOME/X11/xserverrc"
+export XRESOURCES="$XDG_CONFIG_HOME/X11/xresources"
+
 
 ################
 # qt variables #
