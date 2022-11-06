@@ -37,7 +37,7 @@ gap 5 5 5 5
 # menu font #
 #############
 
-fontname "Noto Sans Mono:size=14" 
+fontname "Monospace:size=12" 
 
 ##########################################################
 # borders and coloration                                 #
@@ -47,17 +47,17 @@ fontname "Noto Sans Mono:size=14"
 # for colors, both generic names and hex code is allowed #
 ##########################################################
 
-borderwidth 2
+borderwidth 1
 
-color activeborder   "#669900" 
-color inactiveborder "#282828" 
-color urgencyborder  "#FF9900" 
-color groupborder    "#39E4A3"
-color ungroupborder  "#CC0000"
-color menubg         "#3F3E3E"
-color menufg         "#669900"
-color font           "#EDF0F5"
-color selfont        "#D1FF96"
+color activeborder   "#3584E4" 
+color inactiveborder "#1E1E1E" 
+color urgencyborder  "#F8E45C" 
+color groupborder    "#8FF0A4"
+color ungroupborder  "#FF7B63"
+color menubg         "#383838"
+color menufg         "#3584E4"
+color font           "#FFFFFF"
+color selfont        "#FFFFFF"
 
 ####################################################################################
 # menu contents for programs, system commands, and to point to scripts             #
@@ -70,14 +70,12 @@ color selfont        "#D1FF96"
 command Browser                librewolf
 command Calculator             xcalc
 command Clock                  xclock 
-command Editor                 'urxvt -T Vim -e vim'
-command Mail                   thunderbird
-command '»system«'            'true'
-command 'Compositor Toggle'    picom_toggle
-command 'Notifications Toggle' dunst_toggle 
+command Editor                 'uxterm -e nvim'
+command 'File Picker'          'yad --center --file'         
+command '»system«'             'true'
 command 'Force Close'          xkill
 command 'Lock Screen'          slock
-command 'Logout'               'pkill -KILL -u aaron'
+command 'Logout'               'pkill -KILL -u corpsouth'
 command 'Reboot'               'systemctl reboot'
 command 'Shut Down'            'systemctl poweroff'
 
@@ -112,7 +110,7 @@ wm Xmonad xmonad
 ###########################################################################################
 
 unbind-key all
-bind-key 4-Return urxvt 
+bind-key 4-Return uxterm
 
 ###########
 # browser #
@@ -200,10 +198,11 @@ sticky yes
 
 autogroup 1 librewolf 
 autogroup 1 Thunderbird
+autogroup 2 discord
 autogroup 2 TelegramDesktop
-autogroup 2 WebCord
 autogroup 3 alephone
 autogroup 3 chocolate-doom
+autogroup 3 FreeTube
 autogroup 4 URxvt
 autogroup 4 XCalc
 autogroup 4 XClock
@@ -413,8 +412,8 @@ bind-mouse 4-5 window-lower
 # move/resize a window #
 ########################
 
-bind-mouse 4-1 window-move
-bind-mouse 4-3 window-resize
+bind-mouse M-1 window-move
+bind-mouse M-3 window-resize
 
 #####################################
 # toggle a windows group membership #
