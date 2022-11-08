@@ -4,12 +4,6 @@
 
 ZDOTDIR=$HOME/.config/zsh
 
-########
-# TERM #
-########
-
-export TERM=xterm-256color
-
 ##############################
 # Disable Caps Lock for Good #
 ##############################
