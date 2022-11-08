@@ -1,0 +1,6 @@
+xrdb -merge .Xresources &
+
+sxhkd &
+
+exec nowm_focuswatcher.sh
+

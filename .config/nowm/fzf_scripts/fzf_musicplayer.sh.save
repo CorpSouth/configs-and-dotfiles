@@ -1,0 +1,18 @@
+#!/bin/sh
+
+MDIR="/home/marulo/Música"
+
+cd $MDIR
+
+while true; do
+out=$(fzf --height=100% --layout=reverse --exact --print-query -m)
+      if [ "$out" == ":quit" ]; then
+	  exit 0
+
+      else
+	  for f in $out ; do ffplay -nodisp -autoexit "$f"; done
+
+      fi
+
+done
+
