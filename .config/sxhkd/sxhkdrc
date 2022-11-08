@@ -72,8 +72,9 @@ control + super + Delete
 super + f
  nowm_focus.sh last
 
-super + {bracketleft,bracketright}
- nowm_focus.sh {prev,next}
+super + {_,shift + }Tab
+ {nowm_focus.sh prev,nowm_focus.sh next}
+
 
 ############################
 # Window grouping keychain #
