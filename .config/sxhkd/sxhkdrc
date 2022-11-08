@@ -1,0 +1,115 @@
+#####################################
+# WM INDEPENDENT HOTKEYS START HERE #
+#####################################
+# Common Application Shortcuts      #
+#####################################
+
+super + Return
+ uxterm
+
+XF86Calculator
+ xcalc
+
+XF86Homepage
+ librewolf
+
+XF86Mail
+ thunderbird
+
+###########
+# Editors #
+###########
+
+super + e ; {n,v}
+ {uxterm -e nano, \
+  uxterm -e $EDITOR}
+
+#########################
+# Launcher              #
+#########################
+# Requires UXTerm/XTerm #
+#########################
+
+super + Menu
+ xlauncher.sh
+
+#######################
+# Multimedia Controls #
+#######################
+
+XF86Audio{LowerVolume,RaiseVolume,Mute}
+ {amixer sset Master 10%-, \
+  amixer sset Master 10%+, \
+  amixer sset Master toggle}
+
+XF86Tools
+ uxterm -e alsamixer
+
+#################
+# Restart SXHKD #
+#################
+
+super + Escape
+ pkill -USR1 -x sxhkd
+
+#############################################################
+# WM INDEPENDENT KEYBINDINGS END HERE                       #
+#############################################################
+# WMUTILS [! WM] KEYBINDINGS START HERE                     #
+#############################################################
+# Credits: https://git.disroot.org/root_sti/nowm            #
+#          https://github.com/wmutils/                      #
+#############################################################
+# Basic controls for focusing, ignoring, or killing windows #
+#############################################################
+
+control + super + i
+ ignw -s $(pfw)
+
+control + super + Delete
+ killw $(pfw)
+
+super + f
+ nowm_focus.sh last
+
+super + {bracketleft,bracketright}
+ nowm_focus.sh {prev,next}
+
+############################
+# Window grouping keychain #
+############################
+
+control + super + m ; {a,s,w}
+ {nowm_mapw.sh add, \
+  nowm_mapw.sh stogle, \
+  nowm_mapw.sh wtogle}
+
+##########################
+# Window layout keychain #
+##########################
+
+control + super + l ; {c,m,s,t}
+ {nowm_layout.sh cascade, \
+  nowm_layout.sh monocule, \
+  nowm_layout.sh split, \
+  nowm_layout.sh tiling}
+
+##############################
+# Window moving and resizing #
+##############################
+
+super + {h,j,k,l}
+ wmv {-10 0,0 10,0 -10,10 0} $(pfw)
+	
+super + {KP_7,KP_9,KP_1,KP_3}
+ wmv -a {0 0,1280 0,0 800,1280 800} $(pfw)
+
+alt + super {h,l,k,j}
+ {wrs -10 0 $(pfw), \
+  wrs 10 0 $(pfw), \
+  wrs 0 -10 $(pfw), \
+  wrs 0 10 $(pfw)}
+
+#######################################
+# WMUTILS [! WM] KEYBINDINGS END HERE #
+#######################################
