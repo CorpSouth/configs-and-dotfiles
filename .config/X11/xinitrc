@@ -1,50 +1,46 @@
 #!/bin/sh
 
+####################
+# background color #
+####################
+
+hsetroot -solid "#241F31" &
+
+#####################################
+# picom display compositing manager #
+#####################################
+
+picom &
+
 ############################
-# set virtual monitor size #
+# simple x11 hotkey daemon #
 ############################
 
+sxhkd &
+
+######################################
+# virtual machine display correction #
+######################################
+
+/usr/bin/spice-vdagent &
+
+sleep 2 &&
 xrandr -s 1600x900 &
 
 ####################
-# autohide xcursor #
+# xcursor settings #
 ####################
 
-xbanish -t 5 &
+xsetroot -cursor_name left_ptr &
 
-###############################
-# invoke the policykit daemon #
-###############################
-
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-
-###############################
-# run the lock screen manager #
-###############################
-
-xautolock -time 10 -locker slock &
-
-#####################
-# reload xresources #
-#####################
+##############
+# xresources #
+##############
 
 xrdb -merge $XRESOURCES &
 
-#####################
-# set the wallpaper #
-#####################
+############
+# xsession #
+############
 
-xwallpaper --stretch $XDG_DATA_HOME/wallpapers/DebianArt/Emerald-wallpaper_1920x1080.png &
-
-#################################
-# start the compositing manager #
-#################################
-
-sleep 2 &&
-picom &
-
-######################
-# start the xsession #
-######################
-
-exec cwm -c /home/corpsouth/.config/cwm/.cwmrc
+exec focusd.sh
