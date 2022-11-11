@@ -27,90 +27,157 @@ super + e ; {n,v}
 #########################
 # Launcher              #
 #########################
-# Requires UXTerm/XTerm #
-#########################
 
 super + Menu
- xlauncher.sh
+ fzf_run
 
 #######################
 # Multimedia Controls #
 #######################
 
 XF86Audio{LowerVolume,RaiseVolume,Mute}
- {amixer sset Master 10%-, \
-  amixer sset Master 10%+, \
-  amixer sset Master toggle}
+ {pactl set-sink-volume @DEFAULT_SINK@ -10%, \
+  pactl set-sink-volume @DEFAULT_SINK@ +10%, \
+  pactl set-sink-mute @DEFAULT_SINK@ toggle}
 
-XF86Tools
+alt + XF86Tools
  uxterm -e alsamixer
 
-#################
-# Restart SXHKD #
-#################
+###################
+# Reload, Restart #
+###################
 
-super + Escape
- pkill -USR1 -x sxhkd
+super + F5 ; {c,h,r,x}
+ {i3-msg reload, \
+  pkill -USR1 -x sxhkd, \
+  i3-msg restart, \
+  xrdb -merge $XRESOURCES}
 
-#############################################################
-# WM INDEPENDENT KEYBINDINGS END HERE                       #
-#############################################################
-# WMUTILS [! WM] KEYBINDINGS START HERE                     #
-#############################################################
-# Credits: https://git.disroot.org/root_sti/nowm            #
-#          https://github.com/wmutils/                      #
-#############################################################
-# Basic controls for focusing, ignoring, or killing windows #
-#############################################################
+###############
+# Screenshots #
+###############
 
-control + super + i
- ignw -s $(pfw)
+Print
+ scrot  ~/.local/share/screenshots/%c.png
 
-control + super + Delete
- killw $(pfw)
+###################
+# system monitors #
+###################
 
-super + f
- nowm_focus.sh last
+super + Escape ; {b,h,t}
+ {$TERMINAL -T btop -e btop, $TERMINAL -T htop -e htop, $TERMINAL -T top -e top}
 
-super + {_,shift + }Tab
- {nowm_focus.sh prev,nowm_focus.sh next}
-
-
-############################
-# Window grouping keychain #
-############################
-
-control + super + m ; {a,s,w}
- {nowm_mapw.sh add, \
-  nowm_mapw.sh stogle, \
-  nowm_mapw.sh wtogle}
-
-##########################
-# Window layout keychain #
-##########################
-
-control + super + l ; {c,m,s,t}
- {nowm_layout.sh cascade, \
-  nowm_layout.sh monocule, \
-  nowm_layout.sh split, \
-  nowm_layout.sh tiling}
-
-##############################
-# Window moving and resizing #
-##############################
+#########################
+# WM: i3wm Keybindings  #
+#########################
+# Focal                 #
+#########################
 
 super + {h,j,k,l}
- wmv {-10 0,0 10,0 -10,10 0} $(pfw)
-	
-super + {KP_7,KP_9,KP_1,KP_3}
- wmv -a {0 0,1280 0,0 800,1280 800} $(pfw)
+ i3-msg focus{left,down,up,right}
 
-alt + super {h,l,k,j}
- {wrs -10 0 $(pfw), \
-  wrs 10 0 $(pfw), \
-  wrs 0 -10 $(pfw), \
-  wrs 0 10 $(pfw)}
+#####################
+# Center the window #
+#####################
 
-#######################################
-# WMUTILS [! WM] KEYBINDINGS END HERE #
-#######################################
+control + super + c
+ i3-msg move position center
+
+#########################
+# Child container focus #
+#########################
+
+super + t
+ i3-msg focus mode_toggle
+
+################
+# Float toggle #
+################
+
+control + super + f
+ i3-msg floating toggle
+
+#####################
+# Fullscreen toggle #
+#####################
+
+control + super + F11
+ i3-msg fullscreen toggle
+
+######################
+# Kill active window #
+######################
+
+control + super + Delete
+ i3-msg kill
+
+#########################
+# Layout switching mode #
+#########################
+
+control + shift + super + l : {d,s,t}
+ i3-msg layout {default,stacking,tabbed}
+
+###############
+# Move window #
+###############
+
+shift + super {h,j,k,l}
+ i3-msg move {left,down,up,right}
+
+#################
+# Resize window #
+#################
+
+control + super + {h,j,k,l}
+ i3-msg resize {shrink width 1 px or 1 ppt, \
+                grow height 1 px or 1 ppt, \
+                shrink height 1 px or 1 ppt, \
+                grow width 1 px or 1 ppt}
+
+##################
+# Scratchpadding #
+##################
+
+alt + super + Return
+ uxterm -name scratchpad
+
+super + grave
+ i3-msg scratchpad show
+
+control + super + grave
+ i3-msg move scratchpad
+
+################
+# Split toggle #
+################
+
+control + super + s
+ i3-msg split toggle
+
+control + super + t
+ i3-msg layout toggle split
+
+############################
+# Send window to workspace #
+############################
+
+shift + super + {1-7}
+ i3-msg move container to workspace number {1-7} 
+
+#######################
+# Switch to workspace #
+#######################
+
+super + {1-7}
+ i3-msg workspace {1-7}
+
+#########################
+# Tabular focus cycling #
+#########################
+
+super + Tab
+ i3-msg focus next
+
+shift + super + Tab
+ i3-msg focus prev
