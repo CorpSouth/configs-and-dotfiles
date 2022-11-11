@@ -18,21 +18,6 @@ picom &
 
 sxhkd &
 
-######################################
-# virtual machine display correction #
-######################################
-
-/usr/bin/spice-vdagent &
-
-sleep 2 &&
-xrandr -s 1600x900 &
-
-####################
-# xcursor settings #
-####################
-
-xsetroot -cursor_name left_ptr &
-
 ##############
 # xresources #
 ##############
@@ -43,4 +28,4 @@ xrdb -merge $XRESOURCES &
 # xsession #
 ############
 
-exec focusd.sh
+exec i3
