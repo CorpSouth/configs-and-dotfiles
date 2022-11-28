@@ -119,8 +119,6 @@ set $ws6 "6:work"
 set $ws7 "7:virt"
 
 # Workspace assignments (use xprop to grab window information)
-
-# Assign by class
 assign [class="librewolf-default|thunderbird"]      $ws1
 assign [class="discord|Telegram"]                   $ws2
 assign [class="FreeTube|mpv|Steam"]                 $ws4
