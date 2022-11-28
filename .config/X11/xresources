@@ -1,218 +1,12 @@
-! Sixteen-Color Definitions Start Here
-#define BG #111111
-#define FG #FFFFFF
-#define CC #BBBBBB
+! Cursor theme
+Xcursor.theme: DMZ-Black 
 
-! Black
-#define col0  #111111
-#define col8  #777777
-
-! Red
-#define col1  #FF4136
-#define col9  #FF4136
-
-! Green
-#define col2  #2ECC40
-#define col10 #2ECC40
-
-! Yellow
-#define col3  #FFDC00
-#define col11 #FFDC00
-
-! Blue
-#define col4  #0074D9
-#define col12 #0074D9
-
-! Magenta
-#define col5  #B10DC9
-#define col13 #B10DC9
-
-! Cyan
-#define col6  #7FDBFF
-#define col14 #7FDBFF
-
-! White
-#define col7  #BBBBBB
-#define col15 #FFFFFF
-
-! Applying Colors
-*.background:  BG
-*.foreground:  FG
-*.cursorColor: CC
-*.color0:      col0
-*.color1:      col1
-*.color2:      col2
-*.color3:      col3
-*.color4:      col4
-*.color5:      col5
-*.color6:      col6
-*.color7:      col7
-*.color8:      col8
-*.color9:      col9
-*.color10:     col10
-*.color11:     col11
-*.color12:     col12
-*.color13:     col13
-*.color14:     col14
-*.color15:     col15
-
-! XCalc
-xcalc*geometry:                        300x450+1291+5
-xcalc.ti.background:                   col0
-xcalc.ti.bevel.background:             col7
-xcalc.ti.bevel.screen.borderColor:     col7
-xcalc.ti.bevel.screen.borderWidth:     4 
-xcalc.ti.bevel.screen.background:      col2
-xcalc.ti.bevel.screen.DEC.background:  col2
-xcalc.ti.bevel.screen.DEC.foreground:  BG
-xcalc.ti.bevel.screen.DEG.background:  col2
-xcalc.ti.bevel.screen.DEG.foreground:  BG
-xcalc.ti.bevel.screen.GRAD.background: col2
-xcalc.ti.bevel.screen.GRAD.foreground: BG
-xcalc.ti.bevel.screen.RAD.background:  col2
-xcalc.ti.bevel.screen.RAD.foreground:  col0
-xcalc.ti.bevel.screen.INV.background:  col2
-xcalc.ti.bevel.screen.INV.foreground:  col1
-xcalc.ti.bevel.screen.LCD.background:  col2
-xcalc.ti.bevel.screen.LCD.foreground:  BG
-xcalc.ti.bevel.screen.LCD.shadowWidth: 0
-xcalc.ti.bevel.screen.M.background:    col2
-xcalc.ti.bevel.screen.M.foreground:    BG
-xcalc.ti.bevel.screen.P.background:    col2 
-xcalc.ti.bevel.screen.P.foreground:    BG
-xcalc.ti.bevel.defaultDistance:        0
-xcalc.ti.bevel.screen.vertDistance:    10
-xcalc.ti.bevel.screen.horizDistance:   10 
-xcalc.ti.button1.background:           CC
-xcalc.ti.button1.foreground:           BG
-xcalc.ti.button2.background:           CC
-xcalc.ti.button2.foreground:           BG
-xcalc.ti.button3.background:           CC
-xcalc.ti.button3.foreground:           BG
-xcalc.ti.button4.background:           CC
-xcalc.ti.button4.foreground:           BG
-xcalc.ti.button5.background:           col3
-xcalc.ti.button5.foreground:           BG
-xcalc.ti.button6.background:           CC
-xcalc.ti.button6.foreground:           BG
-xcalc.ti.button7.background:           CC
-xcalc.ti.button7.foreground:           BG
-xcalc.ti.button8.background:           CC
-xcalc.ti.button8.foreground:           BG
-xcalc.ti.button9.background:           CC
-xcalc.ti.button9.foreground:           BG
-xcalc.ti.button10.background:          CC
-xcalc.ti.button10.foreground:          BG
-xcalc.ti.button11.background:          CC
-xcalc.ti.button11.foreground:          BG
-xcalc.ti.button12.background:          CC
-xcalc.ti.button12.foreground:          BG
-xcalc.ti.button13.background:          CC
-xcalc.ti.button13.foreground:          BG
-xcalc.ti.button14.background:          CC
-xcalc.ti.button14.foreground:          BG
-xcalc.ti.button15.background:          CC
-xcalc.ti.button15.foreground:          BG
-xcalc.ti.button16.background:          CC
-xcalc.ti.button16.foreground:          BG
-xcalc.ti.button17.background:          CC
-xcalc.ti.button17.foreground:          BG
-xcalc.ti.button18.background:          col5
-xcalc.ti.button18.foreground:          BG
-xcalc.ti.button19.background:          col5
-xcalc.ti.button19.foreground:          BG
-xcalc.ti.button20.background:          col1
-xcalc.ti.button20.foreground:          BG
-xcalc.ti.button21.background:          CC
-xcalc.ti.button21.foreground:          BG
-xcalc.ti.button22.background:          col4
-xcalc.ti.button22.foreground:          BG
-xcalc.ti.button23.background:          col4
-xcalc.ti.button23.foreground:          BG
-xcalc.ti.button24.background:          col4
-xcalc.ti.button24.foreground:          BG
-xcalc.ti.button25.background:          col1
-xcalc.ti.button25.foreground:          BG
-xcalc.ti.button26.background:          CC
-xcalc.ti.button26.foreground:          BG
-xcalc.ti.button27.background:          col4
-xcalc.ti.button27.foreground:          BG
-xcalc.ti.button28.background:          col4
-xcalc.ti.button28.foreground:          BG
-xcalc.ti.button29.background:          col4
-xcalc.ti.button29.foreground:          BG
-xcalc.ti.button30.background:          col1
-xcalc.ti.button30.foreground:          BG
-xcalc.ti.button31.background:          CC
-xcalc.ti.button31.foreground:          BG
-xcalc.ti.button32.background:          col4
-xcalc.ti.button32.foreground:          BG
-xcalc.ti.button33.background:          col4
-xcalc.ti.button33.foreground:          BG
-xcalc.ti.button34.background:          col4
-xcalc.ti.button34.foreground:          BG
-xcalc.ti.button35.background:          col1
-xcalc.ti.button35.foreground:          BG
-xcalc.ti.button36.background:          CC
-xcalc.ti.button36.foreground:          BG
-xcalc.ti.button37.background:          col4
-xcalc.ti.button37.foreground:          BG
-xcalc.ti.button38.background:          col4
-xcalc.ti.button38.foreground:          BG
-xcalc.ti.button39.background:          col4
-xcalc.ti.button39.foreground:          BG
-xcalc.ti.button40.background:          col1
-xcalc.ti.button40.foreground:          BG
-xcalc.ti.button41.background:          CC
-xcalc.ti.button41.foreground:          BG
-xcalc.ti.button42.background:          CC
-xcalc.ti.button42.foreground:          BG
-xcalc.ti.button43.background:          CC
-xcalc.ti.button43.foreground:          BG
-xcalc.ti.button44.background:          CC
-xcalc.ti.button44.foreground:          BG
-xcalc.ti.button45.background:          CC
-xcalc.ti.button45.foreground:          BG
-xcalc.ti.button46.background:          CC
-xcalc.ti.button46.foreground:          BG
-xcalc.ti.button47.background:          CC
-xcalc.ti.button47.foreground:          BG
-xcalc.ti.button48.background:          CC
-xcalc.ti.button48.foreground:          BG
-xcalc.ti.button49.background:          CC
-xcalc.ti.button49.foreground:          BG
-xcalc.ti.button50.background:          CC
-xcalc.ti.button50.foreground:          BG
-xcalc.ti.button51.background:          CC
-xcalc.ti.button51.foreground:          BG
-xcalc.ti.button52.background:          CC
-xcalc.ti.button52.foreground:          BG
-xcalc.ti.button53.background:          CC
-xcalc.ti.button53.foreground:          BG
-xcalc.ti.button54.background:          CC
-xcalc.ti.button54.foreground:          BG
-xcalc.ti.button55.background:          CC
-xcalc.ti.button55.foreground:          BG
-XCalc*Cursor:                          hand2
-XCalc*ShapeStyle:                      rectangle
-
-! XClock
-XClock*geometry:    350x350+5+5
-XClock*foreground:  FG
-XClock*background:  BG
-XClock*majorColor:  col6
-XClock*minorColor:  col6
-XClock*hourColor:   col8
-XClock*minuteColor: col8
-XClock*secondColor: col1
-XClock*update:      1
-
-! XCursor theme respecting
-Xcursor.theme: Adwaita
+! Invert colors
+*reverseVideo: true
 
 ! UXTerm
 UXTerm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
-UXTerm*faceName:           Source Code Pro 
+UXTerm*faceName:           iosevka term extended 
 UXTerm*faceSize:           12
 UXTerm*faceSize1:          8
 UXTerm*faceSize2:          10
@@ -224,6 +18,7 @@ UXTerm*saveLines:          16385
 UXTerm*selectToClipboard:  true
 UXTerm*termName:           xterm-256color
 UXTerm*trimSelection:      true
+UXTerm*scrollBar: false
 UXTerm.VT100.Translations: #override \n\
   Ctrl <Key> minus: smaller-vt-font() \n\
   Ctrl <Key> plus: larger-vt-font() \n\
@@ -233,9 +28,21 @@ UXTerm.VT100.Translations: #override \n\
   <Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0) \n\
   <Btn2Up>: insert-selection(PRIMARY)
 
+! XCalc
+*customization: -color
+xcalc*geometry:                        300x450+1291+5
+XCalc*Cursor:                          hand2
+XCalc*ShapeStyle:                      rectangle
+
+! XClock
+xclock.Clock.analog: true
+XClock*geometry:     350x350+5+5
+XClock*update:       1
+xclock.Clock.render: true
+
 ! XTerm
 XTerm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
-XTerm*faceName:           Source Code Pro
+XTerm*faceName:           iosevka term extended
 XTerm*faceSize:           12
 XTerm*faceSize1:          8
 XTerm*faceSize2:          10
@@ -247,6 +54,7 @@ XTerm*saveLines:          16385
 XTerm*selectToClipboard:  true
 XTerm*termName:           xterm-256color
 XTerm*trimSelection:      true
+XTerm*scrollBar: false
 XTerm.VT100.Translations: #override \n\
   Ctrl <Key> minus: smaller-vt-font() \n\
   Ctrl <Key> plus: larger-vt-font() \n\
