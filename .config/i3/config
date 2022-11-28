@@ -1,1 +1,0 @@
-include $XDG_CONFIG_HOME/i3/config.d/*.conf
