@@ -10,15 +10,16 @@
 
 # Autostart programs
 
+exec --no-startup-id xrdb -merge $XRESOURCES
 exec_always --no-startup-id $TERMINAL -name btop -e btop
-
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id hsetroot -solid "#000000"
+exec --no-startup-id hsetroot -center $XDG_DATA_HOME/wallpapers/thestruggle.png
 exec --no-startup-id picom
 exec --no-startup-id xbanish -t 5
-exec --no-startup-id xautolock -time 10 -locker slock
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-with-dpms 
 exec --no-startup-id dunst
-exec --no-startup-id xrdb -merge $XRESOURCES
+exec --no-startup-id xfce4-clipman
+exec --no-startup-id nm-applet
+exec --no-startup-id pasystray
 
 # Modifier
 set $mod Mod4
@@ -28,11 +29,14 @@ floating_modifier $mod
 bindsym $mod+Return      exec --no-startup-id $TERMINAL
 bindsym $mod+Mod1+Return exec --no-startup-id $TERMINAL -name scratchpad
 
+# Start a container session
+bindsym $mod+KP_Enter exec --no-startup-id $TERMINAL -name scratchpad -e toolbox enter fedora-toolbox-38
+
 # Terminal scratchpad
 bindsym Mod1+Return $scratchpad
 
 # Print the screen
-bindsym $mod+Print exec --no-startup-id scrot  ~/.local/share/screenshots/%c.png
+bindsym Print exec --no-startup-id scrot  $HOME/.local/share/screenshots/%c.png
 
 # Directional keys (Vi-like)
 set $up    k
@@ -41,27 +45,25 @@ set $left  h
 set $right l
 
 # Colors (XTerm)
-# Using variables makes referencing colors across your configuration easier
-
-set $black         #000000
-set $dimgray       #7F7F7F
-set $gray          #E5E5E5
-set $white         #FFFFFF
-set $brightred     #FF0000
-set $red           #CD0000
-set $brightgreen   #00FF00
-set $green         #00CD00
-set $brightyellow  #FFFF00
-set $yellow        #CDCD00
-set $brightblue    #5C5CFF
-set $blue          #0000EE
-set $brightmagenta #FF00FF
-set $magenta       #CD00CD
-set $brightcyan    #00FFFF
-set $cyan          #00CDCD
+set $black0    #000000
+set $red1      #CD0000
+set $green2    #00CD00
+set $yellow3   #CDCD00
+set $blue4     #0000EE
+set $magenta5  #CD00CD
+set $cyan6     #00CDCD
+set $gray7     #E5E5E5
+set $gray8     #7F7F7F
+set $red9      #FF0000
+set $green10   #00FF00
+set $yellow11  #FFFF00
+set $blue12    #5C5CFF
+set $magenta13 #FF00FF
+set $cyan14    #00FFFF
+set $white15   #FFFFFF
 
 # Disable title bars and allow enabling of gaps
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 3
 
 # Disable borders when there's only one window
 smart_borders on
@@ -76,20 +78,14 @@ font pango: Iosevka Term Extended
 title_align center
 
 # In order: class, border, background, indicator, child border
-client.focused          $brightgreen  $green  $black $brightmagenta $green
-client.focused_inactive $brightcyan   $cyan   $black $magenta       $cyan
-client.unfocused        $brightblue   $blue   $black $magenta       $blue
-client.urgent           $brightyellow $yellow $red   $brightred     $yellow
-client.placeholder      $dimgray      $gray   $black $white         $dimgray
-client.background       $black
+client.focused          $cyan14   $cyan6   $black0 $cyan14  $cyan6
+client.focused_inactive $blue12   $blue4   $black0 $blue12  $blue4
+client.unfocused        $gray7    $gray8   $black0 $white15 $gray8
+client.urgent           $yellow11 $yellow3 $red1   $red9    $yellow3
+client.placeholder      $white15  $black0  $gray7  $red1    $white15
+client.background       $black0
 
 # Bar
-
-# NOTICE:
-# If you are starting your i3wm configuration from scratch,
-# please set up your workspace variables beforehand or ALL
-# options will simply result in error
-
 bar {
     status_command i3status
     # If you only want the workspace name, set to "yes"
@@ -97,15 +93,15 @@ bar {
     # Obey Fitt's law
     tray_padding 0
     colors {
-           background $black
-           separator  $dimgray       
-           statusline $gray
+           background $black0
+           separator  $gray8       
+           statusline $gray7
            # In order: border, background, text
-           focused_workspace  $brightgreen   $green   $black
-           active_workspace   $brightcyan    $cyan    $black
-           inactive_workspace $brightblue    $blue    $black
-           urgent_workspace   $brightyellow  $yellow  $brightred
-           binding_mode       $brightmagenta $magenta $black
+           focused_workspace  $green10   $green2   $black0
+           active_workspace   $blue12    $blue4    $black0
+           inactive_workspace $gray7     $gray8    $black0
+           urgent_workspace   $red9      $yellow3  $red1
+           binding_mode       $magenta13 $magenta5 $black0
     }
 }
 
@@ -119,10 +115,12 @@ set $ws6 "6:work"
 set $ws7 "7:virt"
 
 # Workspace assignments (use xprop to grab window information)
+
+# Assign by class
 assign [class="librewolf-default|thunderbird"]      $ws1
 assign [class="discord|Telegram"]                   $ws2
 assign [class="FreeTube|mpv|Steam"]                 $ws4
-assign [class="Com.github.tchx84.Flatseal|Pcmanfm"] $ws5
+assign [class="Com.github.tchx84.Flatseal|Thunar"] $ws5
 assign [class="Soffice"]                            $ws6
 assign [class="Virt-manager"]                       $ws7
 assign [instance="btop|htop|top"]                   $ws3
@@ -138,8 +136,12 @@ bindsym $mod+5 workspace $ws5
 bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
 
+# Switch back and forth from the most recent two workspaces
+workspace_auto_back_and_forth yes
+
 # Focus on window opening
 focus_on_window_activation focus
+for_window [urgent=latest] focus
 
 # Focal keybindings (Vi-like)
 bindsym $mod+$left  focus left
@@ -163,21 +165,21 @@ bindsym Mod1+Menu exec --no-startup-id dmenu_run
 
 # XF86 common
 bindsym XF86Calculator exec --no-startup-id xcalc
-bindsym XF86Explorer   exec --no-startup-id pcmanfm
+bindsym XF86Explorer   exec --no-startup-id thunar
 bindsym XF86HomePage   exec --no-startup-id librewolf
 bindsym XF86Mail       exec --no-startup-id thunderbird
 
 # XF86 media
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +1%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -1%
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
 bindsym XF86AudioMute        exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym XF86Tools            exec --no-startup-id $TERMINAL -name alsamixer -e alsamixer
+bindsym XF86Tools            exec --no-startup-id $TERMINAL -name scratchpad -e alsamixer
 
 # Set the following rule to make a generic scratchpad terminal
-for_window [instance="scratchpad"] move scratchpad, scratchpad show, resize set 1000 750, move position center
+for_window [instance="scratchpad"] move scratchpad, scratchpad show, resize set 1125 750, move position center, sticky enable
 
 # Scratchpad rules
-for_window [instance="alsamixer|pavucontrol"] move scratchpad, scratchpad show, resize set 1000 750, move position center
+for_window [class="Pavucontrol"] move scratchpad, scratchpad show, resize set 1025 850, move position center, sticky enable
 
 # Scratchpad the current window
 bindsym $mod+control+grave move scratchpad
@@ -210,7 +212,7 @@ mode "layout" {
               bindsym Escape mode "default"
               bindsym Return mode "default"
 }
-bindsym $mod+Mod1+l mode "layout"
+bindsym $mod+control+l mode "layout"
 
 # Move-resize
 mode "move-resize" {
@@ -233,14 +235,14 @@ bindsym $mod+control+m mode "move-resize"
 
 # Session & power
 mode "session & power" {
-                       # Logout, Lock, Reboot, Reload, Restart i3, Shutdown, and Suspend
+                       # Logout, Lock, Reboot, Reload, Restart, Shutdown, and Suspend
 	               bindsym c  reload
-                       bindsym End pkill -KILL -u $USER
+                       bindsym End exec pkill -KILL -u $USER
                        bindsym F5 restart
-	               bindsym Pause slock
-                       bindsym p systemctl poweroff
-                       bindsym r systemctl reboot
-                       bindsym s systemctl suspend
+	               bindsym Pause exec i3lock-with-dpms 
+                       bindsym p exec systemctl poweroff
+                       bindsym r exec systemctl reboot
+                       bindsym s exec systemctl suspend
                        # Exit mode
                        bindsym Escape mode "default"
                        bindsym Return mode "default"

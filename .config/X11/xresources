@@ -1,5 +1,5 @@
 ! Cursor theme
-Xcursor.theme: DMZ-Black 
+Xcursor.theme: Adwaita 
 
 ! Invert colors
 *reverseVideo: true
