@@ -1,0 +1,6 @@
+#######
+#Fetch#
+#######
+
+PF_INFO="ascii de host editor kernel memory pkgs os shell uptime wm palette" pfetch
+
