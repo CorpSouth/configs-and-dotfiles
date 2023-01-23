@@ -12,12 +12,6 @@ vim.cmd('set nowritebackup')
 vim.cmd('set linebreak')
 
 ------------
---Spelling--
-------------
-
-vim.cmd('set spell spelllang=en_us')
-
-------------
 --Vim Plug--
 ------------
 
@@ -43,12 +37,14 @@ vim.call('plug#end')
 --Color Control--
 -----------------
 
-vim.cmd('syntax on')
-vim.cmd('set termguicolors')
-vim.cmd(':colorscheme base16-colors')
-vim.cmd(':hi Normal guibg=NONE ctermbg=NONE')
-vim.cmd(':hi LineNr guibg=NONE ctermbg=NONE')
-vim.cmd(':hi SignColumn guibg=NONE')
+local cmd = vim.cmd
+local g = vim.g
+
+local current_theme_name = os.getenv('BASE16_THEME')
+if current_theme_name and g.colors_name ~= 'base16-'..current_theme_name then
+  cmd('let base16colorspace=256')
+  cmd('colorscheme base16-'..current_theme_name)
+end
 
 ---------------
 --KEYBINDINGS--
