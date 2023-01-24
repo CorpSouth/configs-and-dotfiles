@@ -29,7 +29,7 @@ Plug 'junegunn/limelight.vim'
 Plug 'preservim/vim-pencil'
 Plug 'godlygeek/tabular'
 Plug 'preservim/vim-markdown'
-Plug 'base16-project/base16-vim'
+Plug 'tinted-theming/base16-vim'
 
 vim.call('plug#end')
 
