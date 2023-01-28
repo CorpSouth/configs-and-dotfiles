@@ -25,6 +25,12 @@ else
     set -gx EDITOR nano
 end
 
+if grep	-qs less /usr/bin/nvim
+    set	-x MANPAGER "nvim +Man!"
+else
+    set	-x MANPAGER less
+end
+
 set -gx TERM xterm-256color
 
 if grep -qs micro /usr/bin/nvim
