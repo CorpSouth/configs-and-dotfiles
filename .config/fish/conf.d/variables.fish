@@ -17,25 +17,21 @@ set fish_greeting
 #Exported Defaults#
 ###################
 
-set -gx BROWSER librewolf
-
-if grep -qs micro /usr/bin/nvim
+if type -q nvim
     set -gx EDITOR nvim
-else
+else if type -q nano 
     set -gx EDITOR nano
 end
 
-if grep	-qs less /usr/bin/nvim
+if type	-q nvim
     set	-x MANPAGER "nvim +Man!"
-else
+else if type -q less
     set	-x MANPAGER less
 end
 
-set -gx TERM xterm-256color
-
-if grep -qs micro /usr/bin/nvim
+if type -q nvim
     set	-gx VISUAL nvim
-else
+else if type -q nano
     set	-gx VISUAL nano
 end 
 
@@ -51,6 +47,12 @@ set -gx LESSHISTFILE "-"
 
 set -e fish_user_paths
 set -U fish_user_paths $HOME/.local/bin $HOME/.var/app/ /var/usrlocal/bin $fish_user_paths
+
+######
+#TERM#
+######
+
+set -gx TERM xterm-256color
 
 ####################
 #XDG Base Directory#

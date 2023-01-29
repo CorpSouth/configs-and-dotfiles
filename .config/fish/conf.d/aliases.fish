@@ -2,12 +2,38 @@
 #Conditional Aliases, May Not Apply to Your Situation#
 ######################################################
 
+# Install
+if type -q rpm-ostree
+    alias install='rpm-ostree install'
 
-if grep -qs rpm-ostree /usr/bin/rpm-ostree
-    alias update='rpm-ostree update'
-else
-    alias update='sudo dnf update'
+else if type -q dnf 
+    alias install='sudo dnf install'
+
+else if type -q apt
+    alias install='sudo apt install'
 end
+
+# Uninstall
+if type -q rpm-ostree
+    alias uninstall='rpm-ostree uninstall'
+
+else if type -q dnf
+    alias uninstall='sudo dnf remove'
+
+else if type -q apt
+    alias uninstall='sudo apt remove --purge'
+end
+
+# Updates
+if type -q rpm-ostree
+    alias update='rpm-ostree update'
+
+else if type -q dnf
+    alias update='sudo dnf update'
+
+else if type -q apt
+    alias update='sudo apt update'
+end 
 
 #####
 #Git#
@@ -29,16 +55,14 @@ alias newtag='git tag -a'
 #Ostree#
 ########
 
-alias alive='rpm-ostree install --apply-live'
+alias aplive='rpm-ostree install --apply-live'
 alias cleanup='rpm-ostree cleanup -bmpr'
-alias install='rpm-ostree install'
-alias roremove='rpm-ostree override remove'
-alias roreset='rpm-ostree override reset'
+alias orremove='rpm-ostree override remove'
+alias orreset='rpm-ostree override reset'
 alias pin='sudo ostree admin pin'
 alias rebase='rpm-ostree rebase'
 alias rollback='rpm-ostree rollback'
 alias stati='rpm-ostree status'
-alias uninstall='rpm-ostree uninstall'
 
 ###################
 #Responsible Usage#
