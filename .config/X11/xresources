@@ -4,20 +4,30 @@
 ! Cursor theme
 Xcursor.theme: Bibata-Modern-Classic
 
+! XCalc
+
+xcalc*Cursor:     hand2
+xcalc*geometry:   215x315+1376+5
+xcalc*ShapeStyle: rectangle
+
 ! XClock
 
-XClock*geometry: 235x235+5+5
+XClock*geometry: 255x255+5+5
 XClock*render:   true
 XClock*update:   1
 
+! Xft antialiasing
+Xft.rgba: rgb
+
 ! UXTerm
 UXTerm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
-UXTerm*faceName:           Iosevka Term SS12 Extended
+UXTerm*faceName:           Iosevka Term SS12
 UXTerm*faceSize:           12
 UXTerm*faceSize1:          8
 UXTerm*faceSize2:          10
 UXTerm*faceSize3:          12
 UXTerm*faceSize4:          16
+UXTerm*geometry:           85x25
 UXTerm*highlightSelection: true
 UXTerm*internalBorder:     12
 UXTerm*saveLines:          16385
@@ -36,12 +46,13 @@ UXTerm.VT100.Translations: #override \n\
 
 ! XTerm
 XTerm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
-XTerm*faceName:           Iosevka Term SS12 Extended
+XTerm*faceName:           Iosevka Term SS12
 XTerm*faceSize:           12
 XTerm*faceSize1:          8
 XTerm*faceSize2:          10
 XTerm*faceSize3:          12
 XTerm*faceSize4:          16
+XTerm*geometry:           85x35
 XTerm*highlightSelection: true
 XTerm*internalBorder:     12
 XTerm*saveLines:          16385

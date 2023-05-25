@@ -25,6 +25,13 @@ xbanish -t 5 &
 
 xwallpaper --stretch Pictures/Wallpapers/Kyle_Roxas/pexels-kyle-roxas-Black_Withered_Tree_Surounded_by_Body_of_Water.jpg &
 
+############
+#Calculator#
+############
+
+sleep 1 &&
+xcalc &
+
 #######
 #Clock#
 #######

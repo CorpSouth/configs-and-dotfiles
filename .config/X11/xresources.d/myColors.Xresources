@@ -1,30 +1,29 @@
-! Based on the colorscheme provided by Gogh
-! Credited link: https://github.com/Gogh-Co/Gogh
+! Based on the default GNOME Terminal colorscheme
 
 ! Define the Colors
 
-#define BG            #300A24
-#define CURSOR        #FFFFFF
-#define FG            #FFFFFF
+#define BG            #171421
+#define CURSOR        #B3B3B3
+#define FG            #D0CFCC
 
-#define BLACK         #2E3436
-#define RED           #CC0000
-#define GREEN         #4E9A06
-#define YELLOW        #C4A000
-#define BLUE          #3465A4
-#define MAGENTA       #75507B
-#define CYAN          #06989A
-#define WHITE         #D3D7CF
-#define BRIGHTBLACK   #555753
-#define BRIGHTRED     #EF2929
-#define BRIGHTGREEN   #8AE234
-#define BRIGHTYELLOW  #FCE94F
-#define BRIGHTBLUE    #729FCF
-#define BRIGHTMAGENTA #AD7FA8
-#define BRIGHTCYAN    #34E2E2
-#define BRIGHTWHITE   #EEEEEC
+#define BLACK         #171421
+#define RED           #C01C28
+#define GREEN         #26A269
+#define YELLOW        #A2734C
+#define BLUE          #12488B
+#define MAGENTA       #A347BA
+#define CYAN          #2AA1B3
+#define WHITE         #D0CFCC
+#define BRIGHTBLACK   #5E5C64
+#define BRIGHTRED     #F66151
+#define BRIGHTGREEN   #33D17A
+#define BRIGHTYELLOW  #E9AD0C
+#define BRIGHTBLUE    #2A7BDE
+#define BRIGHTMAGENTA #C061CB
+#define BRIGHTCYAN    #33C7DE
+#define BRIGHTWHITE   #FFFFFF
 
-! Now set the colors here
+! Now set the terminal colors here
 
 *background:  BG
 *cursorColor: CURSOR
@@ -47,6 +46,60 @@
 *color14:     BRIGHTCYAN
 *color15:     BRIGHTWHITE
 
+! Xcalc
+
+xcalc.ti.bevel.background:             WHITE
+xcalc.ti.bevel.screen.background:      GREEN
+xcalc.ti.bevel.screen.DEC.background:  GREEN
+xcalc.ti.bevel.screen.DEC.foreground:  BLACK
+xcalc.ti.bevel.screen.DEG.background:  GREEN
+xcalc.ti.bevel.screen.DEG.foreground:  BLACK
+xcalc.ti.bevel.screen.GRAD.background: GREEN
+xcalc.ti.bevel.screen.GRAD.foreground: BLACK
+xcalc.ti.bevel.screen.INV.background:  GREEN
+xcalc.ti.bevel.screen.INV.foreground:  BLACK
+xcalc.ti.bevel.screen.LCD.background:  BRIGHTGREEN
+xcalc.ti.bevel.screen.LCD.foreground:  BLACK
+xcalc.ti.bevel.screen.LCD.shadowWidth: 0 
+xcalc.ti.bevel.screen.M.background:    BRIGHTGREEN
+xcalc.ti.bevel.screen.M.foreground:    BLACK
+xcalc.ti.bevel.screen.P.background:    BRIGHTGREEN
+xcalc.ti.bevel.screen.P.foreground:    BLACK
+xcalc.ti.bevel.screen.RAD.background:  BRIGHTGREEN
+xcalc.ti.bevel.screen.RAD.foreground:  BLACK
+xcalc.ti.button5.background:           RED
+xcalc.ti.button5.foreground:           BRIGHTRED
+xcalc.ti.button22.background:          YELLOW
+xcalc.ti.button22.foreground:          BRIGHTYELLOW
+xcalc.ti.button23.background:          YELLOW
+xcalc.ti.button23.foreground:          BRIGHTYELLOW
+xcalc.ti.button24.background:          YELLOW
+xcalc.ti.button24.foreground:          BRIGHTYELLOW
+xcalc.ti.button27.background:          YELLOW
+xcalc.ti.button27.foreground:          BRIGHTYELLOW
+xcalc.ti.button28.background:          YELLOW
+xcalc.ti.button28.foreground:          BRIGHTYELLOW
+xcalc.ti.button29.background:          YELLOW
+xcalc.ti.button29.foreground:          BRIGHTYELLOW
+xcalc.ti.button32.background:          YELLOW
+xcalc.ti.button32.foreground:          BRIGHTYELLOW
+xcalc.ti.button33.background:          YELLOW
+xcalc.ti.button33.foreground:          BRIGHTYELLOW
+xcalc.ti.button34.background:          YELLOW
+xcalc.ti.button34.foreground:          BRIGHTYELLOW
+xcalc.ti.button35.background:          BLUE
+xcalc.ti.button35.foreground:          BRIGHTBLUE
+xcalc.ti.button40.background:          BLUE          
+xcalc.ti.button40.foreground:          BRIGHTBLUE
+xcalc.ti.button45.background:          BLUE
+xcalc.ti.button45.foreground:          BRIGHTBLUE
+xcalc.ti.button50.background:          BLUE
+xcalc.ti.button50.foreground:          BRIGHTBLUE
+xcalc.ti.button55.background:          MAGENTA
+xcalc.ti.button55.foreground:          BRIGHTMAGENTA
+xcalc.ti.Command.background:           BRIGHTBLACK
+xcalc.ti.Command.foreground:           CURSOR
+
 ! Xclock
 
 XClock*background: BG
@@ -55,5 +108,5 @@ XClock*foreground: FG
 XClock.Clock.hourColor:   BRIGHTBLACK
 XClock.Clock.majorColor:  BRIGHTCYAN
 XClock.Clock.minorColor:  CYAN
-XClock.Clock.minuteColor: BRIGHTBLACK
+XClock.Clock.minuteColor: CURSOR
 XClock.Clock.secondColor: BRIGHTRED
