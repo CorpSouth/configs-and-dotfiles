@@ -1,0 +1,59 @@
+! Based on the colorscheme provided by Gogh
+! Credited link: https://github.com/Gogh-Co/Gogh
+
+! Define the Colors
+
+#define BG            #300A24
+#define CURSOR        #FFFFFF
+#define FG            #FFFFFF
+
+#define BLACK         #2E3436
+#define RED           #CC0000
+#define GREEN         #4E9A06
+#define YELLOW        #C4A000
+#define BLUE          #3465A4
+#define MAGENTA       #75507B
+#define CYAN          #06989A
+#define WHITE         #D3D7CF
+#define BRIGHTBLACK   #555753
+#define BRIGHTRED     #EF2929
+#define BRIGHTGREEN   #8AE234
+#define BRIGHTYELLOW  #FCE94F
+#define BRIGHTBLUE    #729FCF
+#define BRIGHTMAGENTA #AD7FA8
+#define BRIGHTCYAN    #34E2E2
+#define BRIGHTWHITE   #EEEEEC
+
+! Now set the colors here
+
+*background:  BG
+*cursorColor: CURSOR
+*foreground:  FG
+
+*color0:      BLACK
+*color1:      RED
+*color2:      GREEN
+*color3:      YELLOW
+*color4:      BLUE
+*color5:      MAGENTA
+*color6:      CYAN
+*color7:      WHITE
+*color8:      BRIGHTBLACK
+*color9:      BRIGHTRED
+*color10:     BRIGHTGREEN
+*color11:     BRIGHTYELLOW
+*color12:     BRIGHTBLUE
+*color13:     BRIGHTMAGENTA
+*color14:     BRIGHTCYAN
+*color15:     BRIGHTWHITE
+
+! Xclock
+
+XClock*background: BG
+XClock*foreground: FG
+
+XClock.Clock.hourColor:   BRIGHTBLACK
+XClock.Clock.majorColor:  BRIGHTCYAN
+XClock.Clock.minorColor:  CYAN
+XClock.Clock.minuteColor: BRIGHTBLACK
+XClock.Clock.secondColor: BRIGHTRED

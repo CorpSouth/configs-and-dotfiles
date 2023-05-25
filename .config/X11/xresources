@@ -1,12 +1,18 @@
-! Cursor theme
-Xcursor.theme: Adwaita 
+! Colorschemes
+#include "/home/aaron/.config/X11/xresources.d/myColors.Xresources"
 
-! Invert colors
-*reverseVideo: true
+! Cursor theme
+Xcursor.theme: Bibata-Modern-Classic
+
+! XClock
+
+XClock*geometry: 235x235+5+5
+XClock*render:   true
+XClock*update:   1
 
 ! UXTerm
 UXTerm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
-UXTerm*faceName:           iosevka term extended 
+UXTerm*faceName:           Iosevka Term SS12 Extended
 UXTerm*faceSize:           12
 UXTerm*faceSize1:          8
 UXTerm*faceSize2:          10
@@ -28,21 +34,9 @@ UXTerm.VT100.Translations: #override \n\
   <Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0) \n\
   <Btn2Up>: insert-selection(PRIMARY)
 
-! XCalc
-*customization: -color
-xcalc*geometry:                        300x450+1291+5
-XCalc*Cursor:                          hand2
-XCalc*ShapeStyle:                      rectangle
-
-! XClock
-xclock.Clock.analog: true
-XClock*geometry:     350x350+5+5
-XClock*update:       1
-xclock.Clock.render: true
-
 ! XTerm
 XTerm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
-XTerm*faceName:           iosevka term extended
+XTerm*faceName:           Iosevka Term SS12 Extended
 XTerm*faceSize:           12
 XTerm*faceSize1:          8
 XTerm*faceSize2:          10

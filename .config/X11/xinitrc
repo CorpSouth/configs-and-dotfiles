@@ -1,2 +1,75 @@
 #!/bin/sh
-exec i3
+
+######
+#Dbus#
+######
+
+if test -z "$DBUS_SESSION_BUS_ADDRESS"; then
+    eval $(dbus-launch --exit-with-session --sh-syntax)
+fi
+systemctl --user import-environment DISPLAY XAUTHORITY
+
+if command -v dbus-update-activation-environment >/dev/null 2>&1; then
+        dbus-update-activation-environment DISPLAY XAUTHORITY
+fi
+
+######################
+#Autohide the Xcursor#
+######################
+
+xbanish -t 5 &
+
+############
+#Background#
+############
+
+xwallpaper --stretch Pictures/Wallpapers/Kyle_Roxas/pexels-kyle-roxas-Black_Withered_Tree_Surounded_by_Body_of_Water.jpg &
+
+#######
+#Clock#
+#######
+
+sleep 1 &&
+xclock &
+
+############
+#Compositor#
+############
+
+picom &
+
+###############
+#Notifications#
+###############
+
+dunst &
+
+###########
+#Policykit#
+###########
+
+mate-polkit &
+
+##############
+#Screenlocker#
+##############
+
+xautolock -time 10 -locker slock &
+
+###########
+#Xkeyboard#
+###########
+
+setxkbmap -option caps:swapescape
+
+############
+#Xresources#
+############
+
+xrdb -merge $XRESOURCES
+
+##########
+#Xsession#
+##########
+
+exec cwm -c $CWMRC
