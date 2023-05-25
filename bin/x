@@ -1,3 +1,0 @@
-#!/bin/sh
-export DISPLAY=:0 && 
-nohup "$@" >/dev/null 2>&1 &
