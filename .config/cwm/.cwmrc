@@ -37,7 +37,7 @@ gap 5 5 5 5
 # menu font #
 #############
 
-fontname "Iosevka SS12 Extended:size=12" 
+fontname "Iosevka SS12 Extended:size=12:antialias=true"
 
 ##########################################################
 # borders and coloration                                 #
@@ -67,20 +67,22 @@ color selfont        "#FFFFFF"
 # all menu options are to be placed *above* wherever the 'unbind-key' is specified #
 ####################################################################################
 
-command Browser       brave-browser
-command Calculator    xcalc
-command Clock         xclock
-command Editor        'uxterm -T Micro -e micro'
-command 'File Picker' 'yad --center --file'
-command Mixer         'uxterm -T Pulsemixer -e pulsemixer'         
-command Player        'mpv --player-operation-mode=pseudo-gui'         
-command 'Task Manager 'uxterm -T  BTOP++  -e btop'
-command '»system«'    'true'
-command 'Force Close' xkill
-command 'Lock Screen' slock
-command 'Logout'      'pkill -KILL -u aaron'
-command 'Reboot'      'systemctl reboot'
-command 'Shut Down'   'systemctl poweroff'
+command Browser              brave-browser
+command Calculator           xcalc
+command Clock                xclock
+command Editor              'uxterm -T Micro -e micro'
+command 'File Picker'       'yad --center --file'
+command Mixer               'uxterm -T Pulsemixer -e pulsemixer'         
+command Player              'mpv --player-operation-mode=pseudo-gui'         
+command 'Task Manager'      'uxterm -T BTOP++ -e btop'
+command 'Terminal Emulator' uxterm
+command '»system«'          'true'
+command 'Force Close'       xkill
+command 'Lock Screen'       slock
+command 'Logout'            'pkill -KILL -u aaron'
+command 'Reboot'            'systemctl reboot'
+command 'Shut Down'         'systemctl poweroff'
+command 'Suspend'           'systemctl suspend'
 
 ################################################
 # alternate window managers in the 'wm' menu   #
