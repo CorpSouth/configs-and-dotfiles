@@ -37,7 +37,7 @@ gap 5 5 5 5
 # menu font #
 #############
 
-fontname "Monospace:size=12" 
+fontname "Iosevka SS12 Extended:size=12" 
 
 ##########################################################
 # borders and coloration                                 #
@@ -47,16 +47,16 @@ fontname "Monospace:size=12"
 # for colors, both generic names and hex code is allowed #
 ##########################################################
 
-borderwidth 1
+borderwidth 2
 
-color activeborder   "#3584E4" 
-color inactiveborder "#1E1E1E" 
-color urgencyborder  "#F8E45C" 
-color groupborder    "#8FF0A4"
-color ungroupborder  "#FF7B63"
+color activeborder   "#E54980"
+color inactiveborder "#AF194E" 
+color urgencyborder  "#F27835" 
+color groupborder    "#73D216"
+color ungroupborder  "#FC4138"
 color menubg         "#383838"
-color menufg         "#3584E4"
-color font           "#FFFFFF"
+color menufg         "#E54980"
+color font           "#DADADA"
 color selfont        "#FFFFFF"
 
 ####################################################################################
@@ -67,17 +67,20 @@ color selfont        "#FFFFFF"
 # all menu options are to be placed *above* wherever the 'unbind-key' is specified #
 ####################################################################################
 
-command Browser                librewolf
-command Calculator             xcalc
-command Clock                  xclock 
-command Editor                 'uxterm -e nvim'
-command 'File Picker'          'yad --center --file'         
-command '»system«'             'true'
-command 'Force Close'          xkill
-command 'Lock Screen'          slock
-command 'Logout'               'pkill -KILL -u corpsouth'
-command 'Reboot'               'systemctl reboot'
-command 'Shut Down'            'systemctl poweroff'
+command Browser       brave-browser
+command Calculator    xcalc
+command Clock         xclock
+command Editor        'uxterm -T Micro -e micro'
+command 'File Picker' 'yad --center --file'
+command Mixer         'uxterm -T Pulsemixer -e pulsemixer'         
+command Player        'mpv --player-operation-mode=pseudo-gui'         
+command 'Task Manager 'uxterm -T  BTOP++  -e btop'
+command '»system«'    'true'
+command 'Force Close' xkill
+command 'Lock Screen' slock
+command 'Logout'      'pkill -KILL -u aaron'
+command 'Reboot'      'systemctl reboot'
+command 'Shut Down'   'systemctl poweroff'
 
 ################################################
 # alternate window managers in the 'wm' menu   #
@@ -88,12 +91,14 @@ command 'Shut Down'            'systemctl poweroff'
 
 wm Awesome awesome
 wm BSPWM bspwm
+wm DK dk
 wm DWM dwm
 wm FluxBox fluxbox
 wm i3 i3
 wm IceWM icewm-session
 wm OpenBox openbox-session
 wm Ratpoison ratpoison
+wm Sdorfehs sdorfehs
 wm SpectrWM spectrwm
 wm StumpWM stumpwm
 wm WindowMaker wmaker
@@ -116,7 +121,7 @@ bind-key 4-Return uxterm
 # browser #
 ###########
 
-bind-key XF86HomePage librewolf
+bind-key XF86HomePage brave-browser
 
 ##############
 # calculator #
@@ -135,6 +140,12 @@ bind-key XF86Mail thunderbird
 ###################
 
 bind-key XF86Explorer 'yad --center --file'
+
+################
+# media player #
+################
+
+bind-key XF86Tools  'mpv --player-operation-mode=pseudo-gui'
 
 ################################################################
 # lock the screen, quit the session, or reload the .cwmrc file #
@@ -161,7 +172,7 @@ bind-key 4CS-Menu window-menu-label
 # print screen # 
 ################
 
-bind-key 4-Print "scrot /home/aaron/Pictures/Screenshots/%c-enos-arm.png"
+bind-key 4-Print "scrot /home/aaron/Pictures/Screenshots/%c-debian.png"
 
 ######################
 # volume keybindings #
@@ -196,7 +207,7 @@ bind-key 4C-Prior window-raise
 
 sticky yes
 
-autogroup 1 librewolf 
+autogroup 1 Brave-browser
 autogroup 1 Thunderbird
 autogroup 2 discord
 autogroup 2 TelegramDesktop
@@ -206,6 +217,8 @@ autogroup 3 FreeTube
 autogroup 4 URxvt
 autogroup 4 XCalc
 autogroup 4 XClock
+autogroup 4 UXTerm
+autogroup 4 xterm
 autogroup 5 libreoffice-startcenter
 
 #######################################
