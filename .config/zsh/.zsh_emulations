@@ -1,7 +1,0 @@
-################################
-# emulate the following shells #
-################################
-
-#if [ -n "$ZSH_VERSION" ]; then emulate -L bash; fi
-#if [ -n "$ZSH_VERSION" ]; then emulate -L fish; fi
-#if [ -n "$ZSH_VERSION" ]; then emulate -L sh; fi
