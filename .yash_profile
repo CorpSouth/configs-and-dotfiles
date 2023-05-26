@@ -41,3 +41,4 @@ export XCURSOR_PATH=${XCURSOR_PATH}:~/.local/share/icons
 
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
   exec startx $XINITRC
+fi
