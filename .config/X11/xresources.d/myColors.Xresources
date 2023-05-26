@@ -3,7 +3,7 @@
 ! Define the Colors
 
 #define BG            #171421
-#define CURSOR        #B3B3B3
+#define CURSOR        #FFFFFF
 #define FG            #D0CFCC
 
 #define BLACK         #171421
@@ -98,7 +98,7 @@ xcalc.ti.button50.foreground:          BRIGHTBLUE
 xcalc.ti.button55.background:          MAGENTA
 xcalc.ti.button55.foreground:          BRIGHTMAGENTA
 xcalc.ti.Command.background:           BRIGHTBLACK
-xcalc.ti.Command.foreground:           CURSOR
+xcalc.ti.Command.foreground:           BRIGHTWHITE
 
 ! Xclock
 
