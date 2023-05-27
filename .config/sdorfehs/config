@@ -1,0 +1,190 @@
+###########################################
+#Welcome to Sdorfehs! Refer to the manpage#
+#for additional configuration options.#####
+#######################################
+#AUTOSTARTING PROGRAMS BEGIN HERE#
+##################################
+
+exec /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+exec dunst
+exec hsetroot -solid "#241F31"
+exec picom
+exec setxkbmap -option caps:swapescape
+exec xautolock -time 10 -locker slock
+exec xrdb -merge $XRESOURCES
+exec xbanish -t 5
+exec xsetroot -cursor_name left_ptr
+
+#######################################
+#GENERAL SETTINGS VARIABLES BEGIN HERE#
+#######################################
+
+set barinpadding 0
+set barborder 3
+set barbordercolor #DEDDDA
+set bargravity c
+set bgcolor #241F31
+set barpadding 12 12
+set barsticky 0
+set border 3
+set bwcolor #1A5FB4
+set fgcolor #DEDDDA
+set font "SauceCodePro Nerd Font Mono:style=Regular:size=12:antialias=1:hinting=1:hintstyle=3"
+set fwcolor #62A0EA
+set gap 0
+set ignoresizehints 1
+set onlyborder 0
+set padding 0 0 0 0
+#set rudeness 12
+set startupmessage 0
+set transgravity c
+set vscreens 6
+
+#####################################
+#GENERAL SETTINGS VARIABLES END HERE#
+#####################################
+#KEYBINDING SETTINGS BEGIN HERE#
+################################
+#Escape#
+########
+
+escape C-e
+
+#########
+#General#
+#########
+
+bind BackSpace undo
+bind C-a abort
+bind C-e exec
+bind C-Delete remove
+bind C-F5 exec sdorfehs -c restart
+bind C-M-End quit
+bind C-M-k kill
+bind C-T colon exec uxterm -e
+bind C-t exec uxterm
+bind M-BackSpace redo
+bind M-Delete delete
+bind M-f curframe
+bind M-r redisplay
+bind M-s select
+bind M-t title
+bind M-question help top
+bind M-v version
+
+###########
+#Launchers#
+###########
+
+bind C-M-d exec sdorfehs -c "echo `date`"
+
+########
+#Moving#
+########
+
+bind C-V vmove
+
+###########
+#Splitting#
+###########
+
+bind C-h hsplit
+bind C-o only
+bind C-v vsplit
+
+#################
+#Sticky/Unsticky#
+#################
+
+bind C-S unstick
+bind C-s stick
+
+###########
+#Switching#
+###########
+
+bind M-bracketleft prevscreen
+bind M-bracketright nextscreen
+bind M-S swap
+definekey top M-0 vselect 0
+definekey top M-1 vselect 1
+definekey top M-3 vselect 3
+definekey top M-2 vselect 2
+definekey top M-4 vselect 4
+definekey top M-5 vselect 5
+definekey top M-6 vselect 6
+definekey top M-7 vselect 8
+definekey top M-9 vselect 9
+definekey top M-bracketleft prev
+definekey top M-F10 vselect 10
+definekey top M-bracketright next
+definekey top M-F11 vselect 11
+definekey top M-F12 vselect 12
+
+########################################
+#Unbind and Replace Default Keybindings#
+########################################
+
+unbind C-A
+unbind b
+unbind C-apostrophe
+unbind C-b
+unbind C-c
+unbind C-g
+unbind C-exclam
+unbind C-K
+unbind C-k
+unbind C-l
+unbind C-Return
+unbind C-space
+unbind C-underscore
+unbind C-u
+unbind C-x
+unbind A
+unbind apostrophe
+unbind c
+unbind exclam
+unbind F1
+unbind F2
+unbind F3
+unbind F4
+unbind F5
+unbind F6
+unbind F7
+unbind F8
+unbind F9
+unbind F10
+unbind F11
+unbind F12
+unbind F
+unbind f
+unbind i
+unbind k
+unbind K
+unbind l
+unbind m
+unbind N
+unbind n
+unbind P
+unbind p
+unbind R
+unbind Q
+unbind Return
+unbind r
+unbind S
+unbind space
+unbind s
+unbind v
+unbind U
+unbind u
+unbind w
+unbind x
+
+###################
+#XF86 Common (Top)#
+###################
+
+definekey top XF86Calculator exec uxterm -e bc -q
+definekey top XF86HomePage exec brave-browser
+definekey top XF86Mail exec thunderbird
+definekey top XF86Tools exec uxterm -e pulsemixer
