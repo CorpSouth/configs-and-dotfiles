@@ -13,70 +13,17 @@ if command -v dbus-update-activation-environment >/dev/null 2>&1; then
         dbus-update-activation-environment DISPLAY XAUTHORITY
 fi
 
-######################
-#Autohide the Xcursor#
-######################
-
-xbanish -t 5 &
-
-############
-#Background#
-############
-
-xwallpaper --stretch Pictures/Wallpapers/Kyle_Roxas/pexels-kyle-roxas-Black_Withered_Tree_Surounded_by_Body_of_Water.jpg &
-
-############
-#Calculator#
-############
-
-sleep 1 &&
-xcalc &
-
-#######
-#Clock#
-#######
-
-sleep 1 &&
-xclock &
-
-############
-#Compositor#
-############
-
-picom &
-
-###############
-#Notifications#
-###############
-
-dunst &
-
-###########
-#Policykit#
-###########
-
-mate-polkit &
-
 ##############
-#Screenlocker#
+#Save for VMs#
 ##############
 
-xautolock -time 10 -locker slock &
+spice-vdagent &
 
-###########
-#Xkeyboard#
-###########
-
-setxkbmap -option caps:swapescape
-
-############
-#Xresources#
-############
-
-xrdb -merge $XRESOURCES
+sleep 1 &&
+xrandr -s 1600x900 &
 
 ##########
 #Xsession#
 ##########
 
-exec cwm -c $CWMRC
+exec sdorfehs

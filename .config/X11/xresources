@@ -2,7 +2,7 @@
 #include "/home/aaron/.config/X11/xresources.d/myColors.Xresources"
 
 ! Cursor theme
-Xcursor.theme: Bibata-Modern-Classic
+Xcursor.theme: Simp1e-Adw-Dark
 
 ! XCalc
 
@@ -16,17 +16,22 @@ XClock*geometry: 255x255+5+5
 XClock*render:   true
 XClock*update:   1
 
-! Xft antialiasing
+! Xft
+Xft.antialiasing: true
+Xft.dpi: 96
+Xft.hinting: true
+Xft.hintstyle: hintslight
 Xft.rgba: rgb
 
 ! UXTerm
 UXTerm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
-UXTerm*faceName:           Iosevka Term SS12
+UXTerm*faceName:           xft:SauceCodePro Nerd Font
 UXTerm*faceSize:           12
 UXTerm*faceSize1:          8
-UXTerm*faceSize2:          10
-UXTerm*faceSize3:          12
+UXTerm*faceSize2:          12
+UXTerm*faceSize3:          13
 UXTerm*faceSize4:          16
+UXTerm.font:               9x15
 UXTerm*geometry:           85x25
 UXTerm*highlightSelection: true
 UXTerm*internalBorder:     12
@@ -46,12 +51,13 @@ UXTerm.VT100.Translations: #override \n\
 
 ! XTerm
 XTerm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
-XTerm*faceName:           Iosevka Term SS12
+XTerm*faceName:           xft:SauceCodePro Nerd Font
 XTerm*faceSize:           12
 XTerm*faceSize1:          8
 XTerm*faceSize2:          10
 XTerm*faceSize3:          12
 XTerm*faceSize4:          16
+XTerm.font:               9x15
 XTerm*geometry:           85x35
 XTerm*highlightSelection: true
 XTerm*internalBorder:     12
