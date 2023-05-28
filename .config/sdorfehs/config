@@ -29,7 +29,7 @@ set barsticky 0
 set border 3
 set bwcolor #1A5FB4
 set fgcolor #DEDDDA
-set font "SauceCodePro Nerd Font Mono:style=Regular:size=12:antialias=1:hinting=1:hintstyle=3"
+set font "Iosevka ss09 Extended:style=Regular:size=12:antialias=1:hinting=1:hintstyle=3"
 set fwcolor #62A0EA
 set gap 0
 set ignoresizehints 1
@@ -78,6 +78,12 @@ bind M-v version
 
 bind C-M-d exec sdorfehs -c "echo `date`"
 
+############
+#Screenshot#
+############
+
+definekey top print scrot exec /home/aaron/Pictures/Screenshots/%c-debian.png
+
 ########
 #Moving#
 ########
@@ -118,6 +124,7 @@ definekey top M-9 vselect 9
 definekey top M-bracketleft prev
 definekey top M-F10 vselect 10
 definekey top M-bracketright next
+definekey top M-bracketleft prev
 definekey top M-F11 vselect 11
 definekey top M-F12 vselect 12
 
@@ -182,9 +189,28 @@ unbind x
 
 ###################
 #XF86 Common (Top)#
-###################
+########################################################
+#Launchers for everyday applications should (sparingly)#
+#be placed at the top level.############################
+#############################
 
 definekey top XF86Calculator exec uxterm -e bc -q
+definekey top XF86Explorer exec yad --file
 definekey top XF86HomePage exec brave-browser
 definekey top XF86Mail exec thunderbird
 definekey top XF86Tools exec uxterm -e pulsemixer
+
+#######################
+#XF86 Multimedia (Top)#
+#######################
+
+definekey top M-XF86Tools exec mpv --player-operation-mode=pseudo-gui
+definekey top XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+definekey top XF86AudioMute        exec pactl set-sink-mute   @DEFAULT_SINK@ toggle
+definekey top XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+
+######################
+#KEYBINDINGS END HERE#
+######################
+#EOF#
+#####
