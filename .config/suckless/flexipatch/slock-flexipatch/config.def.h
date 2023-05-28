@@ -1,14 +1,14 @@
 /* user and group to drop privileges to */
 static const char *user  = "nobody";
-static const char *group = "nobody"; // use "nobody" for arch
-				     //
+static const char *group = "nogroup"; // use "nobody" for arch
+
 static const char *colorname[NUMCOLS] = {
 	#if DWM_LOGO_PATCH && !BLUR_PIXELATED_SCREEN_PATCH
-	[BACKGROUND] =  "#2E3440", /* after initialization */
+	[BACKGROUND] =  "#2d2d2d", /* after initialization */
 	#endif // DWM_LOGO_PATCH
-	[INIT] =   "#2E3440",     /* after initialization */
-	[INPUT] =  "#5E81AC",   /* during input */
-	[FAILED] = "#BF616A",   /* wrong password */
+	[INIT] =   "black",     /* after initialization */
+	[INPUT] =  "#005577",   /* during input */
+	[FAILED] = "#CC3333",   /* wrong password */
 	#if CAPSCOLOR_PATCH
 	[CAPS] =   "red",       /* CapsLock on */
 	#endif // CAPSCOLOR_PATCH
