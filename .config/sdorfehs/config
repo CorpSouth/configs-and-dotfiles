@@ -48,7 +48,7 @@ set vscreens 6
 #Escape#
 ########
 
-escape C-e
+escape C-grave
 
 #########
 #General#
@@ -56,9 +56,9 @@ escape C-e
 
 bind BackSpace undo
 bind C-a abort
-bind C-e exec
 bind C-Delete remove
 bind C-F5 exec sdorfehs -c restart
+bind C-grave exec
 bind C-M-End quit
 bind C-M-k kill
 bind C-T colon exec uxterm -e
