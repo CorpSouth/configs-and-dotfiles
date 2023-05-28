@@ -82,7 +82,7 @@ bind C-M-d exec sdorfehs -c "echo `date`"
 #Screenshot#
 ############
 
-definekey top print scrot exec /home/aaron/Pictures/Screenshots/%c-debian.png
+definekey top Print exec scrot /home/aaron/Pictures/Screenshots/%c-debian.png
 
 ########
 #Moving#
@@ -206,7 +206,7 @@ definekey top XF86Tools exec uxterm -e pulsemixer
 
 definekey top M-XF86Tools exec mpv --player-operation-mode=pseudo-gui
 definekey top XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-definekey top XF86AudioMute        exec pactl set-sink-mute   @DEFAULT_SINK@ toggle
+definekey top XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 definekey top XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 
 ######################
