@@ -29,18 +29,6 @@ export XRESOURCES="$XDG_CONFIG_HOME"/X11/xresources
 # WM
 export CWMRC="$XDG_CONFIG_HOME"/cwm/.cwmrc
 
-######
-#Path#
-######
-
-if [ -d "$HOME/.bin" ] ;
-  then PATH="$HOME/.bin:$PATH"
-fi
-
-if [ -d "$HOME/.local/bin" ] ;
-  then PATH="$HOME/.local/bin:$PATH"
-fi
-
 ############################
 #Single-User Cursor Theming#
 ############################
