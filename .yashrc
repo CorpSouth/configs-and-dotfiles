@@ -1,37 +1,19 @@
-##### Sample Yashrc #####
-# This is a sample initialization script for yash. Copy this file to ~/.yashrc
-# and add your favorite customization to it.
-
-
-# Firstly, load the common customization script.
-# If you don't like settings applied in this script, remove this line.
+########
+#Common#
+########
 . --autoload --no-alias initialization/common
 
-# These are additional aliases that are not defined in the common script.
-# Uncomment to enable them.
-#alias g='grep'
-#alias l='$PAGER'
-#alias --global L='|$PAGER'
-#alias --global N='>/dev/null 2>&1' N1='>/dev/null' N2='2>/dev/null'
+#######
+#Fetch#
+#######
 
-# Uncomment to enable direnv support. (jq required)
-#_update_direnv() {
-#  eval "$(
-#    direnv export json |
-#    jq -r 'to_entries | .[] |
-#    if .value == null then
-#      @sh "unset \(.key)"
-#    else
-#      @sh "export \(.key)=\(.value)"
-#    end'
-#  )"
-#}
-#_update_direnv
-#YASH_AFTER_CD=("$YASH_AFTER_CD" '_update_direnv')
+PF_INFO="ascii de host editor kernel memory pkgs os shell uptime wm palette" pfetch
 
-# And add your own customization below.
+###########
+#Functions#
+###########
 
-# Extraction
+# File Extraction
 
 extract ()
 {
@@ -57,8 +39,3 @@ extract ()
     echo "'$1' is not a valid file"
   fi
 }
-
-# Fetch
-PF_INFO="ascii de host editor kernel memory pkgs os shell uptime wm palette" pfetch
-
-# vim: set et sw=2 sts=2 tw=78 ft=sh:
