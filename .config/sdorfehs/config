@@ -4,6 +4,8 @@
 #######################################
 #AUTOSTARTING PROGRAMS BEGIN HERE#
 ##################################
+#common#
+########
 
 exec /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 exec dunst
@@ -15,6 +17,48 @@ exec xrdb -merge $XRESOURCES
 exec xbanish -t 5
 exec xsetroot -cursor_name left_ptr
 
+##################
+#Vscreen Renaming#
+##################
+
+vselect 1
+vrename CHAT
+vselect 2
+vrename LOAD
+vselect 3
+vrename PLAY
+vselect 4
+vrename UTIL
+vselect 5
+vrename VIRT
+vselect 6
+vrename WORK
+vselect 0
+vrename .NET
+
+################################
+#AUTOSTARTING PROGRAMS END HERE#
+################################
+#ALIASES BEGIN HERE#
+####################
+
+alias browser exec sdorfehs -c "vselect 0" -c "exec $BROWSER"
+alias calculator exec sdorfehs -c "vselect 4" -c "only" -c "exec uxterm -e bc -q"
+alias chats exec sdorfehs -c "vselect 1" -c "exec armcord && telegram-desktop"
+alias filepicker exec sdorfehs -c "only" -c "hsplit" -c "focusright" -c "exec yad --file"
+alias mail exec sdorfehs -c "vselect 0" -c "exec $MAIL"
+alias mixer exec sdorfehs -c "only" -c "hsplit" -c "focusright" -c "exec uxterm -e pulsemixer"
+alias volmute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+alias office exec sdorfehs -c "vselect 7" -c "exec $OFFICE"
+alias player exec sdorfehs -c "vselect 3" -c "exec mpv --player-operation-mode=pseudo-gui"
+alias taskmanager exec sdorfehs -c "vselect 2" -c "exec uxterm -e $TASKMANAGER"
+alias term exec $TERMINAL
+alias voldown exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+alias volup exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+alias youtube exec sdorfehs -c "vselect 3" -c "exec freetube"
+
+##################
+#ALIASES END HERE#
 #######################################
 #GENERAL SETTINGS VARIABLES BEGIN HERE#
 #######################################
@@ -33,21 +77,23 @@ set font "Iosevka ss09 Extended:style=Regular:size=12:antialias=1:hinting=1:hint
 set fwcolor #62A0EA
 set gap 0
 set ignoresizehints 1
+set msgwait 4
 set onlyborder 0
 set padding 0 0 0 0
 #set rudeness 12
 set startupmessage 0
 set transgravity c
-set vscreens 6
+set vscreens 7
 
 #####################################
 #GENERAL SETTINGS VARIABLES END HERE#
 #####################################
 #KEYBINDING SETTINGS BEGIN HERE#
 ################################
-#Escape#
-########
+#Escape & Exec#
+###############
 
+bind Menu exec
 escape C-grave
 
 #########
@@ -58,25 +104,26 @@ bind BackSpace undo
 bind C-a abort
 bind C-Delete remove
 bind C-F5 exec sdorfehs -c restart
-bind C-grave exec
 bind C-M-End quit
 bind C-M-k kill
 bind C-T colon exec uxterm -e
 bind C-t exec uxterm
-bind M-BackSpace redo
 bind M-Delete delete
 bind M-f curframe
 bind M-r redisplay
 bind M-s select
 bind M-t title
 bind M-question help top
+bind M-V vscreens
 bind M-v version
+bind Return redo
 
 ###########
 #Launchers#
 ###########
 
-bind C-M-d exec sdorfehs -c "echo `date`"
+bind d exec sdorfehs -c "echo `date`"
+bind End taskmanager
 
 ############
 #Screenshot#
@@ -84,7 +131,9 @@ bind C-M-d exec sdorfehs -c "echo `date`"
 
 definekey top Print exec scrot /home/aaron/Pictures/Screenshots/%c-debian.png
 
-########
+##########################################
+#WINDOW MANAGEMENT KEYBINDINGS BEGIN HERE#
+##########################################
 #Moving#
 ########
 
@@ -129,8 +178,10 @@ definekey top M-F11 vselect 11
 definekey top M-F12 vselect 12
 
 ########################################
-#Unbind and Replace Default Keybindings#
+#WINDOW MANAGEMENT KEYBINDINGS END HERE#
 ########################################
+#UNBIND BEGINS HERE#
+####################
 
 unbind C-A
 unbind b
@@ -174,9 +225,8 @@ unbind N
 unbind n
 unbind P
 unbind p
-unbind R
 unbind Q
-unbind Return
+unbind R
 unbind r
 unbind S
 unbind space
@@ -187,28 +237,53 @@ unbind u
 unbind w
 unbind x
 
+#####################
+#UNBINDING ENDS HERE#
+######################
+#UNMANAGE BEGINS HERE#
+######################
+
+unmanage OpenSSH Authentication Passphrase Request
+
+####################
+#UNMANAGE ENDS HERE#
+####################
+#XF86 BEGINS HERE#
+####################
+#XF86 Common (Root)#
+####################
+
+bind XF86Explorer office
+bind XF86HomePage chats
+bind XF86Tools youtube
+
 ###################
 #XF86 Common (Top)#
-########################################################
-#Launchers for everyday applications should (sparingly)#
-#be placed at the top level.############################
-#############################
+###################
 
-definekey top XF86Calculator exec uxterm -e bc -q
-definekey top XF86Explorer exec yad --file
-definekey top XF86HomePage exec brave-browser
-definekey top XF86Mail exec thunderbird
-definekey top XF86Tools exec uxterm -e pulsemixer
+definekey top XF86Calculator calculator
+definekey top XF86Explorer filepicker
+definekey top XF86HomePage browser
+definekey top XF86Mail mail
+
+########################
+#XF86 Multimedia (Root)#
+########################
+
+definekey top XF86Tools mixer
 
 #######################
 #XF86 Multimedia (Top)#
 #######################
 
-definekey top M-XF86Tools exec mpv --player-operation-mode=pseudo-gui
-definekey top XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-definekey top XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-definekey top XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+definekey top M-XF86Tools youtube
+definekey top XF86Tools player
+definekey top XF86AudioLowerVolume voldown
+definekey top XF86AudioMute mute
+definekey top XF86AudioRaiseVolume volup
 
+################
+#XF86 ENDS HERE#
 ######################
 #KEYBINDINGS END HERE#
 ######################
