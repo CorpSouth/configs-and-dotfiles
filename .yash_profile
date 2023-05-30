@@ -8,7 +8,7 @@ export FILEPICKER='yad --file'
 export MAIL=thunderbird
 export OFFICE=libreoffice
 export PLAYER='mpv --player-operation-mode=pseudo-gui'
-export TASKMANAGER='btop'
+export TASKMANAGER=btop
 export TERMINAL=uxterm
 
 ##########################
