@@ -270,7 +270,7 @@ definekey top XF86Mail mail
 #XF86 Multimedia (Root)#
 ########################
 
-definekey top XF86Tools mixer
+bind XF86Tools mixer
 
 #######################
 #XF86 Multimedia (Top)#
