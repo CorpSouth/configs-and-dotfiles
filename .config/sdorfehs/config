@@ -49,7 +49,7 @@ alias filepicker exec sdorfehs -c "only" -c "hsplit" -c "focusright" -c "exec ya
 alias mail exec sdorfehs -c "vselect 0" -c "exec $MAIL"
 alias mixer exec sdorfehs -c "only" -c "hsplit" -c "focusright" -c "exec uxterm -e pulsemixer"
 alias volmute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-alias office exec sdorfehs -c "vselect 7" -c "exec $OFFICE"
+alias office exec sdorfehs -c "vselect 6" -c "exec $OFFICE"
 alias player exec sdorfehs -c "vselect 3" -c "exec mpv --player-operation-mode=pseudo-gui"
 alias taskmanager exec sdorfehs -c "vselect 2" -c "exec uxterm -e $TASKMANAGER"
 alias term exec $TERMINAL
