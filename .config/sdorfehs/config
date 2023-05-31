@@ -42,16 +42,18 @@ vrename .NET
 #ALIASES BEGIN HERE#
 ####################
 
+alias armcord exec sdorfehs -c "vselect 1" -c "exec armcord"
 alias browser exec sdorfehs -c "vselect 0" -c "exec $BROWSER"
-alias calculator exec sdorfehs -c "vselect 4" -c "only" -c "exec uxterm -e bc -q"
-alias chats exec sdorfehs -c "vselect 1" -c "exec armcord && telegram-desktop"
-alias filepicker exec sdorfehs -c "only" -c "hsplit" -c "focusright" -c "exec yad --file"
+alias calculator exec sdorfehs -c "vselect 4" -c "exec $TERMEXEC $CALCULATOR"
+alias editor exec sdorfehs -c "vselect 6" -c "exec $TERMEXEC $EDITOR"
+alias filepicker exec sdorfehs -c "only" -c "hsplit" -c "focusright" -c "exec $FILEPICKER"
 alias mail exec sdorfehs -c "vselect 0" -c "exec $MAIL"
-alias mixer exec sdorfehs -c "only" -c "hsplit" -c "focusright" -c "exec uxterm -e pulsemixer"
+alias mixer exec $TERMEXEC $MIXER
 alias volmute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 alias office exec sdorfehs -c "vselect 6" -c "exec $OFFICE"
-alias player exec sdorfehs -c "vselect 3" -c "exec mpv --player-operation-mode=pseudo-gui"
-alias taskmanager exec sdorfehs -c "vselect 2" -c "exec uxterm -e $TASKMANAGER"
+alias player exec sdorfehs -c "vselect 3" -c "exec $PLAYER"
+alias taskmanager exec sdorfehs -c "vselect 2" -c "exec $TERMEXEC $TASKMANAGER"
+alias telegram-desktop exec sdorfehs -c "vselect 1" -c "exec telegram-desktop"
 alias term exec $TERMINAL
 alias voldown exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 alias volup exec pactl set-sink-volume @DEFAULT_SINK@ +5%
@@ -106,10 +108,11 @@ bind C-Delete remove
 bind C-F5 exec sdorfehs -c restart
 bind C-M-End quit
 bind C-M-k kill
-bind C-T colon exec uxterm -e
-bind C-t exec uxterm
+bind C-T colon exec $TERMEXEC
+bind C-t exec $TERMINAL
 bind M-Delete delete
 bind M-f curframe
+bind M-i info
 bind M-r redisplay
 bind M-s select
 bind M-t title
@@ -122,8 +125,19 @@ bind Return redo
 #Launchers#
 ###########
 
+bind A armcord
 bind d exec sdorfehs -c "echo `date`"
 bind End taskmanager
+bind E editor
+bind O office
+bind T telegram-desktop
+bind Y youtube
+
+#############
+#Lock Screen#
+#############
+
+bind Pause exec slock
 
 ############
 #Screenshot#
@@ -158,6 +172,7 @@ bind C-s stick
 #Switching#
 ###########
 
+bind C-O cother
 bind M-bracketleft prevscreen
 bind M-bracketright nextscreen
 bind M-S swap
@@ -188,8 +203,9 @@ unbind b
 unbind C-apostrophe
 unbind C-b
 unbind C-c
-unbind C-g
 unbind C-exclam
+unbind C-g
+unbind C-i
 unbind C-K
 unbind C-k
 unbind C-l
@@ -198,7 +214,6 @@ unbind C-space
 unbind C-underscore
 unbind C-u
 unbind C-x
-unbind A
 unbind apostrophe
 unbind c
 unbind exclam
@@ -249,14 +264,6 @@ unmanage OpenSSH Authentication Passphrase Request
 #UNMANAGE ENDS HERE#
 ####################
 #XF86 BEGINS HERE#
-####################
-#XF86 Common (Root)#
-####################
-
-bind XF86Explorer office
-bind XF86HomePage chats
-bind XF86Tools youtube
-
 ###################
 #XF86 Common (Top)#
 ###################
@@ -276,7 +283,6 @@ bind XF86Tools mixer
 #XF86 Multimedia (Top)#
 #######################
 
-definekey top M-XF86Tools youtube
 definekey top XF86Tools player
 definekey top XF86AudioLowerVolume voldown
 definekey top XF86AudioMute mute
