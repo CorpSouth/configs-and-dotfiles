@@ -2,14 +2,17 @@
 #Default Applications#
 ######################
 
-export BROWSER=brave-browser
-export EDITOR=micro
+export BROWSER='brave-browser'
+export CALCULATOR='bc -q'
+export EDITOR='micro'
 export FILEPICKER='yad --file'
-export MAIL=thunderbird
-export OFFICE=libreoffice
+export MAIL='thunderbird'
+export MIXER='pulsemixer'
+export OFFICE='libreoffice'
 export PLAYER='mpv --player-operation-mode=pseudo-gui'
-export TASKMANAGER=btop
-export TERMINAL=uxterm
+export TASKMANAGER='btop'
+export TERMEXEC='kitty --hold'
+export TERMINAL='kitty'
 
 ##########################
 #Organize XDG Directories#
