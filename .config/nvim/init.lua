@@ -29,7 +29,6 @@ Plug 'junegunn/limelight.vim'
 Plug 'preservim/vim-pencil'
 Plug 'godlygeek/tabular'
 Plug 'preservim/vim-markdown'
-Plug 'tinted-theming/base16-vim'
 
 vim.call('plug#end')
 
@@ -37,14 +36,8 @@ vim.call('plug#end')
 --Color Control--
 -----------------
 
-local cmd = vim.cmd
-local g = vim.g
-
-local current_theme_name = os.getenv('BASE16_THEME')
-if current_theme_name and g.colors_name ~= 'base16-'..current_theme_name then
-  cmd('let base16colorspace=256')
-  cmd('colorscheme base16-'..current_theme_name)
-end
+vim.cmd('highlight Normal ctermbg=none')
+vim.cmd('highlight NonText ctermbg=none')
 
 ---------------
 --KEYBINDINGS--
