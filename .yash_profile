@@ -2,17 +2,26 @@
 #Default Applications#
 ######################
 
-export BROWSER='brave-browser'
+export BROWSER='flatpak run com.brave.Browser'
 export CALCULATOR='bc -q'
 export EDITOR='micro'
 export FILEPICKER='yad --file'
-export MAIL='thunderbird'
+export MAIL='flatpak run eu.betterbird.Betterbird'
 export MIXER='pulsemixer'
-export OFFICE='libreoffice'
-export PLAYER='mpv --player-operation-mode=pseudo-gui'
+export OFFICE='flatpak run org.onlyoffice.desktopeditors'
+export PLAYER='flatpak run io.mpv.Mpv'
 export TASKMANAGER='btop'
 export TERMEXEC='kitty --hold'
 export TERMINAL='kitty'
+
+###########
+#Distrobox#
+###########
+
+export DBX_CONTAINER_CUSTOM_HOME='$HOME/.var/home/aaron'
+export DBX_CONTAINER_IMAGE='quay.io/toolbx-images/debian-toolbox:unstable'
+export DBX_CONTAINER_MANAGER='podman'
+export DBX_CONTAINER_NAME='siderius'
 
 ##########################
 #Organize XDG Directories#
