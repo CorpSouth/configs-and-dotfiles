@@ -11,8 +11,8 @@ export MIXER='pulsemixer'
 export OFFICE='flatpak run org.onlyoffice.desktopeditors'
 export PLAYER='flatpak run io.mpv.Mpv'
 export TASKMANAGER='btop'
-export TERMEXEC='kitty --hold'
-export TERMINAL='kitty'
+export TERMEXEC='flatpak run org.contourterminal.Contour'
+export TERMINAL='flatpak run org.contourterminal.Contour'
 
 ###########
 #Distrobox#
