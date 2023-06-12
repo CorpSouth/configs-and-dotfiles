@@ -12,8 +12,8 @@ export MIXER='pulsemixer'
 export OFFICE='onlyoffice-desktopeditors'
 export PLAYER='mpv --player-operation-mode=pseudo-gui'
 export TASKMANAGER='btop'
-export TERMEXEC='kitty --hold'
-export TERMINAL='kitty'
+export TERMEXEC='uxterm -e'
+export TERMINAL='uxterm'
 
 ##########################
 #Organize XDG Directories#
@@ -55,12 +55,12 @@ fi
 #Single-User Cursor Theming#
 ############################
 
-export XCURSOR_PATH=${XCURSOR_PATH}:~/.local/share/icons
+export XCURSOR_PATH="${XCURSOR_PATH}":~/.local/share/icons
 
 ######################################
 #Treat the TTY Like a Display Manager#
 ######################################
 
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-  exec startx $XINITRC
+  exec startx "$XINITRC"
 fi
