@@ -12,35 +12,39 @@ xcalc*ShapeStyle: rectangle
 
 ! XClock
 
-XClock*geometry: 255x255+3+3
+XClock*geometry: 215x215+3+3
 XClock*render:   true
 XClock*update:   1
 
 ! Xft
 
 Xft.antialiasing: true
-Xft.dpi: 96
-Xft.hinting: true
-Xft.hintstyle: hintfull
-Xft.rgba: rgb
+Xft.autohint:     0
+Xft.dpi:          100
+Xft.hinting:      1
+Xft.hintstyle:    hintfull
+Xft.lcdfilter:    lcdfilter
+Xft.rgba:         rgb
 
 ! UXTerm
-UXTerm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
+UXTerm*charClass:          33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
+UXTerm*cursorBlink:        false
+UXTerm*eightBitInput:      false
 UXTerm*faceName:           xft:SauceCodePro NFM
 UXTerm*faceSize:           12
 UXTerm*faceSize1:          8
 UXTerm*faceSize2:          12
 UXTerm*faceSize3:          14
 UXTerm*faceSize4:          16
-UXTerm.font:               9x15
-UXTerm*geometry:           85x25
 UXTerm*highlightSelection: true
 UXTerm*internalBorder:     12
+UXTerm*renderFont:         true
 UXTerm*saveLines:          16385
+UXTerm*scrollBar: false
 UXTerm*selectToClipboard:  true
 UXTerm*termName:           xterm-256color
 UXTerm*trimSelection:      true
-UXTerm*scrollBar: false
+UXTerm.vt100.geometry:     95x25
 UXTerm.VT100.Translations: #override \n\
   Ctrl <Key> minus: smaller-vt-font() \n\
   Ctrl <Key> plus: larger-vt-font() \n\
@@ -51,22 +55,24 @@ UXTerm.VT100.Translations: #override \n\
   <Btn2Up>: insert-selection(PRIMARY)
 
 ! XTerm
-XTerm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
+XTerm*charClass:          33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
+XTerm*cursorBlink:        false
+XTerm*eightBitInput:      false
 XTerm*faceName:           xft:SauceCodePro NFM
 XTerm*faceSize:           12
 XTerm*faceSize1:          8
 XTerm*faceSize2:          12
 XTerm*faceSize3:          14
 XTerm*faceSize4:          16
-XTerm.font:               9x15
-XTerm*geometry:           85x35
 XTerm*highlightSelection: true
 XTerm*internalBorder:     12
+XTerm*renderFont:         true
 XTerm*saveLines:          16385
+XTerm*scrollBar: false
 XTerm*selectToClipboard:  true
 XTerm*termName:           xterm-256color
 XTerm*trimSelection:      true
-XTerm*scrollBar: false
+XTerm.vt100.geometry:     95x25
 XTerm.VT100.Translations: #override \n\
   Ctrl <Key> minus: smaller-vt-font() \n\
   Ctrl <Key> plus: larger-vt-font() \n\
