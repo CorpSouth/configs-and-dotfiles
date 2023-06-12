@@ -1,5 +1,23 @@
 #!/bin/sh
 
+#################
+#Autohide Cursor#
+#################
+
+xbanish -t 5 &
+
+#######################
+#Background Coloration#
+#######################
+
+hsetroot -solid "#241F31" &
+
+############
+#Compositor#
+############
+
+picom -b &
+
 ######
 #Dbus#
 ######
@@ -14,16 +32,48 @@ if command -v dbus-update-activation-environment >/dev/null 2>&1; then
 fi
 
 ##############
-#Save for VMs#
+#Desktop Apps#
 ##############
 
-spice-vdagent &
+sleep 2 &&
+xcalc & 
 
-sleep 1 &&
-xrandr -s 1600x900 &
+sleep 2 &&
+xclock &
+
+###############
+#Notifications#
+###############
+
+dunst &
+
+########
+#Polkit#
+########
+
+/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
+
+
+##############
+#Screenlocker#
+##############
+
+xautolock -time 10 -locker slock &
+
+###########
+#Setxkbmap#
+###########
+
+setxkbmap -option caps:swapescape &
+
+############
+#Xresources#
+############
+
+xrdb -merge $XRESOURCES &
 
 ##########
 #Xsession#
 ##########
 
-exec sdorfehs
+exec dbus-run-session cwm -c $CWMRC

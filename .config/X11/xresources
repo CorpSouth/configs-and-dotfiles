@@ -7,12 +7,12 @@ Xcursor.theme: Simp1e-Adw-Dark
 ! XCalc
 
 xcalc*Cursor:     hand2
-xcalc*geometry:   215x315+1376+5
+xcalc*geometry:   215x315+1376+3
 xcalc*ShapeStyle: rectangle
 
 ! XClock
 
-XClock*geometry: 255x255+5+5
+XClock*geometry: 255x255+3+3
 XClock*render:   true
 XClock*update:   1
 
