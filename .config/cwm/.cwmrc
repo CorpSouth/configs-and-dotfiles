@@ -49,14 +49,14 @@ fontname "SauceCodePro NF:size=12:antialias=true"
 
 borderwidth 3
 
-color activeborder   "#62A0EA"
+color activeborder   "#99C1F1"
 color inactiveborder "#1A5FB4" 
 color urgencyborder  "#FF7800" 
 color groupborder    "#26A269"
 color ungroupborder  "#A51D2D"
 color menubg         "#241F31"
-color menufg         "#DEDDDA"
-color font           "#DEDDDA"
+color menufg         "#F6F5F4"
+color font           "#F6F5F4"
 color selfont        "#241F31"
 
 ####################################################################################
@@ -72,12 +72,13 @@ command Calculator           xcalc
 command Clock                xclock
 command Editor              'uxterm -T Neovim -e nvim'
 command 'File Picker'       filepicker.sh
-command Mixer               'uxterm -T Pulsemixer -e pulsemixer'         
-command Player              'mpv --player-operation-mode=pseudo-gui'         
-command 'Backup System'     'pkexec timeshift-gtk'
-command 'Task Manager'      'uxterm -T BTOP++ -e btop'
+command Mixer               'uxterm -T Pulsemixer -e pulsemixer'
+command Office              onlyoffice-desktopeditors         
+command Player              'mpv --player-operation-mode=pseudo-gui'
+command 'Task Manager'      'uxterm -fullscreen -T BTOP++ -e btop'
 command 'Terminal Emulator' uxterm
 command '»system«'          'true'
+command 'Backup System'     'pkexec timeshift-gtk'
 command 'Force Close'       xkill
 command 'Lock Screen'       slock
 command 'Logout'            'pkill -KILL -u aaron'
@@ -154,9 +155,10 @@ bind-key XF86Tools  'mpv --player-operation-mode=pseudo-gui'
 # lock the screen, quit the session, or reload the .cwmrc file #
 ################################################################
 
-bind-key 4CS-Pause slock
+
 bind-key 4CS-End   quit
 bind-key 4CS-F5    restart
+bind-key CM-Pause  slock
 
 ####################
 # menu keybindings #
