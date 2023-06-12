@@ -70,13 +70,13 @@ color selfont        "#241F31"
 command Browser              brave-browser
 command Calculator           xcalc
 command Clock                xclock
-command Editor              'kitty --name Neovim --hold nvim'
+command Editor              'uxterm -T Neovim -e nvim'
 command 'File Picker'       filepicker.sh
-command Mixer               'kitty --name Pulsemixer --hold pulsemixer'         
+command Mixer               'uxterm -T Pulsemixer -e pulsemixer'         
 command Player              'mpv --player-operation-mode=pseudo-gui'         
 command 'Backup System'     'pkexec timeshift-gtk'
-command 'Task Manager'      'kitty --name BTOP++ --hold btop'
-command 'Terminal Emulator' kitty
+command 'Task Manager'      'uxterm -T BTOP++ -e btop'
+command 'Terminal Emulator' uxterm
 command '»system«'          'true'
 command 'Force Close'       xkill
 command 'Lock Screen'       slock
@@ -118,7 +118,7 @@ wm Xmonad xmonad
 ###########################################################################################
 
 unbind-key all
-bind-key 4-Return kitty
+bind-key 4-Return uxterm
 
 ###########
 # browser #
