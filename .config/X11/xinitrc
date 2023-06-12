@@ -75,4 +75,4 @@ xrdb -merge "$XRESOURCES" &
 #Xsession#
 ##########
 
-exec dbus-run-session cwm -c "$CWMRC"
+exec cwm -c "$CWMRC"
