@@ -23,7 +23,7 @@ picom -b &
 ######
 
 if test -z "$DBUS_SESSION_BUS_ADDRESS"; then
-    eval $(dbus-launch --exit-with-session --sh-syntax)
+    eval "$(dbus-launch --exit-with-session --sh-syntax)"
 fi
 systemctl --user import-environment DISPLAY XAUTHORITY
 
@@ -53,7 +53,6 @@ dunst &
 
 /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
 
-
 ##############
 #Screenlocker#
 ##############
@@ -70,10 +69,10 @@ setxkbmap -option caps:swapescape &
 #Xresources#
 ############
 
-xrdb -merge $XRESOURCES &
+xrdb -merge "$XRESOURCES" &
 
 ##########
 #Xsession#
 ##########
 
-exec dbus-run-session cwm -c $CWMRC
+exec dbus-run-session cwm -c "$CWMRC"
