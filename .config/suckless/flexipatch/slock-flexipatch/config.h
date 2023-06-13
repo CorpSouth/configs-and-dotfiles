@@ -100,7 +100,7 @@ static const int timeoffset = 60;
 static const int runonce = 0;
 
 /* command to be run after [time] has passed */
-static const char *command = "doas poweroff";
+static const char *command = "systemctl suspend";
 #endif // AUTO_TIMEOUT_PATCH
 
 #if FAILURE_COMMAND_PATCH
@@ -109,13 +109,13 @@ static const char *command = "doas poweroff";
 static const int failcount = 0;
 
 /* command to be executed after [failcount] failed password attempts */
-static const char *failcommand = "shutdown";
+static const char *failcommand = "systemctl poweroff";
 #endif // FAILURE_COMMAND_PATCH
 
 #if SECRET_PASSWORD_PATCH
 static const secretpass scom[] = {
 	/* Password             command */
-	{ "shutdown",           "doas poweroff"},
+	{ "shutdown",           "systemctl poweroff"},
 };
 #endif // SECRET_PASSWORD_PATCH
 
