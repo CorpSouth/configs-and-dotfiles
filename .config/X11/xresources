@@ -2,42 +2,28 @@
 #include "/home/aaron/.config/X11/xresources.d/myColors.Xresources"
 
 ! Cursor theme
-Xcursor.theme: Simp1e-Adw-Dark
+Xcursor.theme: X11-Default-Black 
 
 ! XCalc
 
 xcalc*Cursor:     hand2
-xcalc*geometry:   215x315+1376+3
+xcalc*geometry:   215x315+1383+0
 xcalc*ShapeStyle: rectangle
 
 ! XClock
 
-XClock*geometry: 215x215+3+3
+XClock*geometry: 215x215+0+0
 XClock*render:   true
 XClock*update:   1
 
-! Xft
-
-Xft.antialiasing: true
-Xft.autohint:     0
-Xft.dpi:          100
-Xft.hinting:      1
-Xft.hintstyle:    hintfull
-Xft.lcdfilter:    lcdfilter
-Xft.rgba:         rgb
-
 ! UXTerm
+
 UXTerm*charClass:          33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
 UXTerm*cursorBlink:        false
 UXTerm*eightBitInput:      false
-UXTerm*faceName:           xft:SauceCodePro NFM
+UXTerm*faceName:           Terminess Nerd Font 
 UXTerm*faceSize:           12
-UXTerm*faceSize1:          8
-UXTerm*faceSize2:          12
-UXTerm*faceSize3:          14
-UXTerm*faceSize4:          16
 UXTerm*highlightSelection: true
-UXTerm*internalBorder:     12
 UXTerm*renderFont:         true
 UXTerm*saveLines:          16385
 UXTerm*scrollBar: false
@@ -46,8 +32,6 @@ UXTerm*termName:           xterm-256color
 UXTerm*trimSelection:      true
 UXTerm.vt100.geometry:     95x25
 UXTerm.VT100.Translations: #override \n\
-  Ctrl <Key> minus: smaller-vt-font() \n\
-  Ctrl <Key> plus: larger-vt-font() \n\
   Ctrl <Key> 0: set-vt-font(d) \n\
   Ctrl Shift <Key> C: copy-selection(CLIPBOARD) \n\
   Ctrl Shift <Key> V: insert-selection(CLIPBOARD) \n\
@@ -55,17 +39,13 @@ UXTerm.VT100.Translations: #override \n\
   <Btn2Up>: insert-selection(PRIMARY)
 
 ! XTerm
+
 XTerm*charClass:          33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
 XTerm*cursorBlink:        false
 XTerm*eightBitInput:      false
-XTerm*faceName:           xft:SauceCodePro NFM
+XTerm*faceName:           Terminess Nerd Font
 XTerm*faceSize:           12
-XTerm*faceSize1:          8
-XTerm*faceSize2:          12
-XTerm*faceSize3:          14
-XTerm*faceSize4:          16
 XTerm*highlightSelection: true
-XTerm*internalBorder:     12
 XTerm*renderFont:         true
 XTerm*saveLines:          16385
 XTerm*scrollBar: false
@@ -74,9 +54,6 @@ XTerm*termName:           xterm-256color
 XTerm*trimSelection:      true
 XTerm.vt100.geometry:     95x25
 XTerm.VT100.Translations: #override \n\
-  Ctrl <Key> minus: smaller-vt-font() \n\
-  Ctrl <Key> plus: larger-vt-font() \n\
-  Ctrl <Key> 0: set-vt-font(d) \n\
   Ctrl Shift <Key> C: copy-selection(CLIPBOARD) \n\
   Ctrl Shift <Key> V: insert-selection(CLIPBOARD) \n\
   <Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0) \n\

@@ -6,11 +6,11 @@
 
 xbanish -t 5 &
 
-#######################
-#Background Coloration#
-#######################
+############
+#Background#
+############
 
-hsetroot -solid "#241F31" &
+hsetroot -solid "#696969" &
 
 ############
 #Compositor#

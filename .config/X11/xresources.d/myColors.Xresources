@@ -1,26 +1,24 @@
-! Based on the default GNOME Terminal colorscheme
-
 ! Define the Colors
 
-#define BG            #171421
-#define CURSOR        #FFFFFF
-#define FG            #D0CFCC
+#define BG            #000000 
+#define CURSOR        #C0C0C0
+#define FG            #FFFFFF
 
-#define BLACK         #171421
-#define RED           #C01C28
-#define GREEN         #26A269
-#define YELLOW        #A2734C
-#define BLUE          #12488B
-#define MAGENTA       #A347BA
-#define CYAN          #2AA1B3
-#define WHITE         #D0CFCC
-#define BRIGHTBLACK   #5E5C64
-#define BRIGHTRED     #F66151
-#define BRIGHTGREEN   #33D17A
-#define BRIGHTYELLOW  #E9AD0C
-#define BRIGHTBLUE    #2A7BDE
-#define BRIGHTMAGENTA #C061CB
-#define BRIGHTCYAN    #33C7DE
+#define BLACK         #000000
+#define RED           #800000
+#define GREEN         #008000
+#define YELLOW        #808000
+#define BLUE          #000080
+#define MAGENTA       #800080
+#define CYAN          #008080
+#define WHITE         #C0C0C0
+#define BRIGHTBLACK   #808080
+#define BRIGHTRED     #FF0000
+#define BRIGHTGREEN   #00FF00
+#define BRIGHTYELLOW  #FFFF00
+#define BRIGHTBLUE    #0000FF
+#define BRIGHTMAGENTA #FF00FF
+#define BRIGHTCYAN    #00FFFF
 #define BRIGHTWHITE   #FFFFFF
 
 ! Now set the terminal colors here
@@ -95,8 +93,8 @@ xcalc.ti.button45.background:          BLUE
 xcalc.ti.button45.foreground:          BRIGHTBLUE
 xcalc.ti.button50.background:          BLUE
 xcalc.ti.button50.foreground:          BRIGHTBLUE
-xcalc.ti.button55.background:          MAGENTA
-xcalc.ti.button55.foreground:          BRIGHTMAGENTA
+xcalc.ti.button55.background:          BLUE
+xcalc.ti.button55.foreground:          BRIGHTBLUE
 xcalc.ti.Command.background:           BRIGHTBLACK
 xcalc.ti.Command.foreground:           BRIGHTWHITE
 
