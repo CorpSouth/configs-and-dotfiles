@@ -31,13 +31,13 @@
 # "gap top bottom left right"               #
 #############################################
 
-gap 3 3 3 3
+# gap 5 5 5 5
 
 #############
 # menu font #
 #############
 
-fontname "SauceCodePro NF:size=12:antialias=true"
+fontname "Terminess Nerd Font:style=bold"
 
 ##########################################################
 # borders and coloration                                 #
@@ -47,17 +47,17 @@ fontname "SauceCodePro NF:size=12:antialias=true"
 # for colors, both generic names and hex code is allowed #
 ##########################################################
 
-borderwidth 3
+borderwidth 1
 
-color activeborder   "#99C1F1"
-color inactiveborder "#1A5FB4" 
-color urgencyborder  "#FF7800" 
-color groupborder    "#26A269"
-color ungroupborder  "#A51D2D"
-color menubg         "#241F31"
-color menufg         "#F6F5F4"
-color font           "#F6F5F4"
-color selfont        "#241F31"
+color activeborder   magenta
+color inactiveborder blue
+color urgencyborder  yellow
+color groupborder    green
+color ungroupborder  red
+color menubg         black
+color menufg         cyan
+color font           white
+color selfont        black
 
 ####################################################################################
 # menu contents for programs, system commands, and to point to scripts             #
@@ -151,14 +151,20 @@ bind-key XF86Explorer filepicker.sh
 
 bind-key XF86Tools  'mpv --player-operation-mode=pseudo-gui'
 
+################
+# volume mixer #
+################
+
+bind-key C-XF86Tools 'uxterm -T Pulsemixer -e pulsemixer'
+
 ################################################################
 # lock the screen, quit the session, or reload the .cwmrc file #
 ################################################################
 
 
-bind-key 4CS-End   quit
-bind-key 4CS-F5    restart
-bind-key CM-Pause  slock
+bind-key 4CS-End  quit
+bind-key 4CS-F5   restart
+bind-key CM-Pause slock
 
 ####################
 # menu keybindings #
