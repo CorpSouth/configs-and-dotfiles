@@ -47,17 +47,17 @@ fontname "Terminess Nerd Font:style=bold"
 # for colors, both generic names and hex code is allowed #
 ##########################################################
 
-borderwidth 1
+borderwidth 2
 
-color activeborder   magenta
-color inactiveborder blue
-color urgencyborder  yellow
-color groupborder    green
-color ungroupborder  red
-color menubg         black
-color menufg         cyan
-color font           white
-color selfont        black
+color activeborder   magenta2
+color inactiveborder magenta4
+color urgencyborder  yellow2
+color groupborder    green2
+color ungroupborder  red2
+color menubg         gray72
+color menufg         royalblue4 
+color font           gray12
+color selfont        gold2
 
 ####################################################################################
 # menu contents for programs, system commands, and to point to scripts             #
@@ -67,12 +67,12 @@ color selfont        black
 # all menu options are to be placed *above* wherever the 'unbind-key' is specified #
 ####################################################################################
 
-command Browser              brave-browser
+command Browser              sensible-browser
 command Calculator           xcalc
 command Clock                xclock
-command Editor              'uxterm -T Neovim -e nvim'
+command Editor              'uxterm -T Editor -e sensible-editor'
 command 'File Picker'       filepicker.sh
-command Mixer               'uxterm -T Pulsemixer -e pulsemixer'
+command Mixer               'uxterm -T Mixer -e pulsemixer'
 command Office              onlyoffice-desktopeditors         
 command Player              'mpv --player-operation-mode=pseudo-gui'
 command 'Task Manager'      'uxterm -fullscreen -T BTOP++ -e btop'
@@ -84,7 +84,7 @@ command 'Lock Screen'       slock
 command 'Logout'            'pkill -KILL -u aaron'
 command 'Reboot'            'systemctl reboot'
 command 'Shut Down'         'systemctl poweroff'
-command 'Suspend'           'systemctl suspend'
+command 'Suspend'           'systemctl suspend | slock'
 
 ################################################
 # alternate window managers in the 'wm' menu   #
@@ -125,7 +125,7 @@ bind-key 4-Return uxterm
 # browser #
 ###########
 
-bind-key XF86HomePage brave-browser
+bind-key XF86HomePage sensible-browser
 
 ##############
 # calculator #
