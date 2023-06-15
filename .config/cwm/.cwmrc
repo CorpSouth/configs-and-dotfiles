@@ -49,14 +49,14 @@ fontname "Terminess Nerd Font:style=bold"
 
 borderwidth 2
 
-color activeborder   magenta2
-color inactiveborder magenta4
-color urgencyborder  yellow2
+color activeborder   turquoise
+color inactiveborder teal 
+color urgencyborder  orangered2
 color groupborder    green2
 color ungroupborder  red2
-color menubg         gray72
-color menufg         royalblue4 
-color font           gray12
+color menubg         silver
+color menufg         deeppink4
+color font           gray15
 color selfont        gold2
 
 ####################################################################################
@@ -72,6 +72,7 @@ command Calculator           xcalc
 command Clock                xclock
 command Editor              'uxterm -T Editor -e sensible-editor'
 command 'File Picker'       filepicker.sh
+command 'Gallery'           'nsxiv -r /home/aaron/Pictures'
 command Mixer               'uxterm -T Mixer -e pulsemixer'
 command Office              onlyoffice-desktopeditors         
 command Player              'mpv --player-operation-mode=pseudo-gui'
@@ -84,7 +85,7 @@ command 'Lock Screen'       slock
 command 'Logout'            'pkill -KILL -u aaron'
 command 'Reboot'            'systemctl reboot'
 command 'Shut Down'         'systemctl poweroff'
-command 'Suspend'           'systemctl suspend | slock'
+command 'Suspend'           'slock systemctl suspend -i'
 
 ################################################
 # alternate window managers in the 'wm' menu   #
