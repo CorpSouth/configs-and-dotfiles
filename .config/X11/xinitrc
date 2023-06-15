@@ -10,7 +10,7 @@ xbanish -t 5 &
 #Background#
 ############
 
-hsetroot -solid "gray36" &
+hsetroot -solid "gray10" &
 
 ############
 #Compositor#
