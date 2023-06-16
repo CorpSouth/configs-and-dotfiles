@@ -166,8 +166,10 @@ bind C-s stick
 
 bind C-s-c cother
 bind C-s-s swap
-bind s-M bracketleft prev
-bind s-M bracketright next
+bind M-s-bracketleft prevscreen
+bind M-s-bracketright nextscreen
+bind s-bracketleft prev
+bind s-bracketright next
 bind s-0 vselect 0
 bind s-1 vselect 1
 bind s-2 vselect 2
@@ -180,8 +182,6 @@ bind s-9 vselect 9
 bind s-F10 vselect 10
 bind s-F11 vselect 11
 bind s-F12 vselect 12
-bind s-bracketleft prevscreen
-bind s-bracketright nextscreen
 
 ########################################
 #WINDOW MANAGEMENT KEYBINDINGS END HERE#
