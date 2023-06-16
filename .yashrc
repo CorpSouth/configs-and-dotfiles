@@ -63,7 +63,3 @@ extract ()
 #######
 
 PF_INFO="ascii de host editor kernel memory os pkgs shell uptime wm palette" pfetch
-
-########
-#Prompt#
-########
