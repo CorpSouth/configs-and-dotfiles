@@ -2,60 +2,29 @@
 #Welcome to Sdorfehs! Refer to the manpage#
 #for additional configuration options.#####
 #######################################
-#AUTOSTARTING PROGRAMS BEGIN HERE#
-##################################
-#common#
-########
-
-exec /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
-exec dunst
-exec hsetroot -solid "#241F31"
-exec picom
-exec setxkbmap -option caps:swapescape
-exec xautolock -time 10 -locker slock
-exec xrdb -merge $XRESOURCES
-exec xbanish -t 5
-exec xsetroot -cursor_name left_ptr
-
-##################
-#Vscreen Renaming#
-##################
-
-vselect 1
-vrename CHAT
-vselect 2
-vrename LOAD
-vselect 3
-vrename PLAY
-vselect 4
-vrename UTIL
-vselect 5
-vrename VIRT
-vselect 6
-vrename WORK
-vselect 0
-vrename .NET
-
-################################
-#AUTOSTARTING PROGRAMS END HERE#
-################################
 #ALIASES BEGIN HERE#
-####################
+################################################
+#Useful for stringing together complex commands#
+#################################################
+#Hint: Use aliases for launching applications on#
+#other available vscreens. Results may vary.#####
+#############################################
 
 alias armcord exec sdorfehs -c "vselect 1" -c "exec armcord"
 alias browser exec sdorfehs -c "vselect 0" -c "exec $BROWSER"
 alias calculator exec sdorfehs -c "vselect 4" -c "exec $TERMEXEC $CALCULATOR"
 alias editor exec sdorfehs -c "vselect 6" -c "exec $TERMEXEC $EDITOR"
-alias filepicker exec sdorfehs -c "only" -c "hsplit" -c "focusright" -c "exec $FILEPICKER"
+alias filepicker exec filepicker.sh
 alias mail exec sdorfehs -c "vselect 0" -c "exec $MAIL"
 alias mixer exec $TERMEXEC $MIXER
-alias volmute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 alias office exec sdorfehs -c "vselect 6" -c "exec $OFFICE"
 alias player exec sdorfehs -c "vselect 3" -c "exec $PLAYER"
+alias suspend exec slock systemctl suspend -i
 alias taskmanager exec sdorfehs -c "vselect 2" -c "exec $TERMEXEC $TASKMANAGER"
 alias telegram-desktop exec sdorfehs -c "vselect 1" -c "exec telegram-desktop"
 alias term exec $TERMINAL
 alias voldown exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+alias volmute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 alias volup exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 alias youtube exec sdorfehs -c "vselect 3" -c "exec freetube"
 
@@ -66,21 +35,21 @@ alias youtube exec sdorfehs -c "vselect 3" -c "exec freetube"
 #######################################
 
 set barinpadding 0
-set barborder 3
-set barbordercolor #DEDDDA
+set barborder 2
+set barbordercolor maroon
 set bargravity c
-set bgcolor #241F31
-set barpadding 12 12
+set bgcolor silver
+set barpadding 6 6
 set barsticky 0
-set border 3
-set bwcolor #1A5FB4
-set fgcolor #DEDDDA
-set font "Iosevka ss09 Extended:style=Regular:size=12:antialias=1:hinting=1:hintstyle=3"
-set fwcolor #62A0EA
+set border 1
+set bwcolor navy
+set fgcolor black
+set font "Terminess Nerd Font:size=12:style=bold"
+set fwcolor aqua
 set gap 0
 set ignoresizehints 1
 set msgwait 4
-set onlyborder 0
+set onlyborder 1
 set padding 0 0 0 0
 #set rudeness 12
 set startupmessage 0
@@ -92,46 +61,62 @@ set vscreens 7
 #####################################
 #KEYBINDING SETTINGS BEGIN HERE#
 ################################
+#C: Control Key#
+#M: Alt/Mod1 Key######
+#s: Super/Windows Key#
+######################
 #Escape & Exec#
 ###############
 
 bind Menu exec
-escape C-grave
+escape s-grave
+
+##########
+#Focusing#
+##########
+
+bind s-h focusleft
+bind s-j focusdown
+bind s-k focusup
+bind s-l focusright
 
 #########
 #General#
 #########
 
-bind BackSpace undo
+bind C-s-BackSpace undo
 bind C-a abort
 bind C-Delete remove
-bind C-F5 exec sdorfehs -c restart
+bind C-s-F5 restart
+bind C-Menu windows
 bind C-M-End quit
 bind C-M-k kill
-bind C-T colon exec $TERMEXEC
-bind C-t exec $TERMINAL
-bind M-Delete delete
-bind M-f curframe
-bind M-i info
-bind M-r redisplay
-bind M-s select
-bind M-t title
+bind C-s-Return redo
+bind C-s-s select
+bind C-s-T colon exec $TERMEXEC
+bind C-s-Delete delete
 bind M-question help top
-bind M-V vscreens
+bind M-s-f curframe
+bind M-s-i info
+bind M-s-r redisplay
+bind M-s-t title
+bind M-question help top
 bind M-v version
-bind Return redo
+bind s-Menu vscreens
 
 ###########
 #Launchers#
 ###########
 
-bind A armcord
-bind d exec sdorfehs -c "echo `date`"
-bind End taskmanager
-bind E editor
-bind O office
-bind T telegram-desktop
-bind Y youtube
+bind s-A armcord
+bind s-B exec pkexec timeshift-gtk
+bind s-d exec sdorfehs -c "echo `date`"
+bind s-End taskmanager
+bind s-E editor
+bind s-O office
+bind s-T telegram-desktop
+bind s-t exec $TERMINAL
+bind s-Y youtube
 
 #############
 #Lock Screen#
@@ -143,7 +128,13 @@ bind Pause exec slock
 #Screenshot#
 ############
 
-definekey top Print exec scrot /home/aaron/Pictures/Screenshots/%c-debian.png
+definekey top Print exec scrot /home/aaron/.local/share/pictures/screenshots/%c-debian.png
+
+#########
+#Suspend#
+#########
+
+bind C-M-Pause suspend
 
 ##########################################
 #WINDOW MANAGEMENT KEYBINDINGS BEGIN HERE#
@@ -151,15 +142,15 @@ definekey top Print exec scrot /home/aaron/Pictures/Screenshots/%c-debian.png
 #Moving#
 ########
 
-bind C-V vmove
+bind C-s-V vmove
 
 ###########
 #Splitting#
 ###########
 
-bind C-h hsplit
-bind C-o only
-bind C-v vsplit
+bind C-s-h hsplit
+bind C-s-o only
+bind C-s-v vsplit
 
 #################
 #Sticky/Unsticky#
@@ -173,24 +164,25 @@ bind C-s stick
 ###########
 
 bind C-O cother
-bind M-bracketleft prevscreen
-bind M-bracketright nextscreen
-bind M-S swap
-definekey top M-0 vselect 0
-definekey top M-1 vselect 1
-definekey top M-3 vselect 3
-definekey top M-2 vselect 2
-definekey top M-4 vselect 4
-definekey top M-5 vselect 5
-definekey top M-6 vselect 6
-definekey top M-7 vselect 8
-definekey top M-9 vselect 9
-definekey top M-bracketleft prev
-definekey top M-F10 vselect 10
-definekey top M-bracketright next
-definekey top M-bracketleft prev
-definekey top M-F11 vselect 11
-definekey top M-F12 vselect 12
+bind C-M-S swap
+bind s-bracketleft prevscreen
+bind s-bracketright nextscreen
+
+definekey top s-0 vselect 0
+definekey top s-1 vselect 1
+definekey top s-3 vselect 3
+definekey top s-2 vselect 2
+definekey top s-4 vselect 4
+definekey top s-5 vselect 5
+definekey top s-6 vselect 6
+definekey top s-7 vselect 8
+definekey top s-9 vselect 9
+definekey top s-bracketleft prev
+definekey top s-F10 vselect 10
+definekey top s-bracketright next
+definekey top s-bracketleft prev
+definekey top s-F11 vselect 11
+definekey top s-F12 vselect 12
 
 ########################################
 #WINDOW MANAGEMENT KEYBINDINGS END HERE#
@@ -209,10 +201,13 @@ unbind C-i
 unbind C-K
 unbind C-k
 unbind C-l
+unbind C-n
+unbind C-p
 unbind C-Return
 unbind C-space
 unbind C-underscore
 unbind C-u
+unbind C-w
 unbind C-x
 unbind apostrophe
 unbind c
@@ -262,7 +257,26 @@ unmanage OpenSSH Authentication Passphrase Request
 
 ####################
 #UNMANAGE ENDS HERE#
-####################
+##############################
+#VSCREEN RENAMING BEGINS HERE#
+##############################
+
+vselect 1
+vrename CHAT
+vselect 2
+vrename LOAD
+vselect 3
+vrename PLAY
+vselect 4
+vrename UTIL
+vselect 5
+vrename VIRT
+vselect 6
+vrename WORK
+vselect 0
+vrename .NET
+
+##################
 #XF86 BEGINS HERE#
 ###################
 #XF86 Common (Top)#
