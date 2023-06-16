@@ -7,7 +7,7 @@ Xcursor.theme: DMZ-Black
 ! XCalc
 
 xcalc*Cursor:     hand2
-xcalc*geometry:   215x315+1381+0
+xcalc*geometry:   215x315+1383+0
 xcalc*ShapeStyle: rectangle
 
 ! XClock
@@ -21,7 +21,7 @@ XClock*update:   1
 UXTerm*charClass:          33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
 UXTerm*cursorBlink:        false
 UXTerm*eightBitInput:      false
-UXTerm*faceName:           Terminess Nerd Font 
+UXTerm*faceName:           Terminess Nerd Font
 UXTerm*faceSize:           12
 UXTerm*highlightSelection: true
 UXTerm*renderFont:         true
