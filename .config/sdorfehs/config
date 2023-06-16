@@ -12,7 +12,7 @@
 
 alias armcord exec sdorfehs -c "vselect 1" -c "exec armcord"
 alias browser exec sdorfehs -c "vselect 0" -c "exec $BROWSER"
-alias calculator exec sdorfehs -c "vselect 4" -c "exec $TERMEXEC $CALCULATOR"
+alias calculator exec $TERMEXEC $CALCULATOR
 alias editor exec sdorfehs -c "vselect 6" -c "exec $TERMEXEC $EDITOR"
 alias filepicker exec filepicker.sh
 alias mail exec sdorfehs -c "vselect 0" -c "exec $MAIL"
@@ -71,14 +71,14 @@ set vscreens 7
 bind Menu exec
 escape s-grave
 
-##########
-#Focusing#
-##########
+########################
+#Focusing (Numpad, Top)#
+########################
 
-bind s-h focusleft
-bind s-j focusdown
-bind s-k focusup
-bind s-l focusright
+definekey top s-KP_Down focusdown
+definekey top s-KP_Left focusleft
+definekey top s-KP_Right focusright
+definekey top s-KP-Up focusup
 
 #########
 #General#
@@ -164,26 +164,24 @@ bind C-s stick
 #Switching#
 ###########
 
-bind C-O cother
-bind C-M-S swap
+bind C-s-c cother
+bind C-s-s swap
+bind s-M bracketleft prev
+bind s-M bracketright next
+bind s-0 vselect 0
+bind s-1 vselect 1
+bind s-2 vselect 2
+bind s-3 vselect 3
+bind s-4 vselect 4
+bind s-5 vselect 5
+bind s-6 vselect 6
+bind s-7 vselect 8
+bind s-9 vselect 9
+bind s-F10 vselect 10
+bind s-F11 vselect 11
+bind s-F12 vselect 12
 bind s-bracketleft prevscreen
 bind s-bracketright nextscreen
-
-definekey top s-0 vselect 0
-definekey top s-1 vselect 1
-definekey top s-3 vselect 3
-definekey top s-2 vselect 2
-definekey top s-4 vselect 4
-definekey top s-5 vselect 5
-definekey top s-6 vselect 6
-definekey top s-7 vselect 8
-definekey top s-9 vselect 9
-definekey top s-bracketleft prev
-definekey top s-F10 vselect 10
-definekey top s-bracketright next
-definekey top s-bracketleft prev
-definekey top s-F11 vselect 11
-definekey top s-F12 vselect 12
 
 ########################################
 #WINDOW MANAGEMENT KEYBINDINGS END HERE#
@@ -288,16 +286,11 @@ definekey top XF86Explorer filepicker
 definekey top XF86HomePage browser
 definekey top XF86Mail mail
 
-########################
-#XF86 Multimedia (Root)#
-########################
-
-bind XF86Tools mixer
-
 #######################
 #XF86 Multimedia (Top)#
 #######################
 
+definekey top M-XF86Tools mixer
 definekey top XF86Tools player
 definekey top XF86AudioLowerVolume voldown
 definekey top XF86AudioMute mute
