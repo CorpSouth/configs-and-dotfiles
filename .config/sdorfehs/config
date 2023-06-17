@@ -20,28 +20,66 @@ alias volup exec volnoti +5%
 #######################################
 #GENERAL SETTINGS VARIABLES BEGIN HERE#
 #######################################
+#Appearance#
+############
 
-set barinpadding 0
-set barborder 2
-set barbordercolor #1D1F1F 
-set bargravity c
+set barbordercolor #1D1F1F
 set bgcolor #3B3E3F
-set barpadding 6 6
-set barsticky 0
-set border 2
 set bwcolor #202223
 set fgcolor #EEEEEC
 set font "Terminess Nerd Font:size=12:style=bold"
 set fwcolor #145BA6
-set gap 0
-set ignoresizehints 1
+
+#################################################
+#Make Classic Terminals (Rxvt, ST, UXTerm/XTerm)#
+#honor their respective frame sizes##############
+####################################
+
+set ignoreresizehints 1
+
+##################
+#Message Settings#
+##################
+
 set msgwait 4
-set onlyborder 1
-set padding 0 0 0 0
-set rudeness 13
 set startupmessage 0
+
+##################################
+#Number of Virtual Screens to Use#
+##################################
+
+set vscreens 5
+
+###########################
+#Position & Scaling Tweaks#
+###########################
+
+set barinpadding 0
+set barborder 2
+set bargravity c
+set barpadding 8 8
+set barsticky 0
+set border 1
+set gap 0
+set onlyborder 0
+set padding 0 0 0 0
 set transgravity c
-set vscreens 7
+
+############################################
+#Set the "Rudeness" Level for Windows Which#
+#Tend to Follow Their Own Explicit Behavior#
+##############################################
+#13 Should Keep Things Mild, Yet Flexible for#
+#"Weirder" Window Behavior####################
+##########################
+
+set rudeness 13
+
+########################################
+#Keep OSD Messages for the Alotted Time#
+########################################
+
+
 
 #####################################
 #GENERAL SETTINGS VARIABLES END HERE#
@@ -233,20 +271,17 @@ unmanage OpenSSH Authentication Passphrase Request
 #VSCREEN RENAMING BEGINS HERE#
 ##############################
 
+vselect 0
+vrename .NET
 vselect 1
 vrename CHAT
 vselect 2
-vrename LOAD
-vselect 3
 vrename PLAY
-vselect 4
+vselect 3
 vrename UTIL
-vselect 5
-vrename VIRT
-vselect 6
+vselect 4
 vrename WORK
 vselect 0
-vrename .NET
 
 ##################
 #XF86 BEGINS HERE#
