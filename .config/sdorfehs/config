@@ -5,28 +5,15 @@
 #ALIASES BEGIN HERE#
 ################################################
 #Useful for stringing together complex commands#
-#################################################
-#Hint: Use aliases for launching applications on#
-#other available vscreens. Results may vary.#####
-#############################################
+##################################################################
+#Dependencies: Volnoti script requires dunst and pulseaudio-utils#
+##################################################################
 
-alias armcord exec sdorfehs -c "vselect 1" -c "exec armcord"
-alias browser exec sdorfehs -c "vselect 0" -c "exec $BROWSER"
-alias calculator exec $TERMEXEC $CALCULATOR
-alias editor exec sdorfehs -c "vselect 6" -c "exec $TERMEXEC $EDITOR"
-alias filepicker exec filepicker.sh
-alias mail exec sdorfehs -c "vselect 0" -c "exec $MAIL"
-alias mixer exec $TERMEXEC $MIXER
-alias office exec sdorfehs -c "vselect 6" -c "exec $OFFICE"
-alias player exec sdorfehs -c "vselect 3" -c "exec $PLAYER"
+alias lock exec slock
 alias suspend exec slock systemctl suspend -i
-alias taskmanager exec sdorfehs -c "vselect 2" -c "exec $TERMEXEC $TASKMANAGER"
-alias telegram-desktop exec sdorfehs -c "vselect 1" -c "exec telegram-desktop"
-alias term exec $TERMINAL
-alias voldown exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-alias volmute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-alias volup exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-alias youtube exec sdorfehs -c "vselect 3" -c "exec freetube"
+alias voldown exec volnoti -5%
+alias volmute exec volnoti toggle
+alias volup exec volnoti +5%
 
 ##################
 #ALIASES END HERE#
@@ -51,7 +38,7 @@ set ignoresizehints 1
 set msgwait 4
 set onlyborder 1
 set padding 0 0 0 0
-#set rudeness 12
+set rudeness 13
 set startupmessage 0
 set transgravity c
 set vscreens 7
@@ -61,96 +48,82 @@ set vscreens 7
 #####################################
 #KEYBINDING SETTINGS BEGIN HERE#
 ################################
-#C: Control Key#
+#C: Control Key##
 #M: Alt/Mod1 Key######
 #s: Super/Windows Key#
 ######################
-#Escape & Exec#
-###############
+#Escape#
+########
 
-bind Menu exec
-escape s-grave
+escape Super_L 
 
-########################
-#Focusing (Numpad, Top)#
-########################
+#################
+#Exec & Terminal#
+#################
 
-definekey top s-KP_Down focusdown
-definekey top s-KP_Left focusleft
-definekey top s-KP_Right focusright
-definekey top s-KP-Up focusup
+bind C-s-T colon exec $TERMEXEC
+bind s-Menu exec
+bind s-t exec $TERMINAL
 
 #########
 #General#
 #########
 
-bind C-s-BackSpace undo
 bind C-a abort
-bind C-Delete remove
-bind C-s-F5 restart
-bind C-Menu windows
-bind C-M-End quit
-bind C-M-k kill
-bind C-s-Return redo
-bind C-s-s select
-bind C-s-T colon exec $TERMEXEC
-bind C-s-Delete delete
-bind M-question help top
-bind M-s-f curframe
-bind M-s-i info
-bind M-s-r redisplay
-bind M-s-t title
-bind M-question help top
-bind M-v version
-bind s-Menu vscreens
-
-###########
-#Launchers#
-###########
-
-bind s-A armcord
-bind s-B exec pkexec timeshift-gtk
+bind M-s-v version
+bind Print exec scrot $HOME/.local/share/pictures/screenshots/%c-debian.png
 bind s-d exec sdorfehs -c "echo `date`"
-bind s-End taskmanager
-bind s-E editor
-bind s-O office
-bind s-T telegram-desktop
-bind s-t exec $TERMINAL
 bind s-u exec sdorfehs -c "echo `uname -a`"
-bind s-Y youtube
 
-#############
-#Lock Screen#
-#############
+#################
+#Power & Session#
+#################
 
-bind Pause exec slock
-
-############
-#Screenshot#
-############
-
-definekey top Print exec scrot /home/aaron/.local/share/pictures/screenshots/%c-debian.png
-
-#########
-#Suspend#
-#########
-
-bind C-M-Pause suspend
+bind C-M-End quit
+bind C-M-Pause lock
+bind C-s-F5 restart
 
 ##########################################
 #WINDOW MANAGEMENT KEYBINDINGS BEGIN HERE#
 ##########################################
+#Correct, Delete, Kill, Remove, & Restore#
+##########################################
+
+bind C-s-BackSpace undo
+bind C-s-k kill
+bind C-s-o only
+bind C-s-Return redo
+bind M-s-Delete remove
+bind M-s-r redisplay
+
+#############
+#Information#
+#############
+
+bind C-Menu windows
+bind M-Menu vscreens
+bind M-question help top
+bind M-s-f curframe
+bind M-s-i info
+bind M-s-t title
+
+########
 #Moving#
 ########
 
 bind C-s-V vmove
 
 ###########
+#Selection#
+###########
+
+bind s-S select
+
+###########
 #Splitting#
 ###########
 
 bind C-s-h hsplit
-bind C-s-o only
 bind C-s-v vsplit
 
 #################
@@ -281,19 +254,19 @@ vrename .NET
 #XF86 Common (Top)#
 ###################
 
-definekey top XF86Calculator calculator
-definekey top XF86Explorer filepicker
-definekey top XF86HomePage browser
-definekey top XF86Mail mail
+definekey top XF86Calculator exec $TERMEXEC $CALCULATOR
+definekey top XF86Explorer exec $FILEPICKER
+definekey top XF86HomePage exec $BROWSER
+definekey top XF86Mail exec $MAIL
 
 #######################
 #XF86 Multimedia (Top)#
 #######################
 
-definekey top M-XF86Tools mixer
-definekey top XF86Tools player
+definekey top M-XF86Tools exec $TERMEXEC $MIXER
+definekey top XF86Tools exec $PLAYER
 definekey top XF86AudioLowerVolume voldown
-definekey top XF86AudioMute mute
+definekey top XF86AudioMute volmute
 definekey top XF86AudioRaiseVolume volup
 
 ################
