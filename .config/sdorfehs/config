@@ -75,12 +75,6 @@ set transgravity c
 
 set rudeness 13
 
-########################################
-#Keep OSD Messages for the Alotted Time#
-########################################
-
-set msgwait 4
-
 #####################################
 #GENERAL SETTINGS VARIABLES END HERE#
 #####################################
