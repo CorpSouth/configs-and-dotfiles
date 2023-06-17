@@ -2,6 +2,26 @@
 #Welcome to Sdorfehs! Refer to the manpage#
 #for additional configuration options.#####
 #######################################
+#ADDHOOKS BEGIN HERE#
+##################################
+#Attach Commands to Random Events#
+########################################
+#Give me a Rundown of Available Windows#
+#After I Have Switched Focus############
+#############################
+
+addhook switchframe windows
+addhook switchwin windows
+
+#############################
+#Tell Me Which Screen I'm On#
+#############################
+
+addhook switchvscreen vscreens
+
+###################
+#ADDHOOKS END HERE#
+####################
 #ALIASES BEGIN HERE#
 ################################################
 #Useful for stringing together complex commands#
@@ -10,6 +30,7 @@
 ##################################################################
 
 alias lock exec slock
+alias poweroff exec systemctl poweroff
 alias suspend exec slock systemctl suspend -i
 alias voldown exec volnoti -5%
 alias volmute exec volnoti toggle
@@ -41,7 +62,7 @@ set ignoreresizehints 1
 #Message Settings#
 ##################
 
-set msgwait 4
+set msgwait 2
 set startupmessage 0
 
 ##################################
@@ -55,9 +76,9 @@ set vscreens 5
 ###########################
 
 set barinpadding 0
-set barborder 2
-set bargravity c
-set barpadding 8 8
+set barborder 1
+set bargravity sw
+set barpadding 5 5
 set barsticky 0
 set border 1
 set gap 0
@@ -78,8 +99,29 @@ set rudeness 13
 #####################################
 #GENERAL SETTINGS VARIABLES END HERE#
 #####################################
-#KEYBINDING SETTINGS BEGIN HERE#
-################################
+#CUSTOM KEYMAPS BEGIN HERE#
+###########################
+
+newkmap echoes
+newkmap helpme
+newkmap information
+newkmap session
+newkmap shortcuts
+
+####################
+#Access the Keymaps#
+####################
+
+definekey top C-M-s-End readkey session
+definekey top s-I readkey information
+definekey top s-Menu readkey shortcuts
+definekey top s-question readkey helpme
+
+#########################
+#CUSTOM KEYMAPS END HERE#
+########################################
+#GENERIC KEYBINDING SETTINGS BEGIN HERE#
+########################################
 #C: Control Key##
 #M: Alt/Mod1 Key######
 #s: Super/Windows Key#
@@ -87,14 +129,14 @@ set rudeness 13
 #Escape#
 ########
 
-escape Super_L 
+escape s-grave
 
 #################
 #Exec & Terminal#
 #################
 
-bind C-s-T colon exec $TERMEXEC
-bind s-Menu exec
+bind Menu exec
+bind s-T colon exec $TERMEXEC
 bind s-t exec $TERMINAL
 
 #########
@@ -102,19 +144,44 @@ bind s-t exec $TERMINAL
 #########
 
 bind C-a abort
-bind M-s-v version
-bind Print exec scrot $HOME/.local/share/pictures/screenshots/%c-debian.png
-bind s-d exec sdorfehs -c "echo `date`"
-bind s-u exec sdorfehs -c "echo `uname -a`"
+definekey information V version
+definekey top Print exec scrot $HOME/.local/share/pictures/screenshots/%c-debian.png
+
+######
+#Help#
+######
+
+definekey helpme h help helpme
+definekey helpme i help information
+definekey helpme r help root
+definekey helpme S help session
+definekey helpme s help shortcuts
+definekey helpme t help top
 
 #################
 #Power & Session#
 #################
 
-bind C-M-End quit
-bind C-M-Pause lock
-bind C-s-F5 restart
+definekey session End quit
+definekey session F5 restart
+definekey session M-Pause suspend
+definekey session Pause lock
 
+###########
+#Shortcuts#
+###########
+
+definekey shortcuts a exec armcord
+definekey shortcuts d exec sdorfehs -c "echo `date`"
+definekey shortcuts f exec freetube
+definekey shortcuts o exec $OFFICE
+definekey shortcuts T exec telegram-desktop
+definekey shortcuts t exec timeshift-gtk
+definekey shortcuts U exec usbimager
+definekey shortcuts u exec sdorfehs -c "echo `uname -a`"
+
+##############################
+#GENERIC KEYBINDINGS END HERE#
 ##########################################
 #WINDOW MANAGEMENT KEYBINDINGS BEGIN HERE#
 ##########################################
@@ -122,6 +189,7 @@ bind C-s-F5 restart
 ##########################################
 
 bind C-s-BackSpace undo
+bind C-s-Delete delete
 bind C-s-k kill
 bind C-s-o only
 bind C-s-Return redo
@@ -132,12 +200,11 @@ bind M-s-r redisplay
 #Information#
 #############
 
-bind C-Menu windows
-bind M-Menu vscreens
-bind M-question help top
-bind M-s-f curframe
-bind M-s-i info
-bind M-s-t title
+definekey information c curframe
+definekey information i info
+definekey information t title
+definekey information v vscreens
+definekey information w windows
 
 ########
 #Moving#
@@ -240,6 +307,7 @@ unbind n
 unbind P
 unbind p
 unbind Q
+unbind question
 unbind R
 unbind r
 unbind S
@@ -257,6 +325,7 @@ unbind x
 #UNMANAGE BEGINS HERE#
 ######################
 
+unmanage mpv
 unmanage OpenSSH Authentication Passphrase Request
 
 ####################
