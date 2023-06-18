@@ -31,7 +31,9 @@ addhook switchvscreen vscreens
 
 alias lock exec slock
 alias poweroff exec systemctl poweroff
+alias reboot exec systemctl reboot
 alias suspend exec slock systemctl suspend -i
+alias systop exec $TERMEXEC $SYSTOP
 alias voldown exec volnoti -5%
 alias volmute exec volnoti toggle
 alias volup exec volnoti +5%
@@ -102,7 +104,7 @@ set rudeness 13
 #CUSTOM KEYMAPS BEGIN HERE#
 ###########################
 
-newkmap echoes
+newkmap exterm
 newkmap helpme
 newkmap information
 newkmap session
@@ -114,8 +116,9 @@ newkmap shortcuts
 
 definekey top C-M-s-End readkey session
 definekey top s-I readkey information
-definekey top s-Menu readkey shortcuts
 definekey top s-question readkey helpme
+definekey top s-Return readkey exterm
+definekey top s-S readkey shortcuts
 
 #########################
 #CUSTOM KEYMAPS END HERE#
@@ -131,13 +134,13 @@ definekey top s-question readkey helpme
 
 escape s-grave
 
-#################
-#Exec & Terminal#
-#################
+########
+#ExTerm#
+########
 
-bind Menu exec
-bind s-T colon exec $TERMEXEC
-bind s-t exec $TERMINAL
+definekey exterm Menu exec
+definekey exterm M-Return colon exec $TERMEXEC 
+definekey exterm Return exec $TERMINAL
 
 #########
 #General#
@@ -154,30 +157,30 @@ definekey top Print exec scrot $HOME/.local/share/pictures/screenshots/%c-debian
 definekey helpme h help helpme
 definekey helpme i help information
 definekey helpme r help root
-definekey helpme S help session
-definekey helpme s help shortcuts
+definekey helpme s help session
 definekey helpme t help top
 
 #################
 #Power & Session#
 #################
 
-definekey session End quit
+definekey session C-M-End quit
+definekey session C-M-Pause suspend
+definekey session C-M-s-F5 reboot
 definekey session F5 restart
-definekey session M-Pause suspend
 definekey session Pause lock
 
 ###########
 #Shortcuts#
 ###########
 
-definekey shortcuts a exec armcord
+definekey shortcuts A exec armcord
 definekey shortcuts d exec sdorfehs -c "echo `date`"
-definekey shortcuts f exec freetube
-definekey shortcuts o exec $OFFICE
-definekey shortcuts T exec telegram-desktop
-definekey shortcuts t exec timeshift-gtk
-definekey shortcuts U exec usbimager
+definekey shortcuts End systop
+definekey shortcuts F exec freetube
+definekey shortcuts O exec $OFFICE
+definekey shortcuts T exec timeshift-gtk
+definekey shortcuts t exec telegram-dekstop
 definekey shortcuts u exec sdorfehs -c "echo `uname -a`"
 
 ##############################
@@ -261,6 +264,7 @@ bind s-F12 vselect 12
 #UNBIND BEGINS HERE#
 ####################
 
+unbind A
 unbind C-A
 unbind b
 unbind C-apostrophe
@@ -335,15 +339,15 @@ unmanage OpenSSH Authentication Passphrase Request
 ##############################
 
 vselect 0
-vrename .NET
+vrename BrowserMail
 vselect 1
-vrename CHAT
+vrename Communications
 vselect 2
-vrename PLAY
+vrename Entertainment
 vselect 3
-vrename UTIL
+vrename Productivity
 vselect 4
-vrename WORK
+vrename Utilities
 vselect 0
 
 ##################
