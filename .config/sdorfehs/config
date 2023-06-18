@@ -118,7 +118,7 @@ newkmap shortcuts
 definekey top s-End readkey powersession
 definekey top s-i readkey information
 definekey top s-question readkey helpkeys
-definekey top s-Return readkey exterm
+definekey top s-Return readkey execterm
 definekey top s-s readkey shortcuts
 
 #########################
