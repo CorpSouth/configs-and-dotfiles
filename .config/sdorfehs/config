@@ -29,6 +29,7 @@ addhook switchvscreen vscreens
 #Dependencies: Volnoti script requires dunst and pulseaudio-utils#
 ##################################################################
 
+alias editor exec TERMEXEC $EDITOR
 alias lock exec slock
 alias poweroff exec systemctl poweroff
 alias reboot exec systemctl reboot
@@ -48,7 +49,7 @@ alias volup exec volnoti +5%
 
 set barbordercolor #1D1F1F
 set bgcolor #3B3E3F
-set bwcolor #202223
+set bwcolor #0C3662
 set fgcolor #EEEEEC
 set font "Terminess Nerd Font:size=12:style=bold"
 set fwcolor #145BA6
@@ -77,7 +78,7 @@ set vscreens 5
 #Position & Scaling Tweaks#
 ###########################
 
-set barinpadding 0
+set barinpadding 1
 set barborder 1
 set bargravity sw
 set barpadding 5 5
@@ -104,21 +105,21 @@ set rudeness 13
 #CUSTOM KEYMAPS BEGIN HERE#
 ###########################
 
-newkmap exterm
-newkmap helpme
+newkmap execterm
+newkmap helpkeys
 newkmap information
-newkmap session
+newkmap powersession
 newkmap shortcuts
 
 ####################
 #Access the Keymaps#
 ####################
 
-definekey top C-M-s-End readkey session
-definekey top s-I readkey information
-definekey top s-question readkey helpme
+definekey top s-End readkey powersession
+definekey top s-i readkey information
+definekey top s-question readkey helpkeys
 definekey top s-Return readkey exterm
-definekey top s-S readkey shortcuts
+definekey top s-s readkey shortcuts
 
 #########################
 #CUSTOM KEYMAPS END HERE#
@@ -134,52 +135,56 @@ definekey top s-S readkey shortcuts
 
 escape s-grave
 
-########
-#ExTerm#
-########
+##########
+#ExecTerm#
+##########
 
-definekey exterm Menu exec
-definekey exterm M-Return colon exec $TERMEXEC 
-definekey exterm Return exec $TERMINAL
+definekey execterm colon colon
+definekey execterm Menu exec
+definekey execterm M-Return colon exec $TERMEXEC 
+definekey execterm Return exec $TERMINAL
 
 #########
 #General#
 #########
 
 bind C-a abort
-definekey information V version
+definekey information M-v version
+definekey information m lastmsg
 definekey top Print exec scrot $HOME/.local/share/pictures/screenshots/%c-debian.png
 
 ######
 #Help#
 ######
 
-definekey helpme h help helpme
-definekey helpme i help information
-definekey helpme r help root
-definekey helpme s help session
-definekey helpme t help top
+definekey helpkeys h help helpme
+definekey helpkeys i help information
+definekey helpkeys r help root
+definekey helpkeys s help session
+definekey helpkeys t help top
 
 #################
 #Power & Session#
 #################
 
-definekey session C-M-End quit
-definekey session C-M-Pause suspend
-definekey session C-M-s-F5 reboot
+definekey session End quit
 definekey session F5 restart
+definekey session M-End poweroff
+definekey session M-F5 reboot
+definekey session M-Pause suspend
 definekey session Pause lock
 
 ###########
 #Shortcuts#
 ###########
 
-definekey shortcuts A exec armcord
+definekey shortcuts a exec armcord
+definekey shortcuts at exec pkexec timeshift-gtk
 definekey shortcuts d exec sdorfehs -c "echo `date`"
 definekey shortcuts End systop
-definekey shortcuts F exec freetube
-definekey shortcuts O exec $OFFICE
-definekey shortcuts T exec timeshift-gtk
+definekey shortcuts e exec editor
+definekey shortcuts f exec freetube
+definekey shortcuts o exec $OFFICE
 definekey shortcuts t exec telegram-desktop
 definekey shortcuts u exec sdorfehs -c "echo `uname -a`"
 
@@ -202,13 +207,12 @@ definekey top C-s-b banish
 #Correct, Delete, Kill, Remove, & Restore#
 ##########################################
 
-bind s-Delete delete
-bind s-k kill
-bind s-o only
-bind s-Delete remove
-bind s-R redo
-bind s-r redisplay
-bind s-U undo
+bind Delete kill
+bind M-Delete remove
+bind o only
+bind R redo
+bind r redisplay
+bind U undo
 
 #############
 #Information#
@@ -224,20 +228,20 @@ definekey information w windows
 #Moving#
 ########
 
-bind s-at vmove
+bind at vmove
 
 ###########
 #Selection#
 ###########
 
-bind s-S select
+bind S select
 
 ###########
 #Splitting#
 ###########
 
-bind s-h hsplit
-bind s-v vsplit
+bind h hsplit
+bind v vsplit
 
 #################
 #Sticky/Unsticky#
@@ -250,12 +254,16 @@ bind M-asterisk unstick
 #Switching (Root)#
 ##################
 
-bind s-braceleft prevscreen
-bind s-braceright nextscreen
-bind s-bracketleft prev
-bind s-bracketright next
-bind s-O cother
-bind s-S swap
+bind braceleft prevscreen
+bind braceright nextscreen
+bind bracketleft prev
+bind bracketright next
+bind C cprev
+bind c cnext
+bind i inext
+bind M-c cother
+bind M-i iprev
+bind S swap
 
 #################
 #Switching (Top)#
@@ -266,13 +274,6 @@ definekey top s-1 vselect 1
 definekey top s-2 vselect 2
 definekey top s-3 vselect 3
 definekey top s-4 vselect 4
-definekey top s-5 vselect 5
-definekey top s-6 vselect 6
-definekey top s-7 vselect 8
-definekey top s-9 vselect 9
-definekey top s-F10 vselect 10
-definekey top s-F11 vselect 11
-definekey top s-F12 vselect 12
 
 ########################################
 #WINDOW MANAGEMENT KEYBINDINGS END HERE#
@@ -285,6 +286,7 @@ definekey top s-F12 vselect 12
 ####################################################
 
 unbind A
+unbind apostrophe
 unbind C-A
 unbind b
 unbind C-apostrophe
@@ -296,16 +298,19 @@ unbind C-i
 unbind C-K
 unbind C-k
 unbind C-l
+unbind C-m
 unbind C-n
 unbind C-p
 unbind C-Return
+unbind C-S
+unbind C-s
 unbind C-space
 unbind C-underscore
 unbind C-u
+unbind C-v
 unbind C-w
 unbind C-x
-unbind apostrophe
-unbind c
+unbind colon
 unbind exclam
 unbind F1
 unbind F2
@@ -321,10 +326,10 @@ unbind F11
 unbind F12
 unbind F
 unbind f
-unbind i
 unbind k
 unbind K
 unbind l
+unbind M-v
 unbind m
 unbind N
 unbind n
@@ -332,13 +337,9 @@ unbind P
 unbind p
 unbind Q
 unbind question
-unbind R
-unbind r
-unbind S
+unbind Return
 unbind space
 unbind s
-unbind v
-unbind U
 unbind u
 unbind w
 unbind x
