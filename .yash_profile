@@ -11,7 +11,7 @@ export MIXER='pulsemixer'
 export OFFICE='onlyoffice-desktopeditors'
 export PAGER='nvim +Man!'
 export PLAYER='mpv --player-operation-mode=pseudo-gui'
-export TASKMANAGER='btop'
+export SYSTOP='btop'
 export TERMEXEC='uxterm -e'
 export TERMINAL='uxterm'
 
