@@ -180,7 +180,7 @@ definekey shortcuts End systop
 definekey shortcuts F exec freetube
 definekey shortcuts O exec $OFFICE
 definekey shortcuts T exec timeshift-gtk
-definekey shortcuts t exec telegram-dekstop
+definekey shortcuts t exec telegram-desktop
 definekey shortcuts u exec sdorfehs -c "echo `uname -a`"
 
 ##############################
