@@ -24,13 +24,11 @@ UXTerm*eightBitInput:      false
 UXTerm*faceName:           Terminess Nerd Font
 UXTerm*faceSize:           12
 UXTerm*highlightSelection: true
-UXTerm*renderFont:         true
 UXTerm*saveLines:          16385
 UXTerm*scrollBar: false
 UXTerm*selectToClipboard:  true
 UXTerm*termName:           xterm-256color
 UXTerm*trimSelection:      true
-UXTerm.vt100.geometry:     95x25
 UXTerm.VT100.Translations: #override \n\
   Ctrl <Key> 0: set-vt-font(d) \n\
   Ctrl Shift <Key> C: copy-selection(CLIPBOARD) \n\
@@ -46,13 +44,11 @@ XTerm*eightBitInput:      false
 XTerm*faceName:           Terminess Nerd Font
 XTerm*faceSize:           12
 XTerm*highlightSelection: true
-XTerm*renderFont:         true
 XTerm*saveLines:          16385
 XTerm*scrollBar: false
 XTerm*selectToClipboard:  true
 XTerm*termName:           xterm-256color
 XTerm*trimSelection:      true
-XTerm.vt100.geometry:     95x25
 XTerm.VT100.Translations: #override \n\
   Ctrl Shift <Key> C: copy-selection(CLIPBOARD) \n\
   Ctrl Shift <Key> V: insert-selection(CLIPBOARD) \n\
