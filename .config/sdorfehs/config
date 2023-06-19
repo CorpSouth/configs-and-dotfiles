@@ -28,16 +28,34 @@ addhook switchvscreen vscreens
 ##################################################################
 #Dependencies: Volnoti script requires dunst and pulseaudio-utils#
 ##################################################################
+#Variables ("$") have been provided in $HOME/.yash_profile# 
+###########################################################
 
-alias editor exec TERMEXEC $EDITOR
+alias browser exec sdorfehs -c "vselect 0" -c "exec $BROWSER"
+alias calculator exec sdorfehs -c "vselect 4" -c "exec $TERMEXEC $CALCULATOR"
+alias discord exec sdorfehs -c "vselect 1" -c "exec $DISCLIENT"
+alias echodate exec sdorfehs -c "echo `date`"
+alias echouname exec sdorfehs -c "echo `uname -a`"
+alias editor exec sdorfehs -c "vselect 4" -c "exec $TERMEXEC $EDITOR"
+alias email exec sdorfehs -c "vselect 0" -c "exec $MAIL"
+alias filepicker exec $FILEPICKER
+alias imageviewer exec sdorfehs -c "vselect 4" -c "exec $IMAGEVIEWER"
 alias lock exec slock
+alias mixer exec $TERMEXEC $MIXER
+alias office exec sdorfehs -c "vselect 3" -c "exec $OFFICE"
+alias player exec sdorfehs -c "vselect 2" -c "exec $PLAYER"
 alias poweroff exec systemctl poweroff
+alias printscreen exec scrot $HOME/.local/share/pictures/screenshots/%c-debian.png 
 alias reboot exec systemctl reboot
 alias suspend exec slock systemctl suspend -i
-alias systop exec $TERMEXEC $SYSTOP
+alias systop exec sdorfehs -c "vselect 4" -c "exec $TERMEXEC $SYSTOP"
+alias telegram exec sdorfehs -c "vselect 1" -c "exec telegram-desktop"
+alias termexec exec $TERMEXEC
+alias terminal exec $TERMINAL
 alias voldown exec volnoti -5%
 alias volmute exec volnoti toggle
 alias volup exec volnoti +5%
+alias yt exec sdorfehs -c "vselect 2" -c "exec $YT"
 
 ##################
 #ALIASES END HERE#
@@ -87,7 +105,7 @@ set border 1
 set gap 0
 set onlyborder 0
 set padding 0 0 0 0
-set transgravity c
+set transgravity nw 
 
 ############################################
 #Set the "Rudeness" Level for Windows Which#
@@ -97,7 +115,7 @@ set transgravity c
 #"Weirder" Window Behavior####################
 ##########################
 
-set rudeness 13
+# set rudeness 13
 
 #####################################
 #GENERAL SETTINGS VARIABLES END HERE#
@@ -140,53 +158,60 @@ escape s-grave
 ##########
 
 definekey execterm colon colon
+definekey execterm Escape abort
 definekey execterm Menu exec
-definekey execterm M-Return colon exec $TERMEXEC 
-definekey execterm Return exec $TERMINAL
+definekey execterm M-Return colon termexec 
+definekey execterm Return terminal
 
 #########
 #General#
 #########
 
-bind C-a abort
+bind Escape abort
 definekey information M-v version
 definekey information m lastmsg
-definekey top Print exec scrot $HOME/.local/share/pictures/screenshots/%c-debian.png
+definekey top Print printscreen
 
 ######
 #Help#
 ######
 
-definekey helpkeys h help helpme
+definekey helpkeys Escape abort
+definekey helpkeys e help execterm
+definekey helpkeys h help helpkeys
 definekey helpkeys i help information
 definekey helpkeys r help root
-definekey helpkeys s help session
+definekey helpkeys S help powersession
+definekey helpkeys s help shortcuts
 definekey helpkeys t help top
 
 #################
 #Power & Session#
 #################
 
-definekey session End quit
-definekey session F5 restart
-definekey session M-End poweroff
-definekey session M-F5 reboot
-definekey session M-Pause suspend
-definekey session Pause lock
+definekey powersession End quit
+definekey powersession Escape abort
+definekey powersession F5 restart
+definekey powersession M-End poweroff
+definekey powersession M-F5 reboot
+definekey powersession M-Pause suspend
+definekey powersession Pause lock
 
 ###########
 #Shortcuts#
 ###########
 
-definekey shortcuts a exec armcord
-definekey shortcuts at exec pkexec timeshift-gtk
-definekey shortcuts d exec sdorfehs -c "echo `date`"
+definekey shortcuts at exec timeshift-launcher
+definekey shortcuts D discord
+definekey shortcuts d echodate
 definekey shortcuts End systop
-definekey shortcuts e exec editor
-definekey shortcuts f exec freetube
-definekey shortcuts o exec $OFFICE
-definekey shortcuts t exec telegram-desktop
-definekey shortcuts u exec sdorfehs -c "echo `uname -a`"
+definekey shortcuts Escape abort
+definekey shortcuts e editor
+definekey shortcuts i imageviewer
+definekey shortcuts o office
+definekey shortcuts t telegram
+definekey shortcuts u echouname
+definekey shortcuts y yt
 
 ##############################
 #GENERIC KEYBINDINGS END HERE#
@@ -207,8 +232,9 @@ definekey top C-s-b banish
 #Correct, Delete, Kill, Remove, & Restore#
 ##########################################
 
-bind Delete kill
-bind M-Delete remove
+bind C-Delete remove
+bind Delete delete
+bind M-Delete kill
 bind o only
 bind R redo
 bind r redisplay
@@ -219,6 +245,7 @@ bind U undo
 #############
 
 definekey information c curframe
+definekey information Escape abort
 definekey information i info
 definekey information t title
 definekey information v vscreens
@@ -279,8 +306,8 @@ definekey top s-4 vselect 4
 #WINDOW MANAGEMENT KEYBINDINGS END HERE#
 ########################################
 #UNBIND BEGINS HERE#
-#############################################
-#Yes, there are a lot of unbound keys, since#########
+#####################################################
+#Yes, there are a lot of unbound default keys, since#
 #most are either dangerous or redundant to workflow.#
 #Some defaults are saner than others, so they stay.##
 ####################################################
@@ -288,6 +315,7 @@ definekey top s-4 vselect 4
 unbind A
 unbind apostrophe
 unbind C-A
+unbind C-a
 unbind b
 unbind C-apostrophe
 unbind C-b
@@ -377,17 +405,17 @@ vselect 0
 #XF86 Common (Top)#
 ###################
 
-definekey top XF86Calculator exec $TERMEXEC $CALCULATOR
-definekey top XF86Explorer exec $FILEPICKER
-definekey top XF86HomePage exec $BROWSER
-definekey top XF86Mail exec $MAIL
+definekey top XF86Calculator calculator
+definekey top XF86Explorer filepicker
+definekey top XF86HomePage browser
+definekey top XF86Mail email
 
 #######################
 #XF86 Multimedia (Top)#
 #######################
 
-definekey top M-XF86Tools exec $TERMEXEC $MIXER
-definekey top XF86Tools exec $PLAYER
+definekey top M-XF86Tools mixer
+definekey top XF86Tools player
 definekey top XF86AudioLowerVolume voldown
 definekey top XF86AudioMute volmute
 definekey top XF86AudioRaiseVolume volup
