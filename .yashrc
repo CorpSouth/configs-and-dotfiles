@@ -1,37 +1,21 @@
-##### Sample Yashrc #####
-# This is a sample initialization script for yash. Copy this file to ~/.yashrc
-# and add your favorite customization to it.
+########
+#Common#
+########
 
-
-# Firstly, load the common customization script.
-# If you don't like settings applied in this script, remove this line.
 . --autoload --no-alias initialization/common
 
-# These are additional aliases that are not defined in the common script.
-# Uncomment to enable them.
-#alias g='grep'
-#alias l='$PAGER'
-#alias --global L='|$PAGER'
-#alias --global N='>/dev/null 2>&1' N1='>/dev/null' N2='2>/dev/null'
+##########
+#Defaults#
+##########
 
-# Uncomment to enable direnv support. (jq required)
-#_update_direnv() {
-#  eval "$(
-#    direnv export json |
-#    jq -r 'to_entries | .[] |
-#    if .value == null then
-#      @sh "unset \(.key)"
-#    else
-#      @sh "export \(.key)=\(.value)"
-#    end'
-#  )"
-#}
-#_update_direnv
-#YASH_AFTER_CD=("$YASH_AFTER_CD" '_update_direnv')
+export EDITOR='nvim'
+export PAGER='nvim +Man!'
 
-# And add your own customization below.
-
-# Extraction
+#############################
+#CUSTOM FUNCTIONS BEGIN HERE#
+#############################
+#Extraction#
+############
 
 extract ()
 {
@@ -63,3 +47,38 @@ extract ()
 #######
 
 PF_INFO="ascii de host editor kernel memory os pkgs shell uptime wm palette" pfetch
+
+###########################
+#CUSTOM FUNCTIONS END HERE#
+###########################
+#PATHING BEGINS HERE#
+#####################
+
+if [ -d "$HOME/.bin" ] ;
+  then PATH="$HOME/.bin:$PATH"
+fi
+
+if [ -d "$HOME/.local/bin" ] ;
+  then PATH="$HOME/.local/bin:$PATH"
+fi
+
+if [ -d "/usr/sbin/" ] ;
+  then PATH="/usr/sbin:$PATH"
+fi
+
+###################
+#PATHING ENDS HERE#
+###################
+#XDG BEGINS HERE#
+#################
+
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
+
+###############
+#XDG ENDS HERE#
+###############
+#EOF#
+#####
