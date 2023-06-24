@@ -1,0 +1,7 @@
+exec xterm
+exec filepicker.sh
+exec xterm
+exec torbrowser-launcher
+exec dunst
+exec dunstify test
+exec dunst

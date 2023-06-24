@@ -4,13 +4,15 @@
 
 . --autoload --no-alias initialization/common
 
-##########
-#Defaults#
-##########
+#####################
+#DEFAULTS BEGIN HERE#
+#####################
 
-export EDITOR='nvim'
-export PAGER='nvim +Man!'
+export EDITOR="nvim"
+export PAGER="nvim +Man!"
 
+###################
+#DEFAULTS END HERE#
 #############################
 #CUSTOM FUNCTIONS BEGIN HERE#
 #############################
@@ -51,34 +53,5 @@ PF_INFO="ascii de host editor kernel memory os pkgs shell uptime wm palette" pfe
 ###########################
 #CUSTOM FUNCTIONS END HERE#
 ###########################
-#PATHING BEGINS HERE#
-#####################
-
-if [ -d "$HOME/.bin" ] ;
-  then PATH="$HOME/.bin:$PATH"
-fi
-
-if [ -d "$HOME/.local/bin" ] ;
-  then PATH="$HOME/.local/bin:$PATH"
-fi
-
-if [ -d "/usr/sbin/" ] ;
-  then PATH="/usr/sbin:$PATH"
-fi
-
-###################
-#PATHING ENDS HERE#
-###################
-#XDG BEGINS HERE#
-#################
-
-export XDG_CACHE_HOME="$HOME/.cache"
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_DATA_HOME="$HOME/.local/share"
-export XDG_STATE_HOME="$HOME/.local/state"
-
-###############
-#XDG ENDS HERE#
-###############
 #EOF#
 #####
