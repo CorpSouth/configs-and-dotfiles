@@ -1,0 +1,237 @@
+[Keep Authenticate Above]
+Description=Keep Authenticate Above
+above=true
+aboverule=2
+desktopsrule=3
+skipswitcher=true
+skipswitcherrule=2
+title=Authentication Required — PolicyKit1 KDE Agent
+titlematch=1
+wmclass=org.kde.polkit-kde-authentication-agent-1
+wmclassmatch=1
+
+[Keep GtkFileChooserDialog Above]
+Description=Keep GtkFileChooserDialog Above
+above=true
+aboverule=2
+desktops=ff90e722-feeb-4a57-b0f8-c2b1d22e9766
+skipswitcher=true
+skipswitcherrule=2
+types=32
+windowrole=GtkFileChooserDialog
+windowrolematch=1
+wmclassmatch=1
+
+[Spawn ArmCord on Workspace 2]
+Description=Spawn ArmCord on Workspace 2
+desktops=ff90e722-feeb-4a57-b0f8-c2b1d22e9766
+desktopsrule=2
+title=Discover
+wmclass=armcord
+wmclassmatch=1
+
+[Spawn Betterbird on Workspace 1]
+Description=Spawn Betterbird on Workspace 1
+desktops=b43de8e9-8774-4a59-a224-e8417ce853f7
+desktopsrule=2
+title=Telegram
+wmclass=mail betterbird
+wmclasscomplete=true
+wmclassmatch=1
+
+[Spawn BleachBit on Workspace 5]
+Description=Spawn BleachBit on Workspace 5
+desktops=413ff6fd-ab10-4e79-8e4c-e3c784c273cd
+desktopsrule=3
+wmclass=bleachbit
+wmclassmatch=1
+
+[Spawn Crashed Processes Viewer on Workspace 5]
+Description=Spawn Crashed Processes Viewer on Workspace 5
+desktops=413ff6fd-ab10-4e79-8e4c-e3c784c273cd
+desktopsrule=2
+title=Intensive Care — DrKonqi Intensive Care
+titlematch=1
+wmclass=drkonqi-coredump-gui org.kde.drkonqi.coredump.gui
+wmclasscomplete=true
+wmclassmatch=1
+
+[Spawn Discover on Workspace 5]
+Description=Spawn Discover on Workspace 5
+desktops=413ff6fd-ab10-4e79-8e4c-e3c784c273cd
+desktopsrule=2
+title=Discover
+titlematch=1
+wmclass=plasma-discover org.kde.discover
+wmclasscomplete=true
+wmclassmatch=1
+
+[Spawn FreeTube on Workspace 3]
+Description=Spawn FreeTube on Workspace 3
+desktops=835566a3-eac8-4b43-8f53-96ff55f72bd3
+desktopsrule=2
+title=Telegram
+wmclass=freetube freetube
+wmclasscomplete=true
+wmclassmatch=1
+
+[Spawn Gwenview on Workspace 5]
+Description=Spawn Gwenview on Workspace 5
+desktops=413ff6fd-ab10-4e79-8e4c-e3c784c273cd
+desktopsrule=3
+title=Gwenview
+titlematch=1
+types=1
+wmclass=gwenview org.kde.gwenview
+wmclasscomplete=true
+wmclassmatch=1
+
+[Spawn KDE Connect Settings on Workspace 5]
+Description=Spawn KDE Connect Settings on Workspace 5
+desktops=413ff6fd-ab10-4e79-8e4c-e3c784c273cd
+desktopsrule=2
+wmclass=kdeconnect-settings org.kde.kdeconnect-settings
+wmclasscomplete=true
+wmclassmatch=1
+
+[Spawn KDE Connect URL Handler on Workspace 5]
+Description=Spawn KDE Connect URL Handler on Workspace 5
+desktops=413ff6fd-ab10-4e79-8e4c-e3c784c273cd
+desktopsrule=2
+title=KDE Connect URL handler
+titlematch=1
+types=1
+wmclass=kdeconnect-handler org.kde.kdeconnect.handler
+wmclasscomplete=true
+wmclassmatch=1
+
+[Spawn KDE Connect on Workspace 5]
+Description=Spawn KDE Connect on Workspace 5
+desktops=413ff6fd-ab10-4e79-8e4c-e3c784c273cd
+desktopsrule=2
+title=Telegram
+wmclass=kdeconnect-app org.kde.kdeconnect.app
+wmclasscomplete=true
+wmclassmatch=1
+
+[Spawn KDE Menu Editor on Workspace 5]
+Description=Spawn KDE Menu Editor on Workspace 5
+desktops=413ff6fd-ab10-4e79-8e4c-e3c784c273cd
+desktopsrule=3
+title=KDE Menu Editor
+titlematch=1
+wmclass=kmenuedit org.kde.kmenuedit
+wmclasscomplete=true
+wmclassmatch=1
+
+[Spawn KDE Partition Manager on Workspace 5]
+Description=Spawn KDE Partition Manager on Workspace 5
+desktops=413ff6fd-ab10-4e79-8e4c-e3c784c273cd
+desktopsrule=3
+title=/dev/nvme0n1 — KDE Partition Manager
+titlematch=1
+types=1
+wmclass=partitionmanager org.kde.partitionmanager
+wmclasscomplete=true
+wmclassmatch=1
+
+[Spawn KWalletManager on Workspace 5]
+Description=Spawn KWalletManager on Workspace 5
+desktops=413ff6fd-ab10-4e79-8e4c-e3c784c273cd
+desktopsrule=2
+title=Wallet Manager
+titlematch=1
+wmclass=kwalletmanager5 org.kde.kwalletmanager5
+wmclasscomplete=true
+wmclassmatch=1
+
+[Spawn KWrite on Workspace Number 4]
+Description=Spawn KWrite on Workspace Number 4
+desktops=5f19d9d9-aac1-4196-9dc4-97f656883a5a
+desktopsrule=2
+title=KWrite
+titlematch=1
+wmclass=kwrite org.kde.kwrite
+wmclasscomplete=true
+wmclassmatch=1
+
+[Spawn Kate on Workspace  4]
+Description=Spawn Kate on Workspace  4
+desktops=5f19d9d9-aac1-4196-9dc4-97f656883a5a
+desktopsrule=2
+title=Kate
+titlematch=1
+wmclass=kate org.kde.kate
+wmclasscomplete=true
+wmclassmatch=1
+
+[Spawn Librewolf on Workspace 1]
+Description=Spawn Librewolf on Workspace 1
+desktops=b43de8e9-8774-4a59-a224-e8417ce853f7
+desktopsrule=2
+title=Telegram
+wmclass=librewolf-default
+wmclassmatch=1
+
+[Spawn MPV on Workspace 3]
+Description=Spawn MPV on Workspace 3
+desktops=835566a3-eac8-4b43-8f53-96ff55f72bd3
+desktopsrule=2
+wmclass=mpv
+wmclassmatch=1
+
+[Spawn ONLYOFFICE Desktop Editors on Workspace 4]
+Description=Spawn ONLYOFFICE Desktop Editors on Workspace 4
+desktops=5f19d9d9-aac1-4196-9dc4-97f656883a5a
+desktopsrule=2
+title=ONLYOFFICE Desktop Editors
+titlematch=1
+wmclass=desktopeditors onlyoffice desktop editors
+wmclasscomplete=true
+wmclassmatch=1
+
+[Spawn System Monitor on Workspace 5]
+Description=Spawn System Monitor on Workspace 5
+desktops=413ff6fd-ab10-4e79-8e4c-e3c784c273cd
+desktopsrule=2
+ignoregeometry=true
+title=Timeshift
+wmclass=org.kde.plasma-systemmonitor
+wmclassmatch=1
+
+[Spawn Telegram Desktop on Workspace 2]
+Description=Spawn Telegram Desktop on Workspace 2
+desktops=ff90e722-feeb-4a57-b0f8-c2b1d22e9766
+desktopsrule=2
+title=Telegram
+titlematch=1
+wmclass=Telegram org.telegram.desktop._6ad93739515d5ea745d4d7c4771165c3
+wmclasscomplete=true
+wmclassmatch=1
+
+[Spawn Timeshift on Workspace 5]
+Description=Spawn Timeshift on Workspace 5
+desktops=413ff6fd-ab10-4e79-8e4c-e3c784c273cd
+desktopsrule=3
+ignoregeometry=true
+ignoregeometryrule=2
+title=Timeshift
+titlematch=1
+wmclass=timeshift-gtk timeshift-gtk
+wmclasscomplete=true
+wmclassmatch=1
+
+[Spawn Tor Browser on Workspace 1]
+Description=Spawn Tor Browser on Workspace 1
+activity=e225d4ea-11cd-48aa-8728-dccd1aa4e7af
+activityrule=2
+desktops=b43de8e9-8774-4a59-a224-e8417ce853f7
+desktopsrule=2
+wmclass=tor browser
+wmclassmatch=1
+
+[Undecorate Normal Windows and Dialog Windows]
+Description=Undecorate Normal Windows and Dialog Windows
+noborder=true
+noborderrule=2
+types=33
