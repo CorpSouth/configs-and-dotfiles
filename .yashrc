@@ -3,16 +3,8 @@
 ########
 
 . --autoload --no-alias initialization/common
+. --autoload --no-alias $HOME/.yash_profile
 
-#####################
-#DEFAULTS BEGIN HERE#
-#####################
-
-export EDITOR="nvim"
-export PAGER="nvim +Man!"
-
-###################
-#DEFAULTS END HERE#
 #############################
 #CUSTOM FUNCTIONS BEGIN HERE#
 #############################
@@ -44,14 +36,14 @@ extract ()
   fi
 }
 
-#######
-#Fetch#
-#######
-
-PF_INFO="ascii de host editor kernel memory os pkgs shell uptime wm palette" pfetch
-
 ###########################
 #CUSTOM FUNCTIONS END HERE#
 ###########################
+#System Fetch#
+##############
+
+PF_INFO="ascii de host editor kernel memory os pkgs shell uptime wm palette" pfetch
+
+#####
 #EOF#
 #####

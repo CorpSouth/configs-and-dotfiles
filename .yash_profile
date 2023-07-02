@@ -1,31 +1,15 @@
-######################
-#Default Applications#
-######################
+#####################
+#DEFAULTS BEGIN HERE#
+#####################
 
-export ALTBROWSER="torbrowser-launcher"
-export BROWSER="librewolf"
-export DISCLIENT="armcord"
-export FILEPICKER="filepicker.sh"
-export MAIL="thunderbird"
-export MIXER="pulsemixer"
-export OFFICE="onlyoffice-desktopeditors"
-export PLAYER="mpv --player-operation-mode=pseudo-gui"
-export SYSTOP="btop"
-export TERMEXEC="uxterm -e"
-export TERMINAL="uxterm"
-export YT="freetube"
+export EDITOR="nvim"
+export PAGER="nvim +Man!"
 
-##############
-#Organize XDG#
-##############
-
-export XDG_CACHE_HOME="$HOME/.cache"
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_DATA_HOME="$HOME/.local/share"
-
-######
-#Path#
-######
+###################
+#DEFAULTS END HERE#
+###################
+#PATH BEGINS HERE#
+##################
 
 if [ -d "$HOME/.bin" ] ;
   then PATH="$HOME/.bin:$PATH"
@@ -39,23 +23,36 @@ if [ -d "/usr/sbin" ] ;
   then PATH="usr/sbin:$PATH"
 fi
 
-#####
-#X11#
-#####
 
-export ALTUSERXSESSION="$XDG_CACHE_HOME/X11/xsession"
-export ERRFILE="$XDG_CACHE_HOME/X11/xession-errors"
-export USERXSESSION="$XDG_CACHE_HOME/X11/xsession"
-export USERXSESSIONRC="$XDG_CACHE_HOME/X11/xsessionrc"
-export XCURSOR_PATH="${XCURSOR_PATH}:$HOME/.local/share/icons"
-export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
-export XRESOURCES="$XDG_CONFIG_HOME/X11/xresources"
-export XSERVERRC"$XDG_CONFIG_HOME/X11/xserverrc"
+#################
+#X11 BEGINS HERE#
+#################
 
+#export ALTUSERXSESSION="$XDG_CACHE_HOME/X11/xsession"
+#export ERRFILE="$XDG_CACHE_HOME/X11/xession-errors"
+#export USERXSESSION="$XDG_CACHE_HOME/X11/xsession"
+#export USERXSESSIONRC="$XDG_CACHE_HOME/X11/xsessionrc"
+#export XCURSOR_PATH="${XCURSOR_PATH}:$HOME/.local/share/icons"
+#export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
+#export XRESOURCES="$XDG_CONFIG_HOME/X11/xresources"
+#export XSERVERRC"$XDG_CONFIG_HOME/X11/xserverrc"
+
+###############
+#X11 ENDS HERE#
+#################
+#XDG BEGINS HERE#
+#################
+
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+
+###############
+#XDG ENDS HERE#
 ####################################
 #Treat the TTY Like a Login Manager#
 ####################################
 
-if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ] ; then
-  exec startx $XINITRC
-fi
+#if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ] ; then
+#  exec startx $XINITRC
+#fi
