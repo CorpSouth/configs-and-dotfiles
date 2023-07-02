@@ -54,11 +54,27 @@ if (get_window_class() == "BleachBit") then
  set_window_workspace(4);
 end
 
+if (get_window_class() == "Globaltime") then                   
+ set_window_workspace(4);
+end
+
 if (get_window_class() == "Lightdm-gtk-greeter-settings") then
  set_window_workspace(4);
 end
 
+if (get_window_class() == "Mate-calc") then
+ set_window_workspace(4);
+end
+
 if (get_window_class() == "MenuLibre") then
+ set_window_workspace(4);
+end
+
+if (get_window_class() == "Nm-connection-editor") then
+ set_window_workspace(4);
+end
+
+if (get_window_class() == "Orage") then
  set_window_workspace(4);
 end
 
@@ -131,6 +147,10 @@ end
 --------
 
 if (get_window_name() == "Bulk Rename - Rename Multiple Files") then
+ set_window_workspace(4);
+end
+
+if (get_window_name() == "Orage Preferences") then
  set_window_workspace(4);
 end
 

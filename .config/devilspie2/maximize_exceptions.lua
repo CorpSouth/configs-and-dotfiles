@@ -6,7 +6,19 @@ if (get_window_class() == "Blueman-manager") then
   unmaximize();
 end
 
+if (get_window_class() == "Globaltime") then
+  unmaximize();
+end
+
 if (get_window_class() == "Lightdm-gtk-greeter-settings") then
+  unmaximize();
+end
+
+if (get_window_class() == "Nm-connection-editor") then                       
+  unmaximize();
+end
+
+if (get_window_class() == "Orage") then
   unmaximize();
 end
 
