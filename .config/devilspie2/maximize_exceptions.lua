@@ -22,7 +22,7 @@ if (get_window_class() == "Orage") then
   unmaximize();
 end
 
-if (get_window_class() == "pavucontrol") then
+if (get_window_class() == "Pavucontrol") then
   unmaximize();
 end
 
@@ -39,6 +39,14 @@ if (get_window_class() == "Xarchiver") then
 end
 
 if (get_window_class() == "Xfce4-appfinder") then
+  unmaximize();
+end
+
+--------
+--NAME--
+--------
+
+if (get_window_name() == "About LibreWolf") then
   unmaximize();
 end
 
