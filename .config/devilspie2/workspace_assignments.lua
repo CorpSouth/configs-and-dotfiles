@@ -158,6 +158,10 @@ if (get_window_class() == "Xfce4-sensors") then
  set_window_workspace(4);
 end
 
+if (get_window_class() == "Xfce4-session-settings") then
+ set_window_workspace(4);
+end
+
 if (get_window_class() == "Xfce4-settings-editor") then
  set_window_workspace(4);
 end
