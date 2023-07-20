@@ -40,6 +40,10 @@ if (get_window_class() == "FreeTube") then
  set_window_workspace(3);
 end
 
+if (get_window_class() == "mpv") then
+ set_window_workspace(3);
+end
+
 if (get_window_class() == "Parole") then
  set_window_workspace(3);
 end

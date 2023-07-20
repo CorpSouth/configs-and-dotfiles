@@ -2,7 +2,7 @@
 #include "/home/aaron/.config/X11/xresources.d/myColors.Xresources"
 
 ! Cursor theme
-Xcursor.theme: DMZ-Black 
+Xcursor.theme: Bibata-Original-Classic
 
 ! XCalc
 
