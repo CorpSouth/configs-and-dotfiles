@@ -36,6 +36,12 @@ extract ()
   fi
 }
 
+############
+#Swapescape#
+############
+
+setxkbmap -option caps:swapescape
+
 ###########################
 #CUSTOM FUNCTIONS END HERE#
 ###########################
