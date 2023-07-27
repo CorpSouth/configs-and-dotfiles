@@ -94,7 +94,7 @@ static const int failonclear = 1;
 
 #if AUTO_TIMEOUT_PATCH
 /* length of time (seconds) until */
-static const int timeoffset = 60;
+static const int timeoffset = 1800;
 
 /* should [command] be run only once? */
 static const int runonce = 0;
@@ -137,7 +137,7 @@ static const int controlkeyclear = 0;
 
 #if DPMS_PATCH
 /* time in seconds before the monitor shuts down */
-static const int monitortime = 5;
+static const int monitortime = 60;
 #endif // DPMS_PATCH
 
 #if KEYPRESS_FEEDBACK_PATCH
