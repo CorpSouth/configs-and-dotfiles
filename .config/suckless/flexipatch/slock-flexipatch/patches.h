@@ -19,7 +19,7 @@
 /* This patch allows for a command to be executed after a specified time of inactivity.
  * https://tools.suckless.org/slock/patches/auto-timeout/
  */
-#define AUTO_TIMEOUT_PATCH 1
+#define AUTO_TIMEOUT_PATCH 0
 
 /* This patch adds a background image for slock.
  * This patch depends on the Imlib2 library, uncomment the relevant line in
@@ -64,7 +64,7 @@
  * and don't want to spoil the detection of failed unlocking attempts.
  * https://tools.suckless.org/slock/patches/control-clear/
  */
-#define CONTROLCLEAR_PATCH 1
+#define CONTROLCLEAR_PATCH 0
 
 /* This patch interacts with the Display Power Signaling and automatically shuts down
  * the monitor after a configurable amount of seconds.
@@ -72,7 +72,7 @@
  * and the password can be entered then.
  * https://tools.suckless.org/slock/patches/dpms/
  */
-#define DPMS_PATCH 1
+#define DPMS_PATCH 0
 
 /* This patch draws the dwm logo which changes color based on the state.
  * https://tools.suckless.org/slock/patches/dwmlogo/
@@ -82,7 +82,7 @@
 /* This patch allows for a command to be run after a specified number of incorrect attempts.
  * https://tools.suckless.org/slock/patches/failure-command/
  */
-#define FAILURE_COMMAND_PATCH 1
+#define FAILURE_COMMAND_PATCH 0
 
 /* Draws random blocks on the screen to display keypress feedback.
  * https://tools.suckless.org/slock/patches/keypress-feedback/
@@ -119,7 +119,7 @@
  * no input (e.g. reading text, watching video, etc.).
  * https://tools.suckless.org/slock/patches/quickcancel/
  */
-#define QUICKCANCEL_PATCH 1
+#define QUICKCANCEL_PATCH 0
 
 /* This patch allows for commands to be executed when the user enters special passwords.
  * https://tools.suckless.org/slock/patches/secret-password/
