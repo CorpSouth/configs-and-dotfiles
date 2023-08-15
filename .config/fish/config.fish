@@ -13,7 +13,7 @@ if status is-interactive
     else if type -q neofetch
 	neofetch
     else if type -q pfetch
-	pfetch
+        PF_INFO='ascii cpu host kernel memory os pkgs shell uptime palette' pfetch
     else if type -q uname
 	uname -a
     end

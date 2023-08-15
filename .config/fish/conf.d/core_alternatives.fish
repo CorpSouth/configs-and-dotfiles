@@ -22,5 +22,13 @@ if status is-interactive
         alias ll 'exa -lah'
         alias ls 'exa --color=auto'
     end
-    
+
+    #####################
+    #Procs instead of ps#
+    #####################
+
+    if type -q procs
+	alias ps 'procs'
+    end
+
 end
