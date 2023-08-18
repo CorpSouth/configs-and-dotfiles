@@ -85,6 +85,7 @@ if status is-interactive
 	alias ostorp    'rpm-ostree override replace'
 	alias ostor     'rpm-ostree override reset'
 	alias ostr      'rpm-ostree reload'
+	alias osts      'rpm-ostree status'
 	alias ostu      'rpm-ostree uninstall'
 	alias ostudr    'rpm-ostree uninstall --dry-run'
 	alias ostur     'rpm-ostree uninstall --reboot'
