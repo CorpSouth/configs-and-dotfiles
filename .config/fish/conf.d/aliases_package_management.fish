@@ -7,10 +7,14 @@ if status is-interactive
     if type -q apt
 	alias aptar 'sudo apt autoremove'
 	alias aptbd 'sudo apt build-dep'
+	alias aptdu 'sudo apt dist-upgrade'
 	alias aptin 'sudo apt install'
 	alias aptpa 'sudo apt purge --autoremove'
+	alias apts  'apt search'
 	alias aptua 'sudo apt uninstall --autoremove'
+	alias aptug 'sudo apt upgrade'
 	alias aptun 'sudo apt uninstall'
+	alias aptup 'sudo apt update'
     end
 
     #####
