@@ -11,6 +11,13 @@ vim.cmd('set nowritebackup')
 
 vim.cmd('set linebreak')
 
+----------
+--Syntax--
+----------
+
+vim.cmd('filetype plugin indent on')
+vim.cmd('syntax enable')
+
 ------------
 --Vim Plug--
 ------------
@@ -30,6 +37,7 @@ Plug 'preservim/vim-pencil'
 Plug 'godlygeek/tabular'
 Plug 'preservim/vim-markdown'
 -- Plug 'tinted-theming/base16-vim'
+Plug 'rust-lang/rust.vim'
 
 vim.call('plug#end')
 
@@ -37,8 +45,8 @@ vim.call('plug#end')
 --Color Control--
 -----------------
 
--- vim.cmd('set termguicolors')
--- vim.cmd('colorscheme base16-selenized-black')
+vim.cmd('set termguicolors')
+vim.cmd('colorscheme selenized_bw')
 vim.cmd('highlight Normal ctermbg=none')
 vim.cmd('highlight NonText ctermbg=none')
 
