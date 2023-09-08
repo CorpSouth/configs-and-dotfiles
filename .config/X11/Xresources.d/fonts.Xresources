@@ -1,0 +1,9 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!Font Rendering and Other Stuff Goes Here!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Xft.dpi:       96
+Xft.antialias: false
+Xft.rgba:      rgb
+Xft.hinting:   false
+Xft.hintstyle: hintnone
