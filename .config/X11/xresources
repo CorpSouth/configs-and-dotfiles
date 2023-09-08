@@ -2,8 +2,8 @@
 !!Files Separated for Convenience!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-#include "/home/aaron/.config/X11/xresources.d/colorSchemes.d/linux.Xresources"
-#include "/home/aaron/.config/X11/xresources.d/fonts.Xresources"
-#include "/home/aaron/.config/X11/xresources.d/xcalc.Xresources"
-#include "/home/aaron/.config/X11/xresources.d/xclock.Xresources"
-#include "/home/aaron/.config/X11/xresources.d/xterm.Xresources"
+#include "/home/aaron/.config/X11/Xresources.d/colorSchemes.d/linux.Xresources"
+#include "/home/aaron/.config/X11/Xresources.d/fonts.Xresources"
+#include "/home/aaron/.config/X11/Xresources.d/xcalc.Xresources"
+#include "/home/aaron/.config/X11/Xresources.d/xclock.Xresources"
+#include "/home/aaron/.config/X11/Xresources.d/xterm.Xresources"
