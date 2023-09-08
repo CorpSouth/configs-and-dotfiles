@@ -3,6 +3,7 @@
 ####################################
 
 if status is-interactive
+
     if type -q distrobox
         set -gx DBX_CONTAINER_ALWAYS_PULL "1"
         set -gx DBX_CONTAINER_CUSTOM_HOME "$HOME/.var/home/aaron"
