@@ -33,4 +33,5 @@ if status is-interactive
     if test -d /var/usrlocal/bin
 	set -U fish_user_paths /var/usrlocal/bin $fish_user_paths
     end
+
 end
