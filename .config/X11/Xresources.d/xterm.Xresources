@@ -10,63 +10,80 @@ XTerm.termName: xterm-256color
 !!UXTerm!!
 !!!!!!!!!!
 
-UXTerm*charClass:          33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
-UXTerm.cursorBlink:        true
-UXTerm.facename:           -misc-fixed-medium-r-semicondensed--13-120-75-75-c-60-iso10646-1
-UXTerm.faceSize:           12
-UXTerm*highlightSelection: true
-UXTerm*loginShell:         true
-UXTerm*metaSendsEscape:    true
-UXTerm*on3Clicks:          regex ([[:alpha:]]+://)?([[:alnum:]!#+,./=?@_~-]|(%[[:xdigit:]][[:xdigit:]]))+
-UXTerm*renderfont:         false
-UXTerm*rightScrollBar:     false
-UXTerm*saveLines:          1250
-UXTerm*scrollBar:          false
-UXTerm*scrollKey:          true
-UXTerm*scrollTtyOutput:    false
-UXTerm*title:              uxterm
-UXTerm.trimSelection:      true
-UXTerm.ttyModes:           erase ^?
-UXTerm.vt100.backarrowKey: false
-UXTerm.vt100.translations: #override \n\
-                           Ctrl <Key> minus: smaller-vt-font() \n\
-                           Ctrl <Key> plus: larger-vt-font() \n\
-                           Ctrl <Key> 0: set-vt-font(d) \n\
-                           Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
-                           Ctrl Shift <Key>V: insert-selection(CLIPBOARD) \n\
-                           Shift <Btn1Up>: exec-formatted("xdg-open '%t'", PRIMARY) \n\
-                           <Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0) \n\
-                           <Btn2Up>: insert-selection(PRIMARY)
+UXTerm*allowBoldFonts:          false
+UXTerm*charClass:               33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
+UXTerm.cursorBlink:             true
+UXTerm*decTerminalID:           vt382
+UXTerm*eightBitInput:           false
+UXTerm.facename:                -misc-fixed-medium-r-semicondensed--13-120-75-75-c-60-iso10646-1
+UXTerm.faceSize:                12
+UXTerm*.fontMenu.label:         View
+UXTerm*forceBoxChars:           true
+UXTerm*highlightSelection:      true
+UXTerm*loginShell:              true
+UXTerm*.mainMenu.label:         File
+UXTerm*.mainMenu.toolbar.label: Menubar
+UXTerm*metaSendsEscape:         true
+UXTerm*on3Clicks:               regex ([[:alpha:]]+://)?([[:alnum:]!#+,./=?@_~-]|(%[[:xdigit:]][[:xdigit:]]))+
+UXTerm*pointerShape:            left_ptr
+UXTerm*renderfont:              false
+UXTerm*rightScrollBar:          false
+UXTerm*saveLines:               1250
+UXTerm*scrollBar:               false
+UXTerm*scrollKey:               true
+UXTerm*scrollTtyOutput:         false
+UXTerm*title:                   uxterm
+UXTerm.trimSelection:           true
+UXTerm.ttyModes:                erase ^?
+UXTerm.vt100.backarrowKey:      false
+UXTerm.vt100.translations:      #override \n\
+                                Ctrl <Key> minus: smaller-vt-font() \n\
+                                Ctrl <Key> plus: larger-vt-font() \n\
+                                Ctrl <Key> 0: set-vt-font(d) \n\
+                                Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
+                                Ctrl Shift <Key>V: insert-selection(CLIPBOARD) \n\
+                                Shift <Btn1Up>: exec-formatted("xdg-open '%t'", PRIMARY) \n\
+                                <Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0) \n\
+                                <Btn2Up>: insert-selection(PRIMARY)
+UXTerm*.vtMenu.label:           ptions
+
 
 !!!!!!!!!
 !!XTerm!!
 !!!!!!!!!
 
-XTerm*charClass:          33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
-XTerm.cursorBlink:        true
-XTerm.faceName:           -misc-fixed-medium-r-semicondensed--13-120-75-75-c-60-iso10646-1
-XTerm.faceSize:           12
-XTerm*highlightSelection: true
-XTerm*loginShell:         true
-XTerm*metaSendsEscape:    true
-XTerm*on3Clicks:          regex ([[:alpha:]]+://)?([[:alnum:]!#+,./=?@_~-]|(%[[:xdigit:]][[:xdigit:]]))+
-XTerm*renderFont:         false
-XTerm*rightScrollBar:     false
-XTerm*saveLines:          1250
-XTerm*scrollBar:          false
-XTerm*scrollKey:          true
-XTerm*scrollTtyOutput:    false
-XTerm*title:              xterm
-XTerm.trimSelection:      true
-XTerm.ttyModes:           erase ^?
-XTerm.vt100.backarrowKey: false
-XTerm.vt100.translations: #override \n\
-                          Ctrl <Key> minus: smaller-vt-font() \n\
-                          Ctrl <Key> plus: larger-vt-font() \n\
-                          Ctrl <Key> 0: set-vt-font(d) \n\
-                          Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
-                          Ctrl Shift <Key>V: insert-selection(CLIPBOARD) \n\
-                          Shift <Btn1Up>: exec-formatted("xdg-open '%t'", PRIMARY) \n\
-                          <Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0) \n\
-                          <Btn2Up>: insert-selection(PRIMARY) 
-
+XTerm*allowBoldFonts:           false
+XTerm*charClass:                33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
+XTerm.cursorBlink:              true
+XTerm*decTerminalID:            vt382
+XTerm*eightBitInput:            false
+XTerm.faceName:                 -misc-fixed-medium-r-semicondensed--13-120-75-75-c-60-iso10646-1
+XTerm.faceSize:                 12
+XTerm*forceBoxChars:            true
+XTerm*highlightSelection:       true
+XTerm*loginShell:               true
+XTerm*.mainMenu.label:          File
+XTerm*.mainMenu.toolbar.label:   Menubar
+XTerm*metaSendsEscape:          true
+XTerm*on3Clicks:                regex ([[:alpha:]]+://)?([[:alnum:]!#+,./=?@_~-]|(%[[:xdigit:]][[:xdigit:]]))+
+XTerm*pointerShape:             left_ptr
+XTerm*renderFont:               false
+XTerm*rightScrollBar:           false
+XTerm*saveLines:                1250
+XTerm*scrollBar:                false
+XTerm*scrollKey:                true
+XTerm*scrollTtyOutput:          false
+XTerm*title:                    xterm
+XTerm.trimSelection:            true
+XTerm.ttyModes:                 erase ^?
+XTerm.vt100.backarrowKey:       false
+XTerm.vt100.translations:       #override \n\
+                                Ctrl <Key> minus: smaller-vt-font() \n\
+                                Ctrl <Key> plus: larger-vt-font() \n\
+                                Ctrl <Key> 0: set-vt-font(d) \n\
+                                Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
+                                Ctrl Shift <Key>V: insert-selection(CLIPBOARD) \n\
+                                Shift <Btn1Up>: exec-formatted("xdg-open '%t'", PRIMARY) \n\
+                                <Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0) \n\
+                                <Btn2Up>: insert-selection(PRIMARY) 
+XTerm*.vtMenu.label:            Options
