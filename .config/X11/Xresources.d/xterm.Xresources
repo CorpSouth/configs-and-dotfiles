@@ -15,7 +15,7 @@ UXTerm*charClass:               33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126
 UXTerm.cursorBlink:             true
 UXTerm*decTerminalID:           vt382
 UXTerm*eightBitInput:           false
-UXTerm.facename:                -misc-fixed-medium-r-semicondensed--13-120-75-75-c-60-iso10646-1
+UXTerm.facename:                fixed
 UXTerm.faceSize:                12
 UXTerm*.fontMenu.label:         View
 UXTerm*forceBoxChars:           true
@@ -57,7 +57,7 @@ XTerm*charClass:                33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126
 XTerm.cursorBlink:              true
 XTerm*decTerminalID:            vt382
 XTerm*eightBitInput:            false
-XTerm.faceName:                 -misc-fixed-medium-r-semicondensed--13-120-75-75-c-60-iso10646-1
+XTerm.faceName:                 fixed
 XTerm.faceSize:                 12
 XTerm*forceBoxChars:            true
 XTerm*highlightSelection:       true
