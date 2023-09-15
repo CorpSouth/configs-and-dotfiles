@@ -1,5 +1,12 @@
 #!/bin/sh
 
+#############
+#Dbus Daemon#
+#######################################################################
+#If you want to have a pleasant time using your desktop environment or#
+#window manager without a display manager, make sure these are set, K?#
+#######################################################################
+
 if test -z "$DBUS_SESSION_BUS_ADDRESS"; then
 	eval $(dbus-launch --exit-with-session --sh-syntax)
 fi
@@ -8,5 +15,9 @@ systemctl --user import-environment DISPLAY XAUTHORITY
 if command -v dbus-update-activation-environment >/dev/null 2>&1; then
         dbus-update-activation-environment DISPLAY XAUTHORITY
 fi
+
+##########
+#Xsession#
+##########
 
 exec startxfce4
