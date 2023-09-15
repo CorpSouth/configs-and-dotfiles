@@ -36,8 +36,8 @@ Plug 'junegunn/limelight.vim'
 Plug 'preservim/vim-pencil'
 Plug 'godlygeek/tabular'
 Plug 'preservim/vim-markdown'
--- Plug 'tinted-theming/base16-vim'
 Plug 'rust-lang/rust.vim'
+Plug 'tinted-theming/base16-vim'
 
 vim.call('plug#end')
 
@@ -45,10 +45,10 @@ vim.call('plug#end')
 --Color Control--
 -----------------
 
+vim.cmd('let base16_colorspace=256')
+vim.cmd('let base16_background_transparent=1')
 vim.cmd('set termguicolors')
-vim.cmd('colorscheme selenized_bw')
-vim.cmd('highlight Normal ctermbg=none')
-vim.cmd('highlight NonText ctermbg=none')
+vim.cmd('colorscheme base16-selenized-black')
 
 ---------------
 --KEYBINDINGS--
