@@ -1,7 +1,0 @@
-!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!Special Color Settings!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-#ifdef COLOR
-        *customization: -color
-#endif
