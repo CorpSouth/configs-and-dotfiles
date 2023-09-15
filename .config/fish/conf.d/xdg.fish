@@ -25,6 +25,7 @@ if status is-interactive
     #X11#
     #####
 
+
     if test -d "$XDG_CACHE_HOME/X11"
     	set -gx ALTUSERXSESSION "$XDG_CACHE_HOME/X11/Xsession"
 	set -gx ERRFILE         "$XDG_CACHE_HOME/X11/xsession-errors"
