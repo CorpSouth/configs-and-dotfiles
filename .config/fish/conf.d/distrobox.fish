@@ -7,9 +7,9 @@ if status is-interactive
     if type -q distrobox
         set -gx DBX_CONTAINER_ALWAYS_PULL "1"
         set -gx DBX_CONTAINER_CUSTOM_HOME "$HOME/.var/home/aaron"
-	set -gx DBX_CONTAINER_IMAGE "quay.io/toolbx-images/debian-toolbox:unstable"
+	set -gx DBX_CONTAINER_IMAGE "quay.io/toolbx-images/archlinux-toolbox:latest"
 	set -gx DBX_CONTAINER_MANAGER "podman"
-        set -gx DBX_CONTAINER_NAME "Siderius"
+        set -gx DBX_CONTAINER_NAME "Archduke"
 	set -gx DBX_NON_INTERACTIVE "1"
 	set -gx DBX_SKIP_WORKDIR "0"
     end

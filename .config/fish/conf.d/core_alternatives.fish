@@ -16,11 +16,11 @@ if status is-interactive
     #Exa instead of ls#
     ###################
     
-    if type -q exa
-        alias l  'exa'
-        alias la 'exa -a'
-        alias ll 'exa -lah'
-        alias ls 'exa --color=auto'
+    if type -q eza
+        alias l  'eza'
+        alias la 'eza -a'
+        alias ll 'eza -lah'
+        alias ls 'eza --color=auto'
     end
 
     #####################
