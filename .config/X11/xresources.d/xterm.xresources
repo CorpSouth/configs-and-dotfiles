@@ -9,7 +9,6 @@ xterm.termName: xterm-256color
 !!!!!!!!!!
 
 UXTerm*allowBoldFonts:      false
-UXTerm*allowWindowOps:      true
 UXTerm*borderLess:          true
 UXTerm*charClass:           33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
 UXTerm*cursorBlink:         true
@@ -27,9 +26,11 @@ UXTerm*loginShell:          true
 UXTerm*metaSendsEscape:     true
 UXTerm*multiClickTime:      250
 UXTerm*multiScroll:         true
+UXTerm*omitTranslation:     popup-menu
 UXTerm*renderFont:          true
 UXTerm*rightScrollbar:      false
 UXTerm*saveLines:           2000
+UXTerm*scaleHeight:         1.01
 UXTerm*ScrollBar:           false
 UXTerm*scrollTtyOutput:     false
 UXTerm*selectToClipboard:   true
@@ -52,7 +53,6 @@ UXTerm.vt100.translations:  #override \n\
 !!!!!!!!!
 
 XTerm*allowBoldFonts:      false
-XTerm*allowWindowOps:      true
 XTerm*borderLess:          true
 XTerm*charClass:           33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
 XTerm*cursorBlink:         true
@@ -70,9 +70,11 @@ XTerm*loginShell:          true
 XTerm*metaSendsEscape:     true
 XTerm*multiClickTime:      250
 XTerm*multiScroll:         true
+XTerm*omitTranslation:     popup-menu
 XTerm*renderFont:          true
 XTerm*rightScrollbar:      false
 XTerm*saveLines:           2000
+XTerm*scaleHeight:         1.01
 XTerm*ScrollBar:           false
 XTerm*scrollTtyOutput:     false
 XTerm*selectToClipboard:   true
@@ -89,3 +91,4 @@ XTerm.vt100.translations:  #override \n\
                            Shift <Btn1Up>: exec-formatted("xdg-open '%t'", PRIMARY) \n\
                            <Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0) \n\
                            <Btn2Up>: insert-selection(PRIMARY)
+
