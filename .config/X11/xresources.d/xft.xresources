@@ -5,4 +5,4 @@
 Xft.antialias: true
 Xft.dpi:       96
 Xft.hinting:   true
-Xft.hintstyle: hintslight
+Xft.hintstyle: hintfull
