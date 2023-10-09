@@ -39,7 +39,7 @@
     scale = 0
 
     # Maximum number of notification (0 means no limit)
-    notification_limit = 0
+    notification_limit = 20
 
     ### Progress bar ###
 
@@ -60,6 +60,11 @@
     # Set the maximum width for the progress bar
     progress_bar_max_width = 300
 
+    # Corner radius for the progress bar. 0 disables rounded corners.
+    progress_bar_corner_radius = 0
+
+    # Corner radius for the icon image.
+    icon_corner_radius = 0
 
     # Show how many messages are currently hidden (because of
     # notification_limit).
@@ -68,7 +73,7 @@
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing window manager is
     # present (e.g. xcompmgr, compiz, etc.). (X11 only)
-    transparency = 5
+    transparency = 0
 
     # Draw a line of "separator_height" pixel height between two
     # notifications.
@@ -118,7 +123,7 @@
 
     ### Text ###
 
-    font = Ubuntu Condensed Regular 8
+    font = Iosevka SS12 8
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
@@ -310,7 +315,7 @@
     # Otherwise the "#" and following would be interpreted as a comment.
     background = "#383838"
     foreground = "#FFFFFF"
-    highlight  = "#FF7139"
+    highlight  = "#FF7139" 
     timeout    = 10
     # Icon for notifications with low urgency, uncomment to enable
     #default_icon = /path/to/icon
@@ -324,9 +329,9 @@
     #default_icon = /path/to/icon
 
 [urgency_critical]
-    background = "#383838"
-    foreground = "#FFFFFF"
-    timeout = 0
+    background  = "#383838"
+    foreground  = "#FFFFFF"
+    timeout     = 0
     # Icon for notifications with critical urgency, uncomment to enable
     #default_icon = /path/to/icon
 
@@ -414,7 +419,7 @@
 #    script = dunst_test.sh
 
 [ignore]
-#    # This notification will not be displayed
+    # This notification will not be displayed
     appname = xfce4-settings-helper
     summary = "Sticky keys"
     skip_display = true
