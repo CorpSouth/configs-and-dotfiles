@@ -1,0 +1,61 @@
+### General settings
+general {
+  output_format = "i3bar"
+  colors = true
+  color_good = "#73D216"
+  color_bad = "#FC4138"
+  color_degraded = "#F27835"
+  interval = 1
+}
+
+order += "ethernet _first_"
+order += "wireless _first_"
+order += "cpu_temperature 0"
+order += "load"
+order += "disk /"
+order += "memory"
+order += "volume master"
+order += "tztime local"
+
+ethernet _first_ {
+    format_up = "󰶣 %speed"
+    format_down = "󰶡 DOWN"
+}
+
+wireless _first_ {
+    format_up = "󰖩 %quality (%bitrate)"
+    format_down = "󰖪 DOWN"
+}
+
+cpu_temperature 0 {
+	format = "󰔐 %degrees°C"
+}
+
+load {
+    format = "󰄨 %1min"
+}
+
+disk "/" {
+	format = "󰋊 %avail/%total"
+	prefix_type	= custom
+	low_threshold = 20
+	threshold_type = percentage_avail
+}
+
+memory {
+    format = "󰍛 %used/%total"
+    threshold_degraded = "1G"
+    format_degraded = "MEMORY < %available"
+}
+
+volume master {
+  format = "󰕾 %volume"
+  format_muted = "󰖁 MUTED"
+  device = "default"
+  mixer = "Master"
+  mixer_idx = 0
+}
+
+tztime local {
+  format = "󰥔 %c"
+}
