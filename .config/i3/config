@@ -1,1 +1,601 @@
-include $HOME/.config/i3/config.d/*.conf
+################################################
+#Welcome to my i3 configuration file!          #
+#The contents of this file reflect my workflow #
+#and in no guarantee works for yours, but if it#
+#helps you to figure things out go ahead.      #
+################################################
+#THIS FILE DOES NOT REPRESENT THE TOTAL LIST OF#
+#OPTIONS AVAILABLE FOR CONFIGURATION.          #
+################################################
+
+#------+1.0 VARIABLES
+
+# Variables are configurations set with "set $foo",
+# the dollar sign being the prefix they use.
+
+#------+1.1 COLORS
+
+# Colors for the window borders, window title bars,
+# and bar/panel are very frequently changing. Set
+# variables here to make life easier.
+
+set $black         #000000
+
+set $dim_gray      #292929
+set $gray          #383838
+set $bright_gray   #525252
+
+set $dim_silver    #3F4145
+set $silver        #70737A
+set $bright_silver #94979D
+
+set $dim_white     #A8A8A8
+set $white         #DADADA
+set $bright_white  #FFFFFF
+
+set $dim_red       #940F13
+set $red           #E82127
+set $bright_red    #EF6266
+
+set $dim_green     #1D5A2D
+set $green         #35A854
+set $bright_green  #5ACB78
+
+set $dim_yellow    #986D43
+set $yellow        #C5A07C
+set $bright_yellow #DBC4AD
+
+set $dim_orange    #D23B00
+set $orange        #FF7139
+set $bright_orange #FFA480
+
+set $dim_blue      #07427D
+set $blue          #0C75DE
+set $bright_blue   #3D99F5
+
+set $dim_pink      #AF194E
+set $pink          #E54980
+set $bright_pink   #EE87AC
+
+set $dim_purple    #5828A8
+set $purple        #8C5DD9
+set $bright_purple #B597E7
+
+set $dim_aqua      #135E84
+set $aqua          #1F9EDE
+set $bright_aqua   #5CB9E8
+
+set $dim_teal      #0C4A4f
+set $teal          #199CA8
+set $bright_teal   #29D0DF
+
+set $error         #FC4138
+set $success       #73D216
+set $warning       #F27835
+
+#------+1.2 DEFAULT APPLICATIONS & UTILITIES
+
+# Outside of using XDG settings, you can
+# achieve similar functions with variables
+# for default applications and utilities.
+
+set $autohide_cursor     --no-startup-id xbanish -t 5
+set $calculator          i3-sensible-terminal -name scratchpad bc
+set $compositor          --no-startup-id picom
+set $email               --no-startup-id flatpak run eu.betterbird.Betterbird
+set $file_manager        filechooser.sh
+set $i3_nagbar_exit      "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+set $i3_nagbar_reboot    "i3-nagbar -t warning -m 'You pressed the reboot shortcut. Do you really want to reboot your system?' -B 'Yes, reboot my system' 'systemctl reboot'"
+set $i3_nagbar_shutdown  "i3-nagbar -t warning -m 'You pressed the shutdown shortcut. Do you really want to shutdown your system?' -B 'Yes, shutdown my system' 'systemctl poweroff'"
+set $i3_nagbar_suspend   "i3-nagbar -t warning -m 'You pressed the suspend shortcut. Do you really want to suspend your system?' -B 'Yes, suspend my system' 'systemctl suspend -i'"
+set $media_player        --no-startup-id flatpak run io.mpv.Mpv --player-operation-mode=pseudo-gui
+set $menu                --no-startup-id dmenu_run -l 15
+set $notification_daemon --no-startup-id dunst
+set $obex_service        --no-startup-id systemctl --user start obex.service
+set $office_suite        --no-startup-id flatpak run org.onlyoffice.DesktopEditors
+set $polkit              --no-startup id /usr/bin/mate-polkit
+set $scratchpad_terminal i3-sensible-terminal -name scratchpad
+set $screenlocker        --no-startup-id slock
+set $screenlocking       --no-startup-id xautolock -time 10 -locker slock
+set $screenshot          --no-startup-id scrot $HOME/Pictures/%c.png
+set $terminal            i3-sensible-terminal
+set $volume_controller   i3-sensible-terminal -name scratchpad pulsemixer
+set $volume_lower        --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+set $volume_mute         --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+set $volume_raise        --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
+set $wallpaper_setter    --no-startup-id hsetroot -fill $HOME/Pictures/Wallpapers/Pexels/Marek\ Piwnicki/pexels-marek-piwnicki-skyfall.jpg
+set $web_browser         --no-startup-id flatpak run io.gitlab.librewolf-community
+set $xrdb                --no-startup-id xrdb -merge $HOME/.config/X11/xresources & i3-msg restart
+set $youtube_player      --no-startup-id flatpak run io.freetubeapp.FreeTube
+
+#------+1.3 MODIFIERS
+
+# Using either the Alt key (Mod1) or Windows key (Mod4)
+# can be set using a variable, such as "$mod"
+
+set $mod Mod4
+
+#------+1.4 USEFUL KEYBINDING VARIABLES
+
+# Directional
+
+set $down  Down
+set $left  Left
+set $right Right
+set $up    Up
+
+# Escape binding mode
+
+set $escape Escape mode "default"
+
+#------+1.5 WORKSPACE NAMES
+
+# You can set workspace (virtual desktops, etc.) names on a
+# label, number, or symbolic (icon) basis. Using non-number 
+# workspace identifiers requires a set number e.g; "1:foo".
+
+# NOTE: If your preferred name or symbol doesn't appear on any of the default
+# workspaces on startup, and you switch workspaces using keybinding modes,
+# that is why.
+
+set $ws1 "1:󰖟"
+set $ws2 "2:󰭻"
+set $ws3 "3:󰥠"
+set $ws4 "4:󰙏"
+set $ws5 "5:󱁤"
+set $ws6 "6:󰇅"
+
+#------+2.0 APPEARANCE
+
+# Color variables set at the start can/will be assigned to the window
+# decorations (border, indicator, and title bar) specified below
+
+# Apply colors in the following order, all after color class:
+# <color class> <border> <background> <text> <indicator> <child border>
+
+client.focused          $dim_blue $blue        $bright_white $bright_blue $blue
+client.focused_inactive $dim_gray $bright_gray $white        $success     $dim_gray 
+client.unfocused        $dim_gray $gray        $dim_white    $success     $dim_gray
+client.urgent           $error    $warning     $black        $error       $warning
+client.placeholder      $dim_gray $gray        $dim_white    $bright_gray $dim_gray
+client.background       $gray
+
+#------+2.1 BORDERS
+
+# Set the border to your preferred decoration and size.
+# "default_border normal" will preserve the title bar.
+# "default_border pixel" will disable the title bar.
+
+default_border pixel 2
+
+# Smart borders will detect if there's only one client/window
+# open and hide, letting all known pixel space be used on screen.
+# This can be set with "no_gaps" to only apply if gaps are closed.
+
+smart_borders on
+
+#------+2.2 FONTS
+
+# Accepts either "pango:" or "xft:" fonts,
+# this will also apply to the bar if you 
+# exclude setting a font there individually.
+# Excluding font size will fallback to default
+# font sizing according to DPI.
+
+font pango: Iosevka ss12 Extended Bold 12
+
+# You can also set a secondary font, separated by a comma
+
+#------+2.3 GAPS
+
+# Gaps are primarily visual effects
+# and offer no functional benefit,
+# but they are a popular feature 
+# well-integrated into i3.
+
+gaps inner 0
+
+# Edge gaps can be disabled when there is
+# only one window opened.
+
+smart_gaps on
+
+#------+2.4 TITLE ALIGNMENT
+
+# Place the title bar contents to the left (default), center, or right
+
+title_align center
+
+#------+3.0 AUTOSTART
+
+# It is generally helpful to set up a
+# standalone window manager to operate
+# like a desktop environment, such as
+# starting programs and services during startup
+
+#------+3.1 BAR
+
+# "Bar" or "Panel" is the small strip typically at
+# the bottom or top of the screen that displays 
+# various information, how one gets there depends
+# on their preferred tools for the job. This section
+# can be ignored if you prefer Lemonbar, Polybar, 
+# xfce4-panel, etc...
+
+bar {
+
+      # The utility used on startup to display status outputs
+      # You can suffix the "status_command" with a custom status
+      # handler like i3blocks, i3status-rust, etc.
+
+      status_command i3status
+
+      # Position bar at either the top or the bottom.
+
+      position bottom
+
+      # Obey Fitt's Law and disable padding with "0", though 
+      # you might want to adjust padding on a per-font basis 
+      # if icons look really off (and if that bothers you...)
+
+      tray_padding 0
+
+      # Optional, but you can set a font for the bar individually.
+
+      font pango: Iosevka ss12, Symbols Nerd Font Mono 12
+
+      # Separator can use a standard character or symbol.
+
+      separator_symbol "|"
+
+      # Show or hide workspace buttons, useful if you want to display
+      # a statusline-only bar containing additional information.
+
+      workspace_buttons yes
+
+      # Strip workspace numbers, if you prefer to use only the label
+      # or symbol instead
+
+      strip_workspace_numbers yes
+
+      colors {
+               # Colors are applied using the variables at the start of this file
+               # Apply them in the following order:
+               # <colorclass> <border> <background> <text>
+
+               focused_workspace  $bright_blue $blue        $bright_white
+               active_workspace   $dim_gray    $bright_gray $white
+               inactive_workspace $gray        $gray        $dim_white
+               urgent_workspace   $error       $warning     $black
+               binding_mode       $error       $warning     $black
+
+               # Bar details
+
+               background $gray
+               separator  $dim_gray
+               statusline $white
+
+    }
+}
+
+#------+3.2 EXEC
+
+# Execute programs ONCE on startup
+
+# Automatically hide the x-cursor
+
+exec $autohide_cursor
+
+# Display Compositor
+
+exec $compositor
+
+# Fixes the issue mentioned in the section "WORKSPACE NAMES"
+
+exec i3-msg workspace $ws1
+
+# Notification daemon
+
+exec $notification_daemon
+
+# Invoke systemd user-service for bluetooth
+# object exchange (OBEX).
+
+exec $obex_service
+
+# Let programs that require superuser access
+# give me a password prompt.
+
+exec $polkit
+
+# Lock screen after a period of inactivity.
+
+exec $screenlocking
+
+# Xresources
+
+exec $xrdb
+
+#------+3.3 EXEC_ALWAYS
+
+# Execute commands when i3 restarts
+
+# Set the wallpaper
+exec_always $wallpaper_setter
+
+#------+4.0 FOCUS BEHAVIOR
+
+# While i3 primarily emphasizes on keyboard worfklow,
+# you may prefer or require mouse-based window focusing
+# to take precedence.
+
+#------+4.1 FOCUS FOLLOWS MOUSE
+
+# Enabled by default, change focus on mouse hover
+focus_follows_mouse yes
+
+#------+4.2 STEAL FOCUS
+
+# Allow newly spawned windows to grab focus
+for_window [urgent="latest"] focus
+
+#------+5.0 BINDSYM
+
+# Keyboard shortcuts drive the tiling window manager workflow,
+# do take care not to cross-contaminate your keybindings!
+
+#------+5.1 KEYBINDING MODES
+
+# The config file authors preferred means of using i3.
+# Modes are isolated keybindings which override your
+# default keybinding configurations, preventing key conflicts.
+# VERY useful if you have a compact keyboard.
+# WARNING: Potentially dangerous, set a keybinding for
+# the "default" mode!
+
+#------+<{{ MODE: COMMAND
+
+# Here are where I keep most of my application keyboard shortcuts
+
+bindsym $mod+c mode "COMMAND"
+mode "COMMAND" {
+
+     # Exit keybinding mode
+
+     bindsym $escape
+
+     # Menu
+
+     bindsym Menu exec $menu
+
+     # Office Suite
+
+     bindsym $mod+o $office_suite
+
+     # Terminal
+
+     bindsym $mod+Return exec $terminal
+     bindsym Mod1+Return exec $scratchpad_terminal
+
+     # Volume Mixer
+
+     bindsym $mod+v exec $volume_controller
+
+     # XF86
+
+     bindsym XF86AudioLowerVolume exec $lower_volume
+     bindsym XF86AudioMute        exec $mute_volume
+     bindsym XF86AudioRaiseVolume exec $raise_volume
+     bindsym XF86Calculator       exec $calculator
+     bindsym XF86Explorer         exec $file_manager
+     bindsym XF86HomePage         exec $web_browser
+     bindsym XF86Mail             exec $email
+
+     # YouTube player
+
+     bindsym y exec $youtube_player
+
+}
+
+#------+<{{ MODE: SESSION
+
+# Various session and power related shortcuts go here
+
+bindsym Control+Mod1+Delete mode "SESSION"
+mode "SESSION" {
+
+     # Exit keybinding mode
+
+     bindsym $escape
+
+     # Lock screen when not in use/away
+
+     bindsym --release l exec $screenlocker
+
+     # Reload i3's configuration, or restart altogether
+
+     bindsym c reload
+     bindsym r restart
+
+     # Session and system commands using i3-nagbar
+
+     bindsym e      exec $i3_nagbar_exit
+     bindsym Mod1+s exec $i3_nagbar_shutdown
+     bindsym Mod1+r exec $i3_nagbar_reboot
+     bindsym s      exec $i3_nagbar_suspend
+
+}
+
+
+#------+<{{ MODE: WINDOWS
+
+# Everything related to window management goes here
+
+bindsym $mod+w mode "WINDOWS"
+mode "WINDOWS" {
+
+     # Exit keybinding mode
+
+     bindsym $escape
+
+     # Directional focus
+
+     bindsym $down  focus down
+     bindsym $left  focus left
+     bindsym $right focus right
+     bindsym $up    focus up
+
+     # Focus the next and previous window
+
+     bindsym Tab       focus next 
+     bindsym Shift+tab focus prev
+
+     # Kill window
+
+     bindsym Control+Mod1+k kill
+
+     # Layouts
+
+     bindsym d      layout default
+     bindsym Mod1+s layout toggle split
+     bindsym s      layout stacking
+     bindsym t      layout tabbed
+
+     # Scratchpad management
+
+     bindsym $mod+s         scratchpad show
+     bindsym Control+$mod+s move scratchpad 
+
+     # Split horizontal or vertical tiling
+
+     bindsym h           splith
+     bindsym space split toggle
+     bindsym v           splitv
+
+     # Window moving
+
+     bindsym Mod1+$down  move down
+     bindsym Mod1+$left  move left
+     bindsym Mod1+$right move right
+     bindsym Mod1+$up    move up
+
+     # Window resizing
+
+     bindsym Shift+$down  resize grow   height 10 px or 10 ppt
+     bindsym Shift+$left  resize shrink width  10 px or 10 ppt
+     bindsym Shift+$right resize grow   width  10 px or 10 ppt
+     bindsym Shift+$up    resize shrink height 10 px or 10 ppt
+
+     # Window sending to workspace, preserves focus
+
+     bindsym Mod1+1 move container to workspace $ws1, workspace $ws1
+     bindsym Mod1+2 move container to workspace $ws2, workspace $ws2
+     bindsym Mod1+3 move container to workspace $ws3, workspace $ws3
+     bindsym Mod1+4 move container to workspace $ws4, workspace $ws4
+     bindsym Mod1+5 move container to workspace $ws5, workspace $ws5
+     bindsym Mod1+6 move container to workspace $ws6, workspace $ws6
+
+     # Window sending to the next or previous workspace over, preserves focus
+
+     bindsym Mod1+bracketleft  move container to workspace prev, workspace prev
+     bindsym Mod1+bracketright move container to workspace next, workspace next
+
+     # Workspace switching
+
+     bindsym 1 workspace $ws1
+     bindsym 2 workspace $ws2
+     bindsym 3 workspace $ws3
+     bindsym 4 workspace $ws4
+     bindsym 5 workspace $ws5
+     bindsym 6 workspace $ws6
+
+}
+
+#------+5.2 TILING DRAG
+
+# You can configure how to initiate the tiling drag feature
+
+tiling_drag modifier titlebar
+
+#------+5.3 WORKSPACE_AUTO_BACK_AND_FORTH
+
+# When pressing a shortcut to change workspaces,
+# the latest input remembers the last workspace
+# switched to, allowing you to toggle switch
+
+workspace_auto_back_and_forth yes
+
+#------+6.0 FLOATING RULES
+
+# Some windows either do not tile well or do not need to tile at all,
+# so we'll add them to the floating layer.
+
+# 1. Open a terminal next to the window you want to set rules for
+# 2. Run the "xprop" command, you will be given a crosshair cursor
+# 3. Click the window you want to get the properties of
+# 4. Read the outputs and apply their variables
+
+# Wildcard such as "(?i)foo" or "^foo.*" work for very particular
+# occurances of window matching where it's hard to awkward and hard
+# to rule.
+
+# You can use "|" between entries within a single quote range to save
+# lines by assigning entries in one field
+
+#------+6.1 CLASS
+
+# The second half of the "WM_CLASS" specification
+
+for_window [class="Nsxiv|Pavucontrol|XCalc|XClock"] floating enable, move position center
+
+#------+6.2 INSTANCE
+
+# The first half of the "WM_CLASS" specification, can help match more precisely
+
+#------+6.3 TITLE
+
+# The "WM_NAME" specification, but aliased as a "title" for i3
+
+#------+6.4 WINDOW_ROLE
+
+# "WM_ROLE", or utility purpose of a window, such as an "about" pane or introductory "splash"
+
+for_window [window_role="About|about"] floating enable, move position center
+
+#------+6.5 SCRATCHPADS
+
+# Scratchpads are floating windows that can be hidden in the background
+# Useful for terminals or other programs that get in the way while floating
+# Set a general rule for the terminal to abide by for scratchpads
+
+for_window [instance="scratchpad"] move scratchpad, resize set 70 ppt 70 ppt, scratchpad show, move position center, sticky enable
+
+#------+7.0 LAYOUTS
+
+# i3 provides three manually-operated layouts
+
+# Default:  Standard, side-to-side or top-to-bottom tiling
+# Stacking: Singular view, but with the title bars on top of one another
+# Tabbed:   Singular view, but with the title bars beside one another
+
+#------+7.1 DEFAULT WORKSPACE LAYOUT
+
+# The starting layout for workspaces
+
+workspace_layout tabbed
+
+#------+8.0 WORKSPACE ASSIGNMENTS
+
+# Windows can be set to spawn on specific
+# workspaces, greatly organizing your workflow
+# as well as preventing workspace clutter
+
+#------+8.1 CLASS
+
+assign [class="betterbird|LibreWolf"]    $ws1
+assign [class="TelegramDesktop|WebCord"] $ws2
+assign [class="FreeTube|mpv"]            $ws3
+
+#------+8.2 INSTANCE
+#------+8.3 TITLE
+#------+8.4 WINDOW_ROLE
