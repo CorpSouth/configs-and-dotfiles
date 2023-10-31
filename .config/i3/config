@@ -80,7 +80,9 @@ set $warning       #F27835
 # for default applications and utilities.
 
 set $autohide_cursor     --no-startup-id xbanish -t 5
-set $calculator          i3-sensible-terminal -name scratchpad bc
+set $bluetooth_manager   i3-sensible-terminal -class bluetoothctl -e bluetoothctl
+set $bluetooth_transfer  i3-sensible-terminal -class obexctl -e obexctl
+set $calculator          i3-sensible-terminal -class scratchpad -e bc
 set $compositor          --no-startup-id picom
 set $email               --no-startup-id flatpak run eu.betterbird.Betterbird
 set $file_manager        filechooser.sh
@@ -89,17 +91,19 @@ set $i3_nagbar_reboot    "i3-nagbar -t warning -m 'You pressed the reboot shortc
 set $i3_nagbar_shutdown  "i3-nagbar -t warning -m 'You pressed the shutdown shortcut. Do you really want to shutdown your system?' -B 'Yes, shutdown my system' 'systemctl poweroff'"
 set $i3_nagbar_suspend   "i3-nagbar -t warning -m 'You pressed the suspend shortcut. Do you really want to suspend your system?' -B 'Yes, suspend my system' 'systemctl suspend -i'"
 set $media_player        --no-startup-id flatpak run io.mpv.Mpv --player-operation-mode=pseudo-gui
-set $menu                --no-startup-id dmenu_run -l 15
+set $menu                --no-startup-id dmenu_run -l 10
+set $network_manager     i3-sensible-terminal -class nmtui -e nmtui
 set $notification_daemon --no-startup-id dunst
 set $obex_service        --no-startup-id systemctl --user start obex.service
-set $office_suite        --no-startup-id flatpak run org.onlyoffice.DesktopEditors
-set $polkit              --no-startup id /usr/bin/mate-polkit
-set $scratchpad_terminal i3-sensible-terminal -name scratchpad
+set $office_suite        --no-startup-id flatpak run org.onlyoffice.desktopeditors
+set $polkit              --no-startup-id /usr/bin/mate-polkit
+set $scratchpad_terminal i3-sensible-terminal -class scratchpad
 set $screenlocker        --no-startup-id slock
 set $screenlocking       --no-startup-id xautolock -time 10 -locker slock
 set $screenshot          --no-startup-id scrot $HOME/Pictures/%c.png
 set $terminal            i3-sensible-terminal
-set $volume_controller   i3-sensible-terminal -name scratchpad pulsemixer
+set $top                 i3-sensible-terminal -class htop -e htop
+set $volume_controller   i3-sensible-terminal -name scratchpad -e pulsemixer
 set $volume_lower        --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
 set $volume_mute         --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 set $volume_raise        --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
@@ -165,8 +169,10 @@ client.background       $gray
 # Set the border to your preferred decoration and size.
 # "default_border normal" will preserve the title bar.
 # "default_border pixel" will disable the title bar.
+# Can be individually set for floating windows, too.
 
-default_border pixel 2
+default_border pixel          2
+default_floating_border pixel 2
 
 # Smart borders will detect if there's only one client/window
 # open and hide, letting all known pixel space be used on screen.
@@ -337,6 +343,7 @@ focus_follows_mouse yes
 #------+4.2 STEAL FOCUS
 
 # Allow newly spawned windows to grab focus
+
 for_window [urgent="latest"] focus
 
 #------+5.0 BINDSYM
@@ -363,25 +370,34 @@ floating_modifier $mod
 
 # Here are where I keep most of my application keyboard shortcuts
 
-bindsym $mod+c mode "COMMAND"
-mode "COMMAND" {
+bindsym $mod+c mode "󱆃"
+mode "󱆃" {
 
      # Exit keybinding mode
 
      bindsym $escape
 
-     # Menu
+     # Bluetooth
 
-     bindsym Menu exec $menu
+     bindsym $mod+b exec $bluetooth_manager
+     bindsym Mod1+b exec $bluetooth_transfer
+
+     # Network Manager
+
+     bindsym $mod+n exec $network_manager
 
      # Office Suite
 
-     bindsym $mod+o $office_suite
+     bindsym $mod+o exec $office_suite
 
      # Terminal
 
      bindsym $mod+Return exec $terminal
      bindsym Mod1+Return exec $scratchpad_terminal
+
+     # Top
+
+     bindsym $mod+Escape exec $top
 
      # Volume Mixer
 
@@ -396,10 +412,11 @@ mode "COMMAND" {
      bindsym XF86Explorer         exec $file_manager
      bindsym XF86HomePage         exec $web_browser
      bindsym XF86Mail             exec $email
+     bindsym XF86Tools            exec $media_player
 
      # YouTube player
 
-     bindsym y exec $youtube_player
+     bindsym $mod+y exec $youtube_player
 
 }
 
@@ -407,8 +424,8 @@ mode "COMMAND" {
 
 # Various session and power related shortcuts go here
 
-bindsym Control+Mod1+Delete mode "SESSION"
-mode "SESSION" {
+bindsym Control+Mod1+Delete mode "󰍂"
+mode "󰍂" {
 
      # Exit keybinding mode
 
@@ -437,8 +454,8 @@ mode "SESSION" {
 
 # Everything related to window management goes here
 
-bindsym $mod+w mode "WINDOWS"
-mode "WINDOWS" {
+bindsym $mod+w mode "󱇛"
+mode "󱇛" {
 
      # Exit keybinding mode
 
@@ -521,13 +538,20 @@ mode "WINDOWS" {
 
 }
 
-#------+5.3 TILING DRAG
+#------+5.3 RUN LAUNCHER
+
+# Application launcher and command running tool
+# to compliment your keyboard and terminal
+
+bindsym $mod+Menu exec $menu
+
+#------+5.4 TILING DRAG
 
 # You can configure how to initiate the tiling drag feature
 
 tiling_drag modifier titlebar
 
-#------+5.4 WORKSPACE_AUTO_BACK_AND_FORTH
+#------+5.5 WORKSPACE_AUTO_BACK_AND_FORTH
 
 # When pressing a shortcut to change workspaces,
 # the latest input remembers the last workspace
@@ -578,7 +602,7 @@ for_window [window_role="About|about"] floating enable, move position center
 # Useful for terminals or other programs that get in the way while floating
 # Set a general rule for the terminal to abide by for scratchpads
 
-for_window [instance="scratchpad"] move scratchpad, resize set 70 ppt 70 ppt, scratchpad show, move position center, sticky enable
+for_window [class="scratchpad"] move scratchpad, resize set 70 ppt 70 ppt, scratchpad show, move position center, sticky enable
 
 #------+7.0 LAYOUTS
 
@@ -602,10 +626,20 @@ workspace_layout tabbed
 
 #------+8.1 CLASS
 
-assign [class="betterbird|LibreWolf"]    $ws1
-assign [class="TelegramDesktop|WebCord"] $ws2
-assign [class="FreeTube|mpv"]            $ws3
+assign [class="betterbird|LibreWolf"]            $ws1
+assign [class="TelegramDesktop|WebCord"]         $ws2
+assign [class="FreeTube|mpv"]                    $ws3
+assign [class="bluetoothctl|htop|nmtui|obexctl"] $ws5
 
 #------+8.2 INSTANCE
 #------+8.3 TITLE
 #------+8.4 WINDOW_ROLE
+#------+8.5 HALL OF SHAME
+
+# Reserved for windows that are either confusing
+# or impossible to assign workspaces properly,
+# and require the use of "for_window" followed by
+# "move container to workspace $WORKSPACE_NUMBER"
+
+for_window [class="Timeshift-gtk"]     move container to workspace $ws5
+for_window [instance="DesktopEditors"] move container to workspace $ws4
