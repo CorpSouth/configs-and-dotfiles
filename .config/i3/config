@@ -405,9 +405,9 @@ mode "󱆃" {
 
      # XF86
 
-     bindsym XF86AudioLowerVolume exec $lower_volume
-     bindsym XF86AudioMute        exec $mute_volume
-     bindsym XF86AudioRaiseVolume exec $raise_volume
+     bindsym XF86AudioLowerVolume exec $volume_lower
+     bindsym XF86AudioMute        exec $volume_mute
+     bindsym XF86AudioRaiseVolume exec $volume_raise
      bindsym XF86Calculator       exec $calculator
      bindsym XF86Explorer         exec $file_manager
      bindsym XF86HomePage         exec $web_browser
