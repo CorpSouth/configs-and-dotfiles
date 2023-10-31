@@ -344,7 +344,13 @@ for_window [urgent="latest"] focus
 # Keyboard shortcuts drive the tiling window manager workflow,
 # do take care not to cross-contaminate your keybindings!
 
-#------+5.1 KEYBINDING MODES
+#------+5.1 FLOATING MODIFIER
+
+# Set the modifier key to press for dragging floating windows
+
+floating_modifier $mod
+
+#------+5.2 KEYBINDING MODES
 
 # The config file authors preferred means of using i3.
 # Modes are isolated keybindings which override your
@@ -472,6 +478,10 @@ mode "WINDOWS" {
      bindsym space split toggle
      bindsym v           splitv
 
+     # Window centering
+
+     bindsym $mod+c move position center
+
      # Window moving
 
      bindsym Mod1+$down  move down
@@ -511,13 +521,13 @@ mode "WINDOWS" {
 
 }
 
-#------+5.2 TILING DRAG
+#------+5.3 TILING DRAG
 
 # You can configure how to initiate the tiling drag feature
 
 tiling_drag modifier titlebar
 
-#------+5.3 WORKSPACE_AUTO_BACK_AND_FORTH
+#------+5.4 WORKSPACE_AUTO_BACK_AND_FORTH
 
 # When pressing a shortcut to change workspaces,
 # the latest input remembers the last workspace
