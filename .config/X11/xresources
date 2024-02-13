@@ -4,5 +4,6 @@
 
 # include "/home/aaron/.config/X11/xresources.d/ifdef.xresources"
 # include "/home/aaron/.config/X11/xresources.d/xclock.xresources"
+# include "/home/aaron/.config/X11/xresources.d/xcursor.xresources"
 # include "/home/aaron/.config/X11/xresources.d/xft.xresources"
 # include "/home/aaron/.config/X11/xresources.d/xterm.xresources"

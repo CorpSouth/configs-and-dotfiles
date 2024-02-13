@@ -22,7 +22,7 @@ UXTerm*decTerminalID:       vt382
 UXTerm*eightBitControl:     false
 UXTerm*eightBitInput:       false
 UXTerm*eightBitOutput:      false
-UXTerm*faceName:            Iosevka Term SS12 Extended
+UXTerm*faceName:            Iosevka Fixed Extended
 UXTerm*faceSize:            12
 UXTerm*forceBoxChars:       true
 UXTerm*forcePackedFont:     true
@@ -71,7 +71,7 @@ XTerm*decTerminalID:       vt382
 XTerm*eightBitControl:     false
 XTerm*eightBitInput:       false
 XTerm*eightBitOutput:      false
-XTerm*faceName:            Iosevka Term SS12 Extended
+XTerm*faceName:            Iosevka Fixed Extended
 XTerm*faceSize:            12
 XTerm*forceBoxChars:       true
 XTerm*forcePackedFont:     true

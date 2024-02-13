@@ -1,23 +1,39 @@
 #!/bin/sh
 
-#############
-#Dbus Daemon#
-#######################################################################
-#If you want to have a pleasant time using your desktop environment or#
-#window manager without a display manager, make sure these are set, K?#
-#######################################################################
+# Composite Manager
 
-if test -z "$DBUS_SESSION_BUS_ADDRESS"; then
-	eval $(dbus-launch --exit-with-session --sh-syntax)
-fi
-systemctl --user import-environment DISPLAY XAUTHORITY
+picom &
 
-if command -v dbus-update-activation-environment >/dev/null 2>&1; then
-        dbus-update-activation-environment DISPLAY XAUTHORITY
-fi
+# Notification Service
 
-##########
-#Xsession#
-##########
+dunst &
 
-exec startxfce4
+# PolicyKit Authentication Agent
+
+/usr/libexec/polkit-mate-authentication-agent-1 &
+
+# Screen Locker
+
+xautolock -time 10 -locker slock &
+
+# Sound Server
+
+/usr/bin/pipewire &
+/usr/bin/pipewire-pulse &
+/usr/bin/wireplumber &
+
+# Wallpaper
+
+xwallpaper --stretch $HOME/Pictures/Wallpapers/greybird-theme/greybird.png &
+
+# Xcursor Correction for Various WMs
+
+xsetroot -cursor_name left_ptr &
+
+# Xresources
+
+xrdb -merge $XRESOURCES &
+
+# Start Session
+
+exec dbus-run-session -- ratpoison -f $RATPOISONRC
