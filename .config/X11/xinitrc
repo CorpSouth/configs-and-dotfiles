@@ -1,39 +1,17 @@
 #!/bin/sh
 
-# Composite Manager
+# Dbus Daemon
 
-picom &
+if test -z "$DBUS_SESSION_BUS_ADDRESS"; then
+	eval "$(dbus-launch --exit-with-session --sh-syntax)"
+fi
 
-# Notification Service
+systemctl --user import-environment DISPLAY XAUTHORITY
 
-dunst &
+if command -v dbus-update-activation-environment >/dev/null 2>&1; then
+	dbus-update-activation-environment DISPLAY XAUTHORITY
+fi
 
-# PolicyKit Authentication Agent
+# Start session
 
-/usr/libexec/polkit-mate-authentication-agent-1 &
-
-# Screen Locker
-
-xautolock -time 10 -locker slock &
-
-# Sound Server
-
-/usr/bin/pipewire &
-/usr/bin/pipewire-pulse &
-/usr/bin/wireplumber &
-
-# Wallpaper
-
-xwallpaper --stretch $HOME/Pictures/Wallpapers/greybird-theme/greybird.png &
-
-# Xcursor Correction for Various WMs
-
-xsetroot -cursor_name left_ptr &
-
-# Xresources
-
-xrdb -merge $XRESOURCES &
-
-# Start Session
-
-exec dbus-run-session -- ratpoison -f $RATPOISONRC
+exec i3

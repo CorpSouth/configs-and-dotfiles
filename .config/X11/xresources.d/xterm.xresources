@@ -22,8 +22,8 @@ UXTerm*decTerminalID:       vt382
 UXTerm*eightBitControl:     false
 UXTerm*eightBitInput:       false
 UXTerm*eightBitOutput:      false
-UXTerm*faceName:            Iosevka Fixed Extended
-UXTerm*faceSize:            12
+UXTerm*faceName:            Ubuntu Mono Nerd Font Propo
+UXTerm*faceSize:            10
 UXTerm*forceBoxChars:       true
 UXTerm*forcePackedFont:     true
 UXTerm*fullscreen:          never
@@ -43,6 +43,7 @@ UXTerm*title:               UXTerm
 UXTerm*trimSelection:       true
 UXTerm*ttyModes:            erase ^?
 UXTerm.vt100.dynamicColors: true
+UXTerm*vt100*geometry:      100x30
 UXTerm.vt100.translations:  #override \n\
                             Ctrl <Key> minus: smaller-vt-font() \n\
                             Ctrl <Key> plus: larger-vt-font() \n\
@@ -71,8 +72,8 @@ XTerm*decTerminalID:       vt382
 XTerm*eightBitControl:     false
 XTerm*eightBitInput:       false
 XTerm*eightBitOutput:      false
-XTerm*faceName:            Iosevka Fixed Extended
-XTerm*faceSize:            12
+XTerm*faceName:            Ubuntu Mono Nerd Font Propo
+XTerm*faceSize:            10
 XTerm*forceBoxChars:       true
 XTerm*forcePackedFont:     true
 XTerm*fullscreen:          never
@@ -92,6 +93,7 @@ XTerm*title:               XTerm
 XTerm*trimSelection:       true
 XTerm*ttyModes:            erase ^?
 XTerm.vt100.dynamicColors: true
+XTerm*vt100*geometry:      100x30
 XTerm.vt100.translations:  #override \n\
                            Ctrl <Key> minus: smaller-vt-font() \n\
                            Ctrl <Key> plus: larger-vt-font() \n\
@@ -101,4 +103,3 @@ XTerm.vt100.translations:  #override \n\
                            Shift <Btn1Up>: exec-formatted("xdg-open '%t'", PRIMARY) \n\
                            <Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0) \n\
                            <Btn2Up>: insert-selection(PRIMARY)
-
