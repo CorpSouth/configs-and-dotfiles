@@ -1,3 +1,10 @@
+# PATH
+
+if [ -d "$HOME/.local/bin" ]; then
+    PATH="$HOME/.local/bin:$PATH" ;
+fi;
+
+
 # Assign XDG Configuration Directory
 
 if [ -d "$HOME/.config" ]; then
@@ -5,6 +12,10 @@ if [ -d "$HOME/.config" ]; then
 fi;
 
 # Organize X11 Configurations
+
+if [ -f "$HOME/.local/share/icons/default/index.theme" ]; then
+        export XCURSOR_PATH="$XCURSOR_PATH":"$HOME/.local/share/icons" ;
+fi;
 
 if [ -f "$XDG_CACHE_HOME/X11/Xsession" ]; then
 	export ALTUSERXSESSION="$XDG_CACHE_HOME/X11/Xsession" ;
@@ -40,9 +51,13 @@ if [ -f "$XDG_CONFIG_HOME/ratpoison/ratpoisonrc" ]; then
         export RATPOISONRC="$XDG_CONFIG_HOME/ratpoison/ratpoisonrc" ;
 fi;
 
+# Qt stuff
+
+export QT_QPA_PLATFORMTHEME="qt5ct"
+
 # Autostart X after tty login, this can effectively replicate 
 # a display manager
 
-if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
-  exec startx $XINITRC
+if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = "1" ]; then
+  exec startx "$XINITRC"
 fi
