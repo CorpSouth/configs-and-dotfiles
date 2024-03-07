@@ -38,7 +38,7 @@ static char *fonts[] =
 static const char *fonts[] =
 #endif // XRESOURCES_PATCH
 {
-	"Ubuntu Mono Nerd Font Propo:size=10"
+	"Terminess Nerd Font Propo:size=12"
 };
 #endif // PANGO_PATCH
 #if MANAGED_PATCH
