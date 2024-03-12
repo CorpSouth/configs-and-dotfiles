@@ -22,7 +22,7 @@ UXTerm*decTerminalID:       vt382
 UXTerm*eightBitControl:     false
 UXTerm*eightBitInput:       false
 UXTerm*eightBitOutput:      false
-UXTerm*faceName:            Terminess Nerd Font Propo
+UXTerm*faceName:            Terminess Nerd Font
 UXTerm*faceSize:            12
 UXTerm*forceBoxChars:       true
 UXTerm*forcePackedFont:     true
@@ -33,6 +33,7 @@ UXTerm*multiClickTime:      250
 UXTerm*multiScroll:         true
 UXTerm*omitTranslation:     popup-menu
 UXTerm*renderFont:          true
+UXTerm*reverseVideo:        true
 UXTerm*rightScrollbar:      false
 UXTerm*saveLines:           2000
 UXTerm*scaleHeight:         1.04
@@ -72,7 +73,7 @@ XTerm*decTerminalID:       vt382
 XTerm*eightBitControl:     false
 XTerm*eightBitInput:       false
 XTerm*eightBitOutput:      false
-XTerm*faceName:            Terminess Nerd Font Propo
+XTerm*faceName:            Ubuntu Mono Nerd Font
 XTerm*faceSize:            12
 XTerm*forceBoxChars:       true
 XTerm*forcePackedFont:     true
@@ -83,6 +84,7 @@ XTerm*multiClickTime:      250
 XTerm*multiScroll:         true
 XTerm*omitTranslation:     popup-menu
 XTerm*renderFont:          true
+XTerm*reverseVideo:        true
 XTerm*rightScrollbar:      false
 XTerm*saveLines:           2000
 XTerm*scaleHeight:         1.04
