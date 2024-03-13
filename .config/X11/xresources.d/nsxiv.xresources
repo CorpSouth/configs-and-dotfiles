@@ -2,4 +2,7 @@
 !!Neo-Simple X11 Image Viewer!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+Nsxiv.bar.background: white
+Nsxiv.bar.foreground: black
 Nsxiv.bar.font: Terminess Nerd Font Propo-12
+Nsxiv.window.background: black
