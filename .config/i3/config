@@ -80,19 +80,20 @@ set $warning       #F27835
 # for default applications and utilities.
 
 set $autohide_cursor     --no-startup-id xbanish -t 5
-set $calculator          i3-sensible-terminal -name scratchpad -e bc
+set $bluetooth_manager   --no-startup-id i3-sensible-terminal -name bluetoothctl -e bluetoothctl
+set $calculator          --no-startup-id i3-sensible-terminal -name scratchpad -e bc
 set $compositor          --no-startup-id picom
-set $connection_manager  i3-sensible-terminal -name connmanctl -e connmanctl
-set $email               --no-startup-id betterbird
+set $email               --no-startup-id gtk-launch betterbird
 set $file_manager        --no-startup-id i3-sensible-terminal -name nnn -e nnn
 set $file_picker         filechooser.sh
 set $i3_nagbar_exit      "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-set $i3_nagbar_reboot    "i3-nagbar -t warning -m 'You pressed the reboot shortcut. Do you really want to reboot your system?' -B 'Yes, reboot my system' 'loginctl reboot'"
-set $i3_nagbar_shutdown  "i3-nagbar -t warning -m 'You pressed the shutdown shortcut. Do you really want to shutdown your system?' -B 'Yes, shutdown my system' 'loginctl poweroff'"
-set $i3_nagbar_suspend   "i3-nagbar -t warning -m 'You pressed the suspend shortcut. Do you really want to suspend your system?' -B 'Yes, suspend my system' 'loginctl suspend -i'"
+set $i3_nagbar_reboot    "i3-nagbar -t warning -m 'You pressed the reboot shortcut. Do you really want to reboot your system?' -B 'Yes, reboot my system' 'systemctl reboot'"
+set $i3_nagbar_shutdown  "i3-nagbar -t warning -m 'You pressed the shutdown shortcut. Do you really want to shutdown your system?' -B 'Yes, shutdown my system' 'systemctl poweroff'"
+set $i3_nagbar_suspend   "i3-nagbar -t warning -m 'You pressed the suspend shortcut. Do you really want to suspend your system?' -B 'Yes, suspend my system' 'systemctl suspend -i'"
 set $image_viewer        --no-startup-id nsxiv -r $HOME/Pictures
 set $media_player        --no-startup-id mpv --player-operation-mode=pseudo-gui
-set $menu                --no-startup-id dmenu_run -l 10
+set $menu                --no-startup-id dmenu_run
+set $network_manager     --no-startup-id i3-sensible-terminal -name nmtui -e nmtui
 set $notification_daemon --no-startup-id dunst
 set $office_suite        --no-startup-id onlyoffice-desktopeditors
 set $player_next         --no-startup-id playerctl next
@@ -101,18 +102,18 @@ set $player_prev         --no-startup-id playerctl prev
 set $player_stop         --no-startup-id playerctl stop
 set $polkit              --no-startup-id /usr/bin/mate-polkit
 set $scratchpad_terminal i3-sensible-terminal -name scratchpad
-set $screenlocker        --no-startup-id i3lock -c 000000
-set $screenlocking       --no-startup-id xautolock -time 15 -locker i3lock -c 000000
+set $screenlocker        --no-startup-id i3lock-dpms.sh
+set $screenlocking       --no-startup-id xset 600 & xss-lock --transfer-sleep-lock -- i3lock -c 000000 --nofork
 set $screenshot          --no-startup-id maim -u | tee $HOME/Pictures/Screenshots/$(date +%s).png | xclip -selection clipboard -t image/png
 set $screenshot_selected --no-startup-id maim -s -u | xclip -selection clipboard -t image/png
 set $set_resolution      --no-startup-id xrandr -s 1600x900
-set $terminal            i3-sensible-terminal
-set $top                 i3-sensible-terminal -name btop -e btop
-set $volume_controller   i3-sensible-terminal -name scratchpad -e pulsemixer
+set $terminal            --no-startup-id i3-sensible-terminal
+set $top                 --no-startup-id i3-sensible-terminal -name btop -e btop
+set $volume_controller   --no-startup-id i3-sensible-terminal -name scratchpad -e pulsemixer
 set $volume_lower        --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
 set $volume_mute         --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 set $volume_raise        --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
-set $wallpaper_setter    --no-startup-id hsetroot -tile $HOME/Pictures/Wallpapers/SiteOrigin/Mint-Y/Shattered_Bumpmap_0C75DE.png
+set $wallpaper_setter    --no-startup-id hsetroot -tile $HOME/Pictures/Wallpapers/SiteOrigin/Mint-Y/Shattered_Bumpmap_Blue.png
 set $web_browser         --no-startup-id librewolf
 set $youtube_player      --no-startup-id freetube
 
@@ -214,7 +215,7 @@ smart_gaps on
 
 # Place the title bar contents to the left (default), center, or right
 
-title_align center
+title_align left
 
 #------+3.0 AUTOSTART
 
@@ -319,7 +320,7 @@ exec $screenlocking
 
 # Set display resolution, usually if I am on a VM
 
-exec $set_resolution
+# exec $set_resolution
 
 #------+3.3 EXEC_ALWAYS
 
@@ -376,9 +377,13 @@ mode "󱆃" {
 
      bindsym $escape
 
+     # Bluetooth Manager
+
+     bindsym $mod+b exec $bluetooth_manager
+
      # Connection Manager
 
-     bindsym $mod+c exec $connection_manager
+     bindsym $mod+n exec $network_manager
 
      # Image Viewer
 
@@ -585,7 +590,7 @@ workspace_auto_back_and_forth yes
 # 4. Read the outputs and apply their variables
 
 # Wildcard such as "(?i)foo" or "^foo.*" work for very particular
-# occurances of window matching where it's hard to awkward and hard
+# occurances of window matching where it's awkward and difficult
 # to rule.
 
 # You can use "|" between entries within a single quote range to save
@@ -605,11 +610,17 @@ for_window [class="Nsxiv|Pavucontrol|XCalc|XClock"] floating enable, move positi
 
 # The "WM_NAME" specification, but aliased as a "title" for i3
 
+for_window [title="(?i)ArmCord Settings|ArmCord Setup"] floating enable, move position center
+
 #------+6.4 WINDOW_ROLE
 
 # "WM_ROLE", or utility purpose of a window, such as an "about" pane or introductory "splash"
 
 for_window [window_role="About|about"] floating enable, move position center
+
+# Fix the size of normally floating windows, such as the file chooser
+
+for_window [window_role="GtkFileChooserDialog"] move position center, resize set 70 ppt 70 ppt
 
 #------+6.5 SCRATCHPADS
 

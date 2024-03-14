@@ -33,7 +33,7 @@ UXTerm*multiClickTime:      250
 UXTerm*multiScroll:         true
 UXTerm*omitTranslation:     popup-menu
 UXTerm*renderFont:          true
-UXTerm*reverseVideo:        true
+!! UXTerm*reverseVideo:        true
 UXTerm*rightScrollbar:      false
 UXTerm*saveLines:           2000
 UXTerm*scaleHeight:         1.04
@@ -84,7 +84,7 @@ XTerm*multiClickTime:      250
 XTerm*multiScroll:         true
 XTerm*omitTranslation:     popup-menu
 XTerm*renderFont:          true
-XTerm*reverseVideo:        true
+!! XTerm*reverseVideo:        true
 XTerm*rightScrollbar:      false
 XTerm*saveLines:           2000
 XTerm*scaleHeight:         1.04

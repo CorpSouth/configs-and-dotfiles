@@ -1,14 +1,12 @@
 #!/bin/sh
 
-# Pipewire
+# Dbus Daemon
 
-/usr/bin/pipewire &
-/usr/bin/pipewire-pulse &
-/usr/bin/wireplumber &
+eval "$(dbus-launch --sh-syntax --exit-with-session)"
 
 # Xresources
 xrdb -merge "$XRESOURCES" &
 
 # Start session
 
-exec dbus-launch --exit-with-session --sh-syntax i3
+exec i3
