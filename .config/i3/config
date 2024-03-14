@@ -143,9 +143,7 @@ set $escape Escape mode "default"
 # label, number, or symbolic (icon) basis. Using non-number 
 # workspace identifiers requires a set number e.g; "1:foo".
 
-# NOTE: If your preferred name or symbol doesn't appear on any of the default
-# workspaces on startup, and you switch workspaces using keybinding modes,
-# that is why.
+# NOTE: My workflow somewhat "breaks" this...
 
 set $ws1 "1:󰖟"
 set $ws2 "2:󰭻"
@@ -301,9 +299,9 @@ exec $autohide_cursor
 
 exec $compositor
 
-# Due to my keybinding layout, I have to start this workspace specifically
+# Due to my keybinding scheme, I have to start this workspace specifically
 
-exec --no-startup-id i3-msg workspace $ws1
+exec --no-startup-id i3-msg workspace --no-auto-back-and-forth $ws1
 
 # Notification daemon
 
@@ -671,5 +669,5 @@ assign [instance="bluetoothctl|btop|htop|nmtui|nnn|obexctl"] $ws5
 # and require the use of "for_window" followed by
 # "move container to workspace $WORKSPACE_NUMBER"
 
-for_window [class="Timeshift-gtk"]     move container to workspace $ws5
-for_window [instance="DesktopEditors"] move container to workspace $ws4
+for_window [class="Timeshift-gtk"]     move --no-auto-back-and-forth container to workspace $ws5
+for_window [instance="DesktopEditors"] move --no-auto-back-and-forth container to workspace $ws4
