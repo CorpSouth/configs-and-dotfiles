@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 /* Default settings; can be overriden by command line. */
 
-static int topbar = 1;                      /* -b  option; if 0, dmenu appears at bottom */
+static int topbar = 0;                      /* -b  option; if 0, dmenu appears at bottom */
 #if ALPHA_PATCH
 static int opacity = 1;                     /* -o  option; if 0, then alpha is disabled */
 #endif // ALPHA_PATCH
@@ -18,7 +18,7 @@ static int incremental = 0;                 /* -r  option; if 1, outputs text ea
 static int instant = 0;                     /* -n  option; if 1, selects matching item without the need to press enter */
 #endif // INSTANT_PATCH
 #if CENTER_PATCH
-static int center = 1;                      /* -c  option; if 0, dmenu won't be centered on the screen */
+static int center = 0;                      /* -c  option; if 0, dmenu won't be centered on the screen */
 static int min_width = 500;                 /* minimum width when centered */
 #endif // CENTER_PATCH
 #if BARPADDING_PATCH
@@ -91,8 +91,8 @@ const
 #endif // XRESOURCES_PATCH
 char *colors[][2] = {
 	/*               fg         bg       */
-	[SchemeNorm] = { "#DADADA", "#404040" },
-	[SchemeSel]  = { "#FFFFFF", "#1F9EDE" },
+	[SchemeNorm] = { "#DADADA", "#383838" },
+	[SchemeSel]  = { "#FFFFFF", "#0C75DE" },
 	[SchemeOut]  = { "#DADADA", "#292929" },
 	#if BORDER_PATCH
 	[SchemeBorder] = { "#DADADA", "#212121" },
@@ -142,7 +142,7 @@ static const char worddelimiters[] = " ";
 
 #if BORDER_PATCH
 /* Size of the window border */
-static unsigned int border_width = 1;
+static unsigned int border_width = 2;
 #endif // BORDER_PATCH
 
 #if PREFIXCOMPLETION_PATCH
