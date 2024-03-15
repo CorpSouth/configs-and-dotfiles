@@ -1,0 +1,129 @@
+#!/usr/bin/env bash
+
+##
+## Display list of windows managed by the window manager (using dmenu)
+## and switch to the selected window.
+##
+## When launched with '-c' option, display only windows on current desktop.
+##
+## Author: Martin Kourim <misc.kourim@gmail.com>
+## License: Public Domain
+##
+## dependencies: wmctrl, dmenu, sed, tr, tac
+
+
+# blacklisted apps
+blacklist="
+*x-caja-desktop*
+Mate-panel*
+"
+
+debug=false
+
+[ -e "$HOME/.config/winselect" ] && . $HOME/.config/winselect
+
+
+type wmctrl >/dev/null 2>&1 || { echo "wmctrl command missing"; exit 1; }
+type dmenu  >/dev/null 2>&1 || { echo "dmenu command missing"; exit 1; }
+
+[ "$debug" = "true" ] && print_debug=echo || print_debug=true
+cur_desktop=-2
+
+
+case "$1" in
+  '-c'|'c')
+    # get current desktop id
+    cur_desktop="$(wmctrl -d | while read num curr dis; do [ "$curr" = "*" ] && { echo "$num"; break; }; done)"
+    shift
+    ;;
+  '-help'|'--help'|'help')
+    echo "usage: ${0##*/} [-c] [--help] DMENU_OPTIONS" >&2
+    exit 0
+    ;;
+esac
+
+
+# array of window ids
+winid=()
+
+# array of window titles
+wintit=()
+
+
+# populate arrays
+# $1 - window index
+# $2 - desktop number
+# $3 - app name and window title
+# $4 - window id
+save_win() {
+  # print only windows on current desktop or sticky windows when "-c" was specified
+  if [ "$cur_desktop" != "-2" ]; then
+    [ "$2" = "$cur_desktop" -o "$2" = '-1' ] || return 1
+  fi
+
+  check_blacklist "$3" || return 1
+
+  # title and index
+  wintit[${1}]="[${3}(${1})]"
+  # window id
+  winid[${1}]="$4"
+
+  return 0
+}
+
+
+# check if app is on blacklist
+# $1 - app name and window title
+check_blacklist() {
+  for bapp in $blacklist; do
+    case "$1" in
+      $bapp) return 1 ;;
+    esac
+    $print_debug "not matching blacklist: $1" >&2
+  done
+
+  return 0
+}
+
+
+# use wmctrl to print out list of running clients and store relevant info
+winlist() {
+  # titles of all windows
+  i=1
+  while read id dnum class mach title; do
+    if [ "${#title}" -le 30 ]; then
+      local tit="$title"
+    else
+      # shorten window title
+      local tit="$(echo "$title" | sed -n 's/^\(.\{14,27\}\).*$/\1.../p')"
+    fi
+    save_win "$i" "$dnum" "${class##*.} - ${tit}" "$id" && ((i++))
+  done < <(wmctrl -l -x | tac) # avoid subshell
+}
+
+
+# match window index returned by dmenu with actual window and switch to it
+winlist_match() {
+  # window index (from e.g. "[window title(2)]")
+  local index="${@##*(}"
+  index="${index%)]}"
+  [ -z "$index" ] && return 0
+  # use window id as unique window identifier
+  wmctrl -i -a "${winid[$index]}"
+}
+
+
+winlist
+
+title="$(
+  i=1
+  while [ "$i" -le "${#wintit[@]}" ]; do
+    echo "${wintit[$i]}"
+    ((i++))
+  done | tr '[:upper:]' '[:lower:]' | dmenu "$@"
+)"
+
+winlist_match "$title"
+
+
+# vim: set noai et sr ts=2 sw=2 sts=2:
