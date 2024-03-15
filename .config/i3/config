@@ -299,9 +299,9 @@ exec $autohide_cursor
 
 exec $compositor
 
-# Due to my keybinding scheme, I have to start this workspace specifically
+# Due to my keybinding scheme, I have to rectify the first workspace not appearing
 
-exec --no-startup-id i3-msg workspace --no-auto-back-and-forth $ws1
+exec --no-startup-id i3-msg 'rename workspace "1" to "1:󰖟"'
 
 # Notification daemon
 
