@@ -103,7 +103,7 @@ set $player_stop         --no-startup-id playerctl stop
 set $polkit              --no-startup-id /usr/bin/mate-polkit
 set $scratchpad_terminal i3-sensible-terminal -name scratchpad
 set $screenlocker        --no-startup-id i3lock-dpms.sh
-set $screenlocking       --no-startup-id xset 600 & xss-lock --transfer-sleep-lock -- i3lock -i "$HOME/Pictures/Wallpapers/SiteOrigin/Mint-Y/Shattered_Bumpmap_Blue" -n -t -u
+set $screenlocking       --no-startup-id xset 600 & xss-lock --transfer-sleep-lock -- i3lock -i "$HOME/Pictures/Wallpapers/SiteOrigin/Mint-Y/Shattered_Bumpmap_Blue.png" -n -t -u
 set $screenshot          --no-startup-id maim -u | tee $HOME/Pictures/Screenshots/$(date +%s).png | xclip -selection clipboard -t image/png
 set $screenshot_selected --no-startup-id maim -s -u | xclip -selection clipboard -t image/png
 set $set_resolution      --no-startup-id xrandr -s 1600x900
