@@ -501,6 +501,7 @@ mode "󱇛" {
 
      # Layouts
 
+     bindsym a layout all
      bindsym d layout default
      bindsym s layout stacking
      bindsym t layout tabbed
@@ -513,8 +514,12 @@ mode "󱇛" {
      # Split horizontal or vertical tiling
 
      bindsym h     splith
-     bindsym space split toggle
      bindsym v     splitv
+
+     # Split toggling
+
+     bindsym Mod1+space layout toggle split
+     bindsym space split toggle
 
      # Window centering
 
