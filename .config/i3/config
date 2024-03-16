@@ -162,7 +162,7 @@ set $ws6 "6:󰇅"
 client.focused          $dim_blue $blue        $bright_white $bright_blue $blue
 client.focused_inactive $dim_gray $bright_gray $white        $success     $dim_gray 
 client.unfocused        $dim_gray $gray        $dim_white    $success     $dim_gray
-client.urgent           $error    $warning     $black        $dim_gray    $warning
+client.urgent           $dim_gray $warning     $black        $dim_gray    $warning
 client.placeholder      $dim_gray $gray        $dim_white    $bright_gray $dim_gray
 client.background       $gray
 
