@@ -501,7 +501,7 @@ mode "󱇛" {
 
      # Layouts
 
-     bindsym a layout all
+     bindsym a layout toggle all
      bindsym d layout default
      bindsym s layout stacking
      bindsym t layout tabbed
