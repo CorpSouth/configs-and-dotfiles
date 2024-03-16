@@ -11,7 +11,9 @@
 #------+1.0 VARIABLES
 
 # Variables are configurations set with "set $foo",
-# the dollar sign being the prefix they use.
+# the dollar sign being the prefix they use. Useful
+# if you want to keep settings concise and free from
+# errors as you go
 
 #------+1.1 COLORS
 
@@ -69,15 +71,12 @@ set $dim_teal      #0C4A4f
 set $teal          #199CA8
 set $bright_teal   #29D0DF
 
-set $error         #FC4138
 set $success       #73D216
 set $warning       #F27835
 
 #------+1.2 DEFAULT APPLICATIONS & UTILITIES
 
-# Outside of using XDG settings, you can
-# achieve similar functions with variables
-# for default applications and utilities.
+# Various things I will use further down my config
 
 set $autohide_cursor     --no-startup-id xbanish -t 5
 set $bluetooth_manager   --no-startup-id i3-sensible-terminal -name bluetoothctl -e bluetoothctl
@@ -141,7 +140,7 @@ set $escape Escape mode "default"
 
 # You can set workspace (virtual desktops, etc.) names on a
 # label, number, or symbolic (icon) basis. Using non-number 
-# workspace identifiers requires a set number e.g; "1:foo".
+# workspace indicators requires a set number e.g; "1:foo".
 
 # NOTE: My workflow somewhat "breaks" this...
 
@@ -163,7 +162,7 @@ set $ws6 "6:󰇅"
 client.focused          $dim_blue $blue        $bright_white $bright_blue $blue
 client.focused_inactive $dim_gray $bright_gray $white        $success     $dim_gray 
 client.unfocused        $dim_gray $gray        $dim_white    $success     $dim_gray
-client.urgent           $error    $warning     $black        $error       $warning
+client.urgent           $error    $warning     $black        $dim_gray    $warning
 client.placeholder      $dim_gray $gray        $dim_white    $bright_gray $dim_gray
 client.background       $gray
 
@@ -243,13 +242,13 @@ bar {
 
       position bottom
 
-      # Obey Fitt's Law and disable padding with "0", though 
-      # you might want to adjust padding on a per-font basis 
-      # if icons look really off (and if that bothers you...)
+      # Obey Fitt's Law and disable padding with "0"
+      # Adjust if the icons are cut off, results vary
+      # depending on fonts used
 
       tray_padding 4
 
-      # Optional, but you can set a font for the bar individually.
+      # Optional, you can set a font for the bar individually.
 
       font pango:  Terminess Nerd Font Propo 12
 
@@ -276,7 +275,7 @@ bar {
                active_workspace   $dim_gray    $bright_gray $white
                inactive_workspace $gray        $gray        $dim_white
                urgent_workspace   $error       $warning     $black
-               binding_mode       $error       $warning     $black
+               binding_mode       $dim_gray    $warning     $black
 
                # Bar details
 
@@ -331,7 +330,7 @@ exec_always $wallpaper_setter
 
 # While i3 primarily emphasizes on keyboard worfklow,
 # you may prefer or require mouse-based window focusing
-# to take precedence.
+# to take precedence in some situations.
 
 #------+4.1 FOCUS FOLLOWS MOUSE
 
@@ -360,13 +359,14 @@ floating_modifier $mod
 # The config file authors preferred means of using i3.
 # Modes are isolated keybindings which override your
 # default keybinding configurations, preventing key conflicts.
-# VERY useful if you have a compact keyboard.
+# VERY useful if you have a compact keyboard, say, 61%.
+
 # WARNING: Potentially dangerous, set a keybinding for
 # the "default" mode!
 
 #------+<{{ MODE: COMMAND
 
-# Here are where I keep most of my application keyboard shortcuts
+# Here's where I keep most of my application keyboard shortcuts
 
 bindsym $mod+c mode "󱆃"
 mode "󱆃" {
@@ -471,8 +471,8 @@ mode "󰍂" {
 
 # Everything related to window management goes here
 
-bindsym $mod+w mode "󰖯"
-mode "󰖯" {
+bindsym $mod+w mode "󰖲"
+mode "󰖲" {
 
      # Exit keybinding mode
 
@@ -574,7 +574,8 @@ bindsym $mod+Menu exec $menu
 
 #------+5.3 TILING DRAG
 
-# You can configure how to initiate the tiling drag feature
+# You can configure how to initiate the tiling drag feature,
+# useful if you want to use the mouse but keep windows tiled
 
 tiling_drag modifier titlebar
 
@@ -582,14 +583,16 @@ tiling_drag modifier titlebar
 
 # When pressing a shortcut to change workspaces,
 # the latest input remembers the last workspace
-# switched to, allowing you to toggle switch
+# switched to, allowing you to toggle back and forth
 
 workspace_auto_back_and_forth yes
 
 #------+6.0 FLOATING RULES
 
 # Some windows either do not tile well or do not need to tile at all,
-# so we'll add them to the floating layer.
+# so they'll be set to floating. It may help to resize certain windows
+# which already float without a specified ruleset, such as various gtk
+# dialog windows
 
 # 1. Open a terminal next to the window you want to set rules for
 # 2. Run the "xprop" command, you will be given a crosshair cursor
@@ -633,6 +636,7 @@ for_window [window_role="GtkFileChooserDialog"] move position center, resize set
 
 # Scratchpads are floating windows that can be hidden in the background
 # Useful for terminals or other programs that get in the way while floating
+
 # Set a general rule for the terminal to abide by for scratchpads
 
 for_window [instance="scratchpad"] move scratchpad, resize set 70 ppt 70 ppt, scratchpad show, move position center, sticky enable
@@ -641,9 +645,9 @@ for_window [instance="scratchpad"] move scratchpad, resize set 70 ppt 70 ppt, sc
 
 # i3 provides three manually-operated layouts
 
-# Default:  Standard, side-to-side or top-to-bottom tiling
-# Stacking: Singular view, but with the title bars on top of one another
-# Tabbed:   Singular view, but with the title bars beside one another
+# Default:  Standard, horizontal or vertical tiling
+# Stacking: Singular view, but with the title bars vertically stacked
+# Tabbed:   Singular view, horizontally-lined title bars
 
 #------+7.1 DEFAULT WORKSPACE LAYOUT
 
@@ -677,6 +681,10 @@ assign [instance="bluetoothctl|btop|htop|nmtui|nnn|obexctl"] $ws5
 # or impossible to assign workspaces properly,
 # and require the use of "for_window" followed by
 # "move container to workspace $WORKSPACE_NUMBER"
+
+# the '--no-auto-back-and-forth' flag prevents the
+# container/window from being sent to the most previous
+# workspace
 
 for_window [class="Timeshift-gtk"]     move --no-auto-back-and-forth container to workspace $ws5
 for_window [instance="DesktopEditors"] move --no-auto-back-and-forth container to workspace $ws4
