@@ -113,7 +113,7 @@ set $volume_controller   --no-startup-id i3-sensible-terminal -name scratchpad -
 set $volume_lower        --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
 set $volume_mute         --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 set $volume_raise        --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
-set $wallpaper_setter    --no-startup-id hsetroot -tile $HOME/Pictures/Wallpapers/SiteOrigin/Mint-Y/Shattered_Bumpmap_Blue.png
+set $wallpaper_setter    --no-startup-id hsetroot -fill $HOME/Pictures/Wallpapers/Pexels/Francesco_Ungaro/Nature/Landscapes/pexels-francesco-ungaro-clouds-over-barren-mountains.jpg
 set $web_browser         --no-startup-id librewolf
 set $youtube_player      --no-startup-id freetube
 
@@ -501,9 +501,9 @@ mode "󱇛" {
 
      # Layouts
 
-     bindsym d      layout default
-     bindsym s      layout stacking
-     bindsym t      layout tabbed
+     bindsym d layout default
+     bindsym s layout stacking
+     bindsym t layout tabbed
 
      # Scratchpad management
 
@@ -512,9 +512,9 @@ mode "󱇛" {
 
      # Split horizontal or vertical tiling
 
-     bindsym h           splith
+     bindsym h     splith
      bindsym space split toggle
-     bindsym v           splitv
+     bindsym v     splitv
 
      # Window centering
 
