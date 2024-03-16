@@ -471,8 +471,8 @@ mode "󰍂" {
 
 # Everything related to window management goes here
 
-bindsym $mod+w mode "󱇛"
-mode "󱇛" {
+bindsym $mod+w mode "󰖯"
+mode "󰖯" {
 
      # Exit keybinding mode
 
