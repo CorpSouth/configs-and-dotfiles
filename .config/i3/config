@@ -273,9 +273,9 @@ bar {
 
                focused_workspace  $bright_blue $blue        $bright_white
                active_workspace   $dim_gray    $bright_gray $white
-               inactive_workspace $gray        $gray        $dim_white
-               urgent_workspace   $dim_gray    $warning     $black
-               binding_mode       $dim_gray    $warning     $black
+               inactive_workspace $gray        $gray       $dim_white
+               urgent_workspace   $dim_gray       $warning    $black
+               binding_mode       $dim_gray    $warning    $black
 
                # Bar details
 
@@ -668,6 +668,7 @@ assign [class="ArmCord|TelegramDesktop|WebCord"]        $ws2
 assign [class="FreeTube|mpv"]                           $ws3
 assign [class="qDiffusion"]                             $ws4
 assign [class="Nsxiv"]                                  $ws5
+assign [class="Remote-viewer|Virt-manager"]             $ws6
 
 #------+8.2 INSTANCE
 
