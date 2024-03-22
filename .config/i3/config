@@ -79,6 +79,7 @@ set $warning       #F27835
 # Various things I will use further down my config
 
 set $autohide_cursor     --no-startup-id xbanish -t 5
+set $automount           --no-startup-id udiskie
 set $bluetooth_manager   --no-startup-id i3-sensible-terminal -name bluetoothctl -e bluetoothctl
 set $calculator          --no-startup-id i3-sensible-terminal -name scratchpad -e bc
 set $compositor          --no-startup-id picom
@@ -107,6 +108,7 @@ set $screenshot          --no-startup-id maim -u | tee $HOME/Pictures/Screenshot
 set $screenshot_selected --no-startup-id maim -s -u | xclip -selection clipboard -t image/png
 set $set_resolution      --no-startup-id xrandr -s 1600x900
 set $terminal            --no-startup-id i3-sensible-terminal
+set $toggle_compositing  --no-startup-id toggle_picom.sh
 set $top                 --no-startup-id i3-sensible-terminal -name btop -e btop
 set $volume_controller   --no-startup-id i3-sensible-terminal -name scratchpad -e pulsemixer
 set $volume_lower        --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
@@ -114,6 +116,7 @@ set $volume_mute         --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ togg
 set $volume_raise        --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
 set $wallpaper_setter    --no-startup-id hsetroot -fill $HOME/Pictures/Wallpapers/Pexels/Francesco_Ungaro/Nature/Landscapes/pexels-francesco-ungaro-clouds-over-barren-mountains.jpg
 set $web_browser         --no-startup-id librewolf
+set $window_switcher     --no-startup-id winselect
 set $youtube_player      --no-startup-id freetube
 
 #------+1.3 MODIFIERS
@@ -294,6 +297,10 @@ bar {
 
 exec $autohide_cursor
 
+# Automatically mount drives
+
+exec $automount
+
 # Display Compositor
 
 exec $compositor
@@ -400,6 +407,10 @@ mode "󱆃" {
 
      bindsym $mod+Return exec $terminal
      bindsym Mod1+Return exec $scratchpad_terminal
+     
+     # Toggle Compositing
+
+     bindsym Control+c exec $toggle_compositing
 
      # Top
 
@@ -485,11 +496,6 @@ mode "󰖲" {
      bindsym $right focus right
      bindsym $up    focus up
 
-     # Dmenu script for selecting windows
-     # DEPENDS: wmctrl
-
-     bindsym Menu exec --no-startup-id winselect
-
      # Focus the next and previous window
 
      bindsym Tab       focus next 
@@ -571,6 +577,7 @@ mode "󰖲" {
 #------+5.3 RUN LAUNCHER
 
 bindsym $mod+Menu exec $menu
+bindsym Control+Menu exec $window_switcher
 
 #------+5.3 TILING DRAG
 
@@ -610,7 +617,7 @@ workspace_auto_back_and_forth yes
 
 # The second half of the "WM_CLASS" specification
 
-for_window [class="Nsxiv|Pavucontrol|XCalc|XClock"] floating enable, move position center
+for_window [class="Friends List|Nsxiv|Pavucontrol|^steam.*|XCalc|XClock"] floating enable, move position center
 
 #------+6.2 INSTANCE
 
@@ -665,7 +672,7 @@ workspace_layout tabbed
 
 assign [class="betterbird|LibreWolf|librewolf-default"] $ws1
 assign [class="ArmCord|TelegramDesktop|WebCord"]        $ws2
-assign [class="FreeTube|mpv"]                           $ws3
+assign [class="FreeTube|mpv|^steam.*"]                  $ws3
 assign [class="qDiffusion"]                             $ws4
 assign [class="Nsxiv"]                                  $ws5
 assign [class="Remote-viewer|Virt-manager"]             $ws6

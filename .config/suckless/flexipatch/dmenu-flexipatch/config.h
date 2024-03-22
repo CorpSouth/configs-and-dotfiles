@@ -92,7 +92,7 @@ const
 char *colors[][2] = {
 	/*               fg         bg       */
 	[SchemeNorm] = { "#DADADA", "#383838" },
-	[SchemeSel]  = { "#FFFFFF", "#0C75DE" },
+	[SchemeSel]  = { "#FFFFFF", "#525252" },
 	[SchemeOut]  = { "#DADADA", "#292929" },
 	#if BORDER_PATCH
 	[SchemeBorder] = { "#DADADA", "#212121" },
