@@ -80,13 +80,14 @@ set $warning       #F27835
 
 set $autohide_cursor     --no-startup-id xbanish -t 5
 set $automount           --no-startup-id udiskie
-set $bluetooth_manager   --no-startup-id i3-sensible-terminal -name bluetoothctl -e bluetoothctl
-set $calculator          --no-startup-id i3-sensible-terminal -name scratchpad -e bc
+set $bluetooth_exchanger --no-startup-id i3-sensible-terminal -title obexctl -name obexctl -e obexctl
+set $bluetooth_manager   --no-startup-id i3-sensible-terminal -title bluetoothctl -name bluetoothctl -e bluetoothctl
+set $calculator          --no-startup-id i3-sensible-terminal -title bc -name scratchpad -e bc
 set $compositor          --no-startup-id picom
-set $disk_utility        --no-startup-id i3-sensible-terminal -name ncdu -e ncdu
-set $editor              --no-startup-id i3-sensible-terminal -name neovim -e nvim
+set $disk_utility        --no-startup-id i3-sensible-terminal -title ncdu -name ncdu -e ncdu
+set $editor              --no-startup-id i3-sensible-terminal -title neovim -name neovim -e nvim
 set $email               --no-startup-id gtk-launch betterbird
-set $file_manager        --no-startup-id i3-sensible-terminal -name nnn -e nnn
+set $file_manager        --no-startup-id i3-sensible-terminal -title nnn -name nnn -e nnn
 set $file_picker         filechooser.sh
 set $i3_nagbar_exit      "i3-nagbar -f 'Terminess Nerd Font Propo 12' -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 set $i3_nagbar_reboot    "i3-nagbar -f 'Terminess Nerd Font Propo 12' -t warning -m 'You pressed the reboot shortcut. Do you really want to reboot your system?' -B 'Yes, reboot my system' 'systemctl reboot'"
@@ -95,10 +96,11 @@ set $i3_nagbar_suspend   "i3-nagbar -f 'Terminess Nerd Font Propo 12' -t warning
 set $image_viewer        --no-startup-id nsxiv -r $HOME/Pictures
 set $media_player        --no-startup-id mpv --player-operation-mode=pseudo-gui
 set $menu                --no-startup-id dmenu_run
-set $network_manager     --no-startup-id i3-sensible-terminal -name nmtui -e nmtui
+set $network_manager     --no-startup-id i3-sensible-terminal -title nmtui -name nmtui -e nmtui
 set $notification_daemon --no-startup-id dunst
+set $obexd               --no-startup-id /usr/libexec/bluetooth/obexd
 set $office_suite        --no-startup-id onlyoffice-desktopeditors
-set $organizer           --no-startup-id i3-sensible-terminal -name calcurse -e calcurse
+set $organizer           --no-startup-id i3-sensible-terminal -title calcurse -name calcurse -e calcurse
 set $player_next         --no-startup-id playerctl next
 set $player_play_pause   --no-startup-id playerctl play-pause
 set $player_prev         --no-startup-id playerctl prev
@@ -112,8 +114,8 @@ set $screenshot_selected --no-startup-id maim -s -u | xclip -selection clipboard
 set $set_resolution      --no-startup-id xrandr -s 1600x900
 set $terminal            --no-startup-id i3-sensible-terminal
 set $toggle_compositing  --no-startup-id toggle_compositing.sh
-set $top                 --no-startup-id i3-sensible-terminal -name btop -e btop
-set $volume_controller   --no-startup-id i3-sensible-terminal -name scratchpad -e pulsemixer
+set $top                 --no-startup-id i3-sensible-terminal -title btop -name btop -e btop
+set $volume_controller   --no-startup-id i3-sensible-terminal -title pulsemixer -name scratchpad -e pulsemixer
 set $volume_lower        --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
 set $volume_mute         --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 set $volume_raise        --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
@@ -304,6 +306,10 @@ exec $autohide_cursor
 
 exec $automount
 
+# Bluetooth OBEX Daemon
+
+exec $obexd
+
 # Display Compositor
 
 exec $compositor
@@ -384,6 +390,10 @@ mode "󱆃" {
      # Exit keybinding mode
 
      bindsym $escape
+
+     # Bluetooth File Exchanger
+
+     bindsym Mod1+b exec $bluetooth_exchanger
 
      # Bluetooth Manager
 
