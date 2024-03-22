@@ -6,9 +6,7 @@
     pkill $compositor
     exit
     fi
-
-
-
+    
     if ! pgrep -x $compositor
     then
     $compositor &>/dev/null &
