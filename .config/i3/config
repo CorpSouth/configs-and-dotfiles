@@ -89,10 +89,10 @@ set $editor              --no-startup-id i3-sensible-terminal -title neovim -nam
 set $email               --no-startup-id gtk-launch betterbird
 set $file_manager        --no-startup-id i3-sensible-terminal -title nnn -name nnn -e nnn
 set $file_picker         filechooser.sh
-set $i3_nagbar_exit      "i3-nagbar -f 'Terminess Nerd Font Propo 12' -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-set $i3_nagbar_reboot    "i3-nagbar -f 'Terminess Nerd Font Propo 12' -t warning -m 'You pressed the reboot shortcut. Do you really want to reboot your system?' -B 'Yes, reboot my system' 'systemctl reboot'"
-set $i3_nagbar_shutdown  "i3-nagbar -f 'Terminess Nerd Font Propo 12' -t warning -m 'You pressed the shutdown shortcut. Do you really want to shutdown your system?' -B 'Yes, shutdown my system' 'systemctl poweroff'"
-set $i3_nagbar_suspend   "i3-nagbar -f 'Terminess Nerd Font Propo 12' -t warning -m 'You pressed the suspend shortcut. Do you really want to suspend your system?' -B 'Yes, suspend my system' 'systemctl suspend -i'"
+set $i3_nagbar_exit      "i3-nagbar -f 'pango:Terminess Nerd Font Propo Bold 12' -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+set $i3_nagbar_reboot    "i3-nagbar -f 'pango:Terminess Nerd Font Propo Bold 12' -t warning -m 'You pressed the reboot shortcut. Do you really want to reboot your system?' -B 'Yes, reboot my system' 'systemctl reboot'"
+set $i3_nagbar_shutdown  "i3-nagbar -f 'pango:Terminess Nerd Font Propo Bold 12' -t warning -m 'You pressed the shutdown shortcut. Do you really want to shutdown your system?' -B 'Yes, shutdown my system' 'systemctl poweroff'"
+set $i3_nagbar_suspend   "i3-nagbar -f 'pango:Terminess Nerd Font Propo Bold 12' -t warning -m 'You pressed the suspend shortcut. Do you really want to suspend your system?' -B 'Yes, suspend my system' 'systemctl suspend -i'"
 set $image_viewer        --no-startup-id nsxiv -r $HOME/Pictures
 set $media_player        --no-startup-id mpv --player-operation-mode=pseudo-gui
 set $menu                --no-startup-id dmenu_run
