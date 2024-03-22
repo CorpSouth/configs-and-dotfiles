@@ -83,19 +83,22 @@ set $automount           --no-startup-id udiskie
 set $bluetooth_manager   --no-startup-id i3-sensible-terminal -name bluetoothctl -e bluetoothctl
 set $calculator          --no-startup-id i3-sensible-terminal -name scratchpad -e bc
 set $compositor          --no-startup-id picom
+set $disk_utility        --no-startup-id i3-sensible-terminal -name ncdu -e ncdu
+set $editor              --no-startup-id i3-sensible-terminal -name neovim -e nvim
 set $email               --no-startup-id gtk-launch betterbird
 set $file_manager        --no-startup-id i3-sensible-terminal -name nnn -e nnn
 set $file_picker         filechooser.sh
-set $i3_nagbar_exit      "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-set $i3_nagbar_reboot    "i3-nagbar -t warning -m 'You pressed the reboot shortcut. Do you really want to reboot your system?' -B 'Yes, reboot my system' 'systemctl reboot'"
-set $i3_nagbar_shutdown  "i3-nagbar -t warning -m 'You pressed the shutdown shortcut. Do you really want to shutdown your system?' -B 'Yes, shutdown my system' 'systemctl poweroff'"
-set $i3_nagbar_suspend   "i3-nagbar -t warning -m 'You pressed the suspend shortcut. Do you really want to suspend your system?' -B 'Yes, suspend my system' 'systemctl suspend -i'"
+set $i3_nagbar_exit      "i3-nagbar -f 'Terminess Nerd Font Propo 12' -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+set $i3_nagbar_reboot    "i3-nagbar -f 'Terminess Nerd Font Propo 12' -t warning -m 'You pressed the reboot shortcut. Do you really want to reboot your system?' -B 'Yes, reboot my system' 'systemctl reboot'"
+set $i3_nagbar_shutdown  "i3-nagbar -f 'Terminess Nerd Font Propo 12' -t warning -m 'You pressed the shutdown shortcut. Do you really want to shutdown your system?' -B 'Yes, shutdown my system' 'systemctl poweroff'"
+set $i3_nagbar_suspend   "i3-nagbar -f 'Terminess Nerd Font Propo 12' -t warning -m 'You pressed the suspend shortcut. Do you really want to suspend your system?' -B 'Yes, suspend my system' 'systemctl suspend -i'"
 set $image_viewer        --no-startup-id nsxiv -r $HOME/Pictures
 set $media_player        --no-startup-id mpv --player-operation-mode=pseudo-gui
 set $menu                --no-startup-id dmenu_run
 set $network_manager     --no-startup-id i3-sensible-terminal -name nmtui -e nmtui
 set $notification_daemon --no-startup-id dunst
 set $office_suite        --no-startup-id onlyoffice-desktopeditors
+set $organizer           --no-startup-id i3-sensible-terminal -name calcurse -e calcurse
 set $player_next         --no-startup-id playerctl next
 set $player_play_pause   --no-startup-id playerctl play-pause
 set $player_prev         --no-startup-id playerctl prev
@@ -108,7 +111,7 @@ set $screenshot          --no-startup-id maim -u | tee $HOME/Pictures/Screenshot
 set $screenshot_selected --no-startup-id maim -s -u | xclip -selection clipboard -t image/png
 set $set_resolution      --no-startup-id xrandr -s 1600x900
 set $terminal            --no-startup-id i3-sensible-terminal
-set $toggle_compositing  --no-startup-id toggle_picom.sh
+set $toggle_compositing  --no-startup-id toggle_compositing.sh
 set $top                 --no-startup-id i3-sensible-terminal -name btop -e btop
 set $volume_controller   --no-startup-id i3-sensible-terminal -name scratchpad -e pulsemixer
 set $volume_lower        --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
@@ -390,6 +393,10 @@ mode "󱆃" {
 
      bindsym $mod+n exec $network_manager
 
+     # Disk Utility
+
+     bindsym Control+d exec $disk_utility
+
      # Image Viewer
 
      bindsym $mod+i exec $image_viewer
@@ -397,6 +404,10 @@ mode "󱆃" {
      # Office Suite
 
      bindsym $mod+o exec $office_suite
+
+     # Organizer
+
+     bindsym Mod1+o exec $organizer
 
      # Screenshot
 
@@ -407,10 +418,14 @@ mode "󱆃" {
 
      bindsym $mod+Return exec $terminal
      bindsym Mod1+Return exec $scratchpad_terminal
+
+     # Text Editor
+
+     bindsym $mod+e exec $editor
      
      # Toggle Compositing
 
-     bindsym Control+c exec $toggle_compositing
+     bindsym Control+Mod1+c exec $toggle_compositing
 
      # Top
 
@@ -675,11 +690,12 @@ assign [class="ArmCord|TelegramDesktop|WebCord"]        $ws2
 assign [class="FreeTube|mpv|^steam.*"]                  $ws3
 assign [class="qDiffusion"]                             $ws4
 assign [class="Nsxiv"]                                  $ws5
-assign [class="Remote-viewer|Virt-manager"]             $ws6
+assign [class="Remote-viewer|Virt-manager|Virt-viewer"] $ws6
 
 #------+8.2 INSTANCE
 
-assign [instance="bluetoothctl|btop|htop|nmtui|nnn|obexctl"] $ws5
+assign [instance="calcurse|neovim"]                               $ws4
+assign [instance="bluetoothctl|btop|htop|ncdu|nmtui|nnn|obexctl"] $ws5
 
 #------+8.3 TITLE
 #------+8.4 WINDOW_ROLE
