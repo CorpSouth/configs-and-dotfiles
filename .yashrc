@@ -61,7 +61,11 @@ extract ()
 # System Fetch
 if [ -x "/usr/bin/fastfetch" ]; then
 	fastfetch
-   else
+  elif [ -x "/usr/bin/neofetch" ]; then
+        neofetch
+  elif [ -x "/usr/bin/pfetch" ]; then
+        PF_INFO="ascii title de editor host kernel os pkgs shell uptime wm palette" pfetch
+  else
 	uname -a
 fi;
 

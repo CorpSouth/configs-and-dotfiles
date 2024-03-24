@@ -1,3 +1,15 @@
+# Default Applications
+
+if [ -x "/usr/bin/nvim" ]; then
+    export EDITOR="nvim"
+fi;
+
+# manpager
+
+if [ -x "/usr/bin/nvim" ]; then
+    export MANPAGER='nvim +Man!'
+fi;
+
 # PATH
 
 if [ -d "$HOME/.local/bin" ]; then
