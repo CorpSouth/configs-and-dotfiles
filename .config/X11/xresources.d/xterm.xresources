@@ -22,8 +22,8 @@ UXTerm*decTerminalID:       vt382
 UXTerm*eightBitControl:     false
 UXTerm*eightBitInput:       false
 UXTerm*eightBitOutput:      false
-UXTerm*faceName:            Terminess Nerd Font Propo
-UXTerm*faceSize:            12
+UXTerm*faceName:            UbuntuMono Nerd Font Propo
+UXTerm*faceSize:            10
 UXTerm*forceBoxChars:       true
 UXTerm*forcePackedFont:     true
 UXTerm*fullscreen:          never
@@ -73,8 +73,8 @@ XTerm*decTerminalID:       vt382
 XTerm*eightBitControl:     false
 XTerm*eightBitInput:       false
 XTerm*eightBitOutput:      false
-XTerm*faceName:            Terminess Nerd Font Propo
-XTerm*faceSize:            12
+XTerm*faceName:            UbuntuMono Nerd Font Propo
+XTerm*faceSize:            10
 XTerm*forceBoxChars:       true
 XTerm*forcePackedFont:     true
 XTerm*fullscreen:          never
