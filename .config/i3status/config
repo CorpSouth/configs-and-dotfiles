@@ -18,12 +18,12 @@ order += "volume master"
 order += "tztime local"
 
 ethernet _first_ {
-    format_up = "󰶣 %speed"
-    format_down = "󰶡 DOWN"
+    format_up = "󰈀 %speed"
+    format_down = "󰈀 DOWN"
 }
 
 wireless _first_ {
-    format_up = "󰖩%quality (%bitrate)"
+    format_up = "󰖩 %bitrate"
     format_down = "󰖪 DOWN"
 }
 
@@ -49,13 +49,13 @@ memory {
 }
 
 volume master {
-  format = "󱄠 %volume"
-  format_muted = "󰸈 MUTE"
+  format = "󱄠 %devicename:%volume"
+  format_muted = "󰸈 %devicename:MUTED"
   device = "default"
   mixer = "Master"
   mixer_idx = 0
 }
 
 tztime local {
-  format = "󰥔 %c"
+  format = "󰥔 %x %X"
 }

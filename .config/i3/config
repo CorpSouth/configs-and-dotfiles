@@ -89,10 +89,10 @@ set $editor              --no-startup-id i3-sensible-terminal -title neovim -nam
 set $email               --no-startup-id gtk-launch betterbird
 set $file_manager        --no-startup-id i3-sensible-terminal -title mc -name mc -e mc
 set $file_picker         filechooser.sh
-set $i3_nagbar_exit      "i3-nagbar -f 'pango:Terminess Nerd Font Propo Bold 12' -t warning -m ' Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-set $i3_nagbar_reboot    "i3-nagbar -f 'pango:Terminess Nerd Font Propo Bold 12' -t warning -m ' Do you really want to reboot your system?' -B 'Yes, reboot my system' 'systemctl reboot'"
-set $i3_nagbar_shutdown  "i3-nagbar -f 'pango:Terminess Nerd Font Propo Bold 12' -t warning -m ' Do you really want to shutdown your system?' -B 'Yes, shutdown my system' 'systemctl poweroff'"
-set $i3_nagbar_suspend   "i3-nagbar -f 'pango:Terminess Nerd Font Propo Bold 12' -t warning -m ' Do you really want to suspend your system?' -B 'Yes, suspend my system' 'systemctl suspend -i'"
+set $i3_nagbar_exit      "i3-nagbar -f 'pango:UbuntuMono Nerd Font Propo Bold 10' -t warning -m ' Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+set $i3_nagbar_reboot    "i3-nagbar -f 'pango:UbuntuMono Nerd Font Propo Bold 10' -t warning -m ' Do you really want to reboot your system?' -B 'Yes, reboot my system' 'systemctl reboot'"
+set $i3_nagbar_shutdown  "i3-nagbar -f 'pango:UbuntuMono Nerd Font Propo Bold 10' -t warning -m ' Do you really want to shutdown your system?' -B 'Yes, shutdown my system' 'systemctl poweroff'"
+set $i3_nagbar_suspend   "i3-nagbar -f 'pango:UbuntuMono Nerd Font Propo Bold 10' -t warning -m ' Do you really want to suspend your system?' -B 'Yes, suspend my system' 'systemctl suspend -i'"
 set $image_viewer        --no-startup-id nsxiv -r $HOME/Pictures
 set $media_player        --no-startup-id mpv --player-operation-mode=pseudo-gui
 set $menu                --no-startup-id dmenu_run
@@ -198,7 +198,7 @@ smart_borders on
 # Excluding font size will fallback to default
 # font sizing according to DPI.
 
-font pango: Terminess Nerd Font Propo Bold 12
+font pango: Iosevka SS12 Extended, Symbols Nerd Font Mono Bold 10
 
 # You can also set a secondary font, separated by a comma
 
@@ -220,7 +220,7 @@ smart_gaps on
 
 # Place the title bar contents to the left (default), center, or right
 
-title_align left
+title_align center
 
 #------+3.0 AUTOSTART
 
@@ -254,15 +254,15 @@ bar {
       # Adjust if the icons are cut off, results vary
       # depending on fonts used
 
-      tray_padding 4
+      tray_padding 2
 
       # Optional, you can set a font for the bar individually.
 
-      font pango:  Terminess Nerd Font Propo 12
+      font pango:  Iosevka SS12 Extended, Symbols Nerd Font Mono 10
 
       # Separator can use a standard character or symbol.
 
-      separator_symbol "|"
+      separator_symbol "┃"
 
       # Show or hide workspace buttons, useful if you want to display
       # a statusline-only bar containing additional information.
@@ -272,7 +272,7 @@ bar {
       # Strip workspace numbers, if you prefer to use only the label
       # or symbol instead
 
-      strip_workspace_numbers yes
+      strip_workspace_numbers no
 
       colors {
                # Colors are applied using the variables at the start of this file
@@ -393,19 +393,19 @@ mode "󱆃" {
 
      # Bluetooth File Exchanger
 
-     bindsym Mod1+b exec $bluetooth_exchanger
+     bindsym Mod1+Control+b exec $bluetooth_exchanger
 
      # Bluetooth Manager
 
-     bindsym $mod+b exec $bluetooth_manager
+     bindsym $mod+Control+b exec $bluetooth_manager
 
      # Connection Manager
 
-     bindsym $mod+n exec $network_manager
+     bindsym $mod+Control+n exec $network_manager
 
      # Disk Utility
 
-     bindsym Control+d exec $disk_utility
+     bindsym $mod+Control+d exec $disk_utility
 
      # Image Viewer
 
@@ -417,7 +417,7 @@ mode "󱆃" {
 
      # Organizer
 
-     bindsym Mod1+o exec $organizer
+     bindsym $Mod+Mod1+o exec $organizer
 
      # Screenshot
 
@@ -443,7 +443,7 @@ mode "󱆃" {
 
      # Volume Mixer
 
-     bindsym $mod+v exec $volume_controller
+     bindsym $mod+Control+v exec $volume_controller
 
      # XF86 Common
 
