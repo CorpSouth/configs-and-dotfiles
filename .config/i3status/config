@@ -10,7 +10,7 @@ general {
 
 order += "ethernet _first_"
 order += "wireless _first_"
-order += "cpu_temperature 0"
+order += "cpu_temperature all"
 order += "load"
 order += "disk /"
 order += "memory"
@@ -27,7 +27,7 @@ wireless _first_ {
     format_down = "󰖪 DOWN"
 }
 
-cpu_temperature 0 {
+cpu_temperature all {
 	format = "󰔐 %degrees°C"
 }
 
@@ -49,8 +49,8 @@ memory {
 }
 
 volume master {
-  format = "󱄠 %devicename:%volume"
-  format_muted = "󰸈 %devicename:MUTED"
+  format = "󱄠 %volume"
+  format_muted = "󰸈 MUTED"
   device = "default"
   mixer = "Master"
   mixer_idx = 0

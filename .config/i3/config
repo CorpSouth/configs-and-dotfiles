@@ -92,7 +92,7 @@ set $file_picker         filechooser.sh
 set $i3_nagbar_exit      "i3-nagbar -f 'pango:UbuntuMono Nerd Font Propo Bold 10' -t warning -m ' Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 set $i3_nagbar_reboot    "i3-nagbar -f 'pango:UbuntuMono Nerd Font Propo Bold 10' -t warning -m ' Do you really want to reboot your system?' -B 'Yes, reboot my system' 'systemctl reboot'"
 set $i3_nagbar_shutdown  "i3-nagbar -f 'pango:UbuntuMono Nerd Font Propo Bold 10' -t warning -m ' Do you really want to shutdown your system?' -B 'Yes, shutdown my system' 'systemctl poweroff'"
-set $i3_nagbar_suspend   "i3-nagbar -f 'pango:UbuntuMono Nerd Font Propo Bold 10' -t warning -m ' Do you really want to suspend your system?' -B 'Yes, suspend my system' 'systemctl suspend -i'"
+set $i3_nagbar_suspend   "i3-nagbar -f 'pango:UbuntuMono Nerd Font Propo Bold 10' -t warning -m ' Do you really want to suspend your system?' -B 'Yes, suspend my system' 'i3-msg mode default | systemctl suspend -i'"
 set $image_viewer        --no-startup-id nsxiv -r $HOME/Pictures
 set $media_player        --no-startup-id mpv --player-operation-mode=pseudo-gui
 set $menu                --no-startup-id dmenu_run
@@ -198,7 +198,7 @@ smart_borders on
 # Excluding font size will fallback to default
 # font sizing according to DPI.
 
-font pango: Iosevka SS12 Extended, Symbols Nerd Font Mono Bold 10
+font pango: Iosevka SS12 Extended, Symbols Nerd Font Mono Bold 12
 
 # You can also set a secondary font, separated by a comma
 
@@ -254,11 +254,11 @@ bar {
       # Adjust if the icons are cut off, results vary
       # depending on fonts used
 
-      tray_padding 2
+      tray_padding 0
 
       # Optional, you can set a font for the bar individually.
 
-      font pango:  Iosevka SS12 Extended, Symbols Nerd Font Mono 10
+      font pango:  Iosevka SS12, Symbols Nerd Font Mono 12
 
       # Separator can use a standard character or symbol.
 
@@ -272,7 +272,7 @@ bar {
       # Strip workspace numbers, if you prefer to use only the label
       # or symbol instead
 
-      strip_workspace_numbers no
+      strip_workspace_numbers yes
 
       colors {
                # Colors are applied using the variables at the start of this file
@@ -658,7 +658,7 @@ for_window [title="(?i)ArmCord Settings|ArmCord Setup"] floating enable, move po
 
 # "WM_ROLE", or utility purpose of a window, such as an "about" pane or introductory "splash"
 
-for_window [window_role="About|about"] floating enable, move position center
+for_window [window_role="About|about|bubble|dialog|menu|Organizer|Preferences|task_dialog|toolbox"] floating enable, move position center
 
 # Fix the size of normally floating windows, such as the file chooser
 
@@ -695,12 +695,12 @@ workspace_layout tabbed
 
 #------+8.1 CLASS
 
-assign [class="betterbird|LibreWolf|librewolf-default"] $ws1
-assign [class="ArmCord|TelegramDesktop|WebCord"]        $ws2
-assign [class="FreeTube|mpv|^steam.*"]                  $ws3
-assign [class="qDiffusion"]                             $ws4
-assign [class="Nsxiv"]                                  $ws5
-assign [class="Remote-viewer|Virt-manager|Virt-viewer"] $ws6
+assign [class="betterbird|LibreWolf|librewolf-default|Tor Browser"] $ws1
+assign [class="ArmCord|TelegramDesktop|WebCord"]                    $ws2
+assign [class="FreeTube|mpv|^steam.*"]                              $ws3
+assign [class="qDiffusion"]                                         $ws4
+assign [class="Nsxiv"]                                              $ws5
+assign [class="Remote-viewer|Virt-manager|Virt-viewer"]             $ws6
 
 #------+8.2 INSTANCE
 

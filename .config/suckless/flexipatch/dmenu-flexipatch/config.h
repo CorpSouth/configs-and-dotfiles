@@ -38,7 +38,7 @@ static char *fonts[] =
 static const char *fonts[] =
 #endif // XRESOURCES_PATCH
 {
-	"Iosevka SS12, Symbols Nerd Font Mono:size=10"
+	"Iosevka SS12, Symbols Nerd Font Mono:size=12"
 };
 #endif // PANGO_PATCH
 #if MANAGED_PATCH
