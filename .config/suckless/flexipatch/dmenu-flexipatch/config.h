@@ -18,19 +18,19 @@ static int incremental = 0;                 /* -r  option; if 1, outputs text ea
 static int instant = 0;                     /* -n  option; if 1, selects matching item without the need to press enter */
 #endif // INSTANT_PATCH
 #if CENTER_PATCH
-static int center = 0;                      /* -c  option; if 0, dmenu won't be centered on the screen */
+static int center = 1;                      /* -c  option; if 0, dmenu won't be centered on the screen */
 static int min_width = 500;                 /* minimum width when centered */
 #endif // CENTER_PATCH
 #if BARPADDING_PATCH
-static const int vertpad = 10;              /* vertical padding of bar */
-static const int sidepad = 10;              /* horizontal padding of bar */
+static const int vertpad = 12;              /* vertical padding of bar */
+static const int sidepad = 12;              /* horizontal padding of bar */
 #endif // BARPADDING_PATCH
 #if RESTRICT_RETURN_PATCH
 static int restrict_return = 0;             /* -1 option; if 1, disables shift-return and ctrl-return */
 #endif // RESTRICT_RETURN_PATCH
 /* -fn option overrides fonts[0]; default X11 font or font set */
 #if PANGO_PATCH
-static char font[] = "monospace 10";
+static char font[] = "Terminus 8";
 #else
 #if XRESOURCES_PATCH
 static char *fonts[] =
@@ -38,7 +38,7 @@ static char *fonts[] =
 static const char *fonts[] =
 #endif // XRESOURCES_PATCH
 {
-	"Iosevka SS12, Symbols Nerd Font Mono:size=12"
+	"Terminus:size=8"
 };
 #endif // PANGO_PATCH
 #if MANAGED_PATCH
@@ -123,8 +123,8 @@ static unsigned int lines      = 0;
 static unsigned int columns    = 0;
 #endif // GRID_PATCH
 #if LINE_HEIGHT_PATCH
-static unsigned int lineheight = 0;         /* -h option; minimum height of a menu line     */
-static unsigned int min_lineheight = 8;
+static unsigned int lineheight = 10;         /* -h option; minimum height of a menu line     */
+static unsigned int min_lineheight = 10;
 #endif // LINE_HEIGHT_PATCH
 #if NAVHISTORY_PATCH
 static unsigned int maxhist    = 15;
@@ -142,11 +142,11 @@ static const char worddelimiters[] = " ";
 
 #if BORDER_PATCH
 /* Size of the window border */
-static unsigned int border_width = 2;
+static unsigned int border_width = 1;
 #endif // BORDER_PATCH
 
 #if PREFIXCOMPLETION_PATCH
-/*
+/*/
  * Use prefix matching by default; can be inverted with the -x flag.
  */
 static int use_prefix = 1;

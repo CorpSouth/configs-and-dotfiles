@@ -15,47 +15,47 @@ order += "load"
 order += "disk /"
 order += "memory"
 order += "volume master"
-order += "tztime local"
+order += "time"
 
 ethernet _first_ {
-    format_up = "󰈀 %speed"
-    format_down = "󰈀 DOWN"
+    format_up = "E:%speed"
+    format_down = "E:DOWN"
 }
 
 wireless _first_ {
-    format_up = "󰖩 %bitrate"
-    format_down = "󰖪 DOWN"
+    format_up = "W:%bitrate"
+    format_down = "W:DOWN"
 }
 
 cpu_temperature all {
-	format = "󰔐 %degrees°C"
+	format = "TEMP:%degrees°C"
 }
 
 load {
-    format = "󰄨 %1min"
+    format = "LOAD:%1min"
 }
 
 disk "/" {
-	format = "󰋊 %avail/%total"
-	prefix_type	= custom
+	format = "DISK:%avail/%total"
+	prefix_type = custom
 	low_threshold = 20
 	threshold_type = percentage_avail
 }
 
 memory {
-    format = "󰍛 %used/%total"
+    format = "RAM:%used/%total"
     threshold_degraded = "1G"
-    format_degraded = "MEMORY < %available"
+    format_degraded = "MEM: < %available"
 }
 
 volume master {
-  format = "󱄠 %volume"
-  format_muted = "󰸈 MUTED"
+  format = "VOL:%volume"
+  format_muted = "VOL:MUTED"
   device = "default"
   mixer = "Master"
   mixer_idx = 0
 }
 
-tztime local {
-  format = "󰥔 %x %X"
+time {
+  format = "%x %X"
 }

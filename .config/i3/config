@@ -31,7 +31,7 @@ set $dim_silver    #3F4145
 set $silver        #70737A
 set $bright_silver #94979D
 
-set $dim_white     #A8A8A8
+set $dim_white     #A7A7A7
 set $white         #DADADA
 set $bright_white  #FFFFFF
 
@@ -83,19 +83,18 @@ set $automount           --no-startup-id udiskie
 set $bluetooth_exchanger --no-startup-id i3-sensible-terminal -title obexctl -name obexctl -e obexctl
 set $bluetooth_manager   --no-startup-id i3-sensible-terminal -title bluetoothctl -name bluetoothctl -e bluetoothctl
 set $calculator          --no-startup-id i3-sensible-terminal -title bc -name scratchpad -e bc
-set $compositor          --no-startup-id picom
 set $disk_utility        --no-startup-id i3-sensible-terminal -title ncdu -name ncdu -e ncdu
 set $editor              --no-startup-id i3-sensible-terminal -title neovim -name neovim -e nvim
 set $email               --no-startup-id gtk-launch betterbird
 set $file_manager        --no-startup-id i3-sensible-terminal -title mc -name mc -e mc
 set $file_picker         filechooser.sh
-set $i3_nagbar_exit      "i3-nagbar -f 'pango:UbuntuMono Nerd Font Propo Bold 10' -t warning -m ' Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-set $i3_nagbar_reboot    "i3-nagbar -f 'pango:UbuntuMono Nerd Font Propo Bold 10' -t warning -m ' Do you really want to reboot your system?' -B 'Yes, reboot my system' 'systemctl reboot'"
-set $i3_nagbar_shutdown  "i3-nagbar -f 'pango:UbuntuMono Nerd Font Propo Bold 10' -t warning -m ' Do you really want to shutdown your system?' -B 'Yes, shutdown my system' 'systemctl poweroff'"
-set $i3_nagbar_suspend   "i3-nagbar -f 'pango:UbuntuMono Nerd Font Propo Bold 10' -t warning -m ' Do you really want to suspend your system?' -B 'Yes, suspend my system' 'i3-msg mode default | systemctl suspend -i'"
+set $i3_nagbar_exit      "i3-nagbar -f 'pango:Terminus Bold 12' -t warning -m 'Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+set $i3_nagbar_reboot    "i3-nagbar -f 'pango:Terminus Bold 12' -t warning -m 'Do you really want to reboot your system?' -B 'Yes, reboot my system' 'systemctl reboot'"
+set $i3_nagbar_shutdown  "i3-nagbar -f 'pango:Terminus Bold 12' -t warning -m 'Do you really want to shutdown your system?' -B 'Yes, shutdown my system' 'systemctl poweroff'"
+set $i3_nagbar_suspend   "i3-nagbar -f 'pango:Terminus Bold 12' -t warning -m 'Do you really want to suspend your system?' -B 'Yes, suspend my system' 'i3-msg mode default | systemctl suspend -i'"
 set $image_viewer        --no-startup-id nsxiv -r $HOME/Pictures
 set $media_player        --no-startup-id mpv --player-operation-mode=pseudo-gui
-set $menu                --no-startup-id dmenu_run
+set $menu                --no-startup-id dmenu_run -h 10 -l 10
 set $network_manager     --no-startup-id i3-sensible-terminal -title nmtui -name nmtui -e nmtui
 set $notification_daemon --no-startup-id dunst
 set $obexd               --no-startup-id /usr/libexec/bluetooth/obexd
@@ -106,9 +105,9 @@ set $player_play_pause   --no-startup-id playerctl play-pause
 set $player_prev         --no-startup-id playerctl prev
 set $player_stop         --no-startup-id playerctl stop
 set $polkit              --no-startup-id /usr/bin/mate-polkit
-set $scratchpad_terminal i3-sensible-terminal -name scratchpad
+set $scratchpad_terminal --no-startup-id i3-sensible-terminal -name scratchpad
 set $screenlocker        --no-startup-id i3lock-dpms.sh
-set $screenlocking       --no-startup-id xset 600 & xss-lock --transfer-sleep-lock -- i3lock -i "$HOME/Pictures/Wallpapers/SiteOrigin/Mint-Y/Shattered_Bumpmap_Blue.png" -n -t -u
+set $screenlocking       --no-startup-id xset 600 & xss-lock --transfer-sleep-lock -- i3lock -i "$HOME/Pictures/Wallpapers/SiteOrigin/Mint-Y/Classy_Fabric_Bumpmap_Purple.png" -n -t -u
 set $screenshot          --no-startup-id maim -u | tee $HOME/Pictures/Screenshots/$(date +%s).png | xclip -selection clipboard -t image/png
 set $screenshot_selected --no-startup-id maim -s -u | xclip -selection clipboard -t image/png
 set $set_resolution      --no-startup-id xrandr -s 1600x900
@@ -119,7 +118,7 @@ set $volume_controller   --no-startup-id i3-sensible-terminal -title pulsemixer 
 set $volume_lower        --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
 set $volume_mute         --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 set $volume_raise        --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
-set $wallpaper_setter    --no-startup-id hsetroot -fill $HOME/Pictures/Wallpapers/Pexels/Francesco_Ungaro/Nature/Landscapes/pexels-francesco-ungaro-clouds-over-barren-mountains.jpg
+set $wallpaper_setter    --no-startup-id xwallpaper --tile $HOME/Pictures/Wallpapers/SiteOrigin/Mint-Y/Classy_Fabric_Bumpmap_Purple.png
 set $web_browser         --no-startup-id librewolf
 set $window_switcher     --no-startup-id winselect
 set $youtube_player      --no-startup-id freetube
@@ -152,12 +151,12 @@ set $escape Escape mode "default"
 
 # NOTE: My workflow somewhat "breaks" this...
 
-set $ws1 "1:󰖟"
-set $ws2 "2:󰭻"
-set $ws3 "3:󰥠"
-set $ws4 "4:󰙏"
-set $ws5 "5:󱁤"
-set $ws6 "6:󰇅"
+set $ws1 "1:.NET"
+set $ws2 "2:CHAT"
+set $ws3 "3:PLAY"
+set $ws4 "4:UTIL"
+set $ws5 "5:VIRT"
+set $ws6 "6:WORK"
 
 #------+2.0 APPEARANCE
 
@@ -167,7 +166,7 @@ set $ws6 "6:󰇅"
 # Apply colors in the following order, all after color class:
 # <color class> <border> <background> <text> <indicator> <child border>
 
-client.focused          $dim_blue $blue        $bright_white $bright_blue $blue
+client.focused          $dim_purple $purple    $bright_white $bright_purple $purple
 client.focused_inactive $dim_gray $bright_gray $white        $success     $dim_gray 
 client.unfocused        $dim_gray $gray        $dim_white    $success     $dim_gray
 client.urgent           $dim_gray $warning     $black        $dim_gray    $warning
@@ -181,8 +180,8 @@ client.background       $gray
 # "default_border pixel" will disable the title bar.
 # Can be individually set for floating windows, too.
 
-default_border pixel          2
-default_floating_border pixel 2
+default_border pixel          1
+default_floating_border pixel 1
 
 # Smart borders will detect if there's only one client/window
 # open and hide, letting all known pixel space be used on screen.
@@ -198,7 +197,7 @@ smart_borders on
 # Excluding font size will fallback to default
 # font sizing according to DPI.
 
-font pango: Iosevka SS12 Extended, Symbols Nerd Font Mono Bold 12
+font pango: Terminus 8
 
 # You can also set a secondary font, separated by a comma
 
@@ -220,7 +219,7 @@ smart_gaps on
 
 # Place the title bar contents to the left (default), center, or right
 
-title_align center
+title_align left
 
 #------+3.0 AUTOSTART
 
@@ -252,17 +251,17 @@ bar {
 
       # Obey Fitt's Law and disable padding with "0"
       # Adjust if the icons are cut off, results vary
-      # depending on fonts used
+      # depending on font and font size used
 
       tray_padding 0
 
       # Optional, you can set a font for the bar individually.
 
-      font pango:  Iosevka SS12, Symbols Nerd Font Mono 12
+      font pango:  Terminus 8
 
       # Separator can use a standard character or symbol.
 
-      separator_symbol "┃"
+      separator_symbol "|"
 
       # Show or hide workspace buttons, useful if you want to display
       # a statusline-only bar containing additional information.
@@ -272,18 +271,18 @@ bar {
       # Strip workspace numbers, if you prefer to use only the label
       # or symbol instead
 
-      strip_workspace_numbers yes
+      strip_workspace_numbers no
 
       colors {
                # Colors are applied using the variables at the start of this file
                # Apply them in the following order:
                # <colorclass> <border> <background> <text>
 
-               focused_workspace  $bright_blue $blue        $bright_white
-               active_workspace   $dim_gray    $bright_gray $white
-               inactive_workspace $gray        $gray       $dim_white
-               urgent_workspace   $dim_gray       $warning    $black
-               binding_mode       $dim_gray    $warning    $black
+               focused_workspace  $bright_purple $purple      $bright_white
+               active_workspace   $dim_gray      $bright_gray $white
+               inactive_workspace $gray          $gray        $dim_white
+               urgent_workspace   $dim_gray      $warning     $black
+               binding_mode       $dim_gray      $warning     $black
 
                # Bar details
 
@@ -310,13 +309,9 @@ exec $automount
 
 exec $obexd
 
-# Display Compositor
-
-exec $compositor
-
 # Due to my keybinding scheme, I have to rectify the first workspace not appearing
 
-exec --no-startup-id i3-msg 'rename workspace "1" to "1:󰖟"'
+exec --no-startup-id i3-msg 'rename workspace "1" to "1:.NET"'
 
 # Notification daemon
 
@@ -384,8 +379,8 @@ floating_modifier $mod
 
 # Here's where I keep most of my application keyboard shortcuts
 
-bindsym $mod+c mode "󱆃"
-mode "󱆃" {
+bindsym $mod+c mode "COMMAND"
+mode "COMMAND" {
 
      # Exit keybinding mode
 
@@ -393,7 +388,7 @@ mode "󱆃" {
 
      # Bluetooth File Exchanger
 
-     bindsym Mod1+Control+b exec $bluetooth_exchanger
+     bindsym $mod+Mod1+b exec $bluetooth_exchanger
 
      # Bluetooth Manager
 
@@ -435,7 +430,7 @@ mode "󱆃" {
      
      # Toggle Compositing
 
-     bindsym Control+Mod1+c exec $toggle_compositing
+     bindsym $mod+Control+c exec $toggle_compositing
 
      # Top
 
@@ -477,8 +472,8 @@ mode "󱆃" {
 
 # Various session and power related shortcuts go here
 
-bindsym Control+Mod1+Delete mode "󰍂"
-mode "󰍂" {
+bindsym Control+Mod1+Delete mode "SESSION"
+mode "SESSION" {
 
      # Exit keybinding mode
 
@@ -507,8 +502,8 @@ mode "󰍂" {
 
 # Everything related to window management goes here
 
-bindsym $mod+w mode "󰖲"
-mode "󰖲" {
+bindsym $mod+w mode "WINDOWS"
+mode "WINDOWS" {
 
      # Exit keybinding mode
 
@@ -642,7 +637,7 @@ workspace_auto_back_and_forth yes
 
 # The second half of the "WM_CLASS" specification
 
-for_window [class="Friends List|Nsxiv|Pavucontrol|^steam.*|XCalc|XClock"] floating enable, move position center
+for_window [class="Friends List|game scope|Nsxiv|Pavucontrol|qt5ct|^steam.*|Usbimager|XCalc|XClock"] floating enable, move position center
 
 #------+6.2 INSTANCE
 
@@ -697,15 +692,16 @@ workspace_layout tabbed
 
 assign [class="betterbird|LibreWolf|librewolf-default|Tor Browser"] $ws1
 assign [class="ArmCord|TelegramDesktop|WebCord"]                    $ws2
-assign [class="FreeTube|mpv|^steam.*"]                              $ws3
-assign [class="qDiffusion"]                                         $ws4
-assign [class="Nsxiv"]                                              $ws5
-assign [class="Remote-viewer|Virt-manager|Virt-viewer"]             $ws6
+assign [class="FreeTube|gamescope|mpv|^steam.*"]                    $ws3
+assign [class="Nsxiv|qt5ct|Usbimager"]                              $ws4
+assign [class="Remote-viewer|Virt-manager|Virt-viewer"]             $ws5
+assign [class="qDiffusion"]                                         $ws6
+
 
 #------+8.2 INSTANCE
 
-assign [instance="calcurse|neovim"]                                  $ws4
-assign [instance="bluetoothctl|btop|htop|mc|ncdu|nmtui|nnn|obexctl"] $ws5
+assign [instance="bluetoothctl|btop|htop|mc|ncdu|nmtui|nnn|obexctl"] $ws4
+assign [instance="calcurse|neovim"]                                  $ws6
 
 #------+8.3 TITLE
 #------+8.4 WINDOW_ROLE
@@ -720,5 +716,5 @@ assign [instance="bluetoothctl|btop|htop|mc|ncdu|nmtui|nnn|obexctl"] $ws5
 # container/window from being sent to the most previous
 # workspace
 
-for_window [class="Timeshift-gtk"]     move --no-auto-back-and-forth container to workspace $ws5
-for_window [instance="DesktopEditors"] move --no-auto-back-and-forth container to workspace $ws4
+for_window [class="Timeshift-gtk"]     move --no-auto-back-and-forth container to workspace $ws4
+for_window [instance="DesktopEditors"] move --no-auto-back-and-forth container to workspace $ws6

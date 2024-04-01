@@ -29,7 +29,7 @@
  * case-insensitive -i option with a case sensitive -s option.
  * http://tools.suckless.org/dmenu/patches/case-insensitive/
  */
-#define CASEINSENSITIVE_PATCH 0
+#define CASEINSENSITIVE_PATCH 1
 
 /* This patch centers dmenu in the middle of the screen.
  * https://tools.suckless.org/dmenu/patches/center/
@@ -119,7 +119,7 @@
  * integrate dmenu with other UI elements that require a particular vertical size.
  * http://tools.suckless.org/dmenu/patches/line-height/
  */
-#define LINE_HEIGHT_PATCH 0
+#define LINE_HEIGHT_PATCH 1
 
 /* This patch adds a -wm flag which sets override_redirect to false; thus letting your window
  * manager manage the dmenu window.
@@ -160,7 +160,7 @@
  *
  * https://tools.suckless.org/dmenu/patches/navhistory/
  */
-#define NAVHISTORY_PATCH 0
+#define NAVHISTORY_PATCH 1
 
 /* This patch adds back in the workaround for a BadLength error in the Xft library when color
  * glyphs are used. This is for systems that do not have an updated version of the Xft library
