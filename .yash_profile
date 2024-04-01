@@ -64,7 +64,7 @@ fi;
 
 # Qt stuff
 
-export QT_QPA_PLATFORMTHEME="gtk3"
+export QT_QPA_PLATFORMTHEME="qt5ct"
 
 # Autostart X after tty login, this can effectively replicate 
 # a display manager
