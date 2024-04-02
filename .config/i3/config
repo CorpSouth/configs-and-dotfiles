@@ -197,7 +197,7 @@ smart_borders on
 # Excluding font size will fallback to default
 # font sizing according to DPI.
 
-font -xos4-terminus-bold-r-normal--14-140-72-72-c-80-iso10646-1
+font -xos4-terminus-bold-r-normal-*-14-140-72-72-c-80-iso10646-1
 
 # You can also set a secondary font, separated by a comma
 
