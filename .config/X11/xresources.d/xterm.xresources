@@ -8,7 +8,7 @@ xterm.termName: xterm-256color
 !!UXTerm!!
 !!!!!!!!!!
 
-UXTerm*allowBoldFonts:      true
+UXTerm*allowBoldFonts:      false
 UXTerm*allowFontOps:        false
 UXTerm*allowMouseOps:       false
 UXTerm*allowWindowOps:      false
@@ -22,18 +22,17 @@ UXTerm*decTerminalID:       vt382
 UXTerm*eightBitControl:     false
 UXTerm*eightBitInput:       false
 UXTerm*eightBitOutput:      false
-UXTerm*faceName:            Terminus
-UXTerm*faceSize:            8
-UXTerm*forceBoxChars:       true
-UXTerm*forcePackedFont:     true
+UXTerm*font:                -xos4-terminus-medium-r-normal-*-14-140-72-72-c-80-iso10646-1
+UXTerm*forceBoxChars:       false
+UXTerm*forcePackedFont:     false
 UXTerm*fullscreen:          never
 UXTerm*loginShell:          true
 UXTerm*metaSendsEscape:     true
 UXTerm*multiClickTime:      250
 UXTerm*multiScroll:         true
 UXTerm*omitTranslation:     popup-menu
-UXTerm*renderFont:          true
-!! UXTerm*reverseVideo:        true
+UXTerm*renderFont:          false
+UXTerm*reverseVideo:        false
 UXTerm*rightScrollbar:      false
 UXTerm*saveLines:           2000
 UXTerm*scaleHeight:         1.04
@@ -59,7 +58,7 @@ UXTerm.vt100.translations:  #override \n\
 !!XTerm!!
 !!!!!!!!!
 
-XTerm*allowBoldFonts:      true
+XTerm*allowBoldFonts:      false
 XTerm*allowFontOps:        false
 XTerm*allowMouseOps:       false
 XTerm*allowWindowOps:      false
@@ -73,18 +72,17 @@ XTerm*decTerminalID:       vt382
 XTerm*eightBitControl:     false
 XTerm*eightBitInput:       false
 XTerm*eightBitOutput:      false
-XTerm*faceName:            Terminus
-XTerm*faceSize:            8
-XTerm*forceBoxChars:       true
-XTerm*forcePackedFont:     true
+XTerm*font:                -xos4-terminus-medium-r-normal-*-14-140-72-72-c-80-iso10646-1
+XTerm*forceBoxChars:       false
+XTerm*forcePackedFont:     false
 XTerm*fullscreen:          never
 XTerm*loginShell:          true
 XTerm*metaSendsEscape:     true
 XTerm*multiClickTime:      250
 XTerm*multiScroll:         true
 XTerm*omitTranslation:     popup-menu
-XTerm*renderFont:          true
-!! XTerm*reverseVideo:        true
+XTerm*renderFont:          false
+XTerm*reverseVideo:        false
 XTerm*rightScrollbar:      false
 XTerm*saveLines:           2000
 XTerm*scaleHeight:         1.04

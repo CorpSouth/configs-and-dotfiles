@@ -88,10 +88,10 @@ set $editor              --no-startup-id i3-sensible-terminal -title neovim -nam
 set $email               --no-startup-id gtk-launch betterbird
 set $file_manager        --no-startup-id i3-sensible-terminal -title mc -name mc -e mc
 set $file_picker         filechooser.sh
-set $i3_nagbar_exit      "i3-nagbar -f 'pango:Terminus Bold 12' -t warning -m 'Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-set $i3_nagbar_reboot    "i3-nagbar -f 'pango:Terminus Bold 12' -t warning -m 'Do you really want to reboot your system?' -B 'Yes, reboot my system' 'systemctl reboot'"
-set $i3_nagbar_shutdown  "i3-nagbar -f 'pango:Terminus Bold 12' -t warning -m 'Do you really want to shutdown your system?' -B 'Yes, shutdown my system' 'systemctl poweroff'"
-set $i3_nagbar_suspend   "i3-nagbar -f 'pango:Terminus Bold 12' -t warning -m 'Do you really want to suspend your system?' -B 'Yes, suspend my system' 'i3-msg mode default | systemctl suspend -i'"
+set $i3_nagbar_exit      "i3-nagbar -f '-xos4-terminus-bold-r-normal-*-16-160-72-72-c-80-iso10646-1' -t warning -m 'Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+set $i3_nagbar_reboot    "i3-nagbar -f '-xos4-terminus-bold-r-normal-*-16-160-72-72-c-80-iso10646-1' -t warning -m 'Do you really want to reboot your system?' -B 'Yes, reboot my system' 'systemctl reboot'"
+set $i3_nagbar_shutdown  "i3-nagbar -f '-xos4-terminus-bold-r-normal-*-16-160-72-72-c-80-iso10646-1' -t warning -m 'Do you really want to shutdown your system?' -B 'Yes, shutdown my system' 'systemctl poweroff'"
+set $i3_nagbar_suspend   "i3-nagbar -f '-xos4-terminus-bold-r-normal-*-16-160-72-72-c-80-iso10646-1' -t warning -m 'Do you really want to suspend your system?' -B 'Yes, suspend my system' 'i3-msg mode default | systemctl suspend -i'"
 set $image_viewer        --no-startup-id nsxiv -r $HOME/Pictures
 set $media_player        --no-startup-id mpv --player-operation-mode=pseudo-gui
 set $menu                --no-startup-id dmenu_run -h 10 -l 10
@@ -107,7 +107,7 @@ set $player_stop         --no-startup-id playerctl stop
 set $polkit              --no-startup-id /usr/bin/mate-polkit
 set $scratchpad_terminal --no-startup-id i3-sensible-terminal -name scratchpad
 set $screenlocker        --no-startup-id i3lock-dpms.sh
-set $screenlocking       --no-startup-id xset 600 & xss-lock --transfer-sleep-lock -- i3lock -i "$HOME/Pictures/Wallpapers/SiteOrigin/Mint-Y/Classy_Fabric_Bumpmap_Purple.png" -n -t -u
+set $screenlocking       --no-startup-id xset 600 & xss-lock --transfer-sleep-lock -- i3lock -i "$HOME/Pictures/Wallpapers/SiteOrigin/Mint-Y/Back_Pattern_Bumpmap_Purple.png" -n -t -u
 set $screenshot          --no-startup-id maim -u | tee $HOME/Pictures/Screenshots/$(date +%s).png | xclip -selection clipboard -t image/png
 set $screenshot_selected --no-startup-id maim -s -u | xclip -selection clipboard -t image/png
 set $set_resolution      --no-startup-id xrandr -s 1600x900
@@ -118,7 +118,7 @@ set $volume_controller   --no-startup-id i3-sensible-terminal -title pulsemixer 
 set $volume_lower        --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
 set $volume_mute         --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 set $volume_raise        --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
-set $wallpaper_setter    --no-startup-id xwallpaper --tile $HOME/Pictures/Wallpapers/SiteOrigin/Mint-Y/Classy_Fabric_Bumpmap_Purple.png
+set $wallpaper_setter    --no-startup-id xwallpaper --tile $HOME/Pictures/Wallpapers/SiteOrigin/Mint-Y/Back_Pattern_Bumpmap_Purple.png
 set $web_browser         --no-startup-id librewolf
 set $window_switcher     --no-startup-id winselect
 set $youtube_player      --no-startup-id freetube
@@ -197,7 +197,7 @@ smart_borders on
 # Excluding font size will fallback to default
 # font sizing according to DPI.
 
-font pango: Terminus 8
+font -xos4-terminus-bold-r-normal--14-140-72-72-c-80-iso10646-1
 
 # You can also set a secondary font, separated by a comma
 
@@ -257,11 +257,11 @@ bar {
 
       # Optional, you can set a font for the bar individually.
 
-      font pango:  Terminus 8
+      font -xos4-terminus-medium-r-normal--14-140-72-72-c-80-iso10646-1
 
       # Separator can use a standard character or symbol.
 
-      separator_symbol "|"
+      # separator_symbol "|"
 
       # Show or hide workspace buttons, useful if you want to display
       # a statusline-only bar containing additional information.
@@ -693,7 +693,7 @@ workspace_layout tabbed
 assign [class="betterbird|LibreWolf|librewolf-default|Tor Browser"] $ws1
 assign [class="ArmCord|TelegramDesktop|WebCord"]                    $ws2
 assign [class="FreeTube|gamescope|mpv|^steam.*"]                    $ws3
-assign [class="Nsxiv|qt5ct|Usbimager"]                              $ws4
+assign [class="Nsxiv|qt5ct|Usbimager|XFontSel"]                     $ws4
 assign [class="Remote-viewer|Virt-manager|Virt-viewer"]             $ws5
 assign [class="qDiffusion"]                                         $ws6
 
