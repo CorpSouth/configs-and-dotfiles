@@ -88,13 +88,13 @@ set $editor              --no-startup-id i3-sensible-terminal -title neovim -nam
 set $email               --no-startup-id gtk-launch betterbird
 set $file_manager        --no-startup-id i3-sensible-terminal -title mc -name mc -e mc
 set $file_picker         filechooser.sh
-set $i3_nagbar_exit      "i3-nagbar -f '-xos4-terminus-bold-r-normal-*-16-160-72-72-c-80-iso10646-1' -t warning -m 'Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-set $i3_nagbar_reboot    "i3-nagbar -f '-xos4-terminus-bold-r-normal-*-16-160-72-72-c-80-iso10646-1' -t warning -m 'Do you really want to reboot your system?' -B 'Yes, reboot my system' 'systemctl reboot'"
-set $i3_nagbar_shutdown  "i3-nagbar -f '-xos4-terminus-bold-r-normal-*-16-160-72-72-c-80-iso10646-1' -t warning -m 'Do you really want to shutdown your system?' -B 'Yes, shutdown my system' 'systemctl poweroff'"
-set $i3_nagbar_suspend   "i3-nagbar -f '-xos4-terminus-bold-r-normal-*-16-160-72-72-c-80-iso10646-1' -t warning -m 'Do you really want to suspend your system?' -B 'Yes, suspend my system' 'i3-msg mode default | systemctl suspend -i'"
+set $i3_nagbar_exit      "i3-nagbar -f '-xos4-terminus-bold-r-normal-*-14-140-72-72-c-80-iso10646-1' -t warning -m 'Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+set $i3_nagbar_reboot    "i3-nagbar -f '-xos4-terminus-bold-r-normal-*-14-140-72-72-c-80-iso10646-1' -t warning -m 'Do you really want to reboot your system?' -B 'Yes, reboot my system' 'systemctl reboot'"
+set $i3_nagbar_shutdown  "i3-nagbar -f '-xos4-terminus-bold-r-normal-*-14-140-72-72-c-80-iso10646-1' -t warning -m 'Do you really want to shutdown your system?' -B 'Yes, shutdown my system' 'systemctl poweroff'"
+set $i3_nagbar_suspend   "i3-nagbar -f '-xos4-terminus-bold-r-normal-*-14-140-72-72-c-80-iso10646-1' -t warning -m 'Do you really want to suspend your system?' -B 'Yes, suspend my system' 'i3-msg mode default | systemctl suspend -i'"
 set $image_viewer        --no-startup-id nsxiv -r $HOME/Pictures
 set $media_player        --no-startup-id mpv --player-operation-mode=pseudo-gui
-set $menu                --no-startup-id dmenu_run -h 10 -l 10
+set $menu                --no-startup-id dmenu_run
 set $network_manager     --no-startup-id i3-sensible-terminal -title nmtui -name nmtui -e nmtui
 set $notification_daemon --no-startup-id dunst
 set $obexd               --no-startup-id /usr/libexec/bluetooth/obexd
@@ -191,7 +191,7 @@ smart_borders on
 
 #------+2.2 FONTS
 
-# Accepts either "pango:" or "xft:" fonts,
+# Accepts either "X core", "pango", or "xft" fonts,
 # this will also apply to the bar if you 
 # exclude setting a font there individually.
 # Excluding font size will fallback to default
@@ -257,11 +257,11 @@ bar {
 
       # Optional, you can set a font for the bar individually.
 
-      font -xos4-terminus-medium-r-normal--14-140-72-72-c-80-iso10646-1
+      font -xos4-terminus-medium-r-normal-*-12-120-72-72-c-60-iso10646-1
 
       # Separator can use a standard character or symbol.
 
-      # separator_symbol "|"
+      separator_symbol "┃"
 
       # Show or hide workspace buttons, useful if you want to display
       # a statusline-only bar containing additional information.
@@ -498,12 +498,12 @@ mode "SESSION" {
 }
 
 
-#------+<{{ MODE: WINDOWS
+#------+<{{ MODE: WINDOW
 
 # Everything related to window management goes here
 
-bindsym $mod+w mode "WINDOWS"
-mode "WINDOWS" {
+bindsym $mod+w mode "WINDOW"
+mode "WINDOW" {
 
      # Exit keybinding mode
 
