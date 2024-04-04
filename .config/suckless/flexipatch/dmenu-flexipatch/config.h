@@ -18,7 +18,7 @@ static int incremental = 0;                 /* -r  option; if 1, outputs text ea
 static int instant = 0;                     /* -n  option; if 1, selects matching item without the need to press enter */
 #endif // INSTANT_PATCH
 #if CENTER_PATCH
-static int center = 1;                      /* -c  option; if 0, dmenu won't be centered on the screen */
+static int center = 0;                      /* -c  option; if 0, dmenu won't be centered on the screen */
 static int min_width = 500;                 /* minimum width when centered */
 #endif // CENTER_PATCH
 #if BARPADDING_PATCH
@@ -30,7 +30,7 @@ static int restrict_return = 0;             /* -1 option; if 1, disables shift-r
 #endif // RESTRICT_RETURN_PATCH
 /* -fn option overrides fonts[0]; default X11 font or font set */
 #if PANGO_PATCH
-static char font[] = "Terminus 14";
+static char font[] = "Terminus 12";
 #else
 #if XRESOURCES_PATCH
 static char *fonts[] =
@@ -38,7 +38,7 @@ static char *fonts[] =
 static const char *fonts[] =
 #endif // XRESOURCES_PATCH
 {
-	"Terminus:size=14"
+	"Terminus:size=12"
 };
 #endif // PANGO_PATCH
 #if MANAGED_PATCH
@@ -142,7 +142,7 @@ static const char worddelimiters[] = " ";
 
 #if BORDER_PATCH
 /* Size of the window border */
-static unsigned int border_width = 1;
+static unsigned int border_width = 0;
 #endif // BORDER_PATCH
 
 #if PREFIXCOMPLETION_PATCH
