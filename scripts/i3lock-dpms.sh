@@ -1,6 +1,6 @@
 #!/bin/sh
 
-WALLPAPER="$HOME/Pictures/Wallpapers/SiteOrigin/Mint-Y/Back_Pattern_Bumpmap_Purple.png"
+WALLPAPER="$HOME/Pictures/Wallpapers/SiteOrigin/Mint-Y/Brilliant_Bumpmap_Aqua.png"
 
 revert() {
    xset dpms 0 0 0
