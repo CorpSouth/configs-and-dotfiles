@@ -14,6 +14,6 @@ while [ "$(pgrep -f /usr/bin/pipewire)" = "" ] ; do
    sleep 1
 done
 
-exec /usr/bin/wireplumber &
-
 exec /usr/bin/pipewire-pulse &
+
+exec /usr/bin/wireplumber &
