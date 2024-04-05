@@ -85,17 +85,17 @@ set $bluetooth_manager   --no-startup-id i3-sensible-terminal -title bluetoothct
 set $calculator          --no-startup-id i3-sensible-terminal -title bc -name scratchpad -e bc
 set $disk_utility        --no-startup-id i3-sensible-terminal -title ncdu -name ncdu -e ncdu
 set $editor              --no-startup-id i3-sensible-terminal -title neovim -name neovim -e nvim
-set $email               --no-startup-id gtk-launch betterbird
+set $email               --no-startup-id betterbird
 set $file_manager        --no-startup-id i3-sensible-terminal -title mc -name mc -e mc
 set $file_picker         filechooser.sh
 set $i3_nagbar_exit      "i3-nagbar -f '-xos4-terminus-bold-r-normal-*-14-140-72-72-c-80-iso10646-1' -t warning -m 'Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-set $i3_nagbar_reboot    "i3-nagbar -f '-xos4-terminus-bold-r-normal-*-14-140-72-72-c-80-iso10646-1' -t warning -m 'Do you really want to reboot your system?' -B 'Yes, reboot my system' 'systemctl reboot'"
-set $i3_nagbar_shutdown  "i3-nagbar -f '-xos4-terminus-bold-r-normal-*-14-140-72-72-c-80-iso10646-1' -t warning -m 'Do you really want to shutdown your system?' -B 'Yes, shutdown my system' 'systemctl poweroff'"
-set $i3_nagbar_suspend   "i3-nagbar -f '-xos4-terminus-bold-r-normal-*-14-140-72-72-c-80-iso10646-1' -t warning -m 'Do you really want to suspend your system?' -B 'Yes, suspend my system' 'i3-msg mode default | systemctl suspend -i'"
+set $i3_nagbar_reboot    "i3-nagbar -f '-xos4-terminus-bold-r-normal-*-14-140-72-72-c-80-iso10646-1' -t warning -m 'Do you really want to reboot your system?' -B 'Yes, reboot my system' 'loginctl reboot'"
+set $i3_nagbar_shutdown  "i3-nagbar -f '-xos4-terminus-bold-r-normal-*-14-140-72-72-c-80-iso10646-1' -t warning -m 'Do you really want to shutdown your system?' -B 'Yes, shutdown my system' 'loginctl poweroff'"
+set $i3_nagbar_suspend   "i3-nagbar -f '-xos4-terminus-bold-r-normal-*-14-140-72-72-c-80-iso10646-1' -t warning -m 'Do you really want to suspend your system?' -B 'Yes, suspend my system' 'i3-msg mode default | loginctl suspend -i'"
 set $image_viewer        --no-startup-id nsxiv -r $HOME/Pictures
 set $media_player        --no-startup-id mpv --player-operation-mode=pseudo-gui
 set $menu                --no-startup-id dmenu_run
-set $network_manager     --no-startup-id i3-sensible-terminal -title nmtui -name nmtui -e nmtui
+set $network_manager     --no-startup-id i3-sensible-terminal -title connmanctl -name connmanctl -e connmanctl
 set $notification_daemon --no-startup-id dunst
 set $obexd               --no-startup-id /usr/libexec/bluetooth/obexd
 set $office_suite        --no-startup-id onlyoffice-desktopeditors
@@ -107,10 +107,11 @@ set $player_stop         --no-startup-id playerctl stop
 set $polkit              --no-startup-id /usr/bin/mate-polkit
 set $scratchpad_terminal --no-startup-id i3-sensible-terminal -name scratchpad
 set $screenlocker        --no-startup-id i3lock-dpms.sh
-set $screenlocking       --no-startup-id xset 600 & xss-lock --transfer-sleep-lock -- i3lock -i "$HOME/Pictures/Wallpapers/SiteOrigin/Mint-Y/Back_Pattern_Bumpmap_Purple.png" -n -t -u
+set $screenlocking       --no-startup-id xset s 600 & xss-lock --transfer-sleep-lock -- i3lock -i "$HOME/Pictures/Wallpapers/SiteOrigin/Mint-Y/Brilliant_Bumpmap_Aqua.png" -n -t -u
 set $screenshot          --no-startup-id maim -u | tee $HOME/Pictures/Screenshots/$(date +%s).png | xclip -selection clipboard -t image/png
 set $screenshot_selected --no-startup-id maim -s -u | xclip -selection clipboard -t image/png
 set $set_resolution      --no-startup-id xrandr -s 1600x900
+set $sound_server        --no-startup-id pipewire-init.sh
 set $terminal            --no-startup-id i3-sensible-terminal
 set $toggle_compositing  --no-startup-id toggle_compositing.sh
 set $top                 --no-startup-id i3-sensible-terminal -title btop -name btop -e btop
@@ -118,7 +119,7 @@ set $volume_controller   --no-startup-id i3-sensible-terminal -title pulsemixer 
 set $volume_lower        --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
 set $volume_mute         --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 set $volume_raise        --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
-set $wallpaper_setter    --no-startup-id xwallpaper --tile $HOME/Pictures/Wallpapers/SiteOrigin/Mint-Y/Back_Pattern_Bumpmap_Purple.png
+set $wallpaper_setter    --no-startup-id xwallpaper --tile $HOME/Pictures/Wallpapers/SiteOrigin/Mint-Y/Brilliant_Bumpmap_Aqua.png
 set $web_browser         --no-startup-id librewolf
 set $window_switcher     --no-startup-id winselect
 set $youtube_player      --no-startup-id freetube
@@ -166,11 +167,11 @@ set $ws6 "6:WORK"
 # Apply colors in the following order, all after color class:
 # <color class> <border> <background> <text> <indicator> <child border>
 
-client.focused          $dim_purple $purple    $bright_white $bright_purple $purple
-client.focused_inactive $dim_gray $bright_gray $white        $success     $dim_gray 
-client.unfocused        $dim_gray $gray        $dim_white    $success     $dim_gray
-client.urgent           $dim_gray $warning     $black        $dim_gray    $warning
-client.placeholder      $dim_gray $gray        $dim_white    $bright_gray $dim_gray
+client.focused          $bright_aqua $aqua     $bright_white $success     $aqua
+client.focused_inactive $aqua        $dim_aqua $white        $success     $dim_aqua 
+client.unfocused        $bright_gray $gray     $dim_white    $success     $dim_gray
+client.urgent           $dim_gray    $warning  $black        $success     $warning
+client.placeholder      $dim_gray    $gray     $dim_white    $bright_gray $dim_gray
 client.background       $gray
 
 #------+2.1 BORDERS
@@ -180,14 +181,8 @@ client.background       $gray
 # "default_border pixel" will disable the title bar.
 # Can be individually set for floating windows, too.
 
-default_border pixel          1
-default_floating_border pixel 1
-
-# Smart borders will detect if there's only one client/window
-# open and hide, letting all known pixel space be used on screen.
-# This can be set with "no_gaps" to only apply if gaps are closed.
-
-smart_borders on
+default_border normal
+default_floating_border normal
 
 #------+2.2 FONTS
 
@@ -259,10 +254,6 @@ bar {
 
       font -xos4-terminus-medium-r-normal-*-12-120-72-72-c-60-iso10646-1
 
-      # Separator can use a standard character or symbol.
-
-      separator_symbol "┃"
-
       # Show or hide workspace buttons, useful if you want to display
       # a statusline-only bar containing additional information.
 
@@ -278,11 +269,11 @@ bar {
                # Apply them in the following order:
                # <colorclass> <border> <background> <text>
 
-               focused_workspace  $bright_purple $purple      $bright_white
-               active_workspace   $dim_gray      $bright_gray $white
-               inactive_workspace $gray          $gray        $dim_white
-               urgent_workspace   $dim_gray      $warning     $black
-               binding_mode       $dim_gray      $warning     $black
+               focused_workspace  $bright_aqua $aqua      $bright_white
+               active_workspace   $dim_gray    $bright_gray $white
+               inactive_workspace $gray        $gray        $dim_white
+               urgent_workspace   $dim_gray    $warning     $black
+               binding_mode       $dim_gray    $warning     $black
 
                # Bar details
 
@@ -329,6 +320,10 @@ exec $screenlocking
 # Set display resolution, usually if I am on a VM
 
 # exec $set_resolution
+
+# Sound server, without using the system init
+
+exec $sound_server
 
 #------+3.3 EXEC_ALWAYS
 
@@ -700,8 +695,8 @@ assign [class="qDiffusion"]                                         $ws6
 
 #------+8.2 INSTANCE
 
-assign [instance="bluetoothctl|btop|htop|mc|ncdu|nmtui|nnn|obexctl"] $ws4
-assign [instance="calcurse|neovim"]                                  $ws6
+assign [instance="bluetoothctl|btop|connmanctl|htop|mc|ncdu|nmtui|nnn|obexctl"] $ws4
+assign [instance="calcurse|neovim"]                                             $ws6
 
 #------+8.3 TITLE
 #------+8.4 WINDOW_ROLE

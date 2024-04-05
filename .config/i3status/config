@@ -43,7 +43,7 @@ disk "/" {
 }
 
 memory {
-    format = "RAM:%used/%total"
+    format = "MEM:%used/%total"
     threshold_degraded = "1G"
     format_degraded = "MEM: < %available"
 }
