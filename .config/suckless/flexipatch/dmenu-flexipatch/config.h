@@ -91,9 +91,9 @@ const
 #endif // XRESOURCES_PATCH
 char *colors[][2] = {
 	/*               fg         bg       */
-	[SchemeNorm] = { "#DADADA", "#383838" },
-	[SchemeSel]  = { "#FFFFFF", "#525252" },
-	[SchemeOut]  = { "#DADADA", "#292929" },
+	[SchemeNorm] = { "#E5E5E5", "#000000" },
+	[SchemeSel]  = { "#000000", "#E5E5E5" },
+	[SchemeOut]  = { "#000000", "#E5E5E5" },
 	#if BORDER_PATCH
 	[SchemeBorder] = { "#DADADA", "#212121" },
 	#endif // BORDER_PATCH
