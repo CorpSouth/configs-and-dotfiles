@@ -4,7 +4,11 @@ if [ -x "/usr/bin/nvim" ]; then
     export EDITOR="nvim"
 fi;
 
-# manpager
+# Exclude .lesshistfile
+
+export LESSHISTFILE="/dev/null"
+
+# Manpager
 
 if [ -x "/usr/bin/nvim" ]; then
     export MANPAGER='nvim +Man!'
@@ -16,7 +20,11 @@ if [ -d "$HOME/.local/bin" ]; then
     PATH="$HOME/.local/bin:$PATH" ;
 fi;
 
-# Assign XDG Configuration Directory
+# Assign XDG Base Directories
+
+if [ -d "$HOME/.cache" ]; then
+        export XDG_CACHE_HOME="$HOME/.cache" ;
+fi;
 
 if [ -d "$HOME/.config" ]; then
 	export XDG_CONFIG_HOME="$HOME/.config" ;
@@ -56,15 +64,11 @@ if [ -f "$XDG_CONFIG_HOME/X11/xserverrc" ]; then
 	export XSERVERRC="$XDG_CONFIG_HOME/X11/xserverrc" ;
 fi;
 
-# Put the .ratpoisonrc file into xdg config home
-
-if [ -f "$XDG_CONFIG_HOME/ratpoison/ratpoisonrc" ]; then
-        export RATPOISONRC="$XDG_CONFIG_HOME/ratpoison/ratpoisonrc" ;
-fi;
-
 # Qt stuff
 
-export QT_QPA_PLATFORMTHEME="qt5ct"
+export QT_QPA_PLATFORMTHEME="gtk3"
+
+# export QT_QPA_PLATFORMTHEME="qt5ct"
 
 # Autostart X after tty login, this can effectively replicate 
 # a display manager
