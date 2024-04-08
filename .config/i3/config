@@ -542,7 +542,6 @@ bindsym $mod+$up    focus up
 bindsym $mod+Tab       focus next
 bindsym $mod+Shift+Tab focus prev
 
-
 #------+5.5 WORKSPACE_AUTO_BACK_AND_FORTH
 
 # When pressing a shortcut to change workspaces,
