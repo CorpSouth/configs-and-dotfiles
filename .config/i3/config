@@ -84,6 +84,7 @@ set $volume_mute         --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ togg
 set $volume_raise        --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
 set $wallpaper_setter    --no-startup-id xwallpaper --tile $HOME/Pictures/Wallpapers/SiteOrigin/X/Type_Bumpmap_X.png
 set $web_browser         --no-startup-id librewolf
+set $web_browser_alt     --no-startup-id torbrowser-launcher
 set $youtube_player      --no-startup-id freetube
 
 #------+1.3 MODIFIERS
@@ -127,11 +128,11 @@ set $ws6 "6:WORK"
 # Apply colors in the following order, all after color class:
 # <color class> <border> <background> <text> <indicator> <child border>
 
-client.focused          $color14 $color06 $color15 $color10 $color06
+client.focused          $color14 $color06 $color11 $color10 $color06
 client.focused_inactive $color12 $color04 $color15 $color02 $color04
-client.unfocused        $color07 $color08 $color00 $color15 $color08
-client.urgent           $color11 $color03 $color00 $color09 $color01
-client.placeholder      $color07 $color08 $color00 $color15 $color08
+client.unfocused        $color07 $color08 $color00 $color02 $color08
+client.urgent           $color09 $color03 $color00 $color01 $color03
+client.placeholder      $color07 $color08 $color00 $color02 $color08
 client.background       $color00
 
 #------+2.1 BORDERS
@@ -212,7 +213,7 @@ bar {
 
       # Optional, you can set a font for the bar individually.
 
-      font -xos4-terminus-medium-r-normal-*-12-120-72-72-c-60-iso10646-1
+      font -xos4-terminus-medium-r-normal-*-14-140-72-72-c-80-iso10646-1
 
       # Show or hide workspace buttons, useful if you want to display
       # a statusline-only bar containing additional information.
@@ -230,10 +231,10 @@ bar {
                # <colorclass> <border> <background> <text>
 
                focused_workspace  $color14 $color06 $color00 
-               active_workspace   $color12 $color04 $color00
+               active_workspace   $color12 $color04 $color07
                inactive_workspace $color07 $color08 $color00
                urgent_workspace   $color11 $color03 $color00
-               binding_mode       $color13 $color05 $color00
+               binding_mode       $color13 $color05 $color07
 
                # Bar details
 
@@ -385,6 +386,7 @@ mode "COMMAND" {
      # XF86
 
      bindsym XF86Explorer exec $file_picker
+     bindsym XF86HomePage exec $web_browser_alt
 
      # Virtual Machine
 
@@ -394,7 +396,7 @@ mode "COMMAND" {
 
      bindsym $mod+Control+v exec $volume_controller
 
-     # YouTube player
+     # YouTube Player
 
      bindsym $mod+y exec $youtube_player
 
@@ -441,18 +443,6 @@ mode "WINDOW" {
 
      bindsym $escape
 
-     # Directional focus
-
-     bindsym $down  focus down
-     bindsym $left  focus left
-     bindsym $right focus right
-     bindsym $up    focus up
-
-     # Focus the next and previous window
-
-     bindsym Tab       focus next 
-     bindsym Shift+tab focus prev
-
      # Kill window
 
      bindsym Control+Mod1+k kill
@@ -471,8 +461,8 @@ mode "WINDOW" {
 
      # Split horizontal or vertical tiling
 
-     bindsym Control+Mod1+h     splith
-     bindsym Control+Mod1+v     splitv
+     bindsym Control+Mod1+h splith
+     bindsym Control+Mod1+v splitv
 
      # Split toggling
 
@@ -593,8 +583,8 @@ bindsym XF86AudioRaiseVolume exec $volume_raise
 #------+5.8 X-TERMINAL-EMULATOR
 
 bindsym $mod+Return exec $terminal
-bindsym $mod+Mod1+Return exec $scratchpad_terminal
-bindsym Control+Mod1+Return scratchpad show
+bindsym Mod1+Return exec $scratchpad_terminal
+bindsym Control+Return scratchpad show
 
 #------+6.0 FLOATING RULES
 
