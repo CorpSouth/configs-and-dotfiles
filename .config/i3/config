@@ -471,8 +471,8 @@ mode "WINDOW" {
 
      # Split horizontal or vertical tiling
 
-     bindsym Control+h     splith
-     bindsym Control+v     splitv
+     bindsym Control+Mod1+h     splith
+     bindsym Control+Mod1+v     splitv
 
      # Split toggling
 
