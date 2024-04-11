@@ -30,7 +30,7 @@ static int restrict_return = 0;             /* -1 option; if 1, disables shift-r
 #endif // RESTRICT_RETURN_PATCH
 /* -fn option overrides fonts[0]; default X11 font or font set */
 #if PANGO_PATCH
-static char font[] = "Terminus 14";
+static char font[] = "Terminus 12";
 #else
 #if XRESOURCES_PATCH
 static char *fonts[] =
@@ -38,7 +38,7 @@ static char *fonts[] =
 static const char *fonts[] =
 #endif // XRESOURCES_PATCH
 {
-	"Terminus:size=14"
+	"Terminus:size=12"
 };
 #endif // PANGO_PATCH
 #if MANAGED_PATCH
@@ -91,9 +91,9 @@ const
 #endif // XRESOURCES_PATCH
 char *colors[][2] = {
 	/*               fg         bg       */
-	[SchemeNorm] = { "#E5E5E5", "#000000" },
-	[SchemeSel]  = { "#000000", "#E5E5E5" },
-	[SchemeOut]  = { "#000000", "#E5E5E5" },
+	[SchemeNorm] = { "#C0C0C0", "#000000" },
+	[SchemeSel]  = { "#000000", "#C0C0C0" },
+	[SchemeOut]  = { "#000000", "#C0C0C0" },
 	#if BORDER_PATCH
 	[SchemeBorder] = { "#DADADA", "#212121" },
 	#endif // BORDER_PATCH
