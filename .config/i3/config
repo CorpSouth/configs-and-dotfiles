@@ -22,18 +22,18 @@
 # variables here to make life easier.
 
 set $color00 #000000
-set $color01 #CD0000
-set $color02 #00CD00
-set $color03 #CDCD00
-set $color04 #0000CD
-set $color05 #CD00CD
-set $color06 #00CDCD
-set $color07 #E5E5E5
-set $color08 #7F7F7F
+set $color01 #800000
+set $color02 #008000
+set $color03 #808000
+set $color04 #000080
+set $color05 #800080
+set $color06 #008080
+set $color07 #C0C0C0
+set $color08 #808080
 set $color09 #FF0000
 set $color10 #00FF00
 set $color11 #FFFF00
-set $color12 #5C5CFF
+set $color12 #0000FF
 set $color13 #FF00FF
 set $color14 #00FFFF
 set $color15 #FFFFFF
@@ -47,6 +47,7 @@ set $automount           --no-startup-id udiskie
 set $bluetooth_exchanger --no-startup-id i3-sensible-terminal -title obexctl -name obexctl -e obexctl
 set $bluetooth_manager   --no-startup-id i3-sensible-terminal -title bluetoothctl -name bluetoothctl -e bluetoothctl
 set $calculator          --no-startup-id i3-sensible-terminal -title bc -name scratchpad -e bc
+set $discord_client      --no-startup-id armcord
 set $disk_utility        --no-startup-id i3-sensible-terminal -title ncdu -name ncdu -e ncdu
 set $editor              --no-startup-id i3-sensible-terminal -title neovim -name neovim -e nvim
 set $email               --no-startup-id betterbird
@@ -75,6 +76,7 @@ set $screenlocking       --no-startup-id xset s 600 & xss-lock --transfer-sleep-
 set $screenshot          --no-startup-id maim -u | tee $HOME/Pictures/Screenshots/$(date +%s).png | xclip -selection clipboard -t image/png
 set $screenshot_region   --no-startup-id maim -s -u | xclip -selection clipboard -t image/png
 set $set_resolution      --no-startup-id xrandr -s 1600x900
+set $telegram_client     --no-startup-id telegram-desktop
 set $terminal            --no-startup-id i3-sensible-terminal
 set $top                 --no-startup-id i3-sensible-terminal -title btop -name btop -e btop
 set $vm                  --no-startup-id virt-manager
@@ -82,7 +84,7 @@ set $volume_controller   --no-startup-id i3-sensible-terminal -title pulsemixer 
 set $volume_lower        --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
 set $volume_mute         --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 set $volume_raise        --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
-set $wallpaper_setter    --no-startup-id xwallpaper --tile $HOME/Pictures/Wallpapers/SiteOrigin/X/Type_Bumpmap_X.png
+set $wallpaper_setter    --no-startup-id xwallpaper --tile $HOME/Pictures/Wallpapers/SiteOrigin/X/Robots_Bumpmap_X.png
 set $web_browser         --no-startup-id librewolf
 set $web_browser_alt     --no-startup-id torbrowser-launcher
 set $youtube_player      --no-startup-id freetube
@@ -128,11 +130,11 @@ set $ws6 "6:WORK"
 # Apply colors in the following order, all after color class:
 # <color class> <border> <background> <text> <indicator> <child border>
 
-client.focused          $color14 $color06 $color11 $color10 $color06
-client.focused_inactive $color12 $color04 $color15 $color02 $color04
+client.focused          $color14 $color06 $color15 $color10 $color06
+client.focused_inactive $color12 $color04 $color07 $color02 $color04
 client.unfocused        $color07 $color08 $color00 $color02 $color08
-client.urgent           $color09 $color03 $color00 $color01 $color03
-client.placeholder      $color07 $color08 $color00 $color02 $color08
+client.urgent           $color11 $color03 $color15 $color09 $color01
+client.placeholder      $color13 $color05 $color15 $color13 $color05
 client.background       $color00
 
 #------+2.1 BORDERS
@@ -142,8 +144,13 @@ client.background       $color00
 # "default_border pixel" will disable the title bar.
 # Can be individually set for floating windows, too.
 
-default_border normal
-default_floating_border normal
+default_border pixel 1
+default_floating_border pixel 1
+
+# Smart Borders allow you to get rid of borders if you have one window,
+# or are using the stacking/tabbing layouts.
+
+smart_borders on
 
 #------+2.2 FONTS
 
@@ -153,7 +160,7 @@ default_floating_border normal
 # Excluding font size will fallback to default
 # font sizing according to DPI.
 
-font -xos4-terminus-bold-r-normal-*-14-140-72-72-c-80-iso10646-1
+font -xos4-terminus-medium-r-normal-*-12-120-72-72-c-60-iso10646-1
 
 # You can also set a secondary font, separated by a comma
 
@@ -195,6 +202,8 @@ title_align left
 
 bar {
 
+      # i3bar_command i3bar --transparency
+
       # The utility used on startup to display status outputs
       # You can suffix the "status_command" with a custom status
       # handler like i3blocks, i3status-rust, etc.
@@ -211,10 +220,6 @@ bar {
 
       tray_padding 0
 
-      # Optional, you can set a font for the bar individually.
-
-      font -xos4-terminus-medium-r-normal-*-14-140-72-72-c-80-iso10646-1
-
       # Show or hide workspace buttons, useful if you want to display
       # a statusline-only bar containing additional information.
 
@@ -230,11 +235,11 @@ bar {
                # Apply them in the following order:
                # <colorclass> <border> <background> <text>
 
-               focused_workspace  $color14 $color06 $color00 
+               focused_workspace  $color14 $color06 $color15 
                active_workspace   $color12 $color04 $color07
                inactive_workspace $color07 $color08 $color00
-               urgent_workspace   $color11 $color03 $color00
-               binding_mode       $color13 $color05 $color07
+               urgent_workspace   $color11 $color03 $color15
+               binding_mode       $color13 $color05 $color15
 
                # Bar details
 
@@ -350,6 +355,10 @@ mode "COMMAND" {
 
      bindsym $mod+Control+n exec $network_manager
 
+     # Discord Client
+
+     bindsym $mod+d exec $discord_client
+
      # Disk Utility
 
      bindsym $mod+Control+d exec $disk_utility
@@ -370,6 +379,10 @@ mode "COMMAND" {
 
      bindsym Print exec $screenshot
      bindsym Control+Print exec $screenshot_region
+
+     # Telegram Client
+
+     bindsym $mod+t exec $telegram_client
 
      # Text Editor
 

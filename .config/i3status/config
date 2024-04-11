@@ -2,14 +2,15 @@
 general {
   output_format = "i3bar"
   colors = true
-  color_good = "#00CD00"
-  color_bad = "#CD0000"
-  color_degraded = "#CDCD00"
+  color_good = "#00FF00"
+  color_bad = "#FF0000"
+  color_degraded = "#FFFF00"
   interval = 1
 }
 
 order += "ethernet _first_"
 order += "wireless _first_"
+order += "run_watch TOR"
 order += "cpu_temperature all"
 order += "load"
 order += "disk /"
@@ -27,6 +28,11 @@ wireless _first_ {
     format_down = "W:DOWN"
 }
 
+run_watch TOR {
+    format = "%title:%status"
+    pidfile = "/var/run/tor/tor.pid"
+}
+
 cpu_temperature all {
 	format = "TEMP:%degrees°C"
 }
@@ -36,26 +42,26 @@ load {
 }
 
 disk "/" {
-	format = "DISK:%avail/%total"
+	format = "DISK:%used/%avail/%total"
 	prefix_type = custom
 	low_threshold = 20
 	threshold_type = percentage_avail
 }
 
 memory {
-    format = "MEM:%used/%total"
+    format = "MEM:%used/%free/%available"
     threshold_degraded = "1G"
-    format_degraded = "MEM: < %available"
+    format_degraded = "MEM:%available"
 }
 
 volume master {
-  format = "VOL:%volume"
-  format_muted = "VOL:MUTED"
+  format = "%devicename:%volume"
+  format_muted = "%devicename:MUTED"
   device = "default"
   mixer = "Master"
   mixer_idx = 0
 }
 
 time {
-  format = "%x %X"
+  format = "%c"
 }
