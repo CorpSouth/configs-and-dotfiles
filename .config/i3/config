@@ -21,14 +21,14 @@
 # and bar/panel are very frequently changing. Set
 # variables here to make life easier.
 
-set $color00 #000000
+set $color00 #080808
 set $color01 #800000
 set $color02 #008000
 set $color03 #808000
 set $color04 #000080
 set $color05 #800080
 set $color06 #008080
-set $color07 #C0C0C0
+set $color07 #B2B2B2
 set $color08 #808080
 set $color09 #FF0000
 set $color10 #00FF00
@@ -36,7 +36,7 @@ set $color11 #FFFF00
 set $color12 #0000FF
 set $color13 #FF00FF
 set $color14 #00FFFF
-set $color15 #FFFFFF
+set $color15 #EEEEEE
 
 #------+1.2 DEFAULT APPLICATIONS & UTILITIES
 
@@ -60,7 +60,7 @@ set $i3_nagbar_suspend   "i3-nagbar -f '-xos4-terminus-bold-r-normal-*-14-140-72
 set $image_viewer        --no-startup-id nsxiv -r $HOME/Pictures
 set $media_player        --no-startup-id mpv --player-operation-mode=pseudo-gui
 set $menu                --no-startup-id dmenu_run
-set $network_manager     --no-startup-id i3-sensible-terminal -title connmanctl -name connmanctl -e connmanctl
+set $network_manager     --no-startup-id i3-sensible-terminal -title nmtui -name nmtui -e nmtui
 set $notification_daemon --no-startup-id dunst
 set $obexd               --no-startup-id /usr/libexec/bluetooth/obexd
 set $office_suite        --no-startup-id onlyoffice-desktopeditors
@@ -84,7 +84,7 @@ set $volume_controller   --no-startup-id i3-sensible-terminal -title pulsemixer 
 set $volume_lower        --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
 set $volume_mute         --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 set $volume_raise        --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
-set $wallpaper_setter    --no-startup-id xwallpaper --tile $HOME/Pictures/Wallpapers/SiteOrigin/X/Robots_Bumpmap_X.png
+set $wallpaper_setter    --no-startup-id xwallpaper --tile $HOME/Pictures/Wallpapers/SiteOrigin/X/Brilliant_Bumpmap_X.png
 set $web_browser         --no-startup-id librewolf
 set $web_browser_alt     --no-startup-id torbrowser-launcher
 set $youtube_player      --no-startup-id freetube
@@ -133,7 +133,7 @@ set $ws6 "6:WORK"
 client.focused          $color14 $color06 $color15 $color10 $color06
 client.focused_inactive $color12 $color04 $color07 $color02 $color04
 client.unfocused        $color07 $color08 $color00 $color02 $color08
-client.urgent           $color11 $color03 $color15 $color09 $color01
+client.urgent           $color09 $color03 $color15 $color01 $color11
 client.placeholder      $color13 $color05 $color15 $color13 $color05
 client.background       $color00
 
@@ -470,7 +470,7 @@ mode "WINDOW" {
 
      # Scratchpad management
 
-     bindsym $mod+Mod1+Return move scratchpad
+     bindsym $mod+Control+Return move scratchpad
 
      # Split horizontal or vertical tiling
 
@@ -564,6 +564,8 @@ bindsym $mod+3 workspace $ws3
 bindsym $mod+4 workspace $ws4
 bindsym $mod+5 workspace $ws5
 bindsym $mod+6 workspace $ws6
+
+# Ergonomic workspace switching with the brace/bracket keys
 
 bindsym $mod+bracketleft workspace prev
 bindsym $mod+bracketright workspace next

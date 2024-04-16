@@ -2,21 +2,28 @@
 general {
   output_format = "i3bar"
   colors = true
-  color_good = "#00FF00"
-  color_bad = "#FF0000"
-  color_degraded = "#FFFF00"
+  color_good = "#00D700"
+  color_bad = "#D70000"
+  color_degraded = "#FFD700"
   interval = 1
 }
 
+#order += "read_file motd.dynamic"
 order += "ethernet _first_"
 order += "wireless _first_"
 order += "run_watch TOR"
 order += "cpu_temperature all"
 order += "load"
+order += "read_file UP"
 order += "disk /"
 order += "memory"
 order += "volume master"
 order += "time"
+
+read_file motd.dynamic {
+    format = "%content"
+    path = "/var/run/motd.dynamic"
+}
 
 ethernet _first_ {
     format_up = "E:%speed"
@@ -30,6 +37,7 @@ wireless _first_ {
 
 run_watch TOR {
     format = "%title:%status"
+    format_down= "%title:%status"
     pidfile = "/var/run/tor/tor.pid"
 }
 
@@ -39,6 +47,12 @@ cpu_temperature all {
 
 load {
     format = "LOAD:%1min"
+}
+
+read_file UP {
+    format = "%title:%content"
+    max_characters = "255"
+    path = "/proc/uptime"
 }
 
 disk "/" {
