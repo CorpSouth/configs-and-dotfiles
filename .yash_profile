@@ -20,6 +20,10 @@ if [ -d "$HOME/.local/bin" ]; then
     PATH="$HOME/.local/bin:$PATH" ;
 fi;
 
+if [ -d "/usr/sbin/" ]; then
+    PATH="/usr/sbin:$PATH"
+fi;
+
 # Assign XDG Base Directories
 
 if [ -d "$HOME/.cache" ]; then
@@ -30,11 +34,18 @@ if [ -d "$HOME/.config" ]; then
 	export XDG_CONFIG_HOME="$HOME/.config" ;
 fi;
 
+# Disable CSD in GTK3
+
+if [ -f "/usr/lib/x86_64-linux-gnu/libgtk3-nocsd.so.0" ]; then
+	export GTK_CSD="0"
+	export LD_PRELOAD="/usr/lib/x86_64-linux-gnu/libgtk3-nocsd.so.0"
+fi;
+
 # Organize X11 Configurations
 
-if [ -f "$HOME/.local/share/icons/default/index.theme" ]; then
-        export XCURSOR_PATH="$XCURSOR_PATH":"$HOME/.local/share/icons" ;
-fi;
+# if [ -f "$HOME/.local/share/icons/default/index.theme" ]; then
+#        export XCURSOR_PATH="$XCURSOR_PATH":"$HOME/.local/share/icons" ;
+# fi;
 
 if [ -f "$XDG_CACHE_HOME/X11/Xsession" ]; then
 	export ALTUSERXSESSION="$XDG_CACHE_HOME/X11/Xsession" ;
@@ -66,9 +77,9 @@ fi;
 
 # Qt stuff
 
-export QT_QPA_PLATFORMTHEME="gtk3"
+# export QT_QPA_PLATFORMTHEME="gtk3"
 
-# export QT_QPA_PLATFORMTHEME="qt5ct"
+export QT_QPA_PLATFORMTHEME="qt5ct"
 
 # Autostart X after tty login, this can effectively replicate 
 # a display manager
