@@ -3,13 +3,15 @@
 
 # Dbus Daemon
 
-if which dbus-launch >/dev/null && test -z "$DBUS_SESSION_BUS_ADDRESS"; then
-    eval "$(dbus-launch --auto-syntax --exit-with-session)"
+if test -z "$DBUS_SESSION_BUS_ADDRESS"; then
+	eval $(dbus-launch --exit-with-session --sh-syntax)
 fi
 
-# Sound Server
+systemctl --user import-environment DISPLAY XAUTHORITY
 
-pipewire-launcher.sh &
+if command -v dbus-update-activation-environment >/dev/null 2>&1; then
+        dbus-update-activation-environment DISPLAY XAUTHORITY
+fi
 
 # Xresources
 
