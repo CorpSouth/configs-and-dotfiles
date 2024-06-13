@@ -43,9 +43,9 @@ fi;
 
 # Organize X11 Configurations
 
-# if [ -f "$HOME/.local/share/icons/default/index.theme" ]; then
-#        export XCURSOR_PATH="$XCURSOR_PATH":"$HOME/.local/share/icons" ;
-# fi;
+if [ -f "$HOME/.local/share/icons/default/index.theme" ]; then
+	export XCURSOR_PATH="$XCURSOR_PATH":"$HOME/.local/share/icons" ;
+fi;
 
 if [ -f "$XDG_CACHE_HOME/X11/Xsession" ]; then
 	export ALTUSERXSESSION="$XDG_CACHE_HOME/X11/Xsession" ;
@@ -61,6 +61,10 @@ fi;
 
 if [ -f "$XDG_CACHE_HOME/X11/xsessionrc" ]; then
         export USERXSESSIONRC="$XDG_CACHE_HOME/X11/xsessionrc" ;
+fi;
+
+if [ -f "$XDG_CONFIG_HOME/ratpoison/.ratpoison" ]; then
+	export RATPOISONRC="$XDG_CONFIG_HOME/ratpoison/.ratpoisonrc" ;
 fi;
 
 if [ -f "$XDG_CONFIG_HOME/X11/xinitrc" ]; then
