@@ -1,17 +1,30 @@
 #!/bin/sh
 
+# Background
+
+xwallpaper --stretch "$HOME/Pictures/Wallpapers/Brilliant_Bumpmap_Aqua.png" &
+
+# Compositing Manager
+
+fastcompmgr -o 0.4 -r 12 -c -C &
 
 # Dbus Daemon
 
-if test -z "$DBUS_SESSION_BUS_ADDRESS"; then
-	eval "$(dbus-launch --exit-with-session --sh-syntax)"
-fi
+if [ ! "$DBUS_SESSION_BUS_ADDRESS" ]; then
+    eval "$(dbus-launch --sh-syntax --exit-with-session)"
+fi;
 
-systemctl --user import-environment DISPLAY XAUTHORITY
+# Notifications
 
-if command -v dbus-update-activation-environment >/dev/null 2>&1; then
-        dbus-update-activation-environment DISPLAY XAUTHORITY
-fi
+dunst &
+
+# Screen Locker
+
+xautolock -time 10 -locker slock &
+
+# Sound Server
+
+pipewire-launcher.sh &
 
 # Xresources
 
@@ -19,4 +32,4 @@ xrdb -merge "$XRESOURCES" &
 
 # Xsession
 
-exec i3
+exec ratpoison -f "$RATPOISONRC"
